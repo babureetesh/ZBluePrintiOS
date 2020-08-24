@@ -1,0 +1,1709 @@
+
+/* Class = "UILabel"; text = "Phone No."; ObjectID = "04V-yG-Q68"; */
+"04V-yG-Q68.text" = "Telefono";
+
+/* Class = "UILabel"; text = "19"; ObjectID = "07a-Qv-VQj"; */
+"07a-Qv-VQj.text" = "19";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "0MJ-kb-VMp"; */
+"0MJ-kb-VMp.text" = ":";
+
+/* Class = "UILabel"; text = "Time"; ObjectID = "0SN-9t-G14"; */
+"0SN-9t-G14.text" = "Hora";
+
+/* Class = "UITextField"; placeholder = "Phone Number "; ObjectID = "0VD-Io-Cnz"; */
+"0VD-Io-Cnz.placeholder" = "Numero de telefono ";
+
+/* Class = "UILabel"; text = "OTP expires in mm:ss Minutes"; ObjectID = "0YT-1L-MWm"; */
+"0YT-1L-MWm.text" = "OTP caduca en mm: ss Minutos";
+
+/* Class = "UILabel"; text = "Enter actual hours"; ObjectID = "0Zj-9X-YbN"; */
+"0Zj-9X-YbN.text" = "Ingrese horas reales";
+
+/* Class = "UITextField"; placeholder = "Email*"; ObjectID = "0fb-co-XIF"; */
+"0fb-co-XIF.placeholder" = " Correo electrónico*";
+
+/* Class = "UILabel"; text = "CHANGE HOURS"; ObjectID = "0nG-Ze-Duc"; */
+"0nG-Ze-Duc.text" = "Cambiar horas";
+
+/* Class = "UILabel"; text = "Volunteer Hours"; ObjectID = "0rL-bT-9qc"; */
+"0rL-bT-9qc.text" = "Horas de voluntariado";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "1JG-T9-CiS"; */
+"1JG-T9-CiS.normalTitle" = " Cancelar";
+
+/* Class = "UILabel"; text = "NOTIFICATION"; ObjectID = "1KO-20-TGS"; */
+"1KO-20-TGS.text" = "Notificación";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1N5-sJ-N6k"; */
+"1N5-sJ-N6k.text" = "Label";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "1OX-jR-cVe"; */
+"1OX-jR-cVe.text" = "00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1UN-6R-5GZ"; */
+"1UN-6R-5GZ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "1XG-E5-fBl"; */
+"1XG-E5-fBl.normalTitle" = "Añadir";
+
+/* Class = "UIButton"; normalTitle = "Reject"; ObjectID = "1bp-YX-hZG"; */
+"1bp-YX-hZG.normalTitle" = "Rechazar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1lK-vR-DU6"; */
+"1lK-vR-DU6.text" = "Label";
+
+/* Class = "UILabel"; text = "YES"; ObjectID = "1pf-dX-m0N"; */
+"1pf-dX-m0N.text" = "SI";
+
+/* Class = "UILabel"; text = "Upload multiple files*"; ObjectID = "1rz-N3-xeS"; */
+"1rz-N3-xeS.text" = "Sube varios archivos*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "23m-zD-sX6"; */
+"23m-zD-sX6.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "24t-fk-HCU"; */
+"24t-fk-HCU.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Start Time"; ObjectID = "2Gq-UD-Rpg"; */
+"2Gq-UD-Rpg.normalTitle" = "Hora de inicio";
+
+/* Class = "UIButton"; normalTitle = "Clear"; ObjectID = "2Lq-nu-LOP"; */
+"2Lq-nu-LOP.normalTitle" = "Clear";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "2V9-2h-hBc"; */
+"2V9-2h-hBc.normalTitle" = "Registrarse";
+
+/* Class = "UILabel"; text = "Average Rank"; ObjectID = "2Yf-wl-jhE"; */
+"2Yf-wl-jhE.text" = "Rango promedio";
+
+/* Class = "UIButton"; normalTitle = "Select answer"; ObjectID = "2cF-Eu-aVc"; */
+"2cF-Eu-aVc.normalTitle" = "Seleccionar respuesta";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "2pC-B6-o3I"; */
+"2pC-B6-o3I.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter New Password"; ObjectID = "2s3-px-N0t"; */
+"2s3-px-N0t.placeholder" = "Ingrese nueva clave";
+
+/* Class = "UILabel"; text = "22"; ObjectID = "2w7-TH-KJc"; */
+"2w7-TH-KJc.text" = "22";
+
+/* Class = "UIButton"; normalTitle = "2"; ObjectID = "37V-SY-DMm"; */
+"37V-SY-DMm.normalTitle" = "2";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3Fn-Rq-dZm"; */
+"3Fn-Rq-dZm.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "3P1-be-8WR"; */
+"3P1-be-8WR.text" = "Plano Zoe";
+
+/* Class = "UILabel"; text = "Add Comment"; ObjectID = "3RW-9a-nXI"; */
+"3RW-9a-nXI.text" = "Agregar comentario";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "3Rw-kT-sfy"; */
+"3Rw-kT-sfy.normalTitle" = "Cancelar";
+
+/* Class = "UILabel"; text = "Shift Task"; ObjectID = "3V9-1D-oKp"; */
+"3V9-1D-oKp.text" = "Tarea de turno";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3fC-tN-YTo"; */
+"3fC-tN-YTo.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Decline"; ObjectID = "3qL-ry-tPJ"; */
+"3qL-ry-tPJ.normalTitle" = "Disminución";
+
+/* Class = "UITextField"; placeholder = "Password*"; ObjectID = "48J-US-87q"; */
+"48J-US-87q.placeholder" = "Contraseña*";
+
+/* Class = "UILabel"; text = "CHANGE STATUS TO"; ObjectID = "48N-p2-v6G"; */
+"48N-p2-v6G.text" = "CAMBIAR ESTADO A";
+
+/* Class = "UITextField"; placeholder = "Last Name*"; ObjectID = "4DI-DO-G5R"; */
+"4DI-DO-G5R.placeholder" = "Apellido*";
+
+/* Class = "UILabel"; text = "Wednesday"; ObjectID = "4Hb-QR-0fV"; */
+"4Hb-QR-0fV.text" = "Wednesday";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "4QL-Ff-lag"; */
+"4QL-Ff-lag.normalTitle" = "No";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "4zd-nW-3ar"; */
+"4zd-nW-3ar.text" = "Cambia la contraseña";
+
+/* Class = "UILabel"; text = "What type of services and activities does your Organization offer?"; ObjectID = "53K-CH-PEO"; */
+"53K-CH-PEO.text" = "¿Qué tipo de servicios y actividades ofrece su organización?";
+
+/* Class = "UIButton"; normalTitle = "Shift"; ObjectID = "54u-Wo-paH"; */
+"54u-Wo-paH.normalTitle" = "Cambio";
+
+/* Class = "UILabel"; text = "No Event Found"; ObjectID = "54v-q1-2X2"; */
+"54v-q1-2X2.text" = "No Event Found";
+
+/* Class = "UILabel"; text = "ab"; ObjectID = "55p-cN-Y5o"; */
+"55p-cN-Y5o.text" = "ab";
+
+/* Class = "UIButton"; normalTitle = "Mark Complete"; ObjectID = "59h-rs-RHm"; */
+"59h-rs-RHm.normalTitle" = "Mark Complete";
+
+/* Class = "UILabel"; text = "title"; ObjectID = "5KZ-hH-6Mg"; */
+"5KZ-hH-6Mg.text" = "Título";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "5XC-Sx-FjO"; */
+"5XC-Sx-FjO.normalTitle" = "SI";
+
+/* Class = "UILabel"; text = "Days"; ObjectID = "5fA-b0-QJn"; */
+"5fA-b0-QJn.text" = "Dias";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5nC-YB-tTe"; */
+"5nC-YB-tTe.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Organization Phone Number"; ObjectID = "5pe-rq-mKV"; */
+"5pe-rq-mKV.placeholder" = "Número de teléfono de la organización";
+
+/* Class = "UIButton"; normalTitle = "Update"; ObjectID = "6EC-QG-xMC"; */
+"6EC-QG-xMC.normalTitle" = "Actualizar";
+
+/* Class = "UITextField"; placeholder = "First Name*"; ObjectID = "6M9-bl-7uf"; */
+"6M9-bl-7uf.placeholder" = "Nombre de pila*";
+
+/* Class = "UILabel"; text = "UPDATE HOURS"; ObjectID = "6QL-TL-S2j"; */
+"6QL-TL-S2j.text" = "ACTUALIZAR HORAS";
+
+/* Class = "UILabel"; text = "wed"; ObjectID = "6Qh-dR-A9O"; */
+"6Qh-dR-A9O.text" = "Mie";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "6Tc-QA-04J"; */
+"6Tc-QA-04J.text" = "Plano Zoe";
+
+/* Class = "UILabel"; text = "Start Time"; ObjectID = "6Yc-lQ-Dhf"; */
+"6Yc-lQ-Dhf.text" = " Hora de inicio";
+
+/* Class = "UILabel"; text = "Nov"; ObjectID = "6ao-6T-u8R"; */
+"6ao-6T-u8R.text" = "Nov";
+
+/* Class = "UILabel"; text = "NO"; ObjectID = "6d0-fK-cmp"; */
+"6d0-fK-cmp.text" = "NO";
+
+/* Class = "UILabel"; text = "NO"; ObjectID = "6rQ-mh-LZb"; */
+"6rQ-mh-LZb.text" = "NO";
+
+/* Class = "UITextField"; placeholder = "Description*"; ObjectID = "6wD-21-XWh"; */
+"6wD-21-XWh.placeholder" = "Descripción*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "72g-k5-zAB"; */
+"72g-k5-zAB.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "7Ly-tM-rkQ"; */
+"7Ly-tM-rkQ.placeholder" = "Correo electrónico";
+
+/* Class = "UILabel"; text = "Have waiver document ?"; ObjectID = "7Sv-kw-Y3V"; */
+"7Sv-kw-Y3V.text" = "Have waiver document ?";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "7fg-Nb-gia"; */
+"7fg-Nb-gia.text" = "Label";
+
+/* Class = "UILabel"; text = "Discover Events in my area"; ObjectID = "82G-eF-o7M"; */
+"82G-eF-o7M.text" = "Discover Events in my area";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "863-h2-dVJ"; */
+"863-h2-dVJ.text" = "Label";
+
+/* Class = "UILabel"; text = "What type of services and activities does your organisation offer?"; ObjectID = "89i-ih-Jfe"; */
+"89i-ih-Jfe.text" = "¿Qué tipo de servicios y actividades ofrece su organización?";
+
+/* Class = "UILabel"; text = "501C3 Certificate"; ObjectID = "8HI-PQ-dbX"; */
+"8HI-PQ-dbX.text" = "501C3 Certificado";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "8J9-Pm-n3o"; */
+"8J9-Pm-n3o.normalTitle" = "Cancelar";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8K2-RD-JeN"; */
+"8K2-RD-JeN.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Date Of Birth"; ObjectID = "8Lj-6C-FT1"; */
+"8Lj-6C-FT1.normalTitle" = "Fecha de nacimiento";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "8Ov-op-KbC"; */
+"8Ov-op-KbC.text" = "Correo electrónico";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "8SD-Nn-BFO"; */
+"8SD-Nn-BFO.text" = "Label";
+
+/* Class = "UILabel"; text = "NEXT EVENT COUNTDOWN"; ObjectID = "8Uv-e6-3oc"; */
+"8Uv-e6-3oc.text" = "Cuenta atrás del siguiente evento";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "8m4-CG-LuS"; */
+"8m4-CG-LuS.text" = "Nombre";
+
+/* Class = "UITabBarItem"; title = "Message"; ObjectID = "8tU-uG-mcV"; */
+"8tU-uG-mcV.title" = "Mensaje";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "8tr-T2-5VL"; */
+"8tr-T2-5VL.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Event End Time"; ObjectID = "96h-YH-XfT"; */
+"96h-YH-XfT.normalTitle" = "Hora de finalización del evento";
+
+/* Class = "UITextField"; placeholder = "Postal Code"; ObjectID = "9NF-Av-8qj"; */
+"9NF-Av-8qj.placeholder" = "Postal Code";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "9Vq-Da-OTt"; */
+"9Vq-Da-OTt.placeholder" = "Nombre de pila";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "9cs-fx-TBn"; */
+"9cs-fx-TBn.normalTitle" = "Enviar";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "9fT-y1-Ogu"; */
+"9fT-y1-Ogu.normalTitle" = "Reiniciar";
+
+/* Class = "UILabel"; text = "Basic Information"; ObjectID = "9fv-Qo-nxR"; */
+"9fv-Qo-nxR.text" = "Información básica";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "9gX-pM-2PN"; */
+"9gX-pM-2PN.normalTitle" = "Reiniciar";
+
+/* Class = "UITextField"; placeholder = "Phone Number "; ObjectID = "9ge-m0-3Jt"; */
+"9ge-m0-3Jt.placeholder" = "Número de teléfono ";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "9mF-Lz-gVJ"; */
+"9mF-Lz-gVJ.normalTitle" = "Añadir";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9ou-EX-x2X"; */
+"9ou-EX-x2X.text" = "Label";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "9yh-A8-IG5"; */
+"9yh-A8-IG5.text" = "País";
+
+/* Class = "UILabel"; text = "Average Rate"; ObjectID = "9zO-Sk-7yf"; */
+"9zO-Sk-7yf.text" = "Tasa promedio";
+
+/* Class = "UITextField"; placeholder = "Organization Website"; ObjectID = "APG-qK-t4m"; */
+"APG-qK-t4m.placeholder" = "Sitio web de la organización";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "APx-yZ-4zR"; */
+"APx-yZ-4zR.placeholder" = " Correo electrónico";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "AZx-er-dNF"; */
+"AZx-er-dNF.text" = "00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ajp-FJ-vEM"; */
+"Ajp-FJ-vEM.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Target"; ObjectID = "ApP-mP-mAj"; */
+"ApP-mP-mAj.title" = "Objetivo";
+
+/* Class = "UILabel"; text = "Shift Time"; ObjectID = "B0w-D8-IA5"; */
+"B0w-D8-IA5.text" = "Tiempo de cambio";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BEf-2Z-PX2"; */
+"BEf-2Z-PX2.text" = "Label";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "BEn-Kz-SvK"; */
+"BEn-Kz-SvK.text" = "idioma";
+
+/* Class = "UILabel"; text = "MY BOOKING"; ObjectID = "BFB-HL-luC"; */
+"BFB-HL-luC.text" = " Mis reserva";
+
+/* Class = "UILabel"; text = "SHIFTS"; ObjectID = "BHO-N8-VRe"; */
+"BHO-N8-VRe.text" = "CAMBIOS";
+
+/* Class = "UILabel"; text = "What is the minimum time period you would like the volunteers for (eg 3months, 6months, 12months)"; ObjectID = "BJ8-5z-MKW"; */
+"BJ8-5z-MKW.text" = "¿Cuál es el período de tiempo mínimo para el que le gustaría que los voluntarios (por ejemplo, 3 meses, 6 meses, 12 meses)";
+
+/* Class = "UITextField"; placeholder = "Street"; ObjectID = "BOX-e0-fKW"; */
+"BOX-e0-fKW.placeholder" = "Calle";
+
+/* Class = "UIButton"; normalTitle = "Select Document Type"; ObjectID = "BSX-sl-F3Y"; */
+"BSX-sl-F3Y.normalTitle" = "Seleccionar tipo de documento";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Bb0-eh-rLP"; */
+"Bb0-eh-rLP.text" = "Label";
+
+/* Class = "UILabel"; text = "  Volunteer Requested"; ObjectID = "Bhq-Y9-JCg"; */
+"Bhq-Y9-JCg.text" = "  Voluntario solicitado";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "BjL-y5-6Oj"; */
+"BjL-y5-6Oj.normalTitle" = "Reiniciar";
+
+/* Class = "UIButton"; normalTitle = "Add New"; ObjectID = "Bp7-M1-1I1"; */
+"Bp7-M1-1I1.normalTitle" = "Agregar nuevo";
+
+/* Class = "UISegmentedControl"; Br7-cL-bHu.segmentTitles[0] = "VOLUNTEER"; ObjectID = "Br7-cL-bHu"; */
+"Br7-cL-bHu.segmentTitles[0]" = "Voluntario";
+
+/* Class = "UISegmentedControl"; Br7-cL-bHu.segmentTitles[1] = "STUDENT"; ObjectID = "Br7-cL-bHu"; */
+"Br7-cL-bHu.segmentTitles[1]" = "STUDENT";
+
+/* Class = "UILabel"; text = "Select daylight"; ObjectID = "CB1-4e-cZn"; */
+"CB1-4e-cZn.text" = "Seleccionar luz del día";
+
+/* Class = "UILabel"; text = "Decline comment"; ObjectID = "CKq-T2-6QG"; */
+"CKq-T2-6QG.text" = "Rechazar comentario";
+
+/* Class = "UILabel"; text = "No Events Found"; ObjectID = "CP8-Qq-e5f"; */
+"CP8-Qq-e5f.text" = "No se encontraron eventos";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Cis-up-qd0"; */
+"Cis-up-qd0.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Cyv-Na-AxM"; */
+"Cyv-Na-AxM.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "Cz3-Ez-Pg9"; */
+"Cz3-Ez-Pg9.text" = "00";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "D0f-FS-neN"; */
+"D0f-FS-neN.normalTitle" = "Cerca";
+
+/* Class = "UIButton"; normalTitle = "CLICK HERE"; ObjectID = "D84-dg-qtQ"; */
+"D84-dg-qtQ.normalTitle" = "Haga clic aquí";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "DFU-tV-8vk"; */
+"DFU-tV-8vk.placeholder" = "Ciudad";
+
+/* Class = "UIButton"; normalTitle = "Select DayLight"; ObjectID = "DKH-ur-dWM"; */
+"DKH-ur-dWM.normalTitle" = " Seleccionar luz del día";
+
+/* Class = "UILabel"; text = "Please take a moment to verify your phone number. This helps us confirm your identify and secure your account."; ObjectID = "DTs-y3-ed6"; */
+"DTs-y3-ed6.text" = "Tómese un momento para verificar su número de teléfono. Esto nos ayuda a confirmar su identidad y asegurar su cuenta.";
+
+/* Class = "UILabel"; text = "Event Type"; ObjectID = "DdI-Ti-P7u"; */
+"DdI-Ti-P7u.text" = " tipo de evento";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "DmW-mM-ajE"; */
+"DmW-mM-ajE.placeholder" = "Apellido";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "Dns-V7-QCp"; */
+"Dns-V7-QCp.normalTitle" = "Reiniciar";
+
+/* Class = "UILabel"; text = "ADD COMMENT"; ObjectID = "Dps-v1-qHJ"; */
+"Dps-v1-qHJ.text" = "Agregar comentario";
+
+/* Class = "UITextField"; placeholder = " Please enter the Document Name"; ObjectID = "DrD-Uq-pzX"; */
+"DrD-Uq-pzX.placeholder" = " Por favor, introduzca el nombre del documento";
+
+/* Class = "UILabel"; text = "PLEASE SELECT THE DOCUMENT TYPE"; ObjectID = "E3e-2Y-jHC"; */
+"E3e-2Y-jHC.text" = " POR FAVOR SELECCIONE EL TIPO DE DOCUMENTO";
+
+/* Class = "UIButton"; normalTitle = "SEE FOLLOWERS"; ObjectID = "EAN-dF-vAP"; */
+"EAN-dF-vAP.normalTitle" = "VER SEGUIDORES";
+
+/* Class = "UILabel"; text = "YES"; ObjectID = "EHI-ab-PIn"; */
+"EHI-ab-PIn.text" = " SI";
+
+/* Class = "UIButton"; normalTitle = "1"; ObjectID = "ENe-Rh-Gke"; */
+"ENe-Rh-Gke.normalTitle" = "1";
+
+/* Class = "UITextField"; placeholder = "Organization Cause"; ObjectID = "Ecf-0T-JDz"; */
+"Ecf-0T-JDz.placeholder" = "Organización Causa";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ewh-fU-suK"; */
+"Ewh-fU-suK.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "NEW EVENT"; ObjectID = "F06-PA-kV3"; */
+"F06-PA-kV3.normalTitle" = "NUEVOS EVENTOS";
+
+/* Class = "UILabel"; text = "Are you 501C3 certified?"; ObjectID = "F6t-sn-8yQ"; */
+"F6t-sn-8yQ.text" = "¿Estás certificado 501C3?";
+
+/* Class = "UILabel"; text = "Upload waiver document"; ObjectID = "FKY-UP-J0I"; */
+"FKY-UP-J0I.text" = "Subir documento de exención";
+
+/* Class = "UIButton"; normalTitle = NSLocalizedString("OK", comment: ""); ObjectID = "FOy-Qg-R1t"; */
+"FOy-Qg-R1t.normalTitle" = "Okay";
+
+/* Class = "UILabel"; text = "View"; ObjectID = "FfQ-qW-9c2"; */
+"FfQ-qW-9c2.text" = "Ver";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ffg-TP-4hj"; */
+"Ffg-TP-4hj.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "G15-cO-9iD"; */
+"G15-cO-9iD.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "G4M-Wx-jdE"; */
+"G4M-Wx-jdE.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Date Of Birth"; ObjectID = "G6m-dt-YjG"; */
+"G6m-dt-YjG.normalTitle" = "Fecha de nacimiento";
+
+/* Class = "UILabel"; text = "Public"; ObjectID = "GJz-cJ-FzQ"; */
+"GJz-cJ-FzQ.text" = "Público";
+
+/* Class = "UILabel"; text = "Set profile as : "; ObjectID = "GWY-Tv-ikL"; */
+"GWY-Tv-ikL.text" = "Establecer perfil como: ";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "Gdh-kE-FZt"; */
+"Gdh-kE-FZt.normalTitle" = "Reiniciar";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "Gm8-Ox-JDq"; */
+"Gm8-Ox-JDq.placeholder" = "Apellido";
+
+/* Class = "UITextField"; placeholder = "Organization Website"; ObjectID = "GoW-Uz-oSc"; */
+"GoW-Uz-oSc.placeholder" = "Sitio web de la organización";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "HG4-EE-Uzc"; */
+"HG4-EE-Uzc.text" = "Título";
+
+/* Class = "UITextField"; placeholder = "Organization Profile"; ObjectID = "HJk-ZD-w4i"; */
+"HJk-ZD-w4i.placeholder" = "Perfil de la organización";
+
+/* Class = "UILabel"; text = "PLEASE SELECT THE DOCUMENT TYPE"; ObjectID = "HQu-Qu-mLq"; */
+"HQu-Qu-mLq.text" = "POR FAVOR SELECCIONE EL TIPO DE DOCUMENTO";
+
+/* Class = "UIButton"; normalTitle = "Save and Next"; ObjectID = "Hei-WR-zog"; */
+"Hei-WR-zog.normalTitle" = "Guardar y Siguiente";
+
+/* Class = "UITextField"; text = "hashvol@yahoo.com"; ObjectID = "Hg0-MP-cwr"; */
+"Hg0-MP-cwr.text" = "hashvol@yahoo.com";
+
+/* Class = "UILabel"; text = "YES"; ObjectID = "I3x-NV-4d8"; */
+"I3x-NV-4d8.text" = "SI";
+
+/* Class = "UIButton"; normalTitle = "Select State"; ObjectID = "I5k-dV-zeu"; */
+"I5k-dV-zeu.normalTitle" = "Seleccione estado";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "I6F-E2-omr"; */
+"I6F-E2-omr.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "ISR-iI-883"; */
+"ISR-iI-883.normalTitle" = "Hecho";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Ic0-jE-xwy"; */
+"Ic0-jE-xwy.placeholder" = "Contraseña";
+
+/* Class = "UILabel"; text = "06"; ObjectID = "IhO-Jo-A3j"; */
+"IhO-Jo-A3j.text" = "06";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "J8h-2b-viE"; */
+"J8h-2b-viE.text" = "Label";
+
+/* Class = "UILabel"; text = "descrigmjhmjhk,j,frfdjhvbfjvbcnmvfcjvvcmbvmjbnkmjcbncmbcbhjcbnhbgfkbx,vkb"; ObjectID = "JVV-N4-rhp"; */
+"JVV-N4-rhp.text" = "descrigmjhmjhk,j,frfdjhvbfjvbcnmvfcjvvcmbvmjbnkmjcbncmbcbhjcbnhbgfkbx,vkb";
+
+/* Class = "UILabel"; text = "Seconds"; ObjectID = "JWI-pc-vHC"; */
+"JWI-pc-vHC.text" = "Segundos";
+
+/* Class = "UIButton"; normalTitle = "End Time"; ObjectID = "JkU-QR-ZNJ"; */
+"JkU-QR-ZNJ.normalTitle" = "Hora de finalización";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JlP-W2-1TV"; */
+"JlP-W2-1TV.text" = "Label";
+
+/* Class = "UILabel"; text = "Days"; ObjectID = "JoO-rJ-foh"; */
+"JoO-rJ-foh.text" = "Dias";
+
+/* Class = "UITextField"; placeholder = " Last Name*"; ObjectID = "JpA-PK-0Sr"; */
+"JpA-PK-0Sr.placeholder" = " Apellido*";
+
+/* Class = "UILabel"; text = "How many volunteer in the total does your organisation have and how many do you need?"; ObjectID = "Jx6-KA-HWR"; */
+"Jx6-KA-HWR.text" = "¿Cuántos voluntarios en total tiene su organización y cuántos necesita?";
+
+/* Class = "UITextField"; text = "Test@123"; ObjectID = "KAn-av-zg4"; */
+"KAn-av-zg4.text" = "Test@123";
+
+/* Class = "UIButton"; normalTitle = "Event Start Date"; ObjectID = "KWo-jk-1eb"; */
+"KWo-jk-1eb.normalTitle" = "Fecha de inicio del evento";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "Kn8-oX-hKV"; */
+"Kn8-oX-hKV.placeholder" = "Ciudad";
+
+/* Class = "UILabel"; text = "How many volunteer in the total does your organisationhave and how many do you need?"; ObjectID = "KxO-9i-zdc"; */
+"KxO-9i-zdc.text" = "¿Cuántos voluntarios en total tiene su organización y cuántos necesita?";
+
+/* Class = "UILabel"; text = "Enter Hours"; ObjectID = "Ky7-63-y9q"; */
+"Ky7-63-y9q.text" = "Ingrese horas";
+
+/* Class = "UILabel"; text = "No Ratings"; ObjectID = "L00-tw-pHF"; */
+"L00-tw-pHF.text" = "No Ratings";
+
+/* Class = "UITextField"; placeholder = "Organization Email"; ObjectID = "LB8-g8-Bx8"; */
+"LB8-g8-Bx8.placeholder" = "Correo electrónico de la organización";
+
+/* Class = "UILabel"; text = "Description2"; ObjectID = "LID-5o-MKT"; */
+"LID-5o-MKT.text" = "Descripción";
+
+/* Class = "UIButton"; normalTitle = "3"; ObjectID = "LQM-sw-CNb"; */
+"LQM-sw-CNb.normalTitle" = "3";
+
+/* Class = "UILabel"; text = "  Shift Date"; ObjectID = "LQd-yj-MwQ"; */
+"LQd-yj-MwQ.text" = "  Fecha de cambio";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Lf7-3e-dlk"; */
+"Lf7-3e-dlk.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "  Select Country"; ObjectID = "Lik-kJ-WFA"; */
+"Lik-kJ-WFA.normalTitle" = "  Seleccionar país";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LnC-hM-R2d"; */
+"LnC-hM-R2d.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Nov"; ObjectID = "Ltd-dW-cAu"; */
+"Ltd-dW-cAu.text" = "Nov";
+
+/* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "M2g-LT-fDx"; */
+"M2g-LT-fDx.placeholder" = "Código postal";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "MBx-Br-FRm"; */
+"MBx-Br-FRm.placeholder" = "Nombre de pila";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "MKw-7g-PsI"; */
+"MKw-7g-PsI.text" = "Correo electrónico";
+
+/* Class = "UIButton"; normalTitle = "Select Minimum Rating"; ObjectID = "MMg-gY-nj8"; */
+"MMg-gY-nj8.normalTitle" = "Seleccionar calificación mínima";
+
+/* Class = "UIButton"; normalTitle = "Chat"; ObjectID = "MSC-ok-tiv"; */
+"MSC-ok-tiv.normalTitle" = "Charla";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "Mbs-n5-BCX"; */
+"Mbs-n5-BCX.text" = "Zoe Blueprint";
+
+/* Class = "UILabel"; text = "       Shift Time"; ObjectID = "MfD-aa-6tB"; */
+"MfD-aa-6tB.text" = "        Tiempo de cambio";
+
+/* Class = "UIButton"; normalTitle = "Choose profile pic"; ObjectID = "MkT-34-hSK"; */
+"MkT-34-hSK.normalTitle" = "Choose profile pic";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MkU-b0-j04"; */
+"MkU-b0-j04.text" = "Label";
+
+/* Class = "UILabel"; text = "Please describe the person you require for the voluteer role (age,sex,characteristics etc.) ?)"; ObjectID = "MoY-KF-3at"; */
+"MoY-KF-3at.text" = "Describa a la persona que necesita para el rol de voluntario (edad, sexo, características, etc.).";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "MrQ-f9-tSZ"; */
+"MrQ-f9-tSZ.text" = "Label";
+
+/* Class = "UILabel"; text = " MDT"; ObjectID = "Mz6-kd-cRI"; */
+"Mz6-kd-cRI.text" = " MDT";
+
+/* Class = "UILabel"; text = "  Date of Birth*"; ObjectID = "Mzs-SF-Pk6"; */
+"Mzs-SF-Pk6.text" = "  Fecha de nacimiento*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "N2r-ZC-nKe"; */
+"N2r-ZC-nKe.text" = "Label";
+
+/* Class = "UILabel"; text = "Clock In Time"; ObjectID = "NAF-Kh-ahr"; */
+"NAF-Kh-ahr.text" = "Reloj en el tiempo";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "NDz-cR-6Rt"; */
+"NDz-cR-6Rt.text" = ":";
+
+/* Class = "UILabel"; text = "Description1"; ObjectID = "NEg-Aw-ixk"; */
+"NEg-Aw-ixk.text" = "Descripción1";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NPk-fl-KNJ"; */
+"NPk-fl-KNJ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NQT-6f-mld"; */
+"NQT-6f-mld.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "NUn-Td-87t"; */
+"NUn-Td-87t.normalTitle" = "Cerca";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NfQ-5f-APm"; */
+"NfQ-5f-APm.text" = "Label";
+
+/* Class = "UILabel"; text = "Descriptionhds"; ObjectID = "NlU-Es-eeJ"; */
+"NlU-Es-eeJ.text" = "Descriptionhds";
+
+/* Class = "UITabBarItem"; title = "Volunteer"; ObjectID = "Nvn-HQ-z3u"; */
+"Nvn-HQ-z3u.title" = "Voluntario";
+
+/* Class = "UITextField"; placeholder = "Confirm Password*"; ObjectID = "O0w-hW-KtN"; */
+"O0w-hW-KtN.placeholder" = "Confirmar contraseña*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "O40-3c-FNF"; */
+"O40-3c-FNF.text" = "Label";
+
+/* Class = "UITextField"; placeholder = " Please Enter the Document Name\n"; ObjectID = "O46-sJ-VZ2"; */
+"O46-sJ-VZ2.placeholder" = "  Por favor, introduzca el nombre del documento\n";
+
+/* Class = "UIButton"; normalTitle = "MANAGE REQUEST"; ObjectID = "OLp-yq-cfy"; */
+"OLp-yq-cfy.normalTitle" = "GESTIONAR SOLICITUD";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "OQU-CG-KVo"; */
+"OQU-CG-KVo.text" = "Estado";
+
+/* Class = "UILabel"; text = "Theme"; ObjectID = "OSA-cn-F7z"; */
+"OSA-cn-F7z.text" = "Teme";
+
+/* Class = "UIButton"; normalTitle = "Select answer"; ObjectID = "OYK-5E-paN"; */
+"OYK-5E-paN.normalTitle" = "¿Cuál es su grupo de clientes objetivo?";
+
+/* Class = "UILabel"; text = "Do your volunteer require a policy check?"; ObjectID = "OqI-cc-uto"; */
+"OqI-cc-uto.text" = "¿Su voluntario requiere una verificación de la política?";
+
+/* Class = "UILabel"; text = "       Shift Date"; ObjectID = "OtY-zI-KTk"; */
+"OtY-zI-KTk.text" = "        Fecha de cambio";
+
+/* Class = "UITabBarItem"; title = "Locker"; ObjectID = "P8B-W8-hdm"; */
+"P8B-W8-hdm.title" = "Armario";
+
+/* Class = "UIButton"; normalTitle = "Save and Next"; ObjectID = "P92-cn-0vG"; */
+"P92-cn-0vG.normalTitle" = "Guardar y Siguiente";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "PBR-Cl-YRi"; */
+"PBR-Cl-YRi.text" = "Estado";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "PCl-hi-Eot"; */
+"PCl-hi-Eot.text" = "Zoe Blueprint";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "PEd-HD-oBT"; */
+"PEd-HD-oBT.placeholder" = "Confirmar contraseña";
+
+/* Class = "UIButton"; normalTitle = "DOCUMENTS"; ObjectID = "PGs-uW-zH4"; */
+"PGs-uW-zH4.normalTitle" = "DOCUMENTOS";
+
+/* Class = "UILabel"; text = "Rate"; ObjectID = "PMz-9h-XdT"; */
+"PMz-9h-XdT.text" = "Velocidad";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "PNG-6o-wNu"; */
+"PNG-6o-wNu.normalTitle" = "Ver";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PUR-Nn-uIy"; */
+"PUR-Nn-uIy.text" = "Label";
+
+/* Class = "UILabel"; text = "Wednesday"; ObjectID = "PWp-Ij-Jf7"; */
+"PWp-Ij-Jf7.text" = "Wednesday";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "PYj-Zf-UG7"; */
+"PYj-Zf-UG7.placeholder" = "Ciudad";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "Pk6-3q-eD9"; */
+"Pk6-3q-eD9.normalTitle" = "Ver";
+
+/* Class = "UITextField"; placeholder = "Confirm Password*"; ObjectID = "Pol-uC-6AK"; */
+"Pol-uC-6AK.placeholder" = "Confirmar contraseña*";
+
+/* Class = "UIButton"; normalTitle = "DONE"; ObjectID = "Por-Tn-ExV"; */
+"Por-Tn-ExV.normalTitle" = "Hecho";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "PwZ-Hn-Iqf"; */
+"PwZ-Hn-Iqf.text" = "Date";
+
+///* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "PxL-sY-IzS"; */
+"PxL-sY-IzS.title" = "Tablero";
+
+/* Class = "UILabel"; text = "Basic Information"; ObjectID = "Q3a-0x-0XC"; */
+"Q3a-0x-0XC.text" = "Información básica";
+
+/* Class = "UIButton"; normalTitle = "  Select State"; ObjectID = "Q7D-do-uGt"; */
+"Q7D-do-uGt.normalTitle" = "  Seleccione estado";
+
+/* Class = "UILabel"; text = "Uploaded documents"; ObjectID = "QF4-ka-28o"; */
+"QF4-ka-28o.text" = "Documentos cargados";
+
+/* Class = "UILabel"; text = "New Rating"; ObjectID = "QMx-ij-fCo"; */
+"QMx-ij-fCo.text" = "Nueva calificación";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "QOf-Na-GTV"; */
+"QOf-Na-GTV.placeholder" = "Ciudad";
+
+/* Class = "UILabel"; text = "Date of Birth*"; ObjectID = "QQr-rS-FKd"; */
+"QQr-rS-FKd.text" = " Fecha de nacimiento*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QWh-fe-Mij"; */
+"QWh-fe-Mij.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "United States of America"; ObjectID = "Qfm-Uv-fJx"; */
+"Qfm-Uv-fJx.normalTitle" = "United States of America";
+
+/* Class = "UIButton"; normalTitle = "Select Shift Task"; ObjectID = "Qha-Ov-UTk"; */
+"Qha-Ov-UTk.normalTitle" = " Seleccionar tarea de turno";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Qof-pz-akr"; */
+"Qof-pz-akr.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Organization Phone "; ObjectID = "QtN-da-pdJ"; */
+"QtN-da-pdJ.placeholder" = "Teléfono de la organización ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QxU-la-cFh"; */
+"QxU-la-cFh.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "RA7-xK-Aq7"; */
+"RA7-xK-Aq7.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Enter Comment"; ObjectID = "RGd-Ti-BVz"; */
+"RGd-Ti-BVz.placeholder" = " Ingrese comentario";
+
+/* Class = "UIButton"; normalTitle = "YES"; ObjectID = "Ra6-Aq-8dG"; */
+"Ra6-Aq-8dG.normalTitle" = "SI";
+
+/* Class = "UILabel"; text = "What is your target client group?"; ObjectID = "Rxy-wO-s00"; */
+"Rxy-wO-s00.text" = "¿Cuál es su grupo de clientes objetivo?";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "S2K-QZ-IOn"; */
+"S2K-QZ-IOn.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "  Select Timezone"; ObjectID = "S8K-8n-mWf"; */
+"S8K-8n-mWf.normalTitle" = "  Selecciona la zona horaria";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "SBK-7J-INt"; */
+"SBK-7J-INt.text" = "Label";
+
+/* Class = "UILabel"; text = "Shift Task"; ObjectID = "ScB-Ss-jSm"; */
+"ScB-Ss-jSm.text" = "Tarea de turno";
+
+/* Class = "UILabel"; text = "Rate this event"; ObjectID = "Sf2-Fn-ccI"; */
+"Sf2-Fn-ccI.text" = "Califica este evento";
+
+/* Class = "UILabel"; text = "YES"; ObjectID = "ShG-Od-fux"; */
+"ShG-Od-fux.text" = "SI";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "Sk5-N6-5nD"; */
+"Sk5-N6-5nD.text" = "País";
+
+/* Class = "UIButton"; normalTitle = "Select State"; ObjectID = "SrH-uR-OeB"; */
+"SrH-uR-OeB.normalTitle" = "Seleccione estado";
+
+/* Class = "UITextField"; placeholder = "Postal Code"; ObjectID = "SsX-hJ-q3V"; */
+"SsX-hJ-q3V.placeholder" = "Postal Code";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "Syx-Wh-dmc"; */
+"Syx-Wh-dmc.normalTitle" = "Cancelar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "T26-ST-hWJ"; */
+"T26-ST-hWJ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "T32-gq-ggI"; */
+"T32-gq-ggI.normalTitle" = "Regístrate";
+
+/* Class = "UIButton"; normalTitle = "Edit Profile"; ObjectID = "T5e-1O-0F1"; */
+"T5e-1O-0F1.normalTitle" = "Editar perfil";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "TBQ-Z2-6hn"; */
+"TBQ-Z2-6hn.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "TCG-zK-ruo"; */
+"TCG-zK-ruo.normalTitle" = "Cambia la contraseña";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "TDG-5a-E02"; */
+"TDG-5a-E02.normalTitle" = "Cerrar sesión";
+
+/* Class = "UITextField"; placeholder = "Postal Code"; ObjectID = "TRD-lV-an5"; */
+"TRD-lV-an5.placeholder" = "Código postal";
+
+/* Class = "UILabel"; text = "Forgot Password?"; ObjectID = "TRa-K9-zID"; */
+"TRa-K9-zID.text" = " ¿Se te olvidó tu contraseña??";
+
+/* Class = "UILabel"; text = "Is your Organization (or the location where volunteers will work) easily  accessible by Public Transport?"; ObjectID = "TeI-Yl-3RZ"; */
+"TeI-Yl-3RZ.text" = "¿Se puede acceder fácilmente a su organización (o el lugar donde trabajarán los voluntarios) en transporte público?";
+
+/* Class = "UIButton"; normalTitle = "View on map"; ObjectID = "TjP-SI-ziq"; */
+"TjP-SI-ziq.normalTitle" = "Ver en el mapa";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Tvv-g6-YrW"; */
+"Tvv-g6-YrW.text" = "Label";
+
+/* Class = "UILabel"; text = "SET LOCATION"; ObjectID = "Txw-83-l4u"; */
+"Txw-83-l4u.text" = "ESCOGER LOCALIZACIÓN";
+
+/* Class = "UILabel"; text = "Private"; ObjectID = "TzB-ul-xxJ"; */
+"TzB-ul-xxJ.text" = "Privado";
+
+/* Class = "UIButton"; normalTitle = "Select Time Zone"; ObjectID = "U9d-T9-JbR"; */
+"U9d-T9-JbR.normalTitle" = "Selecciona la zona horaria";
+
+/* Class = "UILabel"; text = "No Data Found"; ObjectID = "UL5-WT-YBW"; */
+"UL5-WT-YBW.text" = "Datos no encontrados";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "URd-5F-6kO"; */
+"URd-5F-6kO.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Organization Email"; ObjectID = "UTC-a9-wZH"; */
+"UTC-a9-wZH.placeholder" = "Correo electrónico de la organización";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "UX3-r9-MnJ"; */
+"UX3-r9-MnJ.text" = "Zoe Blueprint";
+
+/* Class = "UILabel"; text = "       Shift Rating"; ObjectID = "Uay-Fr-8K1"; */
+"Uay-Fr-8K1.text" = "       Calificación de cambio";
+
+/* Class = "UILabel"; text = "Sun"; ObjectID = "Uid-48-hUV"; */
+"Uid-48-hUV.text" = "Sun";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Ulm-gf-v87"; */
+"Ulm-gf-v87.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "V1K-ON-jBf"; */
+"V1K-ON-jBf.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "V1z-JY-C3Q"; */
+"V1z-JY-C3Q.normalTitle" = "Ver";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "V4O-ph-7aA"; */
+"V4O-ph-7aA.normalTitle" = "Reiniciar";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "VFk-4T-Pc1"; */
+"VFk-4T-Pc1.text" = ":";
+
+/* Class = "UILabel"; text = "TXT,JPG,PNG,JPEG,DOCX,PPTX,XLSX & PDF only"; ObjectID = "VaX-e2-zIL"; */
+"VaX-e2-zIL.text" = "TXT,JPG,PNG,JPEG,DOCX,PPTX,XLSX & PDF only";
+
+/* Class = "UILabel"; text = "Do your volunteers require a background check?"; ObjectID = "VeC-Nt-fBj"; */
+"VeC-Nt-fBj.text" = "¿Sus voluntarios requieren una verificación de antecedentes?";
+
+/* Class = "UITextField"; placeholder = "First Name*"; ObjectID = "ViL-7q-L3p"; */
+"ViL-7q-L3p.placeholder" = "Nombre de pila*";
+
+/* Class = "UITextField"; placeholder = "First Name"; ObjectID = "Vq0-3v-JcR"; */
+"Vq0-3v-JcR.placeholder" = "Nombre de pila";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VqA-DW-kyK"; */
+"VqA-DW-kyK.text" = "Título";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "WBT-zv-Gfk"; */
+"WBT-zv-Gfk.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "SHIFT"; ObjectID = "WJX-6B-HhA"; */
+"WJX-6B-HhA.text" = "Cambio";
+
+/* Class = "UILabel"; text = "NOV"; ObjectID = "WMQ-q3-hjA"; */
+"WMQ-q3-hjA.text" = "NOV";
+
+/* Class = "UILabel"; text = "SHIFTS"; ObjectID = "WYZ-vS-Goj"; */
+"WYZ-vS-Goj.text" = "CAMBIOS";
+
+/* Class = "UILabel"; text = "Change Status"; ObjectID = "Whx-wE-8ag"; */
+"Whx-wE-8ag.text" = "Cambiar Estado";
+
+/* Class = "UIButton"; normalTitle = " Gender"; ObjectID = "WjG-c4-KYH"; */
+"WjG-c4-KYH.normalTitle" = "Género";
+
+/* Class = "UILabel"; text = "Enter clock in & clock out time"; ObjectID = "WsQ-aG-RC2"; */
+"WsQ-aG-RC2.text" = "Ingrese el tiempo de entrada y salida del reloj";
+
+/* Class = "UITextField"; placeholder = "Mission Statement"; ObjectID = "WsY-Uf-CYQ"; */
+"WsY-Uf-CYQ.placeholder" = "Estado de la misión";
+
+/* Class = "UILabel"; text = "Shift Date"; ObjectID = "Wwl-bh-pMN"; */
+"Wwl-bh-pMN.text" = "Fecha de cambio";
+
+/* Class = "UIButton"; normalTitle = "Choose cover photo"; ObjectID = "X4x-9d-13W"; */
+"X4x-9d-13W.normalTitle" = "Elige foto de portada";
+
+/* Class = "UILabel"; text = "No Ratings"; ObjectID = "XEb-Cl-OwW"; */
+"XEb-Cl-OwW.text" = "No Ratings";
+
+/* Class = "UILabel"; text = "Hours"; ObjectID = "XL9-H2-Mh3"; */
+"XL9-H2-Mh3.text" = "Horas";
+
+/* Class = "UILabel"; text = "UPCOMING EVENTS"; ObjectID = "XtZ-Kj-YKO"; */
+"XtZ-Kj-YKO.text" = "Próximos Eventos";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "Y1c-5f-mBl"; */
+"Y1c-5f-mBl.placeholder" = "Ciudad";
+
+/* Class = "UILabel"; text = "  Shift Time"; ObjectID = "Y2V-1P-6UY"; */
+"Y2V-1P-6UY.text" = "  Tiempo de cambio";
+
+/* Class = "UILabel"; text = "  Country"; ObjectID = "YL1-gO-AJE"; */
+"YL1-gO-AJE.text" = "  País";
+
+/* Class = "UIButton"; normalTitle = "Select answer"; ObjectID = "YQu-mV-Mgh"; */
+"YQu-mV-Mgh.normalTitle" = "Seleccionar respuesta";
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "YTi-C2-EXd"; */
+"YTi-C2-EXd.normalTitle" = "Cerca";
+
+/* Class = "UIButton"; normalTitle = "United States of America"; ObjectID = "YUQ-GS-AEo"; */
+"YUQ-GS-AEo.normalTitle" = "United States of America";
+
+/* Class = "UIButton"; normalTitle = "MY EVENTS"; ObjectID = "YUg-OL-MaL"; */
+"YUg-OL-MaL.normalTitle" = " Mis eventos";
+
+/* Class = "UIButton"; normalTitle = "Event"; ObjectID = "YVL-vT-YMe"; */
+"YVL-vT-YMe.normalTitle" = "Eventos";
+
+/* Class = "UILabel"; text = "Shift Date"; ObjectID = "YYB-0i-Irk"; */
+"YYB-0i-Irk.text" = "Fecha de cambio";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "Ygz-O6-rhx"; */
+"Ygz-O6-rhx.normalTitle" = "Registrarse";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "YhB-F2-f4b"; */
+"YhB-F2-f4b.normalTitle" = "Siguiente";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yuc-8t-HdT"; */
+"Yuc-8t-HdT.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yvs-cW-uyM"; */
+"Yvs-cW-uyM.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "ZB5-62-bIB"; */
+"ZB5-62-bIB.normalTitle" = "No";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "ZMH-9p-KaR"; */
+"ZMH-9p-KaR.normalTitle" = "Configuraciones";
+
+/* Class = "UIButton"; normalTitle = "Select Gender"; ObjectID = "ZOq-xt-MXi"; */
+"ZOq-xt-MXi.normalTitle" = "Seleccione género";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "ZRU-FX-bko"; */
+"ZRU-FX-bko.placeholder" = "Dirección";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "ZWH-hk-bvf"; */
+"ZWH-hk-bvf.placeholder" = "Dirección";
+
+/* Class = "UIButton"; normalTitle = "Select Document"; ObjectID = "Zem-OJ-4Bm"; */
+"Zem-OJ-4Bm.normalTitle" = "Seleccionar documento";
+
+/* Class = "UILabel"; text = "hghj"; ObjectID = "ZjK-qR-Tjm"; */
+"ZjK-qR-Tjm.text" = "hghj";
+
+/* Class = "UILabel"; text = "Oct"; ObjectID = "Zrn-Je-Nz1"; */
+"Zrn-Je-Nz1.text" = "Oct";
+
+/* Class = "UILabel"; text = "NO"; ObjectID = "a1L-Lz-T9r"; */
+"a1L-Lz-T9r.text" = "NO";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "a6g-Em-DPF"; */
+"a6g-Em-DPF.text" = "Label";
+
+/* Class = "UILabel"; text = "  Shift Rating"; ObjectID = "akv-bv-Vfg"; */
+"akv-bv-Vfg.text" = "  Clasificación de cambio";
+
+/* Class = "UITextField"; placeholder = "Enter Password"; ObjectID = "aqG-1g-J6G"; */
+"aqG-1g-J6G.placeholder" = "Introducir la contraseña";
+
+/* Class = "UITextField"; placeholder = "Address*"; ObjectID = "aub-bP-4FT"; */
+"aub-bP-4FT.placeholder" = "Address*";
+
+/* Class = "UISearchBar"; placeholder = "Find followers"; ObjectID = "ayD-QY-hbh"; */
+"ayD-QY-hbh.placeholder" = "Encuentra seguidores";
+
+/* Class = "UILabel"; text = "test"; ObjectID = "bBv-IS-49N"; */
+"bBv-IS-49N.text" = "test";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bFD-4R-Z5w"; */
+"bFD-4R-Z5w.text" = "Label";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "bJn-22-bZU"; */
+"bJn-22-bZU.text" = "Zoe Blueprint";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "bNC-Yq-meL"; */
+"bNC-Yq-meL.normalTitle" = "Registrarse";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bP7-Y4-HJi"; */
+"bP7-Y4-HJi.text" = "Label";
+
+/* Class = "UILabel"; text = "CURRENT STATUS"; ObjectID = "bUE-9a-6zy"; */
+"bUE-9a-6zy.text" = " ESTADO ACTUAL";
+
+/* Class = "UITabBarItem"; title = "Dashboard"; ObjectID = "bZE-EZ-bdw"; */
+"bZE-EZ-bdw.title" = "Tablero";
+
+/* Class = "UILabel"; text = "Minimum Rating*"; ObjectID = "bae-5q-AoY"; */
+"bae-5q-AoY.text" = "Calificación mínima*";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "bbm-BY-25X"; */
+"bbm-BY-25X.normalTitle" = "Si";
+
+/* Class = "UIButton"; normalTitle = "MY BOOKING"; ObjectID = "bgI-6z-zyg"; */
+"bgI-6z-zyg.normalTitle" = "Mis reserva";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "bka-5d-oaA"; */
+"bka-5d-oaA.text" = "00";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bld-EB-pO3"; */
+"bld-EB-pO3.text" = "Label";
+
+/* Class = "UILabel"; text = "Rank Comment"; ObjectID = "buA-wW-gZJ"; */
+"buA-wW-gZJ.text" = "Comentario de rango";
+
+/* Class = "UILabel"; text = "My CSO Events"; ObjectID = "c31-LU-Ib1"; */
+"c31-LU-Ib1.text" = "Mis eventos de OSC";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "c3B-KQ-ytY"; */
+"c3B-KQ-ytY.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Last Name"; ObjectID = "cCW-TE-Nqv"; */
+"cCW-TE-Nqv.placeholder" = "Last Name";
+
+/* Class = "UITabBarItem"; title = "Locker"; ObjectID = "cF1-F1-Vtf"; */
+"cF1-F1-Vtf.title" = "Armario";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "cGn-eB-Pjq"; */
+"cGn-eB-Pjq.normalTitle" = "Aceptar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cMd-cQ-gto"; */
+"cMd-cQ-gto.text" = "Label";
+
+/* Class = "UILabel"; text = "Basic Information"; ObjectID = "cUt-qS-O1Q"; */
+"cUt-qS-O1Q.text" = "Información básica";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "cYs-L3-KLA"; */
+"cYs-L3-KLA.text" = "Zoe Blueprint";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "caA-U0-T0e"; */
+"caA-U0-T0e.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "City*"; ObjectID = "cax-5S-Usu"; */
+"cax-5S-Usu.placeholder" = "Ciudad*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ccA-5O-27b"; */
+"ccA-5O-27b.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cdC-Ey-Olh"; */
+"cdC-Ey-Olh.text" = "Label";
+
+/* Class = "UILabel"; text = "Log In"; ObjectID = "cnT-un-EgS"; */
+"cnT-un-EgS.text" = "Iniciar sesión";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "d4T-Fa-w7x"; */
+"d4T-Fa-w7x.text" = "10";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dLH-NB-yyz"; */
+"dLH-NB-yyz.text" = "Label";
+
+/* Class = "UILabel"; text = "Please enter your registered email id to receive reset password link."; ObjectID = "dQq-6D-VEv"; */
+"dQq-6D-VEv.text" = "Por favor ingrese su correo electrónico registrado para recibir el enlace para restablecer la contraseña.";
+
+/* Class = "UIButton"; normalTitle = "DISCOVER EVENTS"; ObjectID = "dS2-gV-tGj"; */
+"dS2-gV-tGj.normalTitle" = "DESCUBRE EVENTOS";
+
+/* Class = "UITextField"; placeholder = "Add your comment"; ObjectID = "dUe-Wq-D39"; */
+"dUe-Wq-D39.placeholder" = "Añade tu comentario";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dWr-xy-Y8a"; */
+"dWr-xy-Y8a.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dbk-Ef-iUS"; */
+"dbk-Ef-iUS.text" = "Label";
+
+/* Class = "UILabel"; text = "CHANGE STATUS"; ObjectID = "dnD-C8-0Fz"; */
+"dnD-C8-0Fz.text" = "Cambiar Estado";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "doI-lg-BBR"; */
+"doI-lg-BBR.text" = "Label";
+
+/* Class = "UILabel"; text = "jun"; ObjectID = "doe-RV-829"; */
+"doe-RV-829.text" = "jun";
+
+/* Class = "UITabBarItem"; title = "Events"; ObjectID = "dqR-pS-JhV"; */
+"dqR-pS-JhV.title" = "Eventos";
+
+/* Class = "UIButton"; normalTitle = "Event Type"; ObjectID = "dqf-mO-rHq"; */
+"dqf-mO-rHq.normalTitle" = "Tipo de evento";
+
+/* Class = "UIButton"; normalTitle = "Edit Profile"; ObjectID = "duR-Ch-vAM"; */
+"duR-Ch-vAM.normalTitle" = "Editar perfil";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "e1k-WK-YSq"; */
+"e1k-WK-YSq.text" = "0";
+
+/* Class = "UILabel"; text = "No documents found"; ObjectID = "e4w-mW-p7K"; */
+"e4w-mW-p7K.text" = "No se encontraron documentos.";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "e6I-Pa-Mjk"; */
+"e6I-Pa-Mjk.placeholder" = "Contraseña";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "eEB-oc-mEo"; */
+"eEB-oc-mEo.placeholder" = " Numero de telefono";
+
+/* Class = "UITextField"; placeholder = "Volunteer Required"; ObjectID = "eFO-Pb-jk6"; */
+"eFO-Pb-jk6.placeholder" = "Voluntario requerido";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "enR-h7-FpE"; */
+"enR-h7-FpE.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Organization Name*"; ObjectID = "erL-w7-LzA"; */
+"erL-w7-LzA.placeholder" = "Nombre de la Organización*";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "exk-L7-mxT"; */
+"exk-L7-mxT.text" = "00";
+
+/* Class = "UILabel"; text = "MESSAGE"; ObjectID = "f2K-tO-0pO"; */
+"f2K-tO-0pO.text" = "Mensaje";
+
+/* Class = "UILabel"; text = "Upcoming Events"; ObjectID = "fE4-YS-seV"; */
+"fE4-YS-seV.text" = "Próximos Eventos";
+
+/* Class = "UIButton"; normalTitle = "EDT"; ObjectID = "fFj-47-CTF"; */
+"fFj-47-CTF.normalTitle" = "EDT";
+
+/* Class = "UILabel"; text = "Location Services"; ObjectID = "fIz-VL-f27"; */
+"fIz-VL-f27.text" = "Servicios de localización";
+
+/* Class = "UIButton"; normalTitle = "Done"; ObjectID = "fL9-Yg-mEV"; */
+"fL9-Yg-mEV.normalTitle" = "Hecho";
+
+/* Class = "UILabel"; text = "NOTIFICATION"; ObjectID = "fbT-1I-icq"; */
+"fbT-1I-icq.text" = "Notificación";
+
+/* Class = "UIButton"; normalTitle = "Change Status"; ObjectID = "fep-Ba-0jM"; */
+"fep-Ba-0jM.normalTitle" = "Cambiar Estado";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "fes-Vd-Kps"; */
+"fes-Vd-Kps.text" = "00";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "flZ-PJ-qUG"; */
+"flZ-PJ-qUG.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fln-2I-Lbd"; */
+"fln-2I-Lbd.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Event End Date"; ObjectID = "fmE-8q-Bfb"; */
+"fmE-8q-Bfb.normalTitle" = "Fecha de finalización del evento";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fnP-Gd-qhC"; */
+"fnP-Gd-qhC.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "  Find Followers"; ObjectID = "fpj-am-lfY"; */
+"fpj-am-lfY.placeholder" = "  Encuentra seguidores";
+
+/* Class = "UIButton"; normalTitle = "See All"; ObjectID = "fsj-kB-TIe"; */
+"fsj-kB-TIe.normalTitle" = "See All";
+
+/* Class = "UILabel"; text = "Push Notification"; ObjectID = "g0R-Rv-Vni"; */
+"g0R-Rv-Vni.text" = "Notificación de inserción";
+
+/* Class = "UITextField"; placeholder = "Date of Birth"; ObjectID = "gE4-6h-mbf"; */
+"gE4-6h-mbf.placeholder" = "Fecha de nacimiento";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "gEQ-7d-1Rc"; */
+"gEQ-7d-1Rc.placeholder" = "Dirección";
+
+/* Class = "UITabBarItem"; title = "Booking"; ObjectID = "gFx-qj-P2d"; */
+"gFx-qj-P2d.title" = "Reserva";
+
+/* Class = "UILabel"; text = "Minutes"; ObjectID = "gGz-bX-w2T"; */
+"gGz-bX-w2T.text" = "Minutos";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gSQ-Dy-GJd"; */
+"gSQ-Dy-GJd.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Phone Number "; ObjectID = "gXx-mX-LQh"; */
+"gXx-mX-LQh.placeholder" = "Número de teléfono ";
+
+/* Class = "UILabel"; text = "Tue"; ObjectID = "gag-pb-rS0"; */
+"gag-pb-rS0.text" = "Tue";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "gal-9J-hRm"; */
+"gal-9J-hRm.text" = "Género";
+
+/* Class = "UIButton"; normalTitle = "Timezone"; ObjectID = "gbh-eV-AVk"; */
+"gbh-eV-AVk.normalTitle" = "Zona horaria";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gci-kJ-W4O"; */
+"gci-kJ-W4O.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "ggr-1m-aHq"; */
+"ggr-1m-aHq.placeholder" = "Correo electrónico";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "giv-gb-Cdr"; */
+"giv-gb-Cdr.placeholder" = "Ciudad";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "gng-L1-Nds"; */
+"gng-L1-Nds.normalTitle" = "Cerrar sesión";
+
+/* Class = "UIButton"; normalTitle = "Verify"; ObjectID = "gua-N6-XOK"; */
+"gua-N6-XOK.normalTitle" = "Verificar";
+
+/* Class = "UILabel"; text = "Forgot Password?"; ObjectID = "gwV-y0-7F6"; */
+"gwV-y0-7F6.text" = "¿Se te olvidó tu contraseña?";
+
+/* Class = "UILabel"; text = "SHIFTS"; ObjectID = "WYZ-vS-Goj"; */
+"WYZ-vS-Goj.text" = "CAMBIOS";
+
+/* Class = "UILabel"; text = "I'm a Volunteer"; ObjectID = "h5T-fm-e6j"; */
+"h5T-fm-e6j.text" = "Soy voluntario";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "hCe-j2-dSf"; */
+"hCe-j2-dSf.normalTitle" = "Editar";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "hHb-bA-ydh"; */
+"hHb-bA-ydh.normalTitle" = "Registrarse";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "heK-hG-yXy"; */
+"heK-hG-yXy.placeholder" = "Contraseña";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "hfL-6h-PHR"; */
+"hfL-6h-PHR.normalTitle" = "Reiniciar";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "iBu-az-A7n"; */
+"iBu-az-A7n.text" = ":";
+
+/* Class = "UITextField"; placeholder = "Postal Code"; ObjectID = "iJ0-81-zzn"; */
+"iJ0-81-zzn.placeholder" = "Postal Code";
+
+/* Class = "UIButton"; normalTitle = "Accept"; ObjectID = "iRU-q7-A4c"; */
+"iRU-q7-A4c.normalTitle" = "Aceptar";
+
+/* Class = "UILabel"; text = "309 VOLUNTEER HOURS COMPLETED"; ObjectID = "iS7-59-K9H"; */
+"iS7-59-K9H.text" = "309 HORAS VOLUNTARIAS COMPLETADAS";
+
+/* Class = "UILabel"; text = "NEXT EVENT COUNTDOWN"; ObjectID = "ilC-Of-efe"; */
+"ilC-Of-efe.text" = "Cuenta atrás del siguiente evento";
+
+/* Class = "UILabel"; text = "Basic Information"; ObjectID = "ip1-7r-Y4w"; */
+"ip1-7r-Y4w.text" = "Información básica";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "j5E-1k-bBo"; */
+"j5E-1k-bBo.normalTitle" = "Enviar";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "j6P-m8-i14"; */
+"j6P-m8-i14.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "jCj-wk-eVL"; */
+"jCj-wk-eVL.normalTitle" = "Reiniciar";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "jGd-ae-Y1t"; */
+"jGd-ae-Y1t.text" = "Título";
+
+/* Class = "UILabel"; text = "Volunteer Requested"; ObjectID = "jNb-Yo-2YJ"; */
+"jNb-Yo-2YJ.text" = "Voluntario solicitado";
+
+/* Class = "UITextField"; placeholder = "Phone Number*"; ObjectID = "jsM-3e-pao"; */
+"jsM-3e-pao.placeholder" = "Numero de telefono*";
+
+/* Class = "UITextField"; placeholder = "Email*"; ObjectID = "k3j-jU-L8Y"; */
+"k3j-jU-L8Y.placeholder" = "Correo electrónico*";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kGY-xu-sk0"; */
+"kGY-xu-sk0.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "kJW-3q-anY"; */
+"kJW-3q-anY.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "kV8-hf-C7l"; */
+"kV8-hf-C7l.text" = "Título";
+
+/* Class = "UILabel"; text = "  State"; ObjectID = "kYW-on-Gf0"; */
+"kYW-on-Gf0.text" = "  Estado";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "kdD-YE-Rex"; */
+"kdD-YE-Rex.normalTitle" = "Cambia la contraseña";
+
+/* Class = "UILabel"; text = "Timezone"; ObjectID = "knK-xV-I3u"; */
+"knK-xV-I3u.text" = "Zona horaria";
+
+/* Class = "UILabel"; text = "Add Shift"; ObjectID = "l9W-la-79C"; */
+"l9W-la-79C.text" = "Añadir Shift";
+
+/* Class = "UITextField"; placeholder = "Street"; ObjectID = "lHZ-Zi-ylT"; */
+"lHZ-Zi-ylT.placeholder" = "Calle";
+
+/* Class = "UITextField"; placeholder = "Zip Code*"; ObjectID = "lUF-kY-xMS"; */
+"lUF-kY-xMS.placeholder" = "Código postal*";
+
+/* Class = "UILabel"; text = "No Events Found"; ObjectID = "lYx-fC-n6a"; */
+"lYx-fC-n6a.text" = "No se encontraron eventos";
+
+/* Class = "UILabel"; text = "Date -  11-29-2019"; ObjectID = "lay-Rb-a1t"; */
+"lay-Rb-a1t.text" = "Date -  11-29-2019";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "lhX-lJ-Y7l"; */
+"lhX-lJ-Y7l.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "lr3-BO-AAg"; */
+"lr3-BO-AAg.normalTitle" = "Registrarse";
+
+/* Class = "UILabel"; text = "Seconds"; ObjectID = "mm0-ZM-ys3"; */
+"mm0-ZM-ys3.text" = "Segundos";
+
+/* Class = "UILabel"; text = "22"; ObjectID = "mr2-4u-pGo"; */
+"mr2-4u-pGo.text" = "22";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "n2O-Tf-bAc"; */
+"n2O-Tf-bAc.normalTitle" = "Enviar";
+
+/* Class = "UIButton"; normalTitle = "Withdraw"; ObjectID = "n2c-jY-cps"; */
+"n2c-jY-cps.normalTitle" = "Retirar";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "n5f-AK-HVf"; */
+"n5f-AK-HVf.text" = "Estado";
+
+/* Class = "UILabel"; text = "Nov"; ObjectID = "nNB-QX-0K0"; */
+"nNB-QX-0K0.text" = "Nov";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "nVR-wE-MCl"; */
+"nVR-wE-MCl.normalTitle" = "Reiniciar";
+
+/* Class = "UILabel"; text = "  Gender"; ObjectID = "nlh-lg-G7M"; */
+"nlh-lg-G7M.text" = "  Género";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "o06-8L-g4L"; */
+"o06-8L-g4L.normalTitle" = "Ver";
+
+/* Class = "UIButton"; normalTitle = "Shift Date"; ObjectID = "o1x-1w-gVE"; */
+"o1x-1w-gVE.normalTitle" = "Fecha de cambio";
+
+/* Class = "UILabel"; text = "SHIFT"; ObjectID = "oBO-o3-j9k"; */
+"oBO-o3-j9k.text" = "Cambio";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "oFs-cd-g0b"; */
+"oFs-cd-g0b.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Upload"; ObjectID = "oJa-Nu-0z0"; */
+"oJa-Nu-0z0.normalTitle" = "Subir";
+
+/* Class = "UITextField"; placeholder = "Street"; ObjectID = "oYD-s9-T7W"; */
+"oYD-s9-T7W.placeholder" = "Calle";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "odg-pq-Ntt"; */
+"odg-pq-Ntt.placeholder" = "Confirmar contraseña";
+
+/* Class = "UILabel"; text = "UPCOMING EVENTS"; ObjectID = "oeB-Jq-h8M"; */
+"oeB-Jq-h8M.text" = "Próximos Eventos";
+
+/* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "oeS-qd-TQi"; */
+"oeS-qd-TQi.normalTitle" = "Si";
+
+/* Class = "UILabel"; text = "New to Zoe Blueprint?"; ObjectID = "oi8-Gn-qFK"; */
+"oi8-Gn-qFK.text" = "Nuevo en Zoe Blueprint?";
+
+/* Class = "UILabel"; text = "Enter Comment"; ObjectID = "ojp-YT-PkY"; */
+"ojp-YT-PkY.text" = "Ingrese comentario";
+
+/* Class = "UIButton"; normalTitle = "UNLINK"; ObjectID = "ooe-qc-b1W"; */
+"ooe-qc-b1W.normalTitle" = "DESCONECTAR";
+
+/* Class = "UILabel"; text = "What is your target client group?"; ObjectID = "opH-Oc-KSL"; */
+"opH-Oc-KSL.text" = "¿Cuál es su grupo de clientes objetivo?";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "p3T-Sp-DxP"; */
+"p3T-Sp-DxP.normalTitle" = "Regístrate";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "pLB-LD-IWS"; */
+"pLB-LD-IWS.text" = "País";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "pPV-57-SpY"; */
+"pPV-57-SpY.text" = "Contraseña";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "pTR-Zo-W1u"; */
+"pTR-Zo-W1u.placeholder" = "Confirmar contraseña";
+
+/* Class = "UITextField"; placeholder = "Confirm password"; ObjectID = "pdT-I4-xAS"; */
+"pdT-I4-xAS.placeholder" = "Confirmar contraseña";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pge-lZ-MPt"; */
+"pge-lZ-MPt.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Resend OTP"; ObjectID = "pwg-Za-at6"; */
+"pwg-Za-at6.normalTitle" = "Reenviar OTP";
+
+/* Class = "UILabel"; text = "Are you 501C3 certified? "; ObjectID = "px9-z9-i21"; */
+"px9-z9-i21.text" = " ¿Estás certificado 501C3?? ";
+
+/* Class = "UILabel"; text = "Description1"; ObjectID = "pxr-pb-1rc"; */
+"pxr-pb-1rc.text" = "Descripción1";
+
+/* Class = "UILabel"; text = "Place is not yet selected"; ObjectID = "pyl-M5-nzW"; */
+"pyl-M5-nzW.text" = "Place is not yet selected";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "q06-r4-xyl"; */
+"q06-r4-xyl.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Clock Out Time"; ObjectID = "q2H-MN-ARC"; */
+"q2H-MN-ARC.text" = "Hora de salida del reloj";
+
+/* Class = "UILabel"; text = "CHANGE RATING"; ObjectID = "qFF-tA-YQa"; */
+"qFF-tA-YQa.text" = " CAMBIO DE CLASIFICACIÓN";
+
+/* Class = "UITextField"; placeholder = "Organization Mission"; ObjectID = "qNR-Eo-KOm"; */
+"qNR-Eo-KOm.placeholder" = "Misión de organización";
+
+/* Class = "UITextField"; placeholder = "Oraganization Name"; ObjectID = "qqY-ly-tME"; */
+"qqY-ly-tME.placeholder" = "Nombre de la organización";
+
+/* Class = "UILabel"; text = "Select Timezone"; ObjectID = "qrW-vV-1YD"; */
+"qrW-vV-1YD.text" = "Selecciona la zona horaria";
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "quM-Ib-qu8"; */
+"quM-Ib-qu8.normalTitle" = "Eliminar";
+
+/* Class = "UITextField"; placeholder = "EIN/Tax id"; ObjectID = "rUL-fO-dNV"; */
+"rUL-fO-dNV.placeholder" = "EIN/Tax id";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "rmK-WD-lQ2"; */
+"rmK-WD-lQ2.normalTitle" = "Reiniciar";
+
+/* Class = "UIButton"; normalTitle = "Shift"; ObjectID = "s1d-7Y-54a"; */
+"s1d-7Y-54a.normalTitle" = "Cambio";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "s9P-C0-KZT"; */
+"s9P-C0-KZT.normalTitle" = "Cancelar";
+
+/* Class = "UILabel"; text = "Attended Hrs"; ObjectID = "sAB-ox-dnM"; */
+"sAB-ox-dnM.text" = "Asistió a las horas";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sBX-it-R7h"; */
+"sBX-it-R7h.text" = "Label";
+
+/* Class = "UILabel"; text = "Timezone"; ObjectID = "sFo-O4-eGj"; */
+"sFo-O4-eGj.text" = "Zona horaria";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "sOw-eB-dLa"; */
+"sOw-eB-dLa.text" = "Label";
+
+/* Class = "UISearchBar"; placeholder = "Search Event"; ObjectID = "sTn-gO-ydO"; */
+"sTn-gO-ydO.placeholder" = "Buscar evento";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "sX7-i8-jyc"; */
+"sX7-i8-jyc.normalTitle" = "Añadir";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "shG-id-e4i"; */
+"shG-id-e4i.text" = "Label";
+
+/* Class = "UILabel"; text = "Zoe Blueprint"; ObjectID = "shg-9C-CX1"; */
+"shg-9C-CX1.text" = "Plano de Zoe";
+
+/* Class = "UIButton"; normalTitle = "VOLUNTEERS"; ObjectID = "skh-SU-APu"; */
+"skh-SU-APu.normalTitle" = "VOLUNTARIOS";
+
+/* Class = "UITextField"; placeholder = "Organization Causes"; ObjectID = "sll-yO-oH9"; */
+"sll-yO-oH9.placeholder" = "Causas de la organización";
+
+/* Class = "UILabel"; text = "Attended Hrs"; ObjectID = "ste-ac-iGk"; */
+"ste-ac-iGk.text" = "Asistió a las horas";
+
+/* Class = "UITextField"; placeholder = "OTP"; ObjectID = "sxt-uZ-qII"; */
+"sxt-uZ-qII.placeholder" = "OTP";
+
+/* Class = "UILabel"; text = "UPDATE EVENT DETAILS"; ObjectID = "t6q-4G-yvi"; */
+"t6q-4G-yvi.text" = "ACTUALIZAR DETALLES DEL EVENTO";
+
+/* Class = "UILabel"; text = "Available"; ObjectID = "t7W-CQ-vIN"; */
+"t7W-CQ-vIN.text" = "Disponible";
+
+/* Class = "UITextField"; placeholder = "Email*"; ObjectID = "t8B-ZP-Oeq"; */
+"t8B-ZP-Oeq.placeholder" = "Correo electrónico*";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "t9R-nY-wlH"; */
+"t9R-nY-wlH.placeholder" = "Correo electrónico";
+
+/* Class = "UILabel"; text = "Is your Organisation(or the location where volunteers will works) easily accessible by public transport?"; ObjectID = "tGl-V6-w0N"; */
+"tGl-V6-w0N.text" = "¿Su organización (o el lugar donde trabajarán los voluntarios) es fácilmente accesible en transporte público?";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "tMC-3M-gDw"; */
+"tMC-3M-gDw.normalTitle" = "Enviar";
+
+/* Class = "UITextField"; placeholder = "Organization Profile"; ObjectID = "tYn-D6-KdA"; */
+"tYn-D6-KdA.placeholder" = "Perfil de la organización";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ty3-wv-y9l"; */
+"ty3-wv-y9l.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Settings"; ObjectID = "uNq-o5-2Pf"; */
+"uNq-o5-2Pf.normalTitle" = "Configuraciones";
+
+/* Class = "UILabel"; text = "Is your Organization a not-for-profit Organization?"; ObjectID = "uWI-mQ-49Z"; */
+"uWI-mQ-49Z.text" = "¿Es su organización una organización sin fines de lucro?";
+
+/* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "ufu-MR-LbG"; */
+"ufu-MR-LbG.placeholder" = "Código postal";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vCb-UV-egi"; */
+"vCb-UV-egi.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Message"; ObjectID = "vF6-e9-b0W"; */
+"vF6-e9-b0W.title" = "Mensaje";
+
+/* Class = "UITextField"; placeholder = "City"; ObjectID = "vM1-G4-0Tx"; */
+"vM1-G4-0Tx.placeholder" = "Ciudad";
+
+/* Class = "UILabel"; text = "I'm CSO"; ObjectID = "vPx-yy-rqj"; */
+"vPx-yy-rqj.text" = "Soy CSO";
+
+/* Class = "UILabel"; text = ":"; ObjectID = "vSl-ze-m8f"; */
+"vSl-ze-m8f.text" = ":";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "vWw-Im-BCD"; */
+"vWw-Im-BCD.normalTitle" = "iniciar sesión";
+
+/* Class = "UITextField"; placeholder = "Password*"; ObjectID = "va5-TZ-uet"; */
+"va5-TZ-uet.placeholder" = "Contraseña*";
+
+/* Class = "UITextField"; placeholder = "Title*"; ObjectID = "pul-su-s0Y"; */
+"pul-su-s0Y.placeholder" = "Título*";
+
+/* Class = "UITextField"; placeholder = "Description*"; ObjectID = "Bhx-Iw-bKf"; */
+"Bhx-Iw-bKf.placeholder" = "Descripción*";
+
+/* Class = "UILabel"; text = "Event Type"; ObjectID = "Rri-hY-30r"; */
+"Rri-hY-30r.text" = "Tipo de evento";
+
+/* Class = "UIButton"; normalTitle = "Select Event Type"; ObjectID = "2Ge-SZ-lvn"; */
+"2Ge-SZ-lvn.normalTitle" = "Seleccionar tipo de evento";
+
+/* Class = "UILabel"; text = "Timezone"; ObjectID = "561-cx-Ozt"; */
+"561-cx-Ozt.text" = "Zona horaria";
+
+/* Class = "UILabel"; text = "State"; ObjectID = "4hB-n8-adK"; */
+"4hB-n8-adK.text" = "Estado";
+
+/* Class = "UILabel"; text = "Country"; ObjectID = "FeX-hr-dnr"; */
+"FeX-hr-dnr.text" = "País";
+
+/* Class = "UIButton"; normalTitle = "Event Start Time"; ObjectID = "t68-Qs-SRV"; */
+"t68-Qs-SRV.normalTitle" = "Hora de inicio del evento";
+
+/* Class = "UIButton"; normalTitle = "Event End Time"; ObjectID = "Iv7-Lg-bQ4"; */
+"Iv7-Lg-bQ4.normalTitle" = "Hora de finalización del evento";
+
+/* Class = "UIButton"; normalTitle = "Event Start Date"; ObjectID = "uq9-Ef-aib"; */
+"uq9-Ef-aib.normalTitle" = "Fecha de inicio del evento";
+
+/* Class = "UIButton"; normalTitle = "Event End Date"; ObjectID = "th2-C0-xqX"; */
+"th2-C0-xqX.normalTitle" = "Fecha de finalización del evento";
+
+/* Class = "UIButton"; normalTitle = "Reset"; ObjectID = "5KM-dS-3ba"; */
+"5KM-dS-3ba.normalTitle" = "Reiniciar";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "sBd-bq-qjG"; */
+"sBd-bq-qjG.normalTitle" = "Añadir";
+
+/* Class = "UIButton"; normalTitle = "View on map"; ObjectID = "EBe-Oq-5T8"; */
+"EBe-Oq-5T8.normalTitle" = "Ver en el mapa";
+
+/* Class = "UILabel"; text = "Shift Date"; ObjectID = "OtY-zI-KTk"; */
+"OtY-zI-KTk.text" = "Fecha de cambio";
+
+/* Class = "UILabel"; text = "Shift Rating"; ObjectID = "Uay-Fr-8K1"; */
+"Uay-Fr-8K1.text" = "Calificación de cambio";
+
+/* Class = "UILabel"; text = "EVENT"; ObjectID = "oQL-qK-8hN"; */
+"oQL-qK-8hN.text" = "EVENTO";
+
+/* Class = "UIButton"; normalTitle = "Edit"; ObjectID = "PAB-4J-wOC"; */
+"PAB-4J-wOC.normalTitle" = "Editar";
+
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "Bn2-eJ-bCy"; */
+"Bn2-eJ-bCy.normalTitle" = "Eliminar";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "2QO-zO-9cV"; */
+"2QO-zO-9cV.normalTitle" = "Ver";
+
+/* Class = "UIButton"; normalTitle = "Duplicate"; ObjectID = "3l8-cU-YPp"; */
+"3l8-cU-YPp.normalTitle" = "Duplicado";
+
+/* Class = "UILabel"; text = "Shift"; ObjectID = "hkI-bx-7sh"; */
+"hkI-bx-7sh.text" = "Cambio";
+
+/* Class = "UIButton"; normalTitle = "Add"; ObjectID = "LLv-Wm-2vg"; */
+"LLv-Wm-2vg.normalTitle" = "Añadir";
+
+/* Class = "UIButton"; normalTitle = "View"; ObjectID = "EKz-rN-pwO"; */
+"EKz-rN-pwO.normalTitle" = "Ver";
+
+
+/* Class = "UILabel"; text = ":"; ObjectID = "vl7-di-5e0"; */
+"vl7-di-5e0.text" = ":";
+
+/* Class = "UITextField"; placeholder = "Title*"; ObjectID = "w0W-rL-b6q"; */
+"w0W-rL-b6q.placeholder" = "Título*";
+
+/* Class = "UIButton"; normalTitle = "Timezone"; ObjectID = "w84-iM-rbw"; */
+"w84-iM-rbw.normalTitle" = "Zona horaria";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wBk-X3-UxE"; */
+"wBk-X3-UxE.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "          Unpublished  "; ObjectID = "wD9-3E-Z3G"; */
+"wD9-3E-Z3G.text" = "          Inédito  ";
+
+/* Class = "UIButton"; normalTitle = "REGISTER HERE"; ObjectID = "wXX-Dw-4TR"; */
+"wXX-Dw-4TR.normalTitle" = "REGISTRARSE AQUÍ";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "woL-8s-41j"; */
+"woL-8s-41j.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "RATE EVENT"; ObjectID = "wok-xQ-SOj"; */
+"wok-xQ-SOj.text" = "Evaluar evento";
+
+/* Class = "UITextField"; placeholder = "Phone Number*"; ObjectID = "wt7-Iz-YSM"; */
+"wt7-Iz-YSM.placeholder" = "Número de teléfono*";
+
+/* Class = "UIButton"; normalTitle = "NO"; ObjectID = "x0n-it-WRa"; */
+"x0n-it-WRa.normalTitle" = "NO";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "x5W-97-UXl"; */
+"x5W-97-UXl.text" = "00";
+
+/* Class = "UILabel"; text = "22"; ObjectID = "x6e-7a-94g"; */
+"x6e-7a-94g.text" = "22";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "xJZ-UU-wgz"; */
+"xJZ-UU-wgz.text" = "00";
+
+/* Class = "UILabel"; text = "Verifty your number"; ObjectID = "xaw-XO-G4b"; */
+"xaw-XO-G4b.text" = "Verifica tu número";
+
+/* Class = "UILabel"; text = "End Time"; ObjectID = "xmV-R2-VJc"; */
+"xmV-R2-VJc.text" = " Hora de finalización";
+
+/* Class = "UITextField"; placeholder = "EIN/Tax Id"; ObjectID = "xn6-7k-VQ1"; */
+"xn6-7k-VQ1.placeholder" = "EIN/Tax Id";
+
+/* Class = "UIButton"; normalTitle = "Event Start Time"; ObjectID = "xrI-o5-ZpF"; */
+"xrI-o5-ZpF.normalTitle" = "Hora de inicio del evento";
+
+/* Class = "UILabel"; text = "Volunteer Required"; ObjectID = "xsK-yE-8sc"; */
+"xsK-yE-8sc.text" = "Voluntario requerido";
+
+/* Class = "UITextField"; placeholder = "Zip Code"; ObjectID = "xuX-dF-u0S"; */
+"xuX-dF-u0S.placeholder" = "Código postal";
+
+/* Class = "UIButton"; normalTitle = "MY RATING"; ObjectID = "xw8-8r-LM5"; */
+"xw8-8r-LM5.normalTitle" = "MI CLASIFICACIÓN";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "xx6-QC-vfK"; */
+"xx6-QC-vfK.text" = "Título";
+
+/* Class = "UILabel"; text = "Minutes"; ObjectID = "xym-Kk-nnG"; */
+"xym-Kk-nnG.text" = "Minutos";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yC7-ah-xRA"; */
+"yC7-ah-xRA.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "yGn-VW-vE5"; */
+"yGn-VW-vE5.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "yHV-Tg-nnO"; */
+"yHV-Tg-nnO.placeholder" = "Dirección";
+
+/* Class = "UIButton"; normalTitle = "United States of America"; ObjectID = "yIV-eU-YiD"; */
+"yIV-eU-YiD.normalTitle" = "United States of America";
+
+/* Class = "UIButton"; normalTitle = NSLocalizedString("OK", comment: ""); ObjectID = "yR1-3y-KPO"; */
+"yR1-3y-KPO.normalTitle" = "Okay";
+
+/* Class = "UILabel"; text = "Hours"; ObjectID = "yYk-dh-JlX"; */
+"yYk-dh-JlX.text" = "Horas";
+
+/* Class = "UILabel"; text = "NO"; ObjectID = "yvx-IL-cJ6"; */
+"yvx-IL-cJ6.text" = "NO";
+
+/* Class = "UILabel"; text = " HOURS"; ObjectID = "zHA-Lh-f49"; */
+"zHA-Lh-f49.text" = " Horas";
+
+/* Class = "UIButton"; normalTitle = "Select State"; ObjectID = "zef-2q-LRj"; */
+"zef-2q-LRj.normalTitle" = "Seleccione estado";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "zpB-dI-Uo1"; */
+"zpB-dI-Uo1.normalTitle" = "Cancelar";
+
+/* Class = "UITextField"; placeholder = "Enter Hours"; ObjectID = "zpu-lc-NpT"; */
+"zpu-lc-NpT.placeholder" = "Ingrese horas";
+
+/* Class = "UILabel"; text = "Is your Organization a not-for-profit Organisation?"; ObjectID = "zuc-6F-KiO"; */
+"zuc-6F-KiO.text" = "¿Es su organización una organización sin fines de lucro??";
+
+/* Class = "UIButton"; normalTitle = "No"; ObjectID = "zut-jo-f0b"; */
+"zut-jo-f0b.normalTitle" = "No";
+
+/* Class = "UIButton"; normalTitle = "More Information"; ObjectID = "zzz-WC-a5S"; */
+"zzz-WC-a5S.normalTitle" = "Más información";
+
+/* Class = "UILabel"; text = "Volunteer HRS Current"; ObjectID = "yD1-bw-Hpy"; */
+"yD1-bw-Hpy.text" = "Voluntario HRS actual";
+
+/* Class = "UILabel"; text = "Target"; ObjectID = "fGO-le-HCm"; */
+"fGO-le-HCm.text" = "Objetivo    ";
+
+
+
+

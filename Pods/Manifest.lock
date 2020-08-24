@@ -1,0 +1,70 @@
+PODS:
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - BRCountDownView (0.2.1)
+  - FLAnimatedImage (1.0.12)
+  - FloatingLabelInput (0.1.0)
+  - FSCalendar (2.8.0)
+  - MBProgressHUD (1.1.0)
+  - NYTPhotoViewer (1.0.1):
+    - NYTPhotoViewer/AnimatedGifSupport (= 1.0.1)
+    - NYTPhotoViewer/Core (= 1.0.1)
+  - NYTPhotoViewer/AnimatedGifSupport (1.0.1):
+    - FLAnimatedImage (~> 1.0.8)
+    - NYTPhotoViewer/Core
+  - NYTPhotoViewer/Core (1.0.1)
+  - RSKImageCropper (2.2.3)
+  - SDWebImage (5.4.2):
+    - SDWebImage/Core (= 5.4.2)
+  - SDWebImage/Core (5.4.2)
+  - SendBirdSDK (3.0.164)
+  - SideMenu (5.0.3)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - BRCountDownView
+  - FLAnimatedImage (~> 1.0)
+  - FloatingLabelInput
+  - FSCalendar
+  - MBProgressHUD
+  - NYTPhotoViewer (~> 1.0.0)
+  - RSKImageCropper
+  - SDWebImage
+  - SendBirdSDK
+  - SideMenu
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - BRCountDownView
+    - FSCalendar
+    - MBProgressHUD
+    - SideMenu
+  trunk:
+    - AlamofireImage
+    - FLAnimatedImage
+    - FloatingLabelInput
+    - NYTPhotoViewer
+    - RSKImageCropper
+    - SDWebImage
+    - SendBirdSDK
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  BRCountDownView: c94d362aa7227a47582eddf8bb132cc10f7b4749
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  FloatingLabelInput: b8d6ee9c5161fb3e85685cfa52698b58f3ced37b
+  FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  NYTPhotoViewer: 98e0a54a9d28e4a980fc4b611fd5e419ca89ad74
+  RSKImageCropper: a446db0e8444a036b34f3c43db01b2373baa4b2a
+  SDWebImage: 4ca2dc4eefae4224bea8f504251cda485a363745
+  SendBirdSDK: d89d5797ae87fd5aaea8e99a1578162be004de0d
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+
+PODFILE CHECKSUM: 20525a41986dbc4205877460b941708903a506aa
+
+COCOAPODS: 1.8.4

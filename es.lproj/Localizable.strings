@@ -1,0 +1,448 @@
+/* 
+  Localizable.strings
+  ZoeBluePrint
+
+  Created by Reetesh Bajpai on 26/03/20.
+  Copyright © 2020 Reetesh Bajpai. All rights reserved.
+*/
+"OK" = "Okay";
+"Fields can not be left blank!" = "¡Los campos no se pueden dejar en blanco!";
+"UPLOAD FILES FROM" = "CARGAR ARCHIVOS DESDE";
+"Gallery" = "Galería";
+"Camera" = "Cámara";
+"Files" = "Archivos";
+"Cancel" = "Cancelar";
+"Document Type" = "Tipo de Documento";
+"DOWNLOAD DOCUMENT?" = "¿DESCARGAR DOCUMENTO?";
+"Do you want to download the document?" = " ¿Quieres descargar el documento?";
+"DELETE DOCUMENT ?" = "¿BORRAR DOCUMENTO ?";
+"Do you want to delete the document?" = "¿Quieres eliminar el documento?";
+"Yes" = "Si";
+"Document deleted Succesfully" = "Documento eliminado exitosamente";
+"Female" = "Female";
+"Male" = "Male";
+"Select Gender" = "Seleccione género";
+"Organization Information" = "Información de la organización";
+"Select Doument Type"  = "Select Doument Type";
+"Email is empty" = "El correo esta vacio";
+"State not selected" = "Estado no seleccionado";
+"Country not selected" = "País no seleccionado";
+"Password is empty" = "La contraseña esta vacia";
+"Confirm Password is empty" = "Confirmar contraseña está vacía";
+"Password and Confirm Password not Same" = "Contraseña y Confirmar contraseña no igual";
+"Date of birth is empty" = " La fecha de nacimiento está vacía";
+"Select Document" = "Select Document";
+"Document Upload Successfully" = "Carga de documentos exitosamente";
+"Select File" = " Seleccione Archivo";
+"Delete Document Successfully" = "Delete Document Successfully";
+"CONFIRM EXIT?" = "CONFIRMAR SALIR?";
+"Do you want to discard changes?" = "¿Quieres descartar los cambios?";
+"No Document Uploaded" = "Ningún documento cargado";
+"Select State" = "Seleccione estado";
+"Select Country" = "Seleccionar país";
+"Select document type" = "Seleccionar tipo de documento";
+"More Information" = "Más información";
+"Organization Name is empty" = "Organization Name is empty";
+"Upload atleast one document" = "El nombre de la organización está vacío";
+"Should upload a document of type 501C3 Certificate" = "Debe cargar un documento de tipo 501C3 Certificado";
+"Update Successful" = "Actualización exitosa";
+"OTP expires in" = "OTP caduca en";
+"Minutes" = "Minutos";
+"Mobile validate Successfully" = "Validación móvil con éxito";
+"Invalid OTP" = "OTP inválido";
+"Are you sure you want to exit?" = "Are you sure you want to exit?";
+"Text field is empty." = "Text field is empty.";
+"OTP is expired" = "OTP is expired";
+"Published" = "Publicado";
+"Unpublished" = "Inédito";
+"Average Star Rating is" = "Average Star Rating is";
+"from the Total" = "from the Total";
+"Rating" = "Evaluar";
+"No Ratings" = "Sin evaluar";
+"Time" = "Time";
+"Data Not Found" = "Datos no encontrados";
+"Available" = "Disponible";
+"Do you want to delete the document?" = "¿Quieres eliminar el documento?";
+"Data Deleted" = "Datos eliminados";
+"Done" = "Hecho";
+"Update Shift" = "Update Shift";
+"Update" = "Actualizar";
+"Success!" = "¡Éxito!";
+"Shift Added Succesfully!" = "¡Cambio agregado con éxito!";
+"Alert!" = "¡Alerta!";
+"Shift Date not selected." = "Fecha de cambio no seleccionada.";
+"Voluteer Required data not provided." = "Voluntario Datos requeridos no proporcionados.";
+"Shift Start time not selected" = "Hora de inicio de turno no seleccionada";
+"Shift End Time not selected" = "Hora de finalización del turno no seleccionada ";
+"End Time can't be before Start Time" = "La hora de finalización no puede ser anterior a la hora de inicio";
+"Shift Rank not selected" = "Rango de cambio no seleccionado";
+"Volunteer request can't be zero" = "La solicitud de voluntario no puede ser cero";
+"Shift Task not selected" = "Tarea de cambio no seleccionada";
+"Shift End Time should be greater than Shift Start Time" = "La hora de finalización del turno debe ser mayor que la hora de inicio del turno";
+"No Events Found" = "No se encontraron eventos";
+"CONFIRM UNPUBLISH?" = "CONFIRMAR DESPÚBLICO?";
+"Are you sure you want to Unpublish the Event?" = "¿Estás seguro de que quieres anular la publicación del evento??";
+"CONFIRM PUBLISH?" = "CONFIRMAR PUBLICAR??";
+"Are you sure you want to publish the Event?" = "¿Estás seguro de que quieres publicar el Evento?";
+"Are you sure you want to delete?" = "¿Estás seguro de que quieres eliminar?";
+"Delete Successfully" = " Eliminar con éxito";
+"Please Unpublish event first" = "Anule la publicación del evento primero";
+"CONFIRM DUPLICATE ?" = "CONFIRMAR DUPLICADO ?";
+"Are you sure you want to duplicate the event?" = "¿Estás seguro de que quieres duplicar el evento??";
+"Duplicate Event Created Successfully!" = "¡Evento duplicado creado con éxito!!";
+"Location out of Selected state:" = "Location out of Selected state:";
+"UPLOAD FILES FROM"  = "CARGAR ARCHIVOS DESDE";
+"ADD EVENT DETAILS" = "AGREGAR DETALLES DEL EVENTO";
+"Add Event Details" = "AGREGAR DETALLES DEL EVENTO";
+"UPDATE EVENT DETAILS" = "Actualizar detalles del evento";
+"Select Time Zone" = "Selecciona la zona horaria";
+"Select Event Type" = "Seleccionar tipo de evento";
+"Event Added Successfully" = "Evento agregado exitosamente";
+"Please Insert Correct Phone Number"  = "Por favor inserte el número de teléfono correcto";
+"Event Updated Successfully" = "Evento actualizado exitosamente";
+"Start Date not selected." = "Fecha de inicio no seleccionada.";
+"End Date not selected." = "Fecha de finalización no seleccionada.";
+"Event name not filled." = "Nombre del evento no completado.";
+"Event Description not filled" = "Descripción del evento no completada";
+"Event type not selected" = "Tipo de evento no seleccionado";
+"Time zone not selected" = "Zona horaria no seleccionada";
+"Address not filled" = "Dirección no completada";
+"City not filled" = "Ciudad no llena";
+"State not selected" = "Estado no seleccionado";
+"Zip Code not filled" = "Código postal no completado";
+"Country Not Selected" = "País no seleccionado";
+"Email not filled" = "Correo electrónico no completado";
+"Invalid Zip Code!" = "¡Código postal no válido!!";
+"Invalid Phone Number" = "Numero de telefono invalido";
+"Email Invalid!" = "Correo electrónico inválido!";
+"End Date not filled" = " Fecha de finalización no completada";
+"Start Time not filled" = "Hora de inicio no llena";
+"End Time not filled" = "Hora final no llena";
+"Phone Number not filled" = "Número de teléfono no completado";
+"File Not Selected" = "Archivo no seleccionado";
+" End Date should be greater than Start Date" = " La fecha de finalización debe ser mayor que la fecha de inicio";
+"Error Occured!" = "¡Ocurrió un error!";
+"Email Is Empty" = "El correo electrónico está vacío";
+"First Name Is Empty" = "El primer nombre está vacío";
+"Last Name Is Empty" = "El apellido está vacío";
+"Phone Number Is Empty" = "El número de teléfono está vacío";
+"Password Is Empty" = "La contraseña esta vacía";
+"Gender not selected" = "Gender not selected";
+"ON" = "EN";
+"OFF" = "APAGADO";
+"Time Zone Update Successfully" = "Actualización de zona horaria con éxito";
+"Select Day Light" = "Seleccionar luz del día";
+"Old password is empty." = "La contraseña anterior está vacía.";
+"New password is empty" = " La nueva contraseña está vacía.";
+"New password and confirm password are not same." = "La nueva contraseña y la contraseña de confirmación no son las mismas.";
+"Password change successfully" = "Cambio de contraseña exitosamente";
+"Invalid User Name" = "Invalid User Name";
+"No Internet Connection" = "Sin conexión a Internet";
+"Your account is in verification process." = " Tu cuenta está en proceso de verificación.";
+"Login Failed!" = "Login Failed!";
+"Please try again." = "nténtalo de nuevo.";
+"Volunteer HRS Current" = "Voluntario HRS actual    ";
+"Target" = "Objetivo    ";
+"Status change Successfully" = "Cambio de estado exitoso";
+"Out time should not be less than In Date" = "El tiempo de espera no debe ser inferior a la fecha de entrada";
+"Time field cannot be left blank!" = "¡El campo de tiempo no se puede dejar en blanco!!";
+"Rejected" = "Rechazada";
+"Mark Completed Successfully" = "Marca completada con éxito";
+"DISCOVER EVENTS" = "DESCUBRE EVENTOS";
+"Volunteer Request Sent successfully" = "Solicitud de voluntario enviada con éxito";
+"You are not eligible for this shift" = "No eres elegible para este turno";
+"DOWNLOAD DOCUMENT" = " DESCARGAR DOCUMENTO";
+"Are you sure want to download document?" = "HORAS VOLUNTARIAS COMPLETADAS?";
+"DELETE DOCUMENT ?" = "¿BORRAR DOCUMENTO ?";
+"VOLUNTEER HOURS COMPLETED" = "HORAS VOLUNTARIAS COMPLETADAS";
+"Please enter comment" = "Por favor, introduzca un comentario";
+"Request Rejected" = "Solicitud rechazada";
+"UNLINK USER" = "DESVINCULAR USUARIO";
+"Do you want to unlink?" = "¿Quieres desvincular?";
+"Sun" = "Dom.";
+"Mon" = "Lun.";
+"Tue" = "mar.";
+"Wed" = "mié.";
+"Thurs" = "jue.";
+"Fri" = "Vie.";
+"Sat" = "sáb.";
+"January" = "enero.";
+"February" = "febrero";
+"March" = "marzo";
+"April" = "abril";
+"May" = "Mayo";
+"June" = "junio";
+"July" = "julio";
+"August" = "agosto";
+"September" = "septiembre";
+"October" = "octubre";
+"November" = "noviembre";
+"December" = "diciembre";
+"Jan" = "ene.";
+"Feb" =  "feb.";
+"Mar" = "mar.";
+"Apr" = "abr.";
+"May" = "may.";
+"Jun" = "jun.";
+"Jul" = "jul.";
+"Aug" = "ago.";
+"Sep" = "sep.";
+"Oct" = "oct.";
+"Nov" =  "nov.";
+"Dec" =  "dic.";
+"Start Time" = "Hora de inicio";
+"End Time" = "Hora de finalización";
+"Reset" = "Reiniciar";
+"Add" = "Añadir";
+"Select Shift Task" = "Seleccionar tarea de turno";
+"Select Minimum Rating" = "Seleccionar calificación mínima";
+"Please enter your registered email id to receive reset password link" = "Por favor ingrese su correo electrónico registrado para recibir el enlace para restablecer la contraseña";
+"Submit" = "Enviar";
+"Forgot Password?" = "¿Se te olvidó tu contraseña?";
+"Edit" = "Editar";
+"TimeZone" = "Zona horaria";
+"Settings" = "Configuraciones";
+"Change Password" = "Cambia la contraseña";
+"CSO Connect" = "CSO Connect";
+"MY EVENTS" = "Mis eventos";
+"NEW EVENTS" = "NUEVOS EVENTOS";
+"Shifts" = "Cambios";
+"Select TimeZone" = " Selecciona la zona horaria";
+"Select Daylight" = "Seleccionar luz del día";
+"Edit Profile" = "Editar perfil";
+"Enter Password" = "Introducir la contraseña";
+"Enter New Password" = "Ingrese nueva clave";
+"Volunteer Requested" = "Voluntario solicitado";
+"Shift Date" = "Fecha de cambio";
+"Shift Time" = "Tiempo de cambio";
+"shift Rating" = "Clasificación de cambio";
+"Delete" = "Eliminar";
+"View" = "Ver";
+"Title" = "Título";
+"Shift Task" = "Tarea de turno";
+"Attended Hrs" = "Asistió a las horas";
+"Rank Comment" = "Comentario de rango";
+"Decline Comment" = "Rechazar comentario";
+"Rate" = "Velocidad";
+"Change Status" = "Cambiar Estado";
+"Accept" = "Aceptar";
+"Decline" = "Disminución";
+"Verify" = "Verificar";
+"Reject" = "Rechazar";
+"CHANGE RATING" = "CAMBIO DE CLASIFICACIÓN";
+"New Rating" = "Nueva calificación";
+"Add Comment" = "Agregar comentario";
+"Enter Comment" = "Ingrese comentario";
+"Cancel" = "Cancelar";
+"Change Hours" = " Cambiar horas";
+"Volunteer Hours" = "Horas de voluntariado";
+"Hrs" = "Horas";
+"Enter actual hours" = "Ingrese horas reales";
+"Enter Hours" = "Ingrese horas";
+"Add your comment" = "Añade tu comentario";
+"Name" = "Nombre";
+"Phone No" = "Telefono";
+"Average Rate" = "Tasa promedio";
+"Average Rank" = "Rango promedio";
+"UNLINK" = "DESCONECTAR";
+"SEE FOLLOWERS" = "VER SEGUIDORES";
+"VOLUNTEERS" = "VOLUNTARIOS";
+"Please take a moment to verify your phone number. This helps us confirm your identify and secure your account." = "Tómese un momento para verificar su teléfono. número. Esto nos ayuda a confirmar su identidad. y asegure su cuenta.";
+"Verify The Number" = "Verificar el número";
+"Resend OTP" = "Reenviar OTP";
+"OTP expires in mm:ss Minutes" = "OTP caduca en mm: ss Minutos";
+"Postal Code" = "Código postal";
+"Organisation Information" = "Información de la organización";
+"Organisation Name" = "nombre de la organización";
+"Organisation Phone Number" = "Número de teléfono de la organización";
+"Organisation Email" = " Correo electrónico de la organización";
+"Organisation Website" = "Sitio web de la organización";
+"Mission Statement" = "Estado de la misión";
+"Organisation Profile" = " Perfil de la organización";
+"EIN/Tax Id" = "EIN / Identificación fiscal";
+"Upload multiple files" = "Sube varios archivos";
+"Add New" = " Agregar nuevo";
+"Upload" = "Subir";
+"Save and Next" = "Guardar y Siguiente";
+"Uploaded documents" = "Documentos cargados";
+"Is your Organization a not-for-profit Organisation?" = "¿Es su organización una organización sin fines de lucro?";
+"What type of services and activities does your Organization offer?" = "¿Qué tipo de servicios y actividades ofrece su organización?";
+"Select Answer" = "Seleccionar respuesta";
+"What is your Target client group?" = "¿Cuál es su grupo de clientes objetivo?";
+"How many volunteer in the total does your organization have and how many do you need?" = "¿Cuántos voluntarios en total tiene su organización y cuántos necesita?";
+"Do your volunteers required a background check?" = "¿Sus voluntarios requirieron una verificación de antecedentes?";
+"Is your Organization (or the location where volunteers will work) easily accessible by public transport?" = "¿Su organización (o el lugar donde trabajarán los voluntarios) es fácilmente accesible en transporte público?";
+"Are you 501C3 certified?" = "¿Estás certificado 501C3?";
+"Register" = "Registrarse";
+"Events" = "Eventos";
+"Enter clock in & clock out time" = "Ingrese el tiempo de entrada y salida del reloj";
+"Event End Date" = "Fecha de finalización del evento";
+"Address" = "Habla a";
+"Public" = " Público";
+"Private" = "Privado";
+"Rate Event" = "Evaluar evento";
+"Rate this event" = "Califica este evento";
+"Close" = "Cerca";
+"Sign up" = "Regístrate";
+"Set Location" = "ESCOGER LOCALIZACIÓN";
+"Verifty your number" = "Verifica tu número";
+"PLEASE SELECT THE DOCUMENT TYPE" = "POR FAVOR SELECCIONE EL TIPO DE DOCUMENTO";
+"Please Enter the Document Name" = "Por favor, introduzca el nombre del documento";
+"DOCUMENTS" = "DOCUMENTOS";
+"MY RATING" = "MI CLASIFICACIÓN";
+"Volunteer HRS actual" = "Voluntario HRS actual";
+"MY BOOKING" = " Mis reserva";
+"My CSO Events" = "Mis eventos de OSC";
+"CURRENT STATUS" = "ESTADO ACTUAL";
+"CHANGE STATUS TO" = "CAMBIAR ESTADO A";
+"Chat" = "Charla";
+"Withdraw" = " Retirar";
+"UPDATE HOURS" = "ACTUALIZAR HORAS";
+"Clock In Time" = " Reloj en el tiempo";
+"Clock Out Time" = " Hora de salida del reloj";
+"Dashboard" = "Tablero";
+"Booking" = "Reserva";
+"Locker" = "Armario";
+"Message" = "Mensaje";
+"Search Event" = "Buscar evento";
+"Select Type" = "Seleccione tipo";
+"Image must be upto 5 MB." = "La imagen debe tener hasta 5 MB.";
+"Log out" = "Cerrar sesión";
+"I’m CSO" = "Soy un CSO";
+"I’m Volunteer" = "Soy un Voluntario";
+"Click Here" = "Haga clic aquí";
+"Forget Password" = "Contraseña olvidada";
+"REGISTER HERE" = "REGISTRARSE AQUÍ";
+"Password" = "Contraseña";
+"Basic Information" = "Información básica";
+"First Name" = "Nombre de pila";
+"Last Name" = "Apellido";
+"Street" = "Calle";
+"City" = "Ciudad";
+"State" = "Estado";
+"Zip Code" = "Código postal";
+"Country" = " País";
+"Date of Birth" = "Fecha de nacimiento";
+"Gender" = " Género";
+"Confirm Password" = "Confirmar contraseña";
+"UPLOAD PHOTO" = "Subir foto";
+"EVENT" = "EVENTO";
+"SHIFT" = "CAMBIO";
+"Add" = "Añadir";
+"No Data Found" = "Datos no encontrados";
+"Event Time : " = "Hora del evento : ";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

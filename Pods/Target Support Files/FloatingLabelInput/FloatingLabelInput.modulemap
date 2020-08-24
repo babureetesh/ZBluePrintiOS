@@ -1,0 +1,6 @@
+framework module FloatingLabelInput {
+  umbrella header "FloatingLabelInput-umbrella.h"
+
+  export *
+  module * { export * }
+}
