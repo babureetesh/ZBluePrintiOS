@@ -65,6 +65,12 @@
 		3805A4FB22B3BDD7005734AC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3805A4FA22B3BDD7005734AC /* AlertManager.swift */; };
 		381DFD6F22CB78E900C58A74 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */; };
 		381F37F924DEF199009426B6 /* volSliderMenuCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 381F37F824DEF198009426B6 /* volSliderMenuCover.png */; };
+		3827252E24F518560031DEF3 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827252D24F518560031DEF3 /* IntroScreenViewController.swift */; };
+		3827253524F51BB90031DEF3 /* placefordocument.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253024F51BB90031DEF3 /* placefordocument.png */; };
+		3827253624F51BB90031DEF3 /* somewheretohangout.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253124F51BB90031DEF3 /* somewheretohangout.png */; };
+		3827253724F51BB90031DEF3 /* bookyourcsoevents.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253224F51BB90031DEF3 /* bookyourcsoevents.png */; };
+		3827253824F51BB90031DEF3 /* youareconnected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253324F51BB90031DEF3 /* youareconnected.png */; };
+		3827253924F51BB90031DEF3 /* trackyourhours.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253424F51BB90031DEF3 /* trackyourhours.png */; };
 		382F802C24ED973E000D9F59 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F802B24ED973E000D9F59 /* OrganizationTableViewCell.swift */; };
 		383681EB22D864E200ABB209 /* cso_verified.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 383681D022D864E100ABB209 /* cso_verified.jpg */; };
 		383681EC22D864E200ABB209 /* vol_request.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 383681D122D864E100ABB209 /* vol_request.jpg */; };
@@ -470,6 +476,12 @@
 		3805A4FA22B3BDD7005734AC /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
 		381F37F824DEF198009426B6 /* volSliderMenuCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volSliderMenuCover.png; sourceTree = "<group>"; };
+		3827252D24F518560031DEF3 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
+		3827253024F51BB90031DEF3 /* placefordocument.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placefordocument.png; sourceTree = "<group>"; };
+		3827253124F51BB90031DEF3 /* somewheretohangout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = somewheretohangout.png; sourceTree = "<group>"; };
+		3827253224F51BB90031DEF3 /* bookyourcsoevents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookyourcsoevents.png; sourceTree = "<group>"; };
+		3827253324F51BB90031DEF3 /* youareconnected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youareconnected.png; sourceTree = "<group>"; };
+		3827253424F51BB90031DEF3 /* trackyourhours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackyourhours.png; sourceTree = "<group>"; };
 		382F802B24ED973E000D9F59 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
 		383681D022D864E100ABB209 /* cso_verified.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cso_verified.jpg; sourceTree = "<group>"; };
 		383681D122D864E100ABB209 /* vol_request.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vol_request.jpg; sourceTree = "<group>"; };
@@ -920,6 +932,7 @@
 		2A23677122A58DE500FF6549 /* ZoeBluePrint */ = {
 			isa = PBXGroup;
 			children = (
+				3827252C24F518560031DEF3 /* Intro Screen */,
 				38A0903324D0652C00070C9A /* VolunteerMessage */,
 				C2AE2123233A484F00BF97E7 /* Locker */,
 				2A1594CC22EA34B70066D84A /* Reusable and Extensions */,
@@ -1218,9 +1231,30 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		3827252C24F518560031DEF3 /* Intro Screen */ = {
+			isa = PBXGroup;
+			children = (
+				3827252D24F518560031DEF3 /* IntroScreenViewController.swift */,
+			);
+			path = "Intro Screen";
+			sourceTree = "<group>";
+		};
+		3827252F24F51BB90031DEF3 /* introscreen */ = {
+			isa = PBXGroup;
+			children = (
+				3827253024F51BB90031DEF3 /* placefordocument.png */,
+				3827253124F51BB90031DEF3 /* somewheretohangout.png */,
+				3827253224F51BB90031DEF3 /* bookyourcsoevents.png */,
+				3827253324F51BB90031DEF3 /* youareconnected.png */,
+				3827253424F51BB90031DEF3 /* trackyourhours.png */,
+			);
+			path = introscreen;
+			sourceTree = "<group>";
+		};
 		383681CF22D864B900ABB209 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3827252F24F51BB90031DEF3 /* introscreen */,
 				384D1F232372A90900D6826B /* Side Menu */,
 				2A9D499B23118D7C00710612 /* star_empty.png */,
 				38A0908B24D06B3D00070C9A /* user_email.png */,
@@ -1610,6 +1644,7 @@
 				7CD26CFC2360612C004BD8E4 /* complete-verified.svg in Resources */,
 				C288993C23F2C89400A411CD /* Volunteer (1).png in Resources */,
 				C2AE211E233A479500BF97E7 /* folder.jpg in Resources */,
+				3827253824F51BB90031DEF3 /* youareconnected.png in Resources */,
 				7CC06061235F117800CDBE80 /* cross-flat.png in Resources */,
 				7C3CE7F62440981E00786BFA /* cloud.png in Resources */,
 				C2AE211A233A46A300BF97E7 /* caltrans.png in Resources */,
@@ -1675,12 +1710,14 @@
 				38A0908C24D06B3F00070C9A /* user_email.png in Resources */,
 				7CD26D09236083C2004BD8E4 /* more-info.png in Resources */,
 				C2D68B6823D97589004E64DF /* darker+txt.png in Resources */,
+				3827253624F51BB90031DEF3 /* somewheretohangout.png in Resources */,
 				7CDA44CB232A4C6B002C37D9 /* volunteerUser.png in Resources */,
 				C26EBD0B23AF8B9500AA8177 /* sniper.png in Resources */,
 				C235D87B23DB07B2008EA0A5 /* zoeInfo.png in Resources */,
 				C20534ED23E1BCBE0069E595 /* circle+png.png in Resources */,
 				2A671F572308369E00F0CFBD /* Shift_End_Date.png in Resources */,
 				7CAF5807232446B000017D9B /* bell.png in Resources */,
+				3827253524F51BB90031DEF3 /* placefordocument.png in Resources */,
 				38A0908824D0652C00070C9A /* loading_typing.gif in Resources */,
 				C22C736123AE03FF0038B05C /* tn.png in Resources */,
 				38A0908224D0652C00070C9A /* GroupChannelIncomingAudioFileMessageTableViewCell.xib in Resources */,
@@ -1752,6 +1789,7 @@
 				C23864B5236D9C1400384AFA /* delete-icon-png4c8-436e-9180-22c41e9a331b.png in Resources */,
 				C227399E23D1919300CC6515 /* DiscoverEvent.png in Resources */,
 				C22739A223D1BDBF00CC6515 /* newcalendar.png in Resources */,
+				3827253924F51BB90031DEF3 /* trackyourhours.png in Resources */,
 				7CD26D0123608301004BD8E4 /* pending.png in Resources */,
 				7CDE22942328C27000E389F3 /* floating-icon.png in Resources */,
 				383681EE22D864E200ABB209 /* rank_knight.jpg in Resources */,
@@ -1791,6 +1829,7 @@
 				7CDE22A22328CA7D00E389F3 /* imagejpg.png in Resources */,
 				C2F163F9233FBBEA00FCAF52 /* images.png in Resources */,
 				7C3CE7F42440981000786BFA /* cacke.png in Resources */,
+				3827253724F51BB90031DEF3 /* bookyourcsoevents.png in Resources */,
 				C27C1C4523F3E284009C61B7 /* setting.png in Resources */,
 				2A09044122B2CF8300AEC13D /* hqdefault.png in Resources */,
 				7CF91AA2244DE7D400475310 /* lightNewCalandar.png in Resources */,
@@ -1938,6 +1977,7 @@
 			files = (
 				2A09044722B8172900AEC13D /* CustomDetailViewController.swift in Sources */,
 				2A09041A22AB890200AEC13D /* APPUrls.swift in Sources */,
+				3827252E24F518560031DEF3 /* IntroScreenViewController.swift in Sources */,
 				2AD703F422E323DC00A40393 /* EventActionsViewController.swift in Sources */,
 				38A0906524D0652C00070C9A /* CustomProgressCircle.swift in Sources */,
 				3805A4FB22B3BDD7005734AC /* AlertManager.swift in Sources */,
