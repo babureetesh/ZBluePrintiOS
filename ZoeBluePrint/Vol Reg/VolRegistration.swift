@@ -801,7 +801,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     }
     
     @IBAction func volSelectGender(_ sender: Any) {
-        let contents = ["Female","Male","Others"]
+        let contents = ["Female","Male"]
                       showPopoverForView(view: sender, contents: contents)
     }
     
@@ -817,10 +817,10 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     
     
     @IBAction func volSelectDateOfBirth(_ sender: Any) {
+        view.endEditing(true)
         let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "MM-dd-yyyy"
-                    
-                   var date = Date()
+                   let date = Calendar.current.date(byAdding: .year, value: 1, to: Date())!
                     let formatter = DateFormatter()
                formatter.dateFormat = "dd-MM-yyyy"
                let endDate = formatter.string(from: date)
@@ -1060,7 +1060,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
                       return false
-        }else if(self.volPassword.text == ""){
+        }else if (datefromString(strDate: self.volDOB1!).timeIntervalSinceNow.sign == .plus) {
+            // date is in future
+            let alert = UIAlertController(title: nil, message:"Date of birth is not valid", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return false
+        }
+        else if(self.volPassword.text == ""){
             let alert = UIAlertController(title: nil, message:NSLocalizedString("Password Is Empty", comment: ""), preferredStyle: .alert)
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
@@ -1093,6 +1100,13 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             return false
         }
         return true
+    }
+    func datefromString(strDate: String)->Date{
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM-dd-yyyy"
+        let dateToCheck = dateFormatter.date(from: strDate)!
+        return dateToCheck
     }
     func validate2() -> Bool {
        if(self.volFirstName.text == ""){

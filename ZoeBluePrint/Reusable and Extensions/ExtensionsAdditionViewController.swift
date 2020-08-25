@@ -79,6 +79,60 @@ extension UITextField{
             self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
         }
     }
+    
+    func setUnderLine() {
+           let border = CALayer()
+           let width = CGFloat(0.5)
+           border.borderColor = UIColor.red.cgColor
+           border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
+           border.borderWidth = width
+            self.borderStyle = .none
+           self.layer.addSublayer(border)
+           self.layer.masksToBounds = true
+      
+       }
+    
+    func setUnderLineOfColor(color:UIColor)  {
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = width
+         self.borderStyle = .none
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
+    }
 }
 
+extension UIButton {
+    func setUnderLineForView(color:UIColor) {
+             let border = CALayer()
+             let width = CGFloat(0.5)
+             border.borderColor = color.cgColor
+             border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width - 10, height: self.frame.size.height)
+             border.borderWidth = width
+             self.layer.addSublayer(border)
+             self.layer.masksToBounds = true
+         }
+    
+    func setDropDownImagWithInset()  {
+        setImage(UIImage(named: "dropdownarrow"), for: .normal)
+        imageEdgeInsets = UIEdgeInsets(top: 0, left: self.frame.size.width-30, bottom: -2, right: 0)
+    }
+}
+
+class DropDownButton: UIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+       
+    }
+    
+    override func setNeedsLayout() {
+         setImage(UIImage(named: "dropdownarrow"), for: .normal)
+
+
+               imageEdgeInsets = UIEdgeInsets(top: 0, left: self.frame.size.width-30, bottom: -2, right: 0)
+    }
+}
 

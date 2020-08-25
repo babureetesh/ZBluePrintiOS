@@ -31,8 +31,21 @@ class ViewController: BaseViewController {
         }
     }
     
+    func showIntroScreen(){
+        
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let objIntro  = storyboard.instantiateViewController(withIdentifier: "introscreen") as! IntroScreenViewController
+        self.present(objIntro, animated: false, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if !(UserDefaults.standard.bool(forKey: "introshown")){
+            
+            self.showIntroScreen()
+            UserDefaults.standard.set(true, forKey: "introshown")
+        }
+        
         // Do any additional setup after loading the view.
         addTextFieldEventHandling()
         customizeUIElements()
@@ -225,7 +238,11 @@ extension ViewController:UITextFieldDelegate {
                 
                 let encodedData = NSKeyedArchiver.archivedData(withRootObject: loginData)
                 UserDefaults.standard.set(encodedData, forKey: UserDefaultKeys.key_LoggedInUserData)
-                     UserDefaults.standard.set(loginData["user_timezone"]as! String, forKey: UserDefaultKeys.key_userTimeZone)
+                if let usertimeZone = loginData["user_timezone"] as? String {
+                    UserDefaults.standard.set(usertimeZone, forKey: UserDefaultKeys.key_userTimeZone)
+                }
+                    
+                      
                 for viewController in tabBarController.viewControllers! {
                     if let dashboardVol = viewController as? NewVolunteerDashboard {
                         tabBarController.selectedViewController = dashboardVol

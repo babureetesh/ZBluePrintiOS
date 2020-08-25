@@ -207,6 +207,8 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
     
     @IBOutlet weak var stage2DocumentListView: UIView!
     
+    @IBOutlet weak var stage1DOBView: UIView!
+    
     @IBOutlet weak var stage2DocumentListBackgroundView: UIView!
    @IBOutlet weak var stage2documentListTableView: UITableView!
     
@@ -222,141 +224,25 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
     var step2bottomLine11 = CALayer()
     var step2bottomLine12 = CALayer()
     
+    override func viewDidLayoutSubviews() {
+//        stage2OrgPhone.setUnderLine()
+         addUnderLineToField(color: .black)
+        stage1GenderButton.setDropDownImagWithInset()
+        stage1UserStateButton.setDropDownImagWithInset()
+        stage1userCountryButton.setDropDownImagWithInset()
+        stage2SelectStateButton.setDropDownImagWithInset()
+        stage2SelectCountryButton.setDropDownImagWithInset()
+        stage2SelectDocumentButton.setDropDownImagWithInset()
+        stage3ServiceOfferButton.setDropDownImagWithInset()
+        stage3TargetClientGroupButton.setDropDownImagWithInset()
+        stage3TotalVolButton.setDropDownImagWithInset()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
   
         // Do any additional setup after loading the view.
         
-        
-        var bottomlLine = CALayer()
-        bottomlLine.frame = CGRect(x:0.0,y:40.0,width:345.0,height:1.5)
-        bottomlLine.backgroundColor = UIColor.black.cgColor
-        stage1email.borderStyle = UITextField.BorderStyle.none
-        stage1email.layer.addSublayer(bottomlLine)
-        
-        var bottomlLine2 = CALayer()
-        bottomlLine2.frame = CGRect(x:0.0,y:40,width:150.0,height:1.5)
-        bottomlLine2.backgroundColor = UIColor.black.cgColor
-        stage1firstName.borderStyle = UITextField.BorderStyle.none
-        stage1firstName.layer.addSublayer(bottomlLine2)
-        
-        var bottomlLine3 = CALayer()
-        bottomlLine3.frame = CGRect(x:0.0,y:40,width:160.0,height:1.5)
-        bottomlLine3.backgroundColor = UIColor.black.cgColor
-        stage1lastName.borderStyle = UITextField.BorderStyle.none
-        stage1lastName.layer.addSublayer(bottomlLine3)
-        
-        var bottomlLine4 = CALayer()
-        bottomlLine4.frame = CGRect(x:0.0,y:40,width:150.0,height:1.5)
-        bottomlLine4.backgroundColor = UIColor.black.cgColor
-        stage1phoneNumber.borderStyle = UITextField.BorderStyle.none
-        stage1phoneNumber.layer.addSublayer(bottomlLine4)
-        
-        var bottomlLine5 = CALayer()
-        bottomlLine5.frame = CGRect(x:0.0,y:40,width:160.0,height:1.5)
-        bottomlLine5.backgroundColor = UIColor.black.cgColor
-        stage1street.borderStyle = UITextField.BorderStyle.none
-        stage1street.layer.addSublayer(bottomlLine5)
-        
-        var bottomlLine6 = CALayer()
-        bottomlLine6.frame = CGRect(x:0.0,y:40,width:343.0,height:1.5)
-        bottomlLine6.backgroundColor = UIColor.black.cgColor
-        stage1city.borderStyle = UITextField.BorderStyle.none
-        stage1city.layer.addSublayer(bottomlLine6)
-        
-        var bottomlLine7 = CALayer()
-        bottomlLine7.frame = CGRect(x:0.0,y:40,width:343.0,height:1.5)
-        bottomlLine7.backgroundColor = UIColor.black.cgColor
-        stage1zipCode.borderStyle = UITextField.BorderStyle.none
-        stage1zipCode.layer.addSublayer(bottomlLine7)
-        
-        var bottomlLine8 = CALayer()
-        bottomlLine8.frame = CGRect(x:0.0,y:40,width:343.0,height:1.5)
-        bottomlLine8.backgroundColor = UIColor.black.cgColor
-        stage1password.borderStyle = UITextField.BorderStyle.none
-        stage1password.layer.addSublayer(bottomlLine8)
-        stage1Passwordeyebutton.frame = CGRect(x: 348, y: 0, width: 20, height: 40)
-        
-        var bottomlLine9 = CALayer()
-        bottomlLine9.frame = CGRect(x:0.0,y:40,width:343.0,height:1.5)
-        bottomlLine9.backgroundColor = UIColor.black.cgColor
-        stage1confirmPassword.borderStyle = UITextField.BorderStyle.none
-        stage1confirmPassword.layer.addSublayer(bottomlLine9)
-        stage1confirmpasswordeyeButton.frame = CGRect(x: 348, y: 0, width: 20, height: 40)
-        
-        
-        
-        
-        
-        //Step 2
-        
-        
-        
-        step2bottomLine1.frame = CGRect(x: 0.0, y:30.0, width: 355.0, height: 1.0)
-        step2bottomLine1.backgroundColor = UIColor.black.cgColor
-        stage2OrgName.borderStyle = UITextField.BorderStyle.none
-        stage2OrgName.layer.addSublayer(step2bottomLine1)
-        
-        
-        step2bottomLine2.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine2.backgroundColor = UIColor.black.cgColor
-        stage2OrgPhone.borderStyle = UITextField.BorderStyle.none
-        stage2OrgPhone.layer.addSublayer(step2bottomLine2)
-        
-        
-        step2bottomLine3.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine3.backgroundColor = UIColor.black.cgColor
-        stage2OrgEmail.borderStyle = UITextField.BorderStyle.none
-        stage2OrgEmail.layer.addSublayer(step2bottomLine3)
-        
-        
-        step2bottomLine4.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine4.backgroundColor = UIColor.black.cgColor
-        stage2OrgWebsite.borderStyle = UITextField.BorderStyle.none
-        stage2OrgWebsite.layer.addSublayer(step2bottomLine4)
-        
-        
-        step2bottomLine5.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine5.backgroundColor = UIColor.black.cgColor
-        stage2OrgMission.borderStyle = UITextField.BorderStyle.none
-        stage2OrgMission.layer.addSublayer(step2bottomLine5)
-        
-        
-        step2bottomLine6.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine6.backgroundColor = UIColor.black.cgColor
-        stage2OrgCause.borderStyle = UITextField.BorderStyle.none
-        stage2OrgCause.layer.addSublayer(step2bottomLine6)
-        
-        
-        step2bottomLine8.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine8.backgroundColor = UIColor.black.cgColor
-        stage2OrgProfile.borderStyle = UITextField.BorderStyle.none
-        stage2OrgProfile.layer.addSublayer(step2bottomLine8)
-        
-       
-        step2bottomLine9.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine9.backgroundColor = UIColor.black.cgColor
-        stage2OrgStreet.borderStyle = UITextField.BorderStyle.none
-        stage2OrgStreet.layer.addSublayer(step2bottomLine9)
-        
-        
-        step2bottomLine10.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine10.backgroundColor = UIColor.black.cgColor
-        stage2OrgCity.borderStyle = UITextField.BorderStyle.none
-        stage2OrgCity.layer.addSublayer(step2bottomLine10)
-        
-        
-        step2bottomLine11.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine11.backgroundColor = UIColor.black.cgColor
-        stage2OrgZipCode.borderStyle = UITextField.BorderStyle.none
-        stage2OrgZipCode.layer.addSublayer(step2bottomLine11)
-        
-        
-        step2bottomLine12.frame = CGRect(x:0.0,y:30.0,width:355.0,height:1.5)
-        step2bottomLine12.backgroundColor = UIColor.black.cgColor
-        stage2OrgTaxEIN.borderStyle = UITextField.BorderStyle.none
-        stage2OrgTaxEIN.layer.addSublayer(step2bottomLine12)
-
+//        addUnderLineToField(color: .black)
         
        btnbakPressed.isHidden = false
        
@@ -402,6 +288,8 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
               NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+       // stage1DateOfBirth.setUnderLineForView()
         
     }
   @objc func keyboardWillShow(notification: NSNotification) {
@@ -907,6 +795,97 @@ attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
       
  }
     
+    func addUnderLineToField(color:UIColor)  {
+        
+             
+        stage1email.setUnderLineOfColor(color: color)
+        stage1firstName.setUnderLineOfColor(color: color)
+              
+              
+            
+              stage1lastName.setUnderLineOfColor(color: color)
+              
+             
+              stage1phoneNumber.setUnderLineOfColor(color: color)
+              
+             
+              stage1street.setUnderLineOfColor(color: color)
+              
+           
+              stage1city.setUnderLineOfColor(color: color)
+              
+              
+              stage1zipCode.setUnderLineOfColor(color: color)
+              
+              var bottomlLine8 = CALayer()
+              bottomlLine8.frame = CGRect(x:0.0,y:40,width:343.0,height:1.5)
+              bottomlLine8.backgroundColor = UIColor.black.cgColor
+              stage1password.borderStyle = UITextField.BorderStyle.none
+              stage1password.layer.addSublayer(bottomlLine8)
+              stage1Passwordeyebutton.frame = CGRect(x: 348, y: 0, width: 20, height: 40)
+              
+              var bottomlLine9 = CALayer()
+              bottomlLine9.frame = CGRect(x:0.0,y:40,width:343.0,height:1.5)
+              bottomlLine9.backgroundColor = UIColor.black.cgColor
+              stage1confirmPassword.borderStyle = UITextField.BorderStyle.none
+              stage1confirmPassword.layer.addSublayer(bottomlLine9)
+              stage1confirmpasswordeyeButton.frame = CGRect(x: 348, y: 0, width: 20, height: 40)
+              
+              
+              
+              
+              
+              //Step 2
+              
+              
+              
+            
+              stage2OrgName.setUnderLineOfColor(color: color)
+              
+              
+              
+              stage2OrgPhone.setUnderLineOfColor(color: color)
+              
+              
+              
+              
+              
+              stage2OrgEmail.setUnderLineOfColor(color: color)
+              
+              
+            
+              stage2OrgWebsite.setUnderLineOfColor(color: color)
+              
+              
+             
+              stage2OrgMission.setUnderLineOfColor(color: color)
+              
+              
+              
+              stage2OrgCause.setUnderLineOfColor(color: color)
+              
+              
+              
+              stage2OrgProfile.setUnderLineOfColor(color: color)
+              
+             
+             
+              stage2OrgStreet.setUnderLineOfColor(color: color)
+              
+              
+             
+              stage2OrgCity.setUnderLineOfColor(color: color)
+              
+              
+              
+              stage2OrgZipCode.setUnderLineOfColor(color: color)
+              
+              
+              
+              stage2OrgTaxEIN.setUnderLineOfColor(color: color)
+
+//        self.viewDidLayoutSubviews()
+    }
     
     func LightMode() {
         
@@ -1124,10 +1103,11 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
        }
     
     @IBAction func stage1DateOfBirthMethod(_ sender: Any) {
+        view.endEditing(true)
         let dateFormatter = DateFormatter()
              dateFormatter.dateFormat = "MM-dd-yyyy"
              
-            var date = Date()
+            let date = Calendar.current.date(byAdding: .year, value: 1, to: Date())!
              let formatter = DateFormatter()
         formatter.dateFormat = "dd-MM-yyyy"
         let endDate = formatter.string(from: date)
@@ -1177,7 +1157,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
             let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
             let user_id = userIDData["user_id"] as! String
-               
+
             var params2 = [
                 "user_id":user_id,
                 "user_type":"CSO",
@@ -1198,7 +1178,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
 
                 "vol_status":""
                             ]
-                
+
                 let servicehandler = ServiceHandlers()
                 servicehandler.csoeditProfileStep1(data: params2){(responce,isSuccess) in
                     if isSuccess{
@@ -1211,7 +1191,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         self.imgStep2.image = UIImage(named: "teal2.png")
                         self.imageStep1.image = UIImage(named: "gray1.png")
                         self.imgStep3.image = UIImage(named: "gray3.png")
-                        
+
                         self.stage2OrgName.text = self.data_edit_profile_details!["org_name"] as! String
                         self.stage2OrgPhone.text = self.data_edit_profile_details!["org_phone"] as! String
                         self.stage2OrgEmail.text = self.data_edit_profile_details!["org_email"] as! String
@@ -1223,37 +1203,37 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         self.stage2OrgCity.text = self.data_edit_profile_details!["org_city"] as! String
                         self.stage2SelectStateButton.setTitle(self.data_edit_profile_details!["org_state_name"] as! String, for: .normal)
                         self.user_stateID = self.data_edit_profile_details!["org_state"] as! String
-                        
+
                       //  self.DarkMode()   //prachi
                         let utility = Utility()
                     utility.fetchStateList { (stateList, isValueFetched) in
                 if let statelistL = stateList {
-                                                                            
+
                 for statename in statelistL{
-                                                                             
+
                        // //print(statename)
                         if statename["state_id"] as! String == self.user_stateID!
                                                                            {
                     self.stage2SelectStateButton.setTitle(statename["state_name"] as! String, for: .normal)
                         }
-                                                                        
+
                                     }
                         }
                                 }
-              
+
                         self.stage2OrgZipCode.text = self.data_edit_profile_details!["org_zipcode"] as! String
-                        
+
             self.user_countryID = self.data_edit_profile_details!["org_country"] as! String
         self.stage2SelectCountryButton.setTitle(self.data_edit_profile_details!["org_country_name"] as! String, for: .normal)
-                        
+
         utility.fetchCountryList { (countryList, isValueFetched) in
             if let countrylistL = countryList {
-                                                       
+
                 for countryName in countrylistL{
-                                                           
+
                         //print(countryName)
               if countryName["country_id"] as! String == self.user_countryID!
-            
+
 {
                 self.stage2SelectCountryButton.setTitle(( countryName["country_name"]as! String), for: .normal)
             }
@@ -1264,11 +1244,11 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         self.stage2uploadbuttons.isHidden = true
                         self.stage2uploadfilebuttons.isHidden = true
                         self.stage2lbnUploadFile.isHidden = true
-                        
-                        
+
+
                     }
                 }
-            
+
         }else if(validate()){
         var params =            ["user_type":"CSO",
                                  "user_device": UIDevice.current.identifierForVendor!.uuidString,
@@ -1301,8 +1281,8 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         self.imgStep2.image = UIImage(named: "teal2.png")
                                               self.imageStep1.image = UIImage(named:"gray1.png")
                                               self.imgStep3.image = UIImage(named: "gray3.png")
-                        
-                        
+
+
                        }else{
                          let msg = responce as! String
                         let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
@@ -1310,7 +1290,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         self.present(alert, animated: true)
                     }
                    }
-        
+
         }
         
     }
@@ -1482,9 +1462,23 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
                       return false
+        }else if (datefromString(strDate: self.stage1DOB!).timeIntervalSinceNow.sign == .plus) {
+            // date is in future
+            let alert = UIAlertController(title: nil, message:"Date of birth is not valid", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return false
         }
         return true
     }
+    func datefromString(strDate: String)->Date{
+           
+           let dateFormatter = DateFormatter()
+           dateFormatter.dateFormat = "MM-dd-yyyy"
+           let dateToCheck = dateFormatter.date(from: strDate)!
+           return dateToCheck
+       }
+
     
     @IBAction func stage2UploadButtonAddMoreDocument(_ sender: Any) {
         self.documentID = ""
@@ -1720,8 +1714,8 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
            "user_file_title":"",
            "org_longitude":"0",
            "org_latitude":"0"] as [String : Any]
-            
-            
+
+
             let servicehandler = ServiceHandlers()
             servicehandler.csoRegistrationStage2(data: params){(responce,isSuccess) in
                 if isSuccess{
@@ -1733,7 +1727,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                     self.imgStep2.image = UIImage(named: "gray2.png")
                                           self.imageStep1.image = UIImage(named: "gray1.png")
                                           self.imgStep3.image = UIImage(named: "teal3.png")
-                    
+
                     if self.screen == "EDIT VIEW"
                     {
                         self.stage3editprofile()
@@ -1743,7 +1737,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         if isSuccess {
                                     self.quesData = responce as! Dictionary<String,Any>
                                     }
-                                                 
+
                                 }
                            }
                        }
@@ -1796,15 +1790,16 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             self.present(alert, animated: true)
             return false
             
-        }else if(self.screen != "EDIT VIEW"){
-            if(self.numberOfDocument <= 0){
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("Upload atleast one document", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            self.present(alert, animated: true)
-            return false
         }
-
-            }
+//        else if(self.screen != "EDIT VIEW"){
+//            if(self.numberOfDocument <= 0){
+//            let alert = UIAlertController(title: nil, message: NSLocalizedString("Upload atleast one document", comment: ""), preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+//            self.present(alert, animated: true)
+//            return false
+//        }
+//
+//            }
             
             let searchValue = "501C3 Certificate"
             var currentIndex = 0
