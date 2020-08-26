@@ -24,13 +24,20 @@ class ViewController: BaseViewController {
     @IBOutlet weak var btnLogin: UIButton!    //7
     @IBOutlet weak var btnShowPassword: UIButton!   //6
     
+    
+    override func viewDidLayoutSubviews() {
+        addUnderLineToField(color: .black)
+    }
     struct Connectivity {
       static let sharedInstance = NetworkReachabilityManager()!
       static var isConnectedToInternet:Bool {
           return self.sharedInstance.isReachable
         }
     }
-    
+    func addUnderLineToField(color:UIColor)  {
+        txtUserName.setUnderLineOfColor(color: color)
+        txtPassword.setUnderLineOfColor(color: color)        
+    }
     func showIntroScreen(){
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -52,17 +59,17 @@ class ViewController: BaseViewController {
         self.txtUserName.delegate = self
         self.txtPassword.delegate = self
         
-        var bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: txtUserName.frame.height-1, width: 290.0, height: 1.0)
-        bottomLine.backgroundColor = UIColor.black.cgColor
-        txtUserName.borderStyle = UITextField.BorderStyle.none
-        txtUserName.layer.addSublayer(bottomLine)
-               
-        var bottomLine2 = CALayer()
-        bottomLine2.frame = CGRect(x: 0.0, y: txtPassword.frame.height-1, width: 290.0, height: 1.0)
-        bottomLine2.backgroundColor = UIColor.black.cgColor
-        txtPassword.borderStyle = UITextField.BorderStyle.none
-         txtPassword.layer.addSublayer(bottomLine2)
+//        var bottomLine = CALayer()
+//        bottomLine.frame = CGRect(x: 0.0, y: txtUserName.frame.height-1, width: 290.0, height: 1.0)
+//        bottomLine.backgroundColor = UIColor.black.cgColor
+//        txtUserName.borderStyle = UITextField.BorderStyle.none
+//        txtUserName.layer.addSublayer(bottomLine)
+//               
+//        var bottomLine2 = CALayer()
+//        bottomLine2.frame = CGRect(x: 0.0, y: txtPassword.frame.height-1, width: 290.0, height: 1.0)
+//        bottomLine2.backgroundColor = UIColor.black.cgColor
+//        txtPassword.borderStyle = UITextField.BorderStyle.none
+//         txtPassword.layer.addSublayer(bottomLine2)
                
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
