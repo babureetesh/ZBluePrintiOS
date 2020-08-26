@@ -82,31 +82,37 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
     
     var Name : String!
     
-    @IBOutlet weak var lblEditSetPro: UILabel!
-    @IBOutlet weak var lblEditPrivate: UILabel!
-    @IBOutlet weak var lblEditPublic: UILabel!
+//    @IBOutlet weak var lblEditSetPro: UILabel!
+//    @IBOutlet weak var lblEditPrivate: UILabel!
+//    @IBOutlet weak var lblEditPublic: UILabel!
+//
+//    @IBOutlet weak var btnEditPublicPressed: UIButton!
+//
+//    @IBOutlet weak var btnEditPrivatePressed: UIButton!
+//
+//    @IBOutlet weak var editbtnReset: UIButton!
+//
+//    @IBOutlet weak var editbtnUpdate: UIButton!
     
-    @IBOutlet weak var btnEditPublicPressed: UIButton!
-    
-    @IBOutlet weak var btnEditPrivatePressed: UIButton!
-    
-    @IBOutlet weak var editbtnReset: UIButton!
-    
-    @IBOutlet weak var editbtnUpdate: UIButton!
-    
-    
+    override func viewDidLayoutSubviews() {
+        VolGender.setDropDownImagWithInset()
+        volState.setDropDownImagWithInset()
+        volCountry.setDropDownImagWithInset()
+        addUnderLineToField(color: .black)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblEditSetPro.isHidden = true
-        lblEditPublic.isHidden = true
-        lblEditPrivate.isHidden = true
-        btnEditPublicPressed.isHidden = true
-        btnEditPrivatePressed.isHidden = true
-        editbtnReset.isHidden = true
-        editbtnUpdate.isHidden = true
-        
+//        lblEditSetPro.isHidden = true
+//        lblEditPublic.isHidden = true
+//        lblEditPrivate.isHidden = true
+//        btnEditPublicPressed.isHidden = true
+//        btnEditPrivatePressed.isHidden = true
+//        editbtnReset.isHidden = true
+//        editbtnUpdate.isHidden = true
+   
+        /*
     var bottomlLine = CALayer()
         bottomlLine.frame = CGRect(x:0.0,y:40.0,width:330.0,height:1.5)
        bottomlLine.backgroundColor = UIColor.black.cgColor
@@ -166,7 +172,7 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
         lineView.borderColor = UIColor.black
         lineView.backgroundColor = UIColor.black
         VolDOB.addSubview(lineView)
-        
+        */
            volZipCode.delegate = self
         
        self.btnPrivatePressed.setImage(UIImage(named: "checkedButton.png"), for: .normal)
@@ -257,7 +263,7 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
                         }
 
                         
-                        self.lblEditSetPro.isHidden = false
+//                        self.lblEditSetPro.isHidden = false
 //                        self.lblEditPublic.isHidden = false
 //                        self.lblEditPrivate.isHidden = false
 //                        self.btnEditPublicPressed.isHidden = false
@@ -299,10 +305,22 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
             
         }
     }
-    
+    func addUnderLineToField(color:UIColor)  {
+        volEmail.setUnderLineOfColor(color: color)
+        volFirstName.setUnderLineOfColor(color: color)
+        volLastName.setUnderLineOfColor(color: color)
+        volPhoneNumber.setUnderLineOfColor(color: color)
+        volStreet.setUnderLineOfColor(color: color)
+        volCity.setUnderLineOfColor(color: color)
+        volZipCode.setUnderLineOfColor(color: color)
+        volPassword.setUnderLineOfColor(color: color)
+        volconfirmpassword.setUnderLineOfColor(color: color)
+        
+        
+    }
     func DarkMode(){
         
-        self.lblEditSetPro.textColor = .white
+//        self.lblEditSetPro.textColor = .white
         self.lblZoeBlueprint.textColor = .white
         self.view.backgroundColor = .black
         self.volview.backgroundColor = .black
