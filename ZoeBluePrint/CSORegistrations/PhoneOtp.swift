@@ -51,12 +51,46 @@ var countdownTimer: Timer!
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
                  NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
      self.btnResendOTP.isHidden = true
-         startTimer()
+         
     }
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
         
-        self.otptxtfld.text = self.phoneotp
+     //   self.otptxtfld.text = self.phoneotp
+        self.callForSendOtp()
+        
+    }
+    
+    func callForSendOtp(){
+        
+        //sendOTPtoMail
+        
+        let params = ["user_id":self.user_id,
+                      "user_type":self.user_type]
+        let servicehandler = ServiceHandlers()
+        servicehandler.sendOTPtoMail(data: params as Dictionary<String, Any>){(responce,isSuccess) in
+            if isSuccess{
+                
+                let otp_data = responce! as! Dictionary<String,Any>
+                if(otp_data["res_status"] as! String == "200"){
+                     let alert = UIAlertController(title: nil, message: NSLocalizedString("OTP send to registered email!", comment: ""), preferredStyle: .alert)
+                                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(a) in
+                                           self.otptxtfld.text = ""
+                                       }))
+                            self.present(alert, animated: true)
+                    self.startTimer()
+               
+                }else{
+                    let alert = UIAlertController(title: "Error Occured", message: NSLocalizedString("Resend Otp!", comment: ""), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(a) in
+                        self.otptxtfld.text = ""
+                        self.btnResendOTP.isHidden = false
+                    }))
+         self.present(alert, animated: true)
+                }
+            }
+        }
+        
         
     }
     
@@ -105,8 +139,9 @@ var countdownTimer: Timer!
 
 
     @IBAction func ResendOTP(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        
+       // self.dismiss(animated: true, completion: nil)
+       
+        self.callForSendOtp()
     }
     
     @IBAction func submit(_ sender: Any) {
@@ -121,7 +156,7 @@ var countdownTimer: Timer!
                     
                     let otp_data = responce! as! Dictionary<String,Any>
                     if(otp_data["res_status"] as! String == "200"){
-                        let alert = UIAlertController(title: nil, message: NSLocalizedString("Mobile validate Successfully", comment: ""), preferredStyle: .alert)
+                        let alert = UIAlertController(title: nil, message: NSLocalizedString("Email validate Successfully", comment: ""), preferredStyle: .alert)
                         let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default) {
                             UIAlertAction in
                             UIApplication.shared.keyWindow?.rootViewController = self.storyboard!.instantiateViewController(withIdentifier: "login")

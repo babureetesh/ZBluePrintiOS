@@ -469,6 +469,44 @@ func getDashboardUpComingEventData(userData:String, onCompletion:@escaping Compl
             }
             
         }
+    func sendOTPtoMail(data:Dictionary<String,Any>, onCompletion:@escaping CompletionHandler)  {
+           
+           ActivityLoaderView.startAnimating()
+           
+          
+           let urlString = baseURL+"user-access.php?api_key=1234&action=send_mail_otp"
+           Alamofire.request(urlString, method: .post, parameters: data,encoding: JSONEncoding.default, headers: nil).responseJSON {
+               response in
+               switch response.result {
+               case .success:
+                   if let JSON = response.result.value as? [String: Any] {
+                       //print(JSON)
+                       let message = JSON["res_status"] as! String
+                       //print(message)
+                       if(message == "200"){
+                         
+                           ActivityLoaderView.stopAnimating()
+                           onCompletion(JSON,true)
+                          
+                           
+                       }
+                    else if(message == "401"){
+                       
+                        ActivityLoaderView.stopAnimating()
+                       onCompletion(JSON,true)
+                      
+                   }
+                   }
+                   break
+               case .failure(let error):
+                   ActivityLoaderView.stopAnimating()
+                   //print(error)
+                   onCompletion(nil,false)
+               }
+           }
+           
+       }
+    
    func getQuestionListForCSO( onCompletion:@escaping CompletionHandler)  {
              
              ActivityLoaderView.startAnimating()

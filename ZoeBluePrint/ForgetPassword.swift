@@ -73,6 +73,13 @@ class ForgetPassword: UIViewController,UITextFieldDelegate {
     
     @IBAction func SubmitBUtton(_ sender: Any) {
         
+        if (txtEmail.text!.isEmpty) {
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Enter Email", comment: ""), preferredStyle: .alert)
+                                  alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                                  self.present(alert, animated: true)
+            return
+        }
+        
         //forgotPassword
         if(self.isValidEmail(text: self.txtEmail.text!)){
           let serviceHanlder = ServiceHandlers()
@@ -89,7 +96,7 @@ class ForgetPassword: UIViewController,UITextFieldDelegate {
                         
                        print(responce)
                         if(responce as! String! == "401"){
-                            let alert = UIAlertController(title: nil, message: NSLocalizedString("Email id not registered!", comment: ""), preferredStyle: .alert)
+                            let alert = UIAlertController(title: nil, message: NSLocalizedString("Email id is not registered!", comment: ""), preferredStyle: .alert)
                             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                             self.present(alert, animated: true)
                             self.txtEmail.text = ""

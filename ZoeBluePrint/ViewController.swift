@@ -121,6 +121,23 @@ class ViewController: BaseViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         guard let userName = txtUserName.text, isValidUserName(text: userName) else {
             highlightTextFieldForError(textField: txtUserName, label: lblUserName, placeHolder: NSLocalizedString("Invalid User Name", comment: ""))
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Please Enter Valid Email", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            
+                        // add an action (button)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+            // show the alert
+                        self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if (txtPassword.text!.isEmpty){
+            
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Please Enter Password", comment: ""), preferredStyle: UIAlertController.Style.alert)
+                       
+                                   // add an action (button)
+                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+                       // show the alert
+                                   self.present(alert, animated: true, completion: nil)
             return
         }
        
