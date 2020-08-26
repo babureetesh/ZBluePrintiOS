@@ -11,6 +11,7 @@ import UIKit
 class IntroScreenViewController: UIViewController {
 
     
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var btnContinueDone: UIButton!
     @IBOutlet weak var lblDesc: UILabel!
     @IBOutlet weak var lblTitle: UILabel!
@@ -22,7 +23,7 @@ class IntroScreenViewController: UIViewController {
         introDataDictArray = [["imgname": "trackyourhours.png", "title": "TRACK YOUR HOURS", "desc":"One centralized location to track your community service hours and manage your progress to put target GPA.", "btntitle": "CONTINUE","bckColor": "C5EFE7"],
                               ["imgname": "placefordocument.png", "title": "A PLACE FOR DOCUMENTS", "desc":"Load and store files to keep you organized and on track. Managing your hours quick and easy.", "btntitle": "CONTINUE","bckColor": "F7BED0"],
                               ["imgname": "bookyourcsoevents.png", "title": "BOOK YOUR ORGANIZATION EVENTS", "desc":"It's so easy to manage your volunteer Calendar and connect with organizations.", "btntitle": "CONTINUE","bckColor": "FDDBB3"],
-                              ["imgname": "somewheretohangout.png", "title": "SOMEWHERE TO HANGOUT", "desc":"KEEP the conversation going! Chat with your friends and keep in the loop with the organization announcements.", "btntitle": "CONTINUE","bckColor": "C5EFE7"],
+                              ["imgname": "somewheretohangout.png", "title": "SOMEWHERE TO HANGOUT", "desc":"Keep the conversation going! Chat with your friends and keep in the loop with the organization announcements.", "btntitle": "CONTINUE","bckColor": "C5EFE7"],
                               ["imgname": "youareconnected.png", "title": "YOU'RE CONNECTED", "desc":"Have direct access to school and organization administrators. Ask questions, get feedback and keep up to date.", "btntitle": "I'M DONE","bckColor": "F7BED0"]]
         
         
@@ -31,7 +32,77 @@ class IntroScreenViewController: UIViewController {
         self.btnContinueDone.setTitle(introDataDictArray[index]["btntitle"], for: .normal)
         self.view.backgroundColor =  self.colorWithHexString(hexString: introDataDictArray[index]["bckColor"]!)
         self.imgviewIntro.image = UIImage(named: introDataDictArray[index]["imgname"]!)
+        
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+        self.view.addGestureRecognizer(swipeRight)
+
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.respondToSwipeGesture))
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+        self.view.addGestureRecognizer(swipeLeft)
+        pageControl.currentPage = index
+        
     }
+    
+    @objc func respondToSwipeGesture(gesture: UIGestureRecognizer)
+    {
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer
+        {
+            switch swipeGesture.direction
+            {
+            case UISwipeGestureRecognizer.Direction.right:
+                     //write your logic for right swipe
+                      print("Swiped right")
+                      self.handleSwipeLeft()
+
+            case UISwipeGestureRecognizer.Direction.left:
+                     //write your logic for left swipe
+                      print("Swiped left")
+                      self.handleSwipeRight()
+
+                default:
+                    break
+            }
+        }
+    }
+    
+    func handleSwipeRight(){
+        if (index < 5){
+        index = index + 1
+        if (index > 4) {
+            
+             dismiss(animated: true, completion: nil)
+        }else{
+            self.view.backgroundColor =  self.colorWithHexString(hexString: introDataDictArray[index]["bckColor"]!)
+            self.lblTitle.text = introDataDictArray[index]["title"]
+            self.lblDesc.text = introDataDictArray[index]["desc"]
+            self.btnContinueDone.setTitle(introDataDictArray[index]["btntitle"], for: .normal)
+            self.imgviewIntro.image = UIImage(named: introDataDictArray[index]["imgname"]!)
+        }
+        }
+        pageControl.currentPage = index
+    }
+    
+    func handleSwipeLeft(){
+        if (index > 0) {
+        index = index - 1
+        if (index >= 0) {
+            
+             self.view.backgroundColor =  self.colorWithHexString(hexString: introDataDictArray[index]["bckColor"]!)
+             self.lblTitle.text = introDataDictArray[index]["title"]
+             self.lblDesc.text = introDataDictArray[index]["desc"]
+             self.btnContinueDone.setTitle(introDataDictArray[index]["btntitle"], for: .normal)
+             self.imgviewIntro.image = UIImage(named: introDataDictArray[index]["imgname"]!)
+            }
+            
+        }
+        pageControl.currentPage = index
+        
+    }
+    
+    
+    
+    
     @IBAction func btnSkipClicked(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
@@ -51,6 +122,7 @@ class IntroScreenViewController: UIViewController {
             self.btnContinueDone.setTitle(introDataDictArray[index]["btntitle"], for: .normal)
             self.imgviewIntro.image = UIImage(named: introDataDictArray[index]["imgname"]!)
         }
+        pageControl.currentPage = index
     }
     
     func colorWithHexString(hexString: String, alpha:CGFloat = 1.0) -> UIColor {
@@ -87,3 +159,4 @@ class IntroScreenViewController: UIViewController {
     */
 
 }
+

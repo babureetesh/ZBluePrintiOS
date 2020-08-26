@@ -1447,6 +1447,12 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             present(alert, animated: true)
                        return false
+        }else  if !(self.validatePassword(password: self.stage1password.text!) )
+        {
+            let alert = UIAlertController(title: NSLocalizedString("Alert!", comment: ""), message: NSLocalizedString("Password must be at least 8 characters 1 uppercase 1 lowercase and 1 number", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
         }else if(self.stage1confirmPassword.text == ""){
             let alert = UIAlertController(title: nil, message: NSLocalizedString("Confirm Password Is Empty", comment: ""), preferredStyle: .alert)
                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
@@ -1471,6 +1477,18 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         }
         return true
     }
+    
+    
+    func validatePassword(password: String) -> Bool
+    {
+        let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
+
+        let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
+
+        return passwordValidation.evaluate(with: password)
+    }
+    
+
     func datefromString(strDate: String)->Date{
            
            let dateFormatter = DateFormatter()
