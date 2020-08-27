@@ -100,6 +100,10 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
     
     @IBOutlet weak var scrollerView: UIScrollView!
     
+     @IBOutlet weak var stage2ScrollView: UIScrollView!
+    
+     @IBOutlet weak var stage3ScrollView: UIScrollView!
+    
     @IBOutlet weak var stage1zipCode: UITextField!
     
     @IBOutlet weak var stage1DateOfBirth: UIButton!
@@ -240,6 +244,9 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
   
+        
+        stage2ScrollView.isHidden = true
+        stage3ScrollView.isHidden = true
         // Do any additional setup after loading the view.
         
 //        addUnderLineToField(color: .black)
@@ -1186,6 +1193,9 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                            self.user_countryID = ""
                         self.stage1view.isHidden = true
                         self.stage2view.isHidden = false
+                        self.scrollerView.isHidden = true
+                        self.stage2ScrollView.isHidden = false
+                        self.stage3ScrollView.isHidden = true
                         self.boolShowBackAlert = true
                         self.lblStagesInformation.text = NSLocalizedString("Organization Information", comment: "")
                         self.imgStep2.image = UIImage(named: "teal2.png")
@@ -1737,6 +1747,9 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             let servicehandler = ServiceHandlers()
             servicehandler.csoRegistrationStage2(data: params){(responce,isSuccess) in
                 if isSuccess{
+                    self.scrollerView.isHidden = true
+                    self.stage2ScrollView.isHidden = true
+                    self.stage3ScrollView.isHidden = false
                     self.stage1view.isHidden = true
                     self.stage2view.isHidden = true
                     self.stage3view.isHidden = false
