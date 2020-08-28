@@ -1052,7 +1052,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func stage1Gender(_ sender: Any) {
-        let contents = ["Female","Male","Select Gender"]
+        let contents = ["Female","Male"]
                showPopoverForView(view: sender, contents: contents)
         
     }

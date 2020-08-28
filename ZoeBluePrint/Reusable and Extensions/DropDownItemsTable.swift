@@ -43,7 +43,9 @@ class DropDownItemsTable: UITableViewController {
             self.valuesType = .unknown
         
         }
+    
         super.init(style: .plain)
+        self.tableView.tableFooterView = UIView()
 
         
     }
@@ -98,14 +100,12 @@ class DropDownItemsTable: UITableViewController {
         
         
         if let strings = stringValues {
-            self.preferredContentSize = CGSize(width: 300, height: 140)
             cellTitle = strings[indexPath.row]
         }else  if let dictionaries = dictionaryValues {
             let rowData = dictionaries[indexPath.row]
             if let title = rowData [GetStateServiceStrings.keyStateName] as? String {
                 cellTitle = title
             } else  if let title = rowData [GetCountryServiceStrings.keyCountryName] as? String {
-                self.preferredContentSize = CGSize(width: 300, height:50)
                 cellTitle = title
             } else  if let title = rowData [GetAddShiftSelectShiftStrings.keyShiftTaskName] as? String {
                 cellTitle = title
