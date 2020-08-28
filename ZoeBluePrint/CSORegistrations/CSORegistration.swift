@@ -257,6 +257,11 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
        self.stage3view.isHidden = true
         //self.stage2DocumentListView.isHidden = true
         
+//        stage3ScrollView.isHidden = false // to comment
+//        self.stage3view.isHidden = false // to comment
+        
+        
+        
         self.password_secure_eye = true
         self.confirm_secure_eye = true
         self.stage1password.isSecureTextEntry = true
