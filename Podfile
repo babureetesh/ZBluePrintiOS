@@ -19,4 +19,5 @@ pod 'FLAnimatedImage', '~> 1.0'
  pod 'AlamofireImage'
 pod 'RSKImageCropper'
 pod 'NYTPhotoViewer', '~> 1.0.0'
+pod 'IQKeyboardManagerSwift'
 end

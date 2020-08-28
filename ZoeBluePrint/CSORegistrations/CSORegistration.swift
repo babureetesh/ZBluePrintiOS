@@ -293,9 +293,9 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
         stage2DocumentListBackgroundView.addGestureRecognizer(tap_doc)
         stage2DocumentListBackgroundView.isUserInteractionEnabled = true
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-              NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+//              NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+//        
        // stage1DateOfBirth.setUnderLineForView()
         
     }

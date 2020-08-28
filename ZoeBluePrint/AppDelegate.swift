@@ -8,7 +8,7 @@
 
 import UIKit
 import SendBirdSDK // Sendbird
-
+import IQKeyboardManagerSwift
 @UIApplicationMain
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         SBDMain.initWithApplicationId("F46FE267-AE82-45B2-9F44-0BD7266FCFDE")
+         IQKeyboardManager.shared.enable = true
         //Thanks Rishi
         // Override point for customization after application launch.
        //UILabel.appearance(whenContainedInInstancesOf: [UITextField.self]).textColor = UIColor.black
