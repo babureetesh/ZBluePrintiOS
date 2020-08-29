@@ -12,6 +12,8 @@ class RegistrationViewController: BaseViewController {
 
     
     
+    @IBOutlet weak var viewOrganization: UIView!
+    @IBOutlet weak var viewVolunteer: UIView!
     @IBOutlet weak var lblAmVolunteer: UILabel!
     
     @IBOutlet weak var lblAmCSO: UILabel!
@@ -21,7 +23,25 @@ class RegistrationViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let tapVol = UITapGestureRecognizer(target: self, action: #selector(self.handleTapVol(_:)))
+        self.viewVolunteer.addGestureRecognizer(tapVol)
+        
+        let tapCso = UITapGestureRecognizer(target: self, action: #selector(self.handleTapCso(_:)))
+        self.viewOrganization.addGestureRecognizer(tapCso)
     }
+    
+    @objc func handleTapVol(_ sender: UITapGestureRecognizer? = nil) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "volreg") as! VolRegistration
+        self.present(nextViewController, animated:true, completion:nil)
+        
+    }
+    @objc func handleTapCso(_ sender: UITapGestureRecognizer? = nil) {
+           
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "CSORegistrationViewController") as! CSORegistration
+        self.present(nextViewController, animated:true, completion:nil)
+       }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
