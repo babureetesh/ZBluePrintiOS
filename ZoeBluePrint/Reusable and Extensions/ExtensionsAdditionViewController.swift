@@ -119,6 +119,7 @@ extension UIButton {
         setImage(UIImage(named: "dropdownarrow"), for: .normal)
         imageEdgeInsets = UIEdgeInsets(top: 0, left: self.frame.size.width-30, bottom: -2, right: 0)
         titleEdgeInsets = UIEdgeInsets(top: 0, left: -20, bottom: 0, right: 0)
+        contentHorizontalAlignment = .leading
     }
 }
 
