@@ -1281,7 +1281,22 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                                  "user_gender": self.user_gender,
                                  "user_pass": self.stage1password.text as? String
                    ]
-                   //print(params)
+            
+            stage2OrgStreet.text = self.stage1street.text
+            stage2OrgCity.text = self.stage1city.text
+            stage2OrgZipCode.text = self.stage1zipCode.text
+            stage2SelectStateButton.setTitle(stage1UserStateButton.currentTitle, for: .normal)
+            //user_stateID elf.user_stateID self.user_stateID
+           stage2SelectCountryButton.setTitle(stage1userCountryButton.currentTitle, for: .normal)
+            //self.user_countryID  self.user_countryID as? String,
+//            self.stage1view.isHidden = true
+//            self.stage2view.isHidden = false
+//            self.scrollerView.isHidden = true
+//            self.stage2ScrollView.isHidden = false
+//            self.stage3ScrollView.isHidden = true
+                                  
+                                  
+                   print(params)
                    let servicehandler = ServiceHandlers()
                    servicehandler.csoRegistrationStage1(data: params){(responce,isSuccess) in
                        if isSuccess{
@@ -1292,6 +1307,8 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         self.stage1view.isHidden = true
                         self.stage2view.isHidden = false
                         self.scrollerView.isHidden = true
+
+
                         self.stage2ScrollView.isHidden = false
                         self.stage3ScrollView.isHidden = true
                         self.boolShowBackAlert = true
@@ -1481,7 +1498,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             present(alert, animated: true)
                        return false
-        }else if(self.stage1DOB == ""){
+        }else if((self.stage1DOB == "") || (self.stage1DOB == nil)){
             let alert = UIAlertController(title: nil, message:"Date of birth is empty", preferredStyle: .alert)
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
