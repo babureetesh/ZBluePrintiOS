@@ -156,7 +156,7 @@ var countdownTimer: Timer!
                     
                     let otp_data = responce! as! Dictionary<String,Any>
                     if(otp_data["res_status"] as! String == "200"){
-                        let alert = UIAlertController(title: nil, message: NSLocalizedString("Email validate Successfully", comment: ""), preferredStyle: .alert)
+                        let alert = UIAlertController(title: nil, message: NSLocalizedString("OTP Validated Successfully", comment: ""), preferredStyle: .alert)
                         let okAction = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default) {
                             UIAlertAction in
                             UIApplication.shared.keyWindow?.rootViewController = self.storyboard!.instantiateViewController(withIdentifier: "login")
