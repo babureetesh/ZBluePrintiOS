@@ -1073,7 +1073,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
 //        present(alert, animated: true)
 //         return false
 //         }
-    else if(self.volDOB1 == ""){
+    else if((self.volDOB1 == "") || (self.volDOB1 == nil)){
             let alert = UIAlertController(title: nil, message:NSLocalizedString("Date Of Birth Is Empty", comment: ""), preferredStyle: .alert)
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
