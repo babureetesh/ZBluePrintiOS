@@ -576,7 +576,7 @@ self.volState.setTitleColor(UIColor.black, for: UIControl.State.normal)
             self.volZipCode.text = ""
             self.volCountry.setTitle("Select Country", for: .normal)
             self.user_countryID = "1"
-            self.VolDOB.setTitle("Select Date Of Birth", for: .normal)
+            self.VolDOB.setTitle("Select Date of Birth", for: .normal)
             self.volDOB1 = ""
             self.volPassword.text = ""
             self.volconfirmpassword.text = ""
@@ -916,7 +916,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
         self.volZipCode.text = ""
         self.volCountry.setTitle("Select Country", for: .normal)
         self.user_countryID = "1"
-        self.VolDOB.setTitle("Select Date Of Birth", for: .normal)
+        self.VolDOB.setTitle("Select Date of Birth", for: .normal)
         self.volDOB1 = ""
         self.volPassword.text = ""
         self.volconfirmpassword.text = ""
@@ -1066,6 +1066,16 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
                                self.present(alert, animated: true, completion: nil)
                                return false
                            
+                       }else if(self.user_stateID == nil){
+                           let alert = UIAlertController(title: nil, message: NSLocalizedString("State Not Selected", comment: ""), preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                           present(alert, animated: true)
+                           return false
+                       }else if(self.user_countryID == nil){
+                           let alert = UIAlertController(title: nil, message: NSLocalizedString("Country Not Selected", comment: ""), preferredStyle: .alert)
+                           alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                           present(alert, animated: true)
+                           return false
                        }
 //        else if(self.volZipCode.text == ""){
 //        let alert = UIAlertController(title: nil, message: "ZipCode is Empty", preferredStyle: .alert)
@@ -1074,15 +1084,20 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
 //         return false
 //         }
     else if((self.volDOB1 == "") || (self.volDOB1 == nil)){
-            let alert = UIAlertController(title: nil, message:NSLocalizedString("Date Of Birth Is Empty", comment: ""), preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message:NSLocalizedString("Date of Birth is empty.", comment: ""), preferredStyle: .alert)
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
                       return false
         }else if (datefromString(strDate: self.volDOB1!).timeIntervalSinceNow.sign == .plus) {
             // date is in future
-            let alert = UIAlertController(title: nil, message:"Date of birth is not valid", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message:"Date of Birth is not valid", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             self.present(alert, animated: true)
+            return false
+        }else if(self.user_gender == "" || self.user_gender == nil){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Gender not selected", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
             return false
         }
         else if(self.volPassword.text == ""){
@@ -1090,7 +1105,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
                       return false
-        }else if(self.volconfirmpassword.text == ""){
+        }else  if !(self.validatePassword(password: self.volPassword.text!) )
+        {
+            let alert = UIAlertController(title: NSLocalizedString("Alert!", comment: ""), message: NSLocalizedString("Password must be at least 8 characters 1 uppercase 1 lowercase and 1 number", comment: ""), preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        else if(self.volconfirmpassword.text == ""){
             let alert = UIAlertController(title: nil, message:NSLocalizedString("Confirm Password Is Empty", comment: ""), preferredStyle: .alert)
                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                       self.present(alert, animated: true)
@@ -1106,16 +1128,6 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
 //            present(alert, animated: true)
 //            return false
 //        }
-        } else if(self.user_countryID == nil){
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("Country Not Selected", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            present(alert, animated: true)
-            return false
-        }else if(self.user_gender == "" || self.user_gender == nil){
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("Gender not selected", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            present(alert, animated: true)
-            return false
         }
         return true
     }
@@ -1126,6 +1138,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
         let dateToCheck = dateFormatter.date(from: strDate)!
         return dateToCheck
     }
+    func validatePassword(password: String) -> Bool
+       {
+           let regularExpression = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[$@$!%*?&])[A-Za-z\\d$@$!%*?&]{8,}"
+
+           let passwordValidation = NSPredicate.init(format: "SELF MATCHES %@", regularExpression)
+
+           return passwordValidation.evaluate(with: password)
+       }
     func validate2() -> Bool {
        if(self.volFirstName.text == ""){
             let alert = UIAlertController(title: nil, message:NSLocalizedString("First Name Is Empty", comment: ""), preferredStyle: .alert)
@@ -1138,7 +1158,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             self.present(alert, animated: true)
             return false
         }else if(self.volDOB1 == ""){
-            let alert = UIAlertController(title: nil, message:NSLocalizedString("Date Of Birth Is Empty", comment: ""), preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message:NSLocalizedString("Date of Birth is empty.", comment: ""), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             self.present(alert, animated: true)
             return false

@@ -183,7 +183,7 @@ extension ViewController:UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         if let textFieldText = textField.text {
             if textField == txtUserName {
-                textField.textColor = .red
+                //textField.textColor = .red
                 if isValidUserName(text: textFieldText) {
                     textField.textColor = .black
                 }
@@ -193,6 +193,26 @@ extension ViewController:UITextFieldDelegate {
                     textField.textColor = .black
                 }
             }
+        }
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+       if textField == txtUserName {
+        if isValidUserName(text: textField.text!) {
+              textField.textColor = .black
+            textField.layer.borderWidth = 0.0
+          }else{
+            textField.textColor = .red
+            textField.layer.borderWidth = 1.0
+            lblUserName.textColor = .red
+            textField.layer.borderColor = UIColor.red.cgColor
+        }
+        }
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == txtUserName {
+            textField.textColor = .black
+            lblUserName.textColor = .black
+            textField.layer.borderWidth = 0.0
         }
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

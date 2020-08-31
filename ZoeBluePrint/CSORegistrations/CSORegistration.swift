@@ -1445,28 +1445,29 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             present(alert, animated: true)
             return false
-        }else if !(self.isValidPhoneNumber(text:self.stage1phoneNumber.text!)){
+        } else if(self.stage1firstName.text == ""){
+                   let alert = UIAlertController(title: nil, message: NSLocalizedString("First Name cannot be blank", comment: ""), preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                   present(alert, animated: true)
+                   return false
+               }else if(self.stage1lastName.text == ""){
+                   let alert = UIAlertController(title: nil, message: NSLocalizedString("Last Name cannot be blank", comment: ""), preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                   present(alert, animated: true)
+                   return false
+               }else if(self.stage1phoneNumber.text == ""){
+                   let alert = UIAlertController(title: nil, message: NSLocalizedString("Phone Number cannot be blank", comment: ""), preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                   present(alert, animated: true)
+                   return false
+               }
+        else if !(self.isValidPhoneNumber(text:self.stage1phoneNumber.text!)){
             let alert = UIAlertController(title: nil, message: NSLocalizedString("Not a valid phone number.", comment: ""), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             present(alert, animated: true)
             return false
         }
-        else if(self.stage1firstName.text == ""){
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("First Name cannot be blank", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            present(alert, animated: true)
-            return false
-        }else if(self.stage1lastName.text == ""){
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("Last Name cannot be blank", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            present(alert, animated: true)
-            return false
-        }else if(self.stage1phoneNumber.text == ""){
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("Phone Number cannot be blank", comment: ""), preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            present(alert, animated: true)
-            return false
-        }
+       
         else if(self.user_stateID == nil){
             let alert = UIAlertController(title: nil, message: NSLocalizedString("State not selected", comment: ""), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
@@ -1474,6 +1475,22 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             return false
         }else if(self.user_countryID == nil){
             let alert = UIAlertController(title: nil, message: NSLocalizedString("Country Not Selected", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }else if((self.stage1DOB == "") || (self.stage1DOB == nil)){
+            let alert = UIAlertController(title: nil, message:"Date of Birth is empty.", preferredStyle: .alert)
+                      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                      self.present(alert, animated: true)
+                      return false
+        }else if (datefromString(strDate: self.stage1DOB!).timeIntervalSinceNow.sign == .plus) {
+            // date is in future
+            let alert = UIAlertController(title: nil, message:"Date of Birth is not valid", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return false
+        }else if(self.user_gender == "" || self.user_gender == nil){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Gender not selected", comment: ""), preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             present(alert, animated: true)
             return false
@@ -1498,17 +1515,6 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
             present(alert, animated: true)
                        return false
-        }else if((self.stage1DOB == "") || (self.stage1DOB == nil)){
-            let alert = UIAlertController(title: nil, message:"Date of birth is empty", preferredStyle: .alert)
-                      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-                      self.present(alert, animated: true)
-                      return false
-        }else if (datefromString(strDate: self.stage1DOB!).timeIntervalSinceNow.sign == .plus) {
-            // date is in future
-            let alert = UIAlertController(title: nil, message:"Date of birth is not valid", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
-            self.present(alert, animated: true)
-            return false
         }
         return true
     }
@@ -2084,8 +2090,12 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
            self.user_id = (self.regStage1data!["user_id"] as! String)
                                      self.user_stateID = ""
                                      self.user_countryID = "1"
-                                  self.stage1view.isHidden = true
-                                  self.stage2view.isHidden = false
+        self.stage1view.isHidden = true
+        self.stage2view.isHidden = false
+        self.scrollerView.isHidden = true
+        self.stage2ScrollView.isHidden = false
+        self.stage3ScrollView.isHidden = true
+        
         self.boolShowBackAlert = true
                                   self.lblStagesInformation.text = NSLocalizedString("Organization Information", comment: "")
                                   self.imgStep2.image = UIImage(named: "teal2.png")
@@ -2103,6 +2113,11 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
            self.stage1view.isHidden = true
            self.stage2view.isHidden = true
            self.stage3view.isHidden = false
+        
+        self.scrollerView.isHidden = true
+        self.stage2ScrollView.isHidden = true
+        self.stage3ScrollView.isHidden = false
+        
         self.boolShowBackAlert = true
            self.lblStagesInformation.text = "More Information"
            self.imgStep2.image = UIImage(named: "gray2.png")
