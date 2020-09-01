@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Alamofire
+import MobileCoreServices
 class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIDocumentPickerDelegate,UITextFieldDelegate,XMLParserDelegate, UITableViewDataSource,UITableViewDelegate,csoregistrationdeletebutton{
    
     @IBOutlet weak var imageCal: UIImageView!
@@ -227,6 +228,13 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
     var step2bottomLine10 = CALayer()
     var step2bottomLine11 = CALayer()
     var step2bottomLine12 = CALayer()
+    
+    struct Connectivity {
+        static let sharedInstance = NetworkReachabilityManager()!
+        static var isConnectedToInternet:Bool {
+            return self.sharedInstance.isReachable
+        }
+    }
     
     override func viewDidLayoutSubviews() {
 //        stage2OrgPhone.setUnderLine()
@@ -1042,9 +1050,21 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         {
              guard let fileUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
                             else { return }
-                        self.step2fileName = fileUrl.lastPathComponent
-           self.step2doc =  (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
-            //print(step2doc)
+        
+            let selFileName = fileUrl.lastPathComponent
+            let selFileData =  (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+            
+            if (getFileSizeMBfromData(selFileData) > 5.0 ){
+                   let alert = UIAlertController(title: nil, message: "File size must be less than 5 MB.", preferredStyle: .alert)
+                                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                                         self.present(alert, animated: true)
+            self.step2doc = nil
+               }else{
+                   self.step2fileName = selFileName
+                   self.step2doc = selFileData
+               
+               }
+            
            
         }else{
            // //print("error")
@@ -1348,7 +1368,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
     @IBAction func stage2OrgDocumentTypeButton(_ sender: Any) {
         if !(self.documentID == nil){
         let alert = UIAlertController(title: NSLocalizedString("UPLOAD FILES FROM", comment: ""), message: "", preferredStyle: .alert)
-                             let gallery = UIAlertAction(title: NSLocalizedString("UPLOAD FILES FROM", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
+                             let gallery = UIAlertAction(title: NSLocalizedString("Image from Gallery", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
                                  /** What we write here???????? **/
                                
                                   let image = UIImagePickerController()
@@ -1376,7 +1396,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
 //})
                       let drive = UIAlertAction(title: NSLocalizedString("Files", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
                                               /** What we write here???????? **/
-                                             let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item","public.data", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content", "public.text"], in: .import)
+                                             let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item","public.data", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content", "public.text","com.microsoft.word.doc","org.openxmlformats.wordprocessingml.document", kUTTypePDF as String], in: .import)
                                                   
                                              documentPicker.delegate = self
                                           
@@ -1578,18 +1598,68 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
     }
     
     
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+
+     let cico = url as URL
+     print(cico)
+     print(url)
+
+     print(url.lastPathComponent)
+
+     print(url.pathExtension)
+        var selFileName:String?
+        var selFileData:Data?
+    do {
+         // inUrl is the document's URL
+            selFileName = url.lastPathComponent
+            selFileData = try Data(contentsOf: url) // Getting file data here
+        } catch {
+            print("Error Occured")
+        }
+
+
+        if (getFileSizeMBfromData(selFileData!) > 5.0 ){
+                   let alert = UIAlertController(title: nil, message: "File size must be less than 5 MB.", preferredStyle: .alert)
+                                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                                         self.present(alert, animated: true)
+            self.step2doc = nil
+               }else{
+                   self.step2fileName = selFileName
+                   self.step2doc = selFileData
+               
+               }
+    }
+    
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+
+        print(" cancelled by user")
+
+        dismiss(animated: true, completion: nil)
+
+    }
+    
+    func getFileSizeMBfromData(_ filedata : Data)-> Float{
+        var string = ""
+     print("There were \(filedata.count) bytes")
+      let bcf = ByteCountFormatter()
+      bcf.allowedUnits = [.useMB] // optional: restricts the units to MB only
+      bcf.countStyle = .file
+    string = bcf.string(fromByteCount: Int64(filedata.count))
+      print("formatted result: \(string)")
+        return (string as NSString).floatValue
+    }
+    
     
     @IBAction func stage2DocumentUploadButton(_ sender: Any) {
         
         
-        
+        let strNewDocName = self.documentName!.replacingOccurrences(of: "'", with: "%27")
         if((self.step2doc != nil) && (self.documentID != "")){
             let params = ["action": "doc_locker_file_upload",
                           "api_key": "1234",
                           "user_id": self.user_id,
                           "user_device": UIDevice.current.identifierForVendor!.uuidString,
-                          "document_name": self.documentName,
-                          "user_type": "CSO",
+                          "document_name": strNewDocName,
                           "document_type": self.documentID
                          
                         ]
@@ -1597,7 +1667,9 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             servicehandler.csoregistrationStep2fileUPload(data_details: params, file: self.step2doc!,file_name: self.step2fileName!){ (responce,isSuccess) in
                 if isSuccess {
                   // //print("UPload document")
-                    let alert = UIAlertController(title: nil, message:NSLocalizedString("Document Upload Successfully", comment: "") , preferredStyle: .alert)
+                    let strMessage = responce as! String
+                    
+                    let alert = UIAlertController(title: nil, message:NSLocalizedString(strMessage, comment: "") , preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { (action) in
                         self.documentUploaded.append(self.documentName! )
                         self.documentID = ""
@@ -1607,6 +1679,10 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                         
                     }))
                     self.present(alert , animated: true)
+                }else{
+                    let alert = UIAlertController(title: "Error Occured!", message: "Please try again.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                    self.present(alert, animated: true)
                 }
                 
             }
@@ -2107,25 +2183,49 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         
            
        }
+    
        func setupforThirdStage(){
+        
+        
            print(regStage2data)
-           self.user_id = self.regStage2data!["user_id"] as? String
-           self.stage1view.isHidden = true
-           self.stage2view.isHidden = true
-           self.stage3view.isHidden = false
-        
-        self.scrollerView.isHidden = true
-        self.stage2ScrollView.isHidden = true
-        self.stage3ScrollView.isHidden = false
-        
-        self.boolShowBackAlert = true
-           self.lblStagesInformation.text = "More Information"
-           self.imgStep2.image = UIImage(named: "gray2.png")
-                                 self.imageStep1.image = UIImage(named: "gray1.png")
-                                 self.imgStep3.image = UIImage(named: "teal3.png")
+        if Connectivity.isConnectedToInternet {
+        let servicehandler = ServiceHandlers()
+                  servicehandler.getQuestionListForCSO(){(responce,isSuccess) in
+                              if isSuccess {
+                                self.quesData = responce as? Dictionary<String,Any>
+                                self.user_id = self.regStage2data!["user_id"] as? String
+                                          self.stage1view.isHidden = true
+                                          self.stage2view.isHidden = true
+                                          self.stage3view.isHidden = false
+                                       
+                                       self.scrollerView.isHidden = true
+                                       self.stage2ScrollView.isHidden = true
+                                       self.stage3ScrollView.isHidden = false
+                                       
+                                       self.boolShowBackAlert = true
+                                          self.lblStagesInformation.text = "More Information"
+                                          self.imgStep2.image = UIImage(named: "gray2.png")
+                                                                self.imageStep1.image = UIImage(named: "gray1.png")
+                                                                self.imgStep3.image = UIImage(named: "teal3.png")
+                              }else{
+                                let alert = UIAlertController(title: "Error Occured", message: "Try Again Later", preferredStyle: .alert)
+                                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                                self.present(alert, animated: true)
+                                
+                    }
+
+                                      }
+          }else {
+           
+           let alert = UIAlertController(title: nil, message: NSLocalizedString("No Internet Connection", comment: ""), preferredStyle: UIAlertController.Style.alert)
+           
+           // add an action (button)
+           alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+           // show the alert
+           self.present(alert, animated: true, completion: nil)
            
        }
     
-    
+    }
     
 }

@@ -2009,8 +2009,8 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
     
     //MARK:- CSO REGISTRATION DOCUMENT UPLOAD
     func csoregistrationStep2fileUPload(data_details:[String:Any],file: Data,file_name: String, onCompletion:@escaping CompletionHandler){
-                
-                ActivityLoaderView.startAnimating()
+        
+             ActivityLoaderView.startAnimating()
              print(data_details)
             let urlapi:String = baseURL+"file-upload.php" as String
                 
@@ -2029,10 +2029,11 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
                      })
                      
                      upload.responseJSON { response in
-                         if let JSON = response.result.value {
-                             print("JSON: \(JSON)")
+                         if let JSON = response.result.value as? [String: Any]{
+                            let message = JSON["res_message"] as! String
+                            print("JSON: \(JSON)")
                             ActivityLoaderView.stopAnimating()
-                              onCompletion(JSON,true)
+                              onCompletion(message,true)
                             
                          }
                      }
@@ -2040,10 +2041,11 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
                      break
                  case .failure(let encodingError):
                      //self.delegate?.showFailAlert()
-                     //print(encodingError)
+                     print(encodingError)
                       ActivityLoaderView.stopAnimating()
                     onCompletion(nil,false)
                  }
+                
                  
              }
               
