@@ -18,11 +18,11 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     @IBOutlet weak var heading: UILabel!
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var logoImage: UIImageView!
-    @IBOutlet weak var btnEvents: UIButton!
-    @IBOutlet weak var btnLocker: UIButton!
-    @IBOutlet weak var btnTargets: UIButton!
-    @IBOutlet weak var btnMessage: UIButton!
-    @IBOutlet weak var btnCSOArea: UIButton!
+//    @IBOutlet weak var btnEvents: UIButton!
+//    @IBOutlet weak var btnLocker: UIButton!
+//    @IBOutlet weak var btnTargets: UIButton!
+//    @IBOutlet weak var btnMessage: UIButton!
+//    @IBOutlet weak var btnCSOArea: UIButton!
     
     @IBOutlet weak var viewTblEvenList: UIView!
     @IBOutlet weak var imageEvent: UIImageView!
@@ -193,22 +193,22 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         btnSideMenu.setImage(UIImage(named: "newlist.png"), for: UIControl.State.normal)
        
     
-        btnEvents.setTitleColor(UIColor.white, for: UIControl.State.normal)
+//        btnEvents.setTitleColor(UIColor.white, for: UIControl.State.normal)
         imageEvent.image = UIImage(named: "newIconEvents.png")
         
         
-        btnLocker.setTitleColor(UIColor.white, for: UIControl.State.normal)
+//        btnLocker.setTitleColor(UIColor.white, for: UIControl.State.normal)
         imageLocker.image = UIImage(named: "newIconLocker.png")
         
         
-        btnTargets.setTitleColor(UIColor.white, for: UIControl.State.normal)
+//        btnTargets.setTitleColor(UIColor.white, for: UIControl.State.normal)
 //        imageTarget.image = UIImage(named: "")
         
         
-        btnMessage.setTitleColor(UIColor.white, for: UIControl.State.normal)
+//        btnMessage.setTitleColor(UIColor.white, for: UIControl.State.normal)
        imageMessage.image = UIImage(named: "newIconMessages.png")
         
-        btnCSOArea.setTitleColor(UIColor.white, for: UIControl.State.normal)
+ //       btnCSOArea.setTitleColor(UIColor.white, for: UIControl.State.normal)
 //        imageTarget.image = UIImage(named: "")
         
         
