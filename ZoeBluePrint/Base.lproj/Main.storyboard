@@ -12285,8 +12285,8 @@
                                     <constraint firstItem="j81-N4-l8G" firstAttribute="leading" secondItem="qDP-2z-4mS" secondAttribute="leading" constant="40" id="zG7-Th-s7A"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="0k6-xB-zSx">
-                                <rect key="frame" x="10" y="408" width="394" height="312"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0k6-xB-zSx">
+                                <rect key="frame" x="10" y="408" width="394" height="300"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6s-yW-LX9" userLabel="Control - event" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="60"/>
@@ -12332,7 +12332,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bS4-Mp-NjS" userLabel="Control -locker" customClass="UIControl">
-                                        <rect key="frame" x="0.0" y="63" width="394" height="60"/>
+                                        <rect key="frame" x="0.0" y="60" width="394" height="60"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newIconLocker.png" translatesAutoresizingMaskIntoConstraints="NO" id="U3Y-pE-dan">
                                                 <rect key="frame" x="20" y="12" width="36" height="36"/>
@@ -12376,7 +12376,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YyD-Nb-uAS" userLabel="Control - Target" customClass="UIControl">
-                                        <rect key="frame" x="0.0" y="126" width="394" height="60"/>
+                                        <rect key="frame" x="0.0" y="120" width="394" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Targets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rkj-Yd-OF3">
                                                 <rect key="frame" x="76" y="0.0" width="308" height="56"/>
@@ -12419,7 +12419,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLx-ZP-xYa" userLabel="Control - Message" customClass="UIControl">
-                                        <rect key="frame" x="0.0" y="189" width="394" height="60"/>
+                                        <rect key="frame" x="0.0" y="180" width="394" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have a message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4O-om-en7">
                                                 <rect key="frame" x="76" y="0.0" width="308" height="56"/>
@@ -12462,7 +12462,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jis-x6-iK7" userLabel="Control- Area" customClass="UIControl">
-                                        <rect key="frame" x="0.0" y="252" width="394" height="60"/>
+                                        <rect key="frame" x="0.0" y="240" width="394" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Organizations in your area" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN9-Cu-fn8">
                                                 <rect key="frame" x="76" y="0.0" width="308" height="58"/>
