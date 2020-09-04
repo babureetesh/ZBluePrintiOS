@@ -41,7 +41,8 @@ class ChangeTimezoneCSO: UIViewController {
               self.setDataToView()
             }
         } // Reetesh 16 jan
-        
+        btnTimeZone.setDropDownImagWithInset()
+               dayLightButton.setDropDownImagWithInset()
     }
     func setDataToView(){
         

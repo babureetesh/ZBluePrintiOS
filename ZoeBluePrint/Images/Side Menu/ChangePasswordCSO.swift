@@ -27,7 +27,7 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
         
         let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
         
-        submitButton.layer.cornerRadius = 5.0
+        submitButton.layer.cornerRadius = 3.0
         submitButton.layer.masksToBounds = true
         
         
@@ -41,7 +41,7 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
         var bottomlLine = CALayer()
         bottomlLine.frame = CGRect(x:0.0,y:oldPassword.frame.height-1,width:302.0,height:1.0)
       //  /*if defaults == "Light Mode" {
-        bottomlLine.backgroundColor = UIColor.black.cgColor
+        bottomlLine.backgroundColor = UIColor.darkGray.cgColor
       //  } else   if defaults == "Dark Mode"{
         //     bottomlLine.backgroundColor = UIColor.lightGray.cgColor
         //}*/
@@ -51,7 +51,7 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
         var bottomlLine2 = CALayer()
                bottomlLine2.frame = CGRect(x:0.0,y:newPassword.frame.height-1,width:302.0,height:1.0)
        // /*if defaults == "Light Mode" {
-            bottomlLine2.backgroundColor = UIColor.black.cgColor
+            bottomlLine2.backgroundColor = UIColor.darkGray.cgColor
        // } else   if defaults == "Dark Mode"{
          //   bottomlLine2.backgroundColor = UIColor.lightGray.cgColor
         //}*/
@@ -61,7 +61,7 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
         var bottomlLine3 = CALayer()
         bottomlLine3.frame = CGRect(x:0.0,y:confirmPassword.frame.height-1,width:302.0,height:1.0)
       // /* if defaults == "Light Mode" {
-            bottomlLine3.backgroundColor = UIColor.black.cgColor
+            bottomlLine3.backgroundColor = UIColor.darkGray.cgColor
         //} else   if defaults == "Dark Mode"{
           //  bottomlLine3.backgroundColor = UIColor.lightGray.cgColor
         //}*/
