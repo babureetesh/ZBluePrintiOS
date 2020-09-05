@@ -15,7 +15,6 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     @IBOutlet weak var btnSideMenu: UIButton!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var profilePic: UIImageView!
-    @IBOutlet weak var heading: UILabel!
     @IBOutlet weak var logoView: UIView!
     @IBOutlet weak var logoImage: UIImageView!
 //    @IBOutlet weak var btnEvents: UIButton!
@@ -122,8 +121,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     //    if  defaults == "Light Mode"{
             var headingName = userIDData["user_f_name"] as! String
             headingName = "\(headingName)'S DASHBOARD"
-            self.heading.textColor = .black
-            heading.text = headingName.uppercased()
+          
       //      LightMode()
             
         //}else if defaults == "Dark Mode"{
