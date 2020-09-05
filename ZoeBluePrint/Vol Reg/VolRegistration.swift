@@ -28,6 +28,10 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var volview: UIView!
     @IBOutlet weak var scroll_view: UIScrollView!
     
+     @IBOutlet weak var passwordStackView: UIStackView!
+     @IBOutlet weak var confirmPasswordStackView: UIStackView!
+     @IBOutlet weak var mainStackView: UIStackView!
+    
     @IBOutlet weak var volEmail: UITextField!
     
     @IBOutlet weak var volPassword: UITextField!
@@ -273,11 +277,18 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
 //
 //                        self.resetButton.isHidden = true
 //                        self.btnRegisterUpdate.isHidden = true
-                        self.volPassword.isHidden = true
-                        self.volPasswordEyeButton.isHidden = true
-//
-                        self.volconfirmpassword.isHidden = true
-                        self.volconfirmPasswordEyeButton.isHidden = true
+                        
+                        
+                        
+                        
+                        self.mainStackView.removeArrangedSubview(self.passwordStackView)
+                        self.mainStackView.removeArrangedSubview(self.confirmPasswordStackView)
+                        self.passwordStackView.isHidden = true
+                        self.confirmPasswordStackView.isHidden = true
+//                        self.passwordStackView.removeFromSuperview()
+//                        self.confirmPasswordStackView.removeFromSuperview()
+                        self.view.layoutIfNeeded()
+                        
 
                         
                         
@@ -298,11 +309,12 @@ class VolRegistration: UIViewController,UITextFieldDelegate {
         }
                  }
            
-      }else{
+             
+            }else{
                 self.user_countryID = "1"
                 
-      self.back_button.isHidden = false
-            
+                self.back_button.isHidden = false
+                
         }
     }
     func addUnderLineToField(color:UIColor)  {
