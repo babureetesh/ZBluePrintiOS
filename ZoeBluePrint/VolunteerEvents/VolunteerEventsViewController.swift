@@ -53,7 +53,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var imageDisshifts: UIImageView!
     
     @IBOutlet weak var imageDisEvents: UIImageView!
-    @IBOutlet weak var lblHeadingName: UILabel!
+    //@IBOutlet weak var lblHeadingName: UILabel!
     
     @IBOutlet weak var SearchField: UISearchBar!
     @IBOutlet weak var View2: UIView!
@@ -679,8 +679,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             var headingName = userIDData["user_f_name"] as! String
             headingName = "\(headingName)'S BOOKING"
             print(headingName)
-            self.lblHeadingName.textColor = .black
-            lblHeadingName.text = headingName.uppercased()
+            //self.lblHeadingName.textColor = .black
+           // lblHeadingName.text = headingName.uppercased()
        // }
         if let url = URL(string: string_url){
                      do {
