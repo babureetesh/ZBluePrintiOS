@@ -31,13 +31,25 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     @IBOutlet weak var imageArea: UIImageView!
     
     @IBOutlet weak var tblVolEventList: UITableView!
+    
+    @IBOutlet weak var Days_counter_value: UILabel!
+       @IBOutlet weak var Days_counter: UILabel!
+       @IBOutlet weak var Hours_counter_value: UILabel!
+       @IBOutlet weak var Hours_value: UILabel!
+       @IBOutlet weak var Minute_counter_value: UILabel!
+       @IBOutlet weak var Minute_counter: UILabel!
+       @IBOutlet weak var Seconds_counter_Value: UILabel!
+       @IBOutlet weak var second_counter: UILabel!
+    var releaseDate: NSDate?
+    var countdownTimer = Timer()
+    
     var zipcode = ""
     var volunteerEvent : [[String:Any]]!
     var locationManager: CLLocationManager!
     var boolShoOrg = false
     
     var objOrganization : OrganizationViewController!
-    
+    var volunteerEventlist : [[String:Any]]?
     override func viewDidLoad() {
         super.viewDidLoad()
        // self.delegate = self
@@ -55,9 +67,9 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                      servicehandler.VolunteerEventList(userData: userID as! String) { (responce, isSuccess) in
                          if isSuccess {
                              let data = responce as! Dictionary<String,Any>
-                           
+                           self.volunteerEventlist = data["event_data"] as? [[String : Any]]
                              //print(data)
-                            
+                             self.configureCountDown()
         
                             self.zipcode = (data["user_zipcode"] as? String)!
                              //print(self.zipcode)
@@ -74,6 +86,66 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         tabbar.delegate = self
     }
     
+    // Creating Countdown Timer:
+       fileprivate func configureCountDown() {
+           if(self.volunteerEventlist != nil){
+               let shift_date = self.volunteerEventlist!.first!["shift_date"] as? String
+               let shift_time = self.volunteerEventlist!.first!["shift_start_time_timer"] as? String
+               let shift_date_time = shift_date! + " " + shift_time!
+               let dateFormatter = DateFormatter()
+               dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+               let date = dateFormatter.date(from: shift_date_time)
+              // dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
+               
+               
+               let releaseDateString =  dateFormatter.string(from: date!)
+               let releaseDateFormatter = DateFormatter()
+               releaseDateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+               releaseDate = releaseDateFormatter.date(from: releaseDateString) as NSDate?
+               countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+           }else{
+              self.volunteerEventlist = []
+           }
+       }
+       @objc func updateTime() {
+           
+           let currentDate = Date()
+           let calendar = Calendar.current
+           ////print(releaseDate!)
+           let diffDateComponents = calendar.dateComponents([.day, .hour, .minute, .second], from: currentDate, to: (releaseDate! as Date))
+           let strday = "\(diffDateComponents.day ?? 00)"
+            if  (strday.count<2){
+                Days_counter_value.text = "0"+strday
+            }else{
+              Days_counter_value.text = strday
+            }
+           
+            // For Hours:
+            let strHours = "\(diffDateComponents.hour ?? 00)"
+            if(strHours.count < 2){
+               Hours_counter_value.text = "0" + strHours
+            }else{
+              Hours_counter_value.text = strHours
+            }
+            
+                //For Minutes:
+                let strMinutes = "\(diffDateComponents.minute ?? 00)"
+                       if(strMinutes.count < 2){
+                          Minute_counter_value.text = "0" + strMinutes
+              }else{
+             Minute_counter_value.text = strMinutes
+           }
+           
+            // For Seconds:
+            let strSeconds = "\(diffDateComponents.second ?? 00)"
+                     if(strSeconds.count < 2){
+                       Seconds_counter_Value.text = "0" + strSeconds
+            }else{
+               Seconds_counter_Value.text = strSeconds
+            }
+            
+           
+       }
     func getCoverImageForRank(){
         
         var strImageNameCover = "cover_cloud.jpg"
