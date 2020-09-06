@@ -25,6 +25,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     var SelectData:Dictionary<String,Any>?
      var calendarEvents = [[String:Any]]()
     @IBOutlet weak var Table1: UITableView!
+    @IBOutlet weak var eventStatusViewHeightContraint:NSLayoutConstraint!
     var SearchList : [[String:Any]]?
     var FilterList : [[String:Any]]?
     
@@ -38,8 +39,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     let cal = FSCalendar()
     
     
-   
-    @IBOutlet weak var lblBlankOutTime: UILabel!
+   @IBOutlet weak var lblBlankOutTime: UILabel!
+    @IBOutlet weak var statusMainStackView: UIStackView!
     
     @IBOutlet weak var btnList: UIButton!
     @IBOutlet weak var lblBlankInTime: UILabel!
@@ -54,6 +55,14 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     
     @IBOutlet weak var imageDisEvents: UIImageView!
     //@IBOutlet weak var lblHeadingName: UILabel!
+    
+    
+     @IBOutlet weak var eventStatus_CurrentStatusView: UIControl!
+     @IBOutlet weak var eventStatus_WithdrawView: UIControl!
+     @IBOutlet weak var eventStatus_MarkCompleteView: UIControl!
+     @IBOutlet weak var eventStatus_ChatView: UIControl!
+    
+    
     
     @IBOutlet weak var SearchField: UISearchBar!
     @IBOutlet weak var View2: UIView!
@@ -424,6 +433,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_alert)->Void in
                             self.statusview2.isHidden = true
                             self.StatsView1.isHidden = true
+                            self.statusMainStackView.isHidden = true
                             self.refreshLoadData()
         //                    self.tblViewforAllRequest.reloadData()
                         }))
@@ -750,7 +760,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         EventShiftView2.isHidden = true
         StatsView1.isHidden = true               // Change Status
         statusview2.isHidden = true
-       
+        self.statusMainStackView.isHidden = true
         for subview in view.subviews {
             if subview.tag == 99 { // removing
                 subview.removeFromSuperview()
@@ -792,7 +802,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
 
         self.StatsView1.isHidden = true
         self.statusview2.isHidden = true
-        
+         self.statusMainStackView.isHidden = true
 
     }
     
@@ -828,6 +838,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         
         StatsView1.isHidden = true
         statusview2.isHidden = true
+         self.statusMainStackView.isHidden = true
         //print("withdraw Button Tapped")
 
     }
@@ -837,6 +848,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         
         StatsView1.isHidden = true
         statusview2.isHidden = true
+         self.statusMainStackView.isHidden = true
          //print("Mark Complete Button Tapped")
         
 
@@ -897,6 +909,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     @IBAction func eventStatusoverlayTapped(_ sender: Any) {
        self.StatsView1.isHidden = true
        self.statusview2.isHidden = true
+         self.statusMainStackView.isHidden = true
     }
     
     @IBAction func eventAndShiftOverlayTapped(_ sender: Any) {
@@ -933,10 +946,12 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         }
     }
     
+    
+    
     @IBAction func ChangeStatusButton(_ sender: Any) {
         self.ViewChangeStatusBackground.isHidden = true
         self.ViewChangeStatusPoMain.isHidden = true
-        
+         self.statusMainStackView.isHidden = false
         statusview2.isHidden = false
         StatsView1.isHidden = false
             switch (SelectData!["map_status"] as! String) {
@@ -961,7 +976,26 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 changeacceptImage.isHidden = true
                  changestatusLabel.isHidden = true
                  
-                 statusview2.frame = CGRect(x: 19, y: 123, width: 338, height: 98)
+                
+                statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
+                statusMainStackView.removeArrangedSubview(changestatusLabel)
+                statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                statusMainStackView.removeArrangedSubview(Label1)
+                
+                lblchangeStatusTo.isHidden = true
+                changestatusLabel.isHidden = true
+                eventStatus_WithdrawView.isHidden = true
+                eventStatus_MarkCompleteView.isHidden = true
+                eventStatus_ChatView.isHidden = true
+                Label1.isHidden = true
+                
+                
+                
+                
+                
+                // statusview2.frame = CGRect(x: 19, y: 123, width: 338, height: 98)
 
                  break
                 
@@ -986,7 +1020,22 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     completedImage.isHidden = true
                     changestatusLabel.isHidden = true
                  
-                  statusview2.frame = CGRect(x: 19, y: 226, width: 338, height: 92)
+                    
+                    statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
+                    statusMainStackView.removeArrangedSubview(changestatusLabel)
+                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                    statusMainStackView.removeArrangedSubview(Label1)
+                    
+                    lblchangeStatusTo.isHidden = true
+                    changestatusLabel.isHidden = true
+                    eventStatus_WithdrawView.isHidden = true
+                    eventStatus_MarkCompleteView.isHidden = true
+                    eventStatus_ChatView.isHidden = true
+                    Label1.isHidden = true
+                    
+                 // statusview2.frame = CGRect(x: 19, y: 226, width: 338, height: 92)
                 
 
                  break
@@ -1012,8 +1061,20 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                      changeacceptImage.isHidden = true
                      changestatusLabel.isHidden = false
                      withdrawImage.image = UIImage(named: "withdrawn-volunteer.png")
+                     
+                
+                     statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                     statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                     statusMainStackView.removeArrangedSubview(Label1)
+
+                    
+                     eventStatus_MarkCompleteView.isHidden = true
+                     eventStatus_ChatView.isHidden = true
+                     Label1.isHidden = true
+                     lblchangeStatusTo.isHidden = true
+                     changestatusLabel.isHidden = true
                       
-        statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 187)
+       // statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 187)
                        
                      
                     break
@@ -1042,7 +1103,19 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 completedImage.image = UIImage(named: "completed-volunteer.png")
                       
                 changestatusLabel.isHidden = false
-                  statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 236)
+                
+                
+                
+                statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                statusMainStackView.removeArrangedSubview(Label1)
+
+                
+                              
+                eventStatus_ChatView.isHidden = true
+                Label1.isHidden = true
+                
+                
+                //  statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 236)
                       
                       
 
@@ -1073,8 +1146,17 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     chatImage.image = UIImage(named: "chat.png")
                     chatImage.frame.origin = CGPoint(x: 59, y:149)
                     
-            statusview2.frame = CGRect (x: 19, y: 189, width: 338, height: 187)
+          //  statusview2.frame = CGRect (x: 19, y: 189, width: 338, height: 187)
                     chat.frame.origin = CGPoint(x: 0, y: 146)
+                    
+                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                    statusMainStackView.removeArrangedSubview(Label1)
+                    
+                    eventStatus_WithdrawView.isHidden = true
+                    eventStatus_MarkCompleteView.isHidden = true
+                    Label1.isHidden = true
+                    
                     
                  break
                  
@@ -1100,7 +1182,22 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       changeacceptImage.isHidden = true
                      changestatusLabel.isHidden = true
                       
-        statusview2.frame = CGRect (x: 19, y: 226, width: 338, height: 98)
+                    statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
+                    statusMainStackView.removeArrangedSubview(changestatusLabel)
+                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                    statusMainStackView.removeArrangedSubview(Label1)
+
+                    lblchangeStatusTo.isHidden = true
+                    changestatusLabel.isHidden = true
+                    eventStatus_WithdrawView.isHidden = true
+                    eventStatus_MarkCompleteView.isHidden = true
+                    eventStatus_ChatView.isHidden = true
+                    Label1.isHidden = true
+                    
+                    
+       // statusview2.frame = CGRect (x: 19, y: 226, width: 338, height: 98)
                       
                        break
                
@@ -1131,8 +1228,10 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     completedImage.image = UIImage(named: "completed-volunteer.png")
                     changeacceptImage.image = UIImage(named: "accepted-cso.png")
                       
-                    statusview2.frame = CGRect (x: 18, y: 123, width: 338, height: 333)
+                   // statusview2.frame = CGRect (x: 18, y: 123, width: 338, height: 333)
                       
+                  
+
 
                       break
                       
@@ -1157,13 +1256,25 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       completedImage.isHidden = true
                       changeacceptImage.isHidden = true
                       
-          statusview2.frame = CGRect (x: 18, y: 189, width: 338, height: 236)
+        //  statusview2.frame = CGRect (x: 18, y: 189, width: 338, height: 236)
                      
                 chat.frame.origin = CGPoint(x: 0, y: 189)
                 chatImage.frame.origin = CGPoint(x: 59, y:191)
                 chatImage.image = UIImage(named: "chat.png")
                 
 
+                    statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
+                    statusMainStackView.removeArrangedSubview(changestatusLabel)
+                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                    statusMainStackView.removeArrangedSubview(Label1)
+
+                    lblchangeStatusTo.isHidden = true
+                    changestatusLabel.isHidden = true
+                    eventStatus_WithdrawView.isHidden = true
+                    eventStatus_ChatView.isHidden = true
+                    Label1.isHidden = true
+                    
                       break
                       
                   case "60":
@@ -1186,13 +1297,23 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       completedImage.isHidden = true
                      changeacceptImage.isHidden = true
                     changestatusLabel.isHidden = false
-              statusview2.frame = CGRect(x: 18, y: 123, width: 338, height: 187)
+          //    statusview2.frame = CGRect(x: 18, y: 123, width: 338, height: 187)
                       
                     
                      chat.frame.origin = CGPoint(x: 0, y: 146)
                       chatImage.frame.origin = CGPoint(x:58 , y:149)
                     chatImage.image = UIImage(named: "chat.png")
                       
+                    statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
+                    statusMainStackView.removeArrangedSubview(changestatusLabel)
+                    statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                    statusMainStackView.removeArrangedSubview(Label1)
+
+                    lblchangeStatusTo.isHidden = true
+                    changestatusLabel.isHidden = true
+                    eventStatus_ChatView.isHidden = true
+                    Label1.isHidden = true
+                    
                       break
                       
                   default:
@@ -1207,8 +1328,27 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       moreinfoimage.isHidden = true
                       completedImage.isHidden = true
                     changeacceptImage.isHidden = true
+                      
+                      statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
+                      statusMainStackView.removeArrangedSubview(changestatusLabel)
+                      statusMainStackView.removeArrangedSubview(lblCurrentStatus)
+                      statusMainStackView.removeArrangedSubview(eventStatus_CurrentStatusView)
+                      statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                      statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                      statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                      statusMainStackView.removeArrangedSubview(Label1)
+
+                      lblchangeStatusTo.isHidden = true
+                      changestatusLabel.isHidden = true
+                      lblCurrentStatus.isHidden = true
+                      eventStatus_WithdrawView.isHidden = true
+                      eventStatus_MarkCompleteView.isHidden = true
+                      eventStatus_ChatView.isHidden = true
+                      eventStatus_CurrentStatusView.isHidden = true
+                      Label1.isHidden = true
                   }
    
+        self.view.layoutIfNeeded()
     }
 
     @IBAction func DiscoverShiftPressed(_ sender: Any) {
@@ -1273,6 +1413,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
 
                     let alert = UIAlertController(title: nil, message:NSLocalizedString("Mark Completed Successfully", comment: ""), preferredStyle: .alert)
                                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_alert)->Void in
+                                        
+                                         self.statusMainStackView.isHidden = true
                                         self.statusview2.isHidden = true
                                         self.StatsView1.isHidden = true
                                         self.refreshLoadData()
