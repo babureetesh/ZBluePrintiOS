@@ -9422,7 +9422,6 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="PNG-6o-wNu" firstAttribute="centerY" secondItem="ejg-vY-ojr" secondAttribute="centerY" id="88C-Z8-2WD"/>
                                                     <constraint firstAttribute="trailing" secondItem="PNG-6o-wNu" secondAttribute="trailing" id="GNE-qw-MOP"/>
@@ -9458,7 +9457,6 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="fep-Ba-0jM" firstAttribute="centerY" secondItem="jd2-UJ-xLo" secondAttribute="centerY" id="82S-rp-oGQ"/>
                                                     <constraint firstAttribute="trailing" secondItem="fep-Ba-0jM" secondAttribute="trailing" id="AJ5-eI-HwP"/>
