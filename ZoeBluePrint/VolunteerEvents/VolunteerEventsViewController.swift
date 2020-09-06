@@ -457,21 +457,21 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
      
         self.DiscoverEventsTapped.setTitleColor(UIColor.gray, for: UIControl.State.normal)
         
-        let mytapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(handleTap4(_:)))
-              self.EventShiftView1.addGestureRecognizer(mytapGestureRecognizer4)
-              self.EventShiftView1.isUserInteractionEnabled = true
+//        let mytapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(handleTap4(_:)))
+//              self.EventShiftView1.addGestureRecognizer(mytapGestureRecognizer4)
+//              self.EventShiftView1.isUserInteractionEnabled = true
               
  
         
         let mytapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(handleTap3(_:)))
         self.UpdateView1.addGestureRecognizer(mytapGestureRecognizer3)
         self.UpdateView1.isUserInteractionEnabled = true
-        let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        self.StatsView1.addGestureRecognizer(mytapGestureRecognizer)
-        self.StatsView1.isUserInteractionEnabled = true
-        let mytapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(handleTap2(_:)))
-               self.ViewChangeStatusBackground.addGestureRecognizer(mytapGestureRecognizer2)
-               self.ViewChangeStatusBackground.isUserInteractionEnabled = true
+//        let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+//        self.StatsView1.addGestureRecognizer(mytapGestureRecognizer)
+//        self.StatsView1.isUserInteractionEnabled = true
+//        let mytapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(handleTap2(_:)))
+//               self.ViewChangeStatusBackground.addGestureRecognizer(mytapGestureRecognizer2)
+//               self.ViewChangeStatusBackground.isUseInteractionEnabled = true
         self.searchTab.delegate = self
         
      
@@ -893,6 +893,22 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         
     }
     }
+    
+    @IBAction func eventStatusoverlayTapped(_ sender: Any) {
+       self.StatsView1.isHidden = true
+       self.statusview2.isHidden = true
+    }
+    
+    @IBAction func eventAndShiftOverlayTapped(_ sender: Any) {
+        self.EventShiftView1.isHidden = true
+        self.EventShiftView2.isHidden = true
+    }
+    
+    @IBAction func eventBookingInfoOverlayTapped(_ sender: Any) {
+        self.ViewChangeStatusBackground.isHidden = true
+        self.ViewChangeStatusPoMain.isHidden = true
+    }
+
     
     @IBAction func ViewButton(_ sender: Any) {
         
