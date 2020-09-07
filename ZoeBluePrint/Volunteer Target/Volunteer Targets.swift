@@ -23,6 +23,7 @@ class Volunteer_Targets: UIViewController {
     @IBOutlet weak var lblCurrentHours: UILabel!
 
     @IBOutlet weak var imgViewCoverPic: UIImageView!
+    @IBOutlet weak var CircluarProgress: CircularProgressView!
     
     var Target : [[String:Any]]!
     var TargetPercentage:Float!
@@ -34,16 +35,8 @@ class Volunteer_Targets: UIViewController {
         
         
         // For CircularView:
-        
-    let CircluarProgress = CircularProgressView(frame: CGRect(x: 10.0, y: 10.0, width: 100.0, height: 100.0))
-    
     CircluarProgress.progressColor = UIColor(red: 208/255.0 , green:25/255.0 , blue: 89/255.0, alpha: 1.0)
     CircluarProgress.trackColor = UIColor(red: 238/255.0, green: 185/255.0, blue: 203/255.0, alpha: 1.0)
-        
-        
-        self.view.addSubview(CircluarProgress)
-        CircluarProgress.center = self.view.center
-        
         CircluarProgress.tag = 101
        // self.perform(#selector(progressAnimate),with: nil, afterDelay: 2.0)
         
@@ -118,8 +111,8 @@ class Volunteer_Targets: UIViewController {
             var headingName = userIDData["user_f_name"] as! String
             headingName = "\(headingName)'S TARGET"
             print(headingName)
-            self.lblHeadingName.textColor = .black
-            lblHeadingName.text = headingName.uppercased()
+           // self.lblHeadingName.textColor = .black
+           // lblHeadingName.text = headingName.uppercased()
             
        // }
         if let url = URL(string: string_url){
