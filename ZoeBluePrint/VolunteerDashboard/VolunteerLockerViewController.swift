@@ -38,7 +38,7 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var DocumentTextField: UITextField!
     @IBOutlet weak var lblPleaseEnterTheDocuments: UILabel!
     @IBOutlet weak var profilepic: UIImageView!
-    @IBOutlet weak var lblHeadingName: UILabel!
+//    @IBOutlet weak var lblHeadingName: UILabel!
     @IBOutlet weak var AddButtonTapped: UIButton!
     @IBOutlet weak var View2: UIView!
     @IBOutlet weak var rankLabel: UILabel!
@@ -107,8 +107,8 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
        
        var headingName = userIDData["user_f_name"] as! String
         headingName = "\(headingName)'S LOCKER"
-            self.lblHeadingName.textColor = .black
-        lblHeadingName.text = headingName.uppercased()
+//            self.lblHeadingName.textColor = .black
+//        lblHeadingName.text = headingName.uppercased()
       
      //   }else if defaults == "Dark Mode"{
             
