@@ -12985,10 +12985,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvd-p2-vbd" userLabel="Counter View">
-                                <rect key="frame" x="0.0" y="515" width="414" height="298"/>
+                                <rect key="frame" x="0.0" y="515" width="414" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="D8C-ns-dsZ">
-                                        <rect key="frame" x="68" y="201" width="20" height="22"/>
+                                        <rect key="frame" x="68" y="3" width="20" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="M2d-4g-6y4"/>
@@ -13000,7 +13000,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXT EVENT COUNTDOWN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfI-9V-Lv3">
-                                        <rect key="frame" x="98" y="201" width="218" height="22"/>
+                                        <rect key="frame" x="98" y="3" width="218" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="UFQ-zp-i1p"/>
                                         </constraints>
@@ -13009,7 +13009,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NXw-tK-0Zf" userLabel="Border View">
-                                        <rect key="frame" x="20" y="235" width="374" height="65"/>
+                                        <rect key="frame" x="20" y="37" width="374" height="65"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6s6-3h-7be" userLabel="Arranged View">
                                                 <rect key="frame" x="0.0" y="7.5" width="374" height="50"/>
@@ -13186,6 +13186,7 @@
                                     <constraint firstItem="UfI-9V-Lv3" firstAttribute="centerX" secondItem="Dvd-p2-vbd" secondAttribute="centerX" id="CoM-k7-K66"/>
                                     <constraint firstItem="UfI-9V-Lv3" firstAttribute="leading" secondItem="D8C-ns-dsZ" secondAttribute="trailing" constant="10" id="NwO-5m-0TQ"/>
                                     <constraint firstAttribute="bottom" secondItem="NXw-tK-0Zf" secondAttribute="bottom" constant="-2" id="Sb1-0m-ikd"/>
+                                    <constraint firstAttribute="height" constant="100" id="Tl3-iV-6RQ"/>
                                     <constraint firstAttribute="trailing" secondItem="NXw-tK-0Zf" secondAttribute="trailing" constant="20" id="UoN-9g-EPv"/>
                                     <constraint firstItem="D8C-ns-dsZ" firstAttribute="height" secondItem="UfI-9V-Lv3" secondAttribute="height" id="iJz-Oj-sMx"/>
                                     <constraint firstItem="D8C-ns-dsZ" firstAttribute="top" secondItem="UfI-9V-Lv3" secondAttribute="top" id="rWg-yO-kWk"/>
@@ -13199,7 +13200,6 @@
                             <constraint firstItem="0k6-xB-zSx" firstAttribute="top" secondItem="qDP-2z-4mS" secondAttribute="bottom" constant="10" id="3gx-so-wH0"/>
                             <constraint firstItem="qDP-2z-4mS" firstAttribute="trailing" secondItem="hat-aS-HBB" secondAttribute="trailing" id="5K5-HI-9vJ"/>
                             <constraint firstAttribute="trailing" secondItem="oEb-kE-MIf" secondAttribute="trailing" id="A1e-Ib-X69"/>
-                            <constraint firstItem="Dvd-p2-vbd" firstAttribute="bottom" secondItem="hat-aS-HBB" secondAttribute="bottom" id="KOo-Zc-eSX"/>
                             <constraint firstItem="Dvd-p2-vbd" firstAttribute="trailing" secondItem="hat-aS-HBB" secondAttribute="trailing" id="Ken-GG-nxL"/>
                             <constraint firstItem="0k6-xB-zSx" firstAttribute="leading" secondItem="bxD-tc-7NP" secondAttribute="leading" constant="10" id="bLA-6n-QKb"/>
                             <constraint firstItem="qDP-2z-4mS" firstAttribute="top" secondItem="oEb-kE-MIf" secondAttribute="bottom" id="iTi-kv-MRI"/>
@@ -13977,7 +13977,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="onF-vY-Gix"/>
-        <segue reference="OfH-YS-HDc"/>
+        <segue reference="f8w-ht-7Ve"/>
         <segue reference="GwZ-Rv-4cF"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
