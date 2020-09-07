@@ -22,7 +22,7 @@ class VolunteerEventDescription: UIViewController {
     @IBOutlet weak var lightStar: FloatRatingView!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var lblRate: UILabel!
-    @IBOutlet weak var lblHeadingName: UILabel!
+//    @IBOutlet weak var lblHeadingName: UILabel!
     
     @IBOutlet weak var lblRateThisEvent: UILabel!
     @IBOutlet weak var btnstatusViewTapped: UIButton!
@@ -289,8 +289,8 @@ view.addSubview(scroller)
                         
                         var headingName = userIDData["user_f_name"] as! String
                         headingName = "\(headingName)'S Booking"
-                        self.lblHeadingName.textColor = .black
-                        self.lblHeadingName.text = headingName.uppercased()
+//                        self.lblHeadingName.textColor = .black
+//                        self.lblHeadingName.text = headingName.uppercased()
                         
                         
                  //   }
