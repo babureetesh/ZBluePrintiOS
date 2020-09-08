@@ -16,7 +16,7 @@ class VolunteerShifts: UIViewController,UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var btnback: UIButton!
     @IBOutlet weak var buttonView: UIButton!
     
-    @IBOutlet weak var lblHeadingName: UILabel!
+//    @IBOutlet weak var lblHeadingName: UILabel!
     @IBOutlet weak var profilepic: UIImageView!
     var data:Array<Any>?
      var eventID:String?
@@ -82,8 +82,8 @@ override func viewWillAppear(_ animated: Bool) {
         
         var headingName = userIDData["user_f_name"] as! String
          headingName = "\(headingName)'S BOOKING"
-         self.lblHeadingName.textColor = .black
-         lblHeadingName.text = headingName.uppercased()
+//         self.lblHeadingName.textColor = .black
+//         lblHeadingName.text = headingName.uppercased()
    // }
      let string_url = userIDData["user_profile_pic"] as! String
          if let url = URL(string: string_url){
