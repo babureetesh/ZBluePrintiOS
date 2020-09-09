@@ -86,17 +86,33 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         tabbar.delegate = self
     }
     
+    func utcToLocal(dateStr: String) -> String? {
+        let dateFormatter = DateFormatter()
+        let timeZone =  UserDefaults.standard.object(forKey: UserDefaultKeys.key_userTimeZone) as! String
+        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(abbreviation: timeZone)
+        
+        if let date = dateFormatter.date(from: dateStr) {
+            dateFormatter.timeZone = TimeZone.current
+            dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+        
+            return dateFormatter.string(from: date)
+        }
+        return nil
+    }
+    
     // Creating Countdown Timer:
        fileprivate func configureCountDown() {
            if(self.volunteerEventlist != nil){
                let shift_date = self.volunteerEventlist!.first!["shift_date"] as? String
                let shift_time = self.volunteerEventlist!.first!["shift_start_time_timer"] as? String
-               let shift_date_time = shift_date! + " " + shift_time!
+            let shift_date_time = self.utcToLocal(dateStr: shift_date! + " " + shift_time!)
                let dateFormatter = DateFormatter()
                dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
-               let date = dateFormatter.date(from: shift_date_time)
+            let date = dateFormatter.date(from: shift_date_time!)
               // dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-               
+//               let timeZone =  UserDefaults.standard.object(forKey: UserDefaultKeys.key_userTimeZone) as! String
+//               print(timeZone)
                
                let releaseDateString =  dateFormatter.string(from: date!)
                let releaseDateFormatter = DateFormatter()
