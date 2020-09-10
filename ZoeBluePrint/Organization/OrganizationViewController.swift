@@ -10,7 +10,7 @@ import UIKit
 
 class OrganizationViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,delegateOrganizationCell,UISearchBarDelegate {
 
-     @IBOutlet weak var lblHeadingName: UILabel!
+//     @IBOutlet weak var lblHeadingName: UILabel!
      @IBOutlet weak var profilepic: UIImageView!
      @IBOutlet weak var coverpic: UIImageView!
     @IBOutlet weak var lblMyOrgSel: UILabel!
@@ -20,6 +20,7 @@ class OrganizationViewController: UIViewController,UITableViewDelegate,UITableVi
     @IBOutlet weak var btnSearchOrg: UIButton!
     @IBOutlet weak var tblOrganizationList: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     
     var arrOrgList:[[String:Any]] = []
     var searchSelected: Bool = false
@@ -56,8 +57,8 @@ class OrganizationViewController: UIViewController,UITableViewDelegate,UITableVi
           //  if  defaults == "Light Mode"{
                                 var headingName = userIDData["user_f_name"] as! String
                                    headingName = "\(headingName)'S DASHBOARD"
-                                   self.lblHeadingName.textColor = .black
-                                   lblHeadingName.text = headingName.uppercased()
+//                                   self.lblHeadingName.textColor = .black
+//                                   lblHeadingName.text = headingName.uppercased()
            // }else if defaults == "Dark Mode"{
                 
                 //var headingName = userIDData["user_f_name"] as! String
@@ -80,8 +81,13 @@ class OrganizationViewController: UIViewController,UITableViewDelegate,UITableVi
                                 }
                                 }
         searchSelected = false
-        self.tblOrganizationList.frame = CGRect(x: 0, y: 248, width: 374, height: 419)
+        
+        
+//        self.tblOrganizationList.frame = CGRect(x: 0, y: 248, width: 374, height: 419)
+        tableViewTopConstraint.constant = 0
+         self.view.layoutIfNeeded()
         self.callForMyOrganizationData()
+       
               }
     /*
     // MARK: - Navigation
@@ -138,7 +144,10 @@ class OrganizationViewController: UIViewController,UITableViewDelegate,UITableVi
         lblMyOrgSel.isHidden = false
          searchSelected = false
         self.callForMyOrganizationData()
-        self.tblOrganizationList.frame = CGRect(x: 0, y: 248, width: 374, height: 419)
+//        self.tblOrganizationList.frame = CGRect(x: 0, y: 248, width: 374, height: 419)
+        tableViewTopConstraint.constant = 0
+        self.view.layoutIfNeeded()
+        
     }
     
     @IBAction func searchOrgSelected(_ sender: Any) {
@@ -147,8 +156,12 @@ class OrganizationViewController: UIViewController,UITableViewDelegate,UITableVi
         lblSearchOrgSel.isHidden = false
         lblMyOrgSel.isHidden = true
          searchSelected = true
-        self.tblOrganizationList.frame = CGRect(x: 0, y: 292, width: 374, height: 375)
+//        self.tblOrganizationList.frame = CGRect(x: 0, y: 292, width: 374, height: 375)
+        tableViewTopConstraint.constant = 61
+        self.view.layoutIfNeeded()
         self.callForSearchOrganizationData()
+        
+        
         
     }
     
