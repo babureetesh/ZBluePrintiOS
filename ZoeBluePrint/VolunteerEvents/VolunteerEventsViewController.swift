@@ -972,7 +972,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                  
                  chatImage.isHidden = true
                  withdrawImage.isHidden = true
-                 moreinfoimage.isHidden = true
+//                 moreinfoimage.isHidden = true
                 changeacceptImage.isHidden = true
                  changestatusLabel.isHidden = true
                  
@@ -1071,8 +1071,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                      eventStatus_MarkCompleteView.isHidden = true
                      eventStatus_ChatView.isHidden = true
                      Label1.isHidden = true
-                     lblchangeStatusTo.isHidden = true
-                     changestatusLabel.isHidden = true
                       
        // statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 187)
                        
@@ -1152,12 +1150,14 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
                     statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
                     statusMainStackView.removeArrangedSubview(Label1)
+                    statusMainStackView.removeArrangedSubview(changestatusLabel)
+                    statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
                     
                     eventStatus_WithdrawView.isHidden = true
                     eventStatus_MarkCompleteView.isHidden = true
                     Label1.isHidden = true
-                    
-                    
+                    changestatusLabel.isHidden = true
+                    eventStatus_ChatView.isHidden = true
                  break
                  
                   case "40":
@@ -1221,12 +1221,12 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       chatImage.isHidden = false
                       withdrawImage.isHidden = false
                       completedImage.isHidden = false
-                      changeacceptImage.isHidden = false
+                      changeacceptImage.isHidden = true
                     
                       chatImage.image = UIImage(named: "chat.png")
                     withdrawImage.image = UIImage(named: "withdrawn-volunteer.png")
                     completedImage.image = UIImage(named: "completed-volunteer.png")
-                    changeacceptImage.image = UIImage(named: "accepted-cso.png")
+//                    changeacceptImage.image = UIImage(named: "accepted-cso.png")
                       
                    // statusview2.frame = CGRect (x: 18, y: 123, width: 338, height: 333)
                       
@@ -1263,15 +1263,12 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 chatImage.image = UIImage(named: "chat.png")
                 
 
-                    statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
-                    statusMainStackView.removeArrangedSubview(changestatusLabel)
-                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+            
+                    statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
                     statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
                     statusMainStackView.removeArrangedSubview(Label1)
 
-                    lblchangeStatusTo.isHidden = true
-                    changestatusLabel.isHidden = true
-                    eventStatus_WithdrawView.isHidden = true
+                    eventStatus_MarkCompleteView.isHidden = true
                     eventStatus_ChatView.isHidden = true
                     Label1.isHidden = true
                     
@@ -1307,11 +1304,16 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     statusMainStackView.removeArrangedSubview(lblchangeStatusTo)
                     statusMainStackView.removeArrangedSubview(changestatusLabel)
                     statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
+                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+                    
                     statusMainStackView.removeArrangedSubview(Label1)
 
                     lblchangeStatusTo.isHidden = true
                     changestatusLabel.isHidden = true
                     eventStatus_ChatView.isHidden = true
+                    eventStatus_MarkCompleteView.isHidden = true
+                    eventStatus_WithdrawView.isHidden = true
                     Label1.isHidden = true
                     
                       break
@@ -1325,7 +1327,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       
                       chatImage.isHidden = true
                       withdrawImage.isHidden = true
-                      moreinfoimage.isHidden = true
+//                      moreinfoimage.isHidden = true
                       completedImage.isHidden = true
                     changeacceptImage.isHidden = true
                       
@@ -1351,6 +1353,27 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         self.view.layoutIfNeeded()
     }
 
+    fileprivate func resetStatusStackView(){
+        statusMainStackView.addArrangedSubview(lblCurrentStatus)
+        statusMainStackView.addArrangedSubview(eventStatus_CurrentStatusView)
+        statusMainStackView.addArrangedSubview(lblchangeStatusTo)
+        statusMainStackView.addArrangedSubview(changestatusLabel)
+        statusMainStackView.addArrangedSubview(eventStatus_WithdrawView)
+        statusMainStackView.addArrangedSubview(Label1)
+        statusMainStackView.addArrangedSubview(eventStatus_MarkCompleteView)
+        statusMainStackView.addArrangedSubview(eventStatus_ChatView)
+        
+
+
+        lblchangeStatusTo.isHidden = false
+        changestatusLabel.isHidden = false
+        lblCurrentStatus.isHidden = false
+        eventStatus_WithdrawView.isHidden = false
+        eventStatus_MarkCompleteView.isHidden = false
+        eventStatus_ChatView.isHidden = false
+        eventStatus_CurrentStatusView.isHidden = false
+        Label1.isHidden = false
+    }
     @IBAction func DiscoverShiftPressed(_ sender: Any) {
         EventShiftView1.isHidden = true
         EventShiftView2.isHidden = true
