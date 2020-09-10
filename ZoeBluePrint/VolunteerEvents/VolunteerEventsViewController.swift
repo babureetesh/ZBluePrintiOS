@@ -282,6 +282,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             
             
         }
+        cell.layoutIfNeeded()
         return cell
     }
     
@@ -304,9 +305,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         eventAlert.didMove(toParent: self)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 109.0
+        return UITableView.automaticDimension
     }
-    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+           return UITableView.automaticDimension
+       }
     @IBAction func notificationBellTapped(_ sender: Any) {
            
            let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -463,6 +466,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     let EventList : Array<Any>! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        Table1.estimatedRowHeight = 109.0
+        Table1.rowHeight = UITableView.automaticDimension
+        Table1.tableFooterView = UIView(frame: .zero)
         self.tabBarController?.delegate = self
      
         self.DiscoverEventsTapped.setTitleColor(UIColor.gray, for: UIControl.State.normal)
@@ -958,11 +964,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         
 //        Test cases
 //        let numbers = ["30", "50", "51", "60", "90","20","10","40","70"]
-//        let mapStatus = numbers.randomElement()
+        let mapStatus = "30"//numbers.randomElement()
 //        print("map status = \(mapStatus)")
         
         
-        let mapStatus = SelectData!["map_status"] as! String
+//        let mapStatus = SelectData!["map_status"] as! String
         
         
             switch (mapStatus) {
