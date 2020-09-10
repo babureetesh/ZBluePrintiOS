@@ -954,8 +954,20 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
          self.statusMainStackView.isHidden = false
         statusview2.isHidden = false
         StatsView1.isHidden = false
-            switch (SelectData!["map_status"] as! String) {
+        resetStatusStackView()
+        
+//        Test cases
+//        let numbers = ["30", "50", "51", "60", "90","20","10","40","70"]
+//        let mapStatus = numbers.randomElement()
+//        print("map status = \(mapStatus)")
+        
+        
+        let mapStatus = SelectData!["map_status"] as! String
+        
+        
+            switch (mapStatus) {
               
+                
             case "90":
                 
                 currentStatusImage.image = UIImage(named: "not_available.png")
@@ -1104,13 +1116,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 
                 
                 
-                statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
-                statusMainStackView.removeArrangedSubview(Label1)
 
                 
                               
                 eventStatus_ChatView.isHidden = true
-                Label1.isHidden = true
+                Label1.isHidden = false
                 
                 
                 //  statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 236)
@@ -1135,7 +1145,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       Label2.isHidden = true
                       Label3.isHidden = true
                     
-                                 
+                        chat.isHidden = false
                       chatImage.isHidden = false
                       withdrawImage.isHidden = true
                     changestatusLabel.isHidden = false
@@ -1145,7 +1155,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     chatImage.frame.origin = CGPoint(x: 59, y:149)
                     
           //  statusview2.frame = CGRect (x: 19, y: 189, width: 338, height: 187)
-                    chat.frame.origin = CGPoint(x: 0, y: 146)
                     
                     statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
                     statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
@@ -1230,6 +1239,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       
                    // statusview2.frame = CGRect (x: 18, y: 123, width: 338, height: 333)
                       
+                    chat.isHidden = false
+                    
+                    
                   
 
 
@@ -1255,10 +1267,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       withdrawImage.isHidden = false
                       completedImage.isHidden = true
                       changeacceptImage.isHidden = true
-                      
+                      chat.isHidden = false
         //  statusview2.frame = CGRect (x: 18, y: 189, width: 338, height: 236)
                      
-                chat.frame.origin = CGPoint(x: 0, y: 189)
                 chatImage.frame.origin = CGPoint(x: 59, y:191)
                 chatImage.image = UIImage(named: "chat.png")
                 
@@ -1294,10 +1305,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       completedImage.isHidden = true
                      changeacceptImage.isHidden = true
                     changestatusLabel.isHidden = false
+                    chat.isHidden = false
           //    statusview2.frame = CGRect(x: 18, y: 123, width: 338, height: 187)
                       
                     
-                     chat.frame.origin = CGPoint(x: 0, y: 146)
+                     
                       chatImage.frame.origin = CGPoint(x:58 , y:149)
                     chatImage.image = UIImage(named: "chat.png")
                       
@@ -1340,6 +1352,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
                       statusMainStackView.removeArrangedSubview(Label1)
 
+                      
                       lblchangeStatusTo.isHidden = true
                       changestatusLabel.isHidden = true
                       lblCurrentStatus.isHidden = true
@@ -1364,7 +1377,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         statusMainStackView.addArrangedSubview(eventStatus_ChatView)
         
 
-
+        chat.isHidden = true
         lblchangeStatusTo.isHidden = false
         changestatusLabel.isHidden = false
         lblCurrentStatus.isHidden = false
@@ -1373,6 +1386,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         eventStatus_ChatView.isHidden = false
         eventStatus_CurrentStatusView.isHidden = false
         Label1.isHidden = false
+        
+        
+        statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
+        eventStatus_ChatView.isHidden = true
+        
     }
     @IBAction func DiscoverShiftPressed(_ sender: Any) {
         EventShiftView1.isHidden = true

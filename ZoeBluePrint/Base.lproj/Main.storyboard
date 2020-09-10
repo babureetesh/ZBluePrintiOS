@@ -9676,7 +9676,7 @@
                                         <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="0.42519263698630139" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="7V8-FV-Jte">
-                                        <rect key="frame" x="20" y="250.5" width="374" height="312"/>
+                                        <rect key="frame" x="20" y="276" width="374" height="261"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CURRENT STATUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUE-9a-6zy">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -9732,11 +9732,35 @@
                                                             <constraint firstAttribute="width" constant="37" id="ryt-nx-bVV"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSC-ok-tiv" userLabel="Chat Button">
+                                                        <rect key="frame" x="321" y="12.5" width="35" height="35"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="35" id="k2S-BC-UfK"/>
+                                                            <constraint firstAttribute="width" constant="35" id="nPm-Pb-gnT"/>
+                                                        </constraints>
+                                                        <inset key="titleEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" image="chatButton.png">
+                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="0.0"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="changeStatusBtnClick:" destination="0zm-HP-wpH" eventType="touchUpInside" id="GZx-NQ-JuL"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="MSC-ok-tiv" secondAttribute="trailing" constant="18" id="1d8-oO-nNt"/>
                                                     <constraint firstAttribute="height" constant="60" id="2hf-ml-iOn"/>
                                                     <constraint firstAttribute="trailing" secondItem="cGn-eB-Pjq" secondAttribute="trailing" id="38Z-Da-XUx"/>
+                                                    <constraint firstItem="MSC-ok-tiv" firstAttribute="centerY" secondItem="8fv-D7-OyP" secondAttribute="centerY" id="3Ds-wa-UTa"/>
                                                     <constraint firstAttribute="trailing" secondItem="MrQ-f9-tSZ" secondAttribute="trailing" id="8Y7-9W-tJo"/>
                                                     <constraint firstItem="jT3-5G-YQu" firstAttribute="centerY" secondItem="8fv-D7-OyP" secondAttribute="centerY" id="Atu-p9-Idh"/>
                                                     <constraint firstItem="jT3-5G-YQu" firstAttribute="leading" secondItem="8fv-D7-OyP" secondAttribute="leading" constant="46.5" id="GXL-9O-ibe"/>
@@ -9786,7 +9810,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="2fQ-dc-WRQ" firstAttribute="centerY" secondItem="tF5-PY-Xya" secondAttribute="centerY" id="8Dg-Ji-bI8"/>
                                                     <constraint firstItem="n2c-jY-cps" firstAttribute="leading" secondItem="2fQ-dc-WRQ" secondAttribute="trailing" constant="10" id="FQM-KY-5cR"/>
@@ -9798,17 +9822,17 @@
                                                 </constraints>
                                             </view>
                                             <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCi-uP-kBt">
-                                                <rect key="frame" x="0.0" y="200" width="374" height="2"/>
+                                                <rect key="frame" x="0.0" y="200" width="374" height="1"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="2" id="cPI-8c-thM"/>
+                                                    <constraint firstAttribute="height" constant="1" id="cPI-8c-thM"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OCQ-JX-7Gt" userLabel="Mark Completed View" customClass="UIControl">
-                                                <rect key="frame" x="0.0" y="202" width="374" height="60"/>
+                                                <rect key="frame" x="0.0" y="201" width="374" height="60"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59h-rs-RHm">
                                                         <rect key="frame" x="93.5" y="0.0" width="280.5" height="60"/>
@@ -9836,7 +9860,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="59h-rs-RHm" firstAttribute="height" secondItem="OCQ-JX-7Gt" secondAttribute="height" id="A3a-bh-aaT"/>
                                                     <constraint firstItem="59h-rs-RHm" firstAttribute="leading" secondItem="mB7-8U-Wn1" secondAttribute="trailing" constant="10" id="Ax0-WS-lmm"/>
@@ -9847,37 +9871,22 @@
                                                     <constraint firstAttribute="height" constant="60" id="ksm-ht-oCL"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASi-y1-ZnP" userLabel="Chat View" customClass="UIControl">
-                                                <rect key="frame" x="0.0" y="262" width="374" height="50"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ASi-y1-ZnP" userLabel="Chat View" customClass="UIControl">
+                                                <rect key="frame" x="0.0" y="261" width="374" height="0.0"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MSC-ok-tiv">
-                                                        <rect key="frame" x="20" y="20" width="338" height="42"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <inset key="titleEdgeInsets" minX="-18" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <state key="normal" title="Chat">
-                                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </state>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="0.0"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="changeStatusBtnClick:" destination="0zm-HP-wpH" eventType="touchUpInside" id="GZx-NQ-JuL"/>
-                                                        </connections>
-                                                    </button>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="complete-verified.png" translatesAutoresizingMaskIntoConstraints="NO" id="n46-Ot-us4">
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="complete-verified.png" translatesAutoresizingMaskIntoConstraints="NO" id="n46-Ot-us4">
                                                         <rect key="frame" x="79" y="24" width="37" height="33"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
@@ -14129,6 +14138,7 @@
         <image name="black-square-png.png" width="50" height="50"/>
         <image name="black-stars.png" width="215" height="209"/>
         <image name="change_password (1).png" width="36" height="36"/>
+        <image name="chatButton.png" width="512" height="512"/>
         <image name="checkedButton.png" width="24" height="24"/>
         <image name="circle+undefined.png" width="75" height="75"/>
         <image name="cirlce+PNG.png" width="279.83999633789062" height="277.44000244140625"/>
@@ -14215,7 +14225,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="onF-vY-Gix"/>
-        <segue reference="Gpr-Zx-8Sp"/>
+        <segue reference="suG-pC-WRR"/>
         <segue reference="GwZ-Rv-4cF"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
