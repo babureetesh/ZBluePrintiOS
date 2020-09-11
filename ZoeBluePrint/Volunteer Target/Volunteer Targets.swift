@@ -80,7 +80,7 @@ class Volunteer_Targets: UIViewController {
                     var totalPercentage:String = String(Percentage)
                     print(totalPercentage)
                     
-                    self.lblTotalHours.text = totalPercentage + " %"
+                    self.lblTotalHours.text = totalPercentage + "%"
                     
                     self.progressAnimate()
                 

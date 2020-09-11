@@ -57,7 +57,7 @@ class VolRightMenuOption: UIViewController {
         
                var timeZone =  userIDData["user_timezone"] as! String ?? ""
         print(timeZone)
-             //  self.btlTimezone.text = timeZone
+               self.btlTimezone.text = timeZone
        
                
                let serivehandler = ServiceHandlers()

@@ -287,6 +287,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.view.endEditing(true)
         EventShiftView1.isHidden = false
         EventShiftView2.isHidden = false
         self.SelectData = SearchList![indexPath.row] as! Dictionary<String,Any>
@@ -1534,12 +1535,12 @@ let formatter = DateFormatter()
            
        }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        self.SearchList! = searchText.isEmpty ? FilterList! : FilterList!.filter{(($0 as AnyObject)["event_heading"] as! String).contains(searchText)}
+        self.SearchList! = searchText.isEmpty ? FilterList! : FilterList!.filter{(($0 as AnyObject)["event_heading"] as! String).localizedCaseInsensitiveContains(searchText)}
         Table1.reloadData()
         }
   
     @IBAction func BookingButtonPressed(_ sender: Any) {
-   
+        self.view.endEditing(true)
        // let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
         //if defaults == "Dark Mode"{
             
@@ -1565,6 +1566,7 @@ let formatter = DateFormatter()
 }
     
     @IBAction func DiscoverEventsPressed(_ sender: Any) {
+        self.view.endEditing(true)
  //  let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
    //     if defaults == "Dark Mode"{
      //       self.DiscoverEventsTapped.setTitleColor(UIColor.white, for: UIControl.State.normal)

@@ -467,7 +467,7 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
 
             // filterdata  = searchText.isEmpty ? data : data.filter {(item : String) -> Bool in
           
-        filteredData = searchText.isEmpty ? listDetails : listDetails.filter { (($0 as AnyObject)["user_f_name"] as! String).contains(searchText) }
+        filteredData = searchText.isEmpty ? listDetails : listDetails.filter { (($0 as AnyObject)["user_f_name"] as! String).localizedCaseInsensitiveContains(searchText) }
            tblView.reloadData()
     }
  
