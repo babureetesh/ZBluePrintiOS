@@ -750,7 +750,10 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             
 
             self.View2.frame = CGRect(x: View2.frame.origin.x, y: floatYcoordinateView2 - 60.0, width: View2.frame.width, height: floatHeightView2 + 60.0)
-
+            DiscoverLabel.isHidden = false
+            BookLabel.isHidden = true
+            self.bookButtonTapped.setTitleColor(UIColor.gray, for: UIControl.State.normal)
+                       self.DiscoverEventsTapped.setTitleColor(UIColor.black, for: UIControl.State.normal)
             strFromScreen = ""
         }else{
             self.View2.frame = CGRect(x: View2.frame.origin.x, y: floatYcoordinateView2, width: View2.frame.width, height: floatHeightView2)
