@@ -385,8 +385,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         self.timeView.backgroundColor = .black
     
         timePickeSelected.setValue(UIColor.white, forKeyPath: "textColor")
-        self.lblCSOEvents.borderColor = .white
-        self.lblCSOEvents.borderWidth = 3.0
+        //self.lblCSOEvents.borderColor = .white
+       // self.lblCSOEvents.borderWidth = 3.0
         
         ViewChangeStatusPoMain.backgroundColor = .black
         imageStatus.image = UIImage(named: "lightThemePencil.png")

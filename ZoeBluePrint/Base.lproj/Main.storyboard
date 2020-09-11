@@ -9236,7 +9236,7 @@
                                         <state key="normal" image="black-square-png.png"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="2"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -14232,7 +14232,7 @@
         <image name="back_button.png" width="50" height="50"/>
         <image name="back_cover.jpg" width="364" height="186"/>
         <image name="bell.png" width="30" height="30"/>
-        <image name="black-square-png.png" width="50" height="50"/>
+        <image name="black-square-png.png" width="35" height="35"/>
         <image name="black-stars.png" width="215" height="209"/>
         <image name="change_password (1).png" width="36" height="36"/>
         <image name="chatButton.png" width="512" height="512"/>
@@ -14321,7 +14321,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="onF-vY-Gix"/>
-        <segue reference="f8w-ht-7Ve"/>
+        <segue reference="suG-pC-WRR"/>
         <segue reference="GwZ-Rv-4cF"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
