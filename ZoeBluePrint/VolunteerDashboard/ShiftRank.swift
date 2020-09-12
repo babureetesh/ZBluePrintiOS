@@ -15,7 +15,6 @@ class ShiftRank: UIViewController {
     
     
     
-    @IBOutlet weak var lblHeadingName: UILabel!
     @IBOutlet weak var whiteStar: FloatRatingView!
     
     
@@ -65,8 +64,8 @@ class ShiftRank: UIViewController {
       //  if  defaults == "Light Mode"{
                             var headingName = userIDData["user_f_name"] as! String
                                headingName = "\(headingName)'S DASHBOARD"
-                               self.lblHeadingName.textColor = .black
-                               lblHeadingName.text = headingName.uppercased()
+//                               self.lblHeadingName.textColor = .black
+//                               lblHeadingName.text = headingName.uppercased()
        // }else if defaults == "Dark Mode"{
             
             //var headingName = userIDData["user_f_name"] as! String
