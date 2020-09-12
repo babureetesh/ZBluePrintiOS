@@ -1256,7 +1256,7 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
              "search_postcode":search_postcode,
              "search_state":search_state]
          //print(params)
-         let url = baseURL+"search-event.php?api_key=1234&action=search_event_filter"
+         let url = baseURL+"search-event.php?api_key=1234&action=search_event_filter_vol"
          Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default
              , headers: nil).responseJSON {
                  response in

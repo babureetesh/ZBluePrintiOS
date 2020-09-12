@@ -890,7 +890,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     
-    
     @IBAction func DiscoverEventPressed(_ sender: Any) {
         EventShiftView1.isHidden = true
         EventShiftView2.isHidden = true
@@ -968,11 +967,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         
 //        Test cases
 //        let numbers = ["30", "50", "51", "60", "90","20","10","40","70"]
-        let mapStatus = "30"//numbers.randomElement()
+     //   let mapStatus = "30"//numbers.randomElement()
 //        print("map status = \(mapStatus)")
         
         
-//        let mapStatus = SelectData!["map_status"] as! String
+       let mapStatus = SelectData!["map_status"] as! String
         
         
             switch (mapStatus) {
@@ -1012,9 +1011,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 eventStatus_MarkCompleteView.isHidden = true
                 eventStatus_ChatView.isHidden = true
                 Label1.isHidden = true
-                
-                
-                
                 
                 
                 // statusview2.frame = CGRect(x: 19, y: 123, width: 338, height: 98)
@@ -1223,7 +1219,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                   case "50":
                     
                     
-                    currentStatusImage.image = UIImage(named: "more_info.png")
+                    currentStatusImage.image = UIImage(named: "more-info.png")
                     currentstatusName.text = "More Information"
                     
                      
@@ -1260,7 +1256,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                   case "51":
                     
                     
-                    currentStatusImage.image = UIImage(named: "more_info.png")
+                    currentStatusImage.image = UIImage(named: "more-info.png")
                     currentstatusName.text = "More Information"
                     
                       self.withdraw.isHidden = false
