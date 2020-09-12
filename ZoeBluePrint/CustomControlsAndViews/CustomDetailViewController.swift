@@ -60,25 +60,13 @@ class CustomDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//        if defaults == "Dark Mode"{
-//
-//            DarkMode()
-//        }else if defaults == "Light Mode"{
-//            LightMode()
-//
-//        }
-        
-        
         var heightConstraint = contentViewHeightConstraint.constant
         
         if contentToShow.count < 2 {
-            heightConstraint = heightConstraint - 75
+            heightConstraint = heightConstraint - 40
             contentViewHeightConstraint.constant = heightConstraint
             self.view.layoutIfNeeded()
         }
-        
-        
         
     }
     func DarkMode(){
@@ -91,8 +79,7 @@ eventView.backgroundColor = UIColor(red: 66.0/255.0, green: 66.0/255.0, blue: 66
         
         eventView.backgroundColor = .white
     }
-    
-   
+
 }
 
 extension CustomDetailViewController: UITableViewDelegate,UITableViewDataSource {
@@ -182,6 +169,31 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
             let dated = dateFormatter.string(from: dateObj!)
            print(dated)
             cell.dateLabel.text = dated  //2
+   // cell.lblCommentRemark.isHidden = true
+    if (contents["map_status"] as! String) == "90" {
+        cell.dateTimeLabel.text = "Not Available"
+    }else if ((contents["map_status"] as! String) == "70"){
+        cell.dateTimeLabel.text = "Verified" + "\n\(contents["map_rank_comment"] as! String)"
+//cell.lblCommentRemark.isHidden = false
+        //cell.lblCommentRemark.text = (contents["map_rank_comment"] as! String)
+    }else if ((contents["map_status"] as! String) == "10"){
+        cell.dateTimeLabel.text = "Pending"
+    }else if ((contents["map_status"] as! String) == "20"){
+        cell.dateTimeLabel.text = "Accepted"
+    }else if ((contents["map_status"] as! String) == "30"){
+        cell.dateTimeLabel.text = "Decline"
+    }else if ((contents["map_status"] as! String) == "40"){
+        cell.dateTimeLabel.text = "Complete"
+    }else if ((contents["map_status"] as! String) == "50"){
+        cell.dateTimeLabel.text = "More Information"
+    }else if ((contents["map_status"] as! String) == "51"){
+        cell.dateTimeLabel.text = "More Information"
+    }else if ((contents["map_status"] as! String) == "60"){
+        cell.dateTimeLabel.text = "Rejected" + "\n\(contents["map_status_comment"] as! String)"
+         //cell.lblCommentRemark.isHidden = false
+        //cell.lblCommentRemark.text = (contents["map_status_comment"] as! String)
+    }
+    
     
     
             
@@ -190,9 +202,9 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
                var strRank = contents["map_rank_comment"] as? String ?? ""
                               if (strRank.count>0){
                                   strRank = "Rank : " + strRank
-                                  cell.dateTimeLabel.text = strRank //3
+                                 // cell.dateTimeLabel.text = strRank //3
                               }else{
-                               cell.dateTimeLabel.text = ""
+                               //cell.dateTimeLabel.text = ""
                               }
                 
                
@@ -200,7 +212,7 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
                          //  //print(heading)
                 cell.titleLabel.text = heading   //4
                                        
-        cell.lableDescription.text = "Time : \(contents["shift_start_time"] as?  String ?? "") - \(contents["shift_end_time"] as?  String ?? "")"   //5
+        cell.lableDescription.text = "\(contents["shift_start_time"] as?  String ?? "") - \(contents["shift_end_time"] as?  String ?? "")"   //5
                                             
         let weekDay = getDayOfWeek(contents["shift_date"] as! String)!
         cell.dayLabel.text = weekDay as? String ?? ""  //6
@@ -208,26 +220,26 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
        
     }else if(contents["map_status"] as! String) == nil || (contents["map_status"] as! String) == "40" {
                 
-        cell.dateTimeLabel?.isHidden = true
+       // cell.dateTimeLabel?.isHidden = true
                 
                 
         var heading = contents["event_heading"] as! String
        // //print(heading)
         cell.titleLabel.text = heading
                                        
-    cell.lableDescription.text = "Time : \(contents["shift_start_time"] as?  String ?? "") - \(contents["shift_end_time"] as?  String ?? "")"
+    cell.lableDescription.text = "\(contents["shift_start_time"] as?  String ?? "") - \(contents["shift_end_time"] as?  String ?? "")"
                                             
         let weekDay = getDayOfWeek(contents["shift_date"] as! String)!
         cell.dayLabel.text = weekDay as? String ?? ""
            
 }else{
-                cell.dateTimeLabel?.isHidden = true
+          //      cell.dateTimeLabel?.isHidden = true
                 
               var heading = contents["event_heading"] as! String
                   //  //print(heading)
                     cell.titleLabel.text = heading
                                                    
-                cell.lableDescription.text = "Time : \(contents["shift_start_time"] as?  String ?? "") - \(contents["shift_end_time"] as?  String ?? "")"
+                cell.lableDescription.text = "\(contents["shift_start_time"] as?  String ?? "") - \(contents["shift_end_time"] as?  String ?? "")"
                                                         
                     let weekDay = getDayOfWeek(contents["shift_date"] as! String)!
                     cell.dayLabel.text = weekDay as? String ?? ""

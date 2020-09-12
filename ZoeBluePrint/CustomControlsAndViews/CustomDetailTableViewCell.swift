@@ -13,6 +13,7 @@ class CustomDetailTableViewCell: UITableViewCell {
     
    
     
+    @IBOutlet weak var lblCommentRemark: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
