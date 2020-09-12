@@ -11962,10 +11962,10 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GvH-9V-My4">
-                                                <rect key="frame" x="45" y="574" width="324" height="60"/>
+                                                <rect key="frame" x="45" y="654" width="324" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTi-C2-EXd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="157" height="45"/>
                                                         <color key="backgroundColor" red="0.66274509803921566" green="0.66274509803921566" blue="0.66274509803921566" alpha="0.28368471746575341" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Close">
                                                             <color key="titleColor" red="0.36862745098039218" green="0.36862745098039218" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -11986,7 +11986,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3T-Sp-DxP">
-                                                        <rect key="frame" x="167" y="0.0" width="157" height="60"/>
+                                                        <rect key="frame" x="167" y="0.0" width="157" height="45"/>
                                                         <color key="backgroundColor" red="0.0" green="0.56862745098039214" blue="0.57647058823529407" alpha="0.20577375856164384" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="View Status">
                                                             <color key="titleColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -12008,7 +12008,7 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="Ehe-yp-m39"/>
+                                                    <constraint firstAttribute="height" constant="45" id="Ehe-yp-m39"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -12039,7 +12039,7 @@
                                             <constraint firstAttribute="trailing" secondItem="9ou-EX-x2X" secondAttribute="trailing" constant="20" id="WXL-l1-bzv"/>
                                             <constraint firstItem="NPk-fl-KNJ" firstAttribute="top" secondItem="OGd-wz-ahx" secondAttribute="top" constant="-5" id="Ylq-e2-Gzq"/>
                                             <constraint firstItem="j6P-m8-i14" firstAttribute="width" secondItem="NPk-fl-KNJ" secondAttribute="width" multiplier="0.958333" id="Z16-UC-7eq"/>
-                                            <constraint firstItem="GvH-9V-My4" firstAttribute="top" secondItem="zGI-AX-UxU" secondAttribute="bottom" constant="30" id="Zzr-yB-bno"/>
+                                            <constraint firstItem="GvH-9V-My4" firstAttribute="top" secondItem="u0x-Tr-ebm" secondAttribute="bottom" constant="30" id="Zzr-yB-bno"/>
                                             <constraint firstItem="Yuc-8t-HdT" firstAttribute="top" secondItem="YBH-z0-6oG" secondAttribute="bottom" constant="10" id="auy-FX-PXG"/>
                                             <constraint firstItem="sBX-it-R7h" firstAttribute="leading" secondItem="nM7-Oz-9vn" secondAttribute="trailing" constant="5" id="dA4-iL-aqw"/>
                                             <constraint firstItem="OGd-wz-ahx" firstAttribute="leading" secondItem="aVl-E4-5JO" secondAttribute="leading" constant="30" id="dlw-wP-Iaj"/>
