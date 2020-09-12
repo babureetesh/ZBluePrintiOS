@@ -249,6 +249,7 @@ if let data = try? Data(contentsOf: url! as URL)
 self.ImageFromServer.image = UIImage(data: data)
 }
 
+//    self.view.layoutIfNeeded()
 }
 }
 }
@@ -256,7 +257,7 @@ view.addSubview(scroller)
 }
     override func viewWillLayoutSubviews(){
        super.viewWillLayoutSubviews()
-       scroller.contentSize = CGSize(width: 375, height: 600)
+       //scroller.contentSize = CGSize(width: 375, height: 600)
        }
     
     
