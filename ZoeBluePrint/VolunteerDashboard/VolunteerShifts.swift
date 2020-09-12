@@ -295,8 +295,8 @@ override func viewWillAppear(_ animated: Bool) {
         ////print(changeRate)
         if changeRate != "0"{
             
-            cell.StatusNameTapped.setImage(UIImage(named: "pending.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
-            cell.StatusName.text = "Waiting"
+            cell.StatusNameTapped.setImage(UIImage(named: "complete-verified.png")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            cell.StatusName.text = "Applied"
             cell.StatusName.textColor = .gray
             // UIColor(red: 39/255.0, green: 174/255.0, blue: 96/255.0, alpha: 1.0)
         }else
