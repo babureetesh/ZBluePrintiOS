@@ -1142,7 +1142,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     
                     
                     
-                      self.withdraw.isHidden = true
+                      self.withdraw.isHidden = false
                       self.chat.isHidden = false
                       self.markCompleted.isHidden = true
                       self.currentAccepted.isHidden = true
@@ -1153,7 +1153,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     
                         chat.isHidden = false
                       chatImage.isHidden = false
-                      withdrawImage.isHidden = true
+                      withdrawImage.isHidden = false
                     changestatusLabel.isHidden = false
                       completedImage.isHidden = true
                       
@@ -1162,16 +1162,16 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                     
           //  statusview2.frame = CGRect (x: 19, y: 189, width: 338, height: 187)
                     
-                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
+//                    statusMainStackView.removeArrangedSubview(eventStatus_WithdrawView)
                     statusMainStackView.removeArrangedSubview(eventStatus_MarkCompleteView)
                     statusMainStackView.removeArrangedSubview(Label1)
-                    statusMainStackView.removeArrangedSubview(changestatusLabel)
+//                    statusMainStackView.removeArrangedSubview(changestatusLabel)
                     statusMainStackView.removeArrangedSubview(eventStatus_ChatView)
                     
-                    eventStatus_WithdrawView.isHidden = true
+//                    eventStatus_WithdrawView.isHidden = true
                     eventStatus_MarkCompleteView.isHidden = true
                     Label1.isHidden = true
-                    changestatusLabel.isHidden = true
+//                    changestatusLabel.isHidden = true
                     eventStatus_ChatView.isHidden = true
                  break
                  
