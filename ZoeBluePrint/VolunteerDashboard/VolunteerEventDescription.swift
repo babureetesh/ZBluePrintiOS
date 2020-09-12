@@ -53,7 +53,7 @@ class VolunteerEventDescription: UIViewController {
     @IBOutlet weak var DescriptionLabel: UILabel!
     var event_id:String?
     
-    @IBOutlet weak var txtviewDescription: UITextView!
+    @IBOutlet weak var txtviewDescription: UITextViewFixed!
     @IBOutlet weak var description2: UILabel!
     @IBOutlet weak var imgViewCoverPic: UIImageView!
     
@@ -83,11 +83,12 @@ class VolunteerEventDescription: UIViewController {
                
                 var date_start = data["event_register_start_date"] as! String
                 var date_end = data["event_register_end_date"] as! String
-                self.DateLabel.text = date_start + "-" + date_end
+//                self.DateLabel.text = date_start + "-" + date_end
                 
                 var time_start = data["event_start_time_format"] as! String
                 var time_end = data["event_end_time_format"] as! String
-                self.TimeLabel.text = time_start + "-" + time_end
+//                self.TimeLabel.text = time_start + "-" + time_end
+                self.DateLabel.text = "\(date_start) - \(date_end)\n\(time_start) - \(time_end)"
                 
                 self.AddressLabel.text = data["event_address"] as! String
                 self.DescriptionLabel.text = data["event_heading"] as! String
@@ -137,14 +138,14 @@ class VolunteerEventDescription: UIViewController {
             var date_end = dict_data["event_register_end_date"] as! String
             var Date = "\(date_start) - \(date_end)"
             //print(Date)
-            self.DateLabel.text = Date as! String
+//            self.DateLabel.text = Date as! String
             
             var time_start = dict_data["event_start_time_format"] as! String
             var time_end = dict_data["event_end_time_format"] as! String
             var Time = "\(time_start) - \(time_end)"
             //print(Time)
-            self.TimeLabel.text = Time as! String
-            
+//            self.TimeLabel.text = Time as! String
+            self.DateLabel.text = "\(date_start) - \(date_end)\n\(time_start) - \(time_end)"
             self.AddressLabel.text = dict_data["event_address"] as! String
             self.DescriptionLabel.text = dict_data["event_heading"] as! String
            // self.description2.text = dict_data["event_details"] as! String
@@ -202,13 +203,13 @@ var date_start = dict_data["event_register_start_date"] as! String
 var date_end = dict_data["event_register_end_date"] as! String
 var Date = "\(date_start) - \(date_end)"
 //print(Date)
-self.DateLabel.text = Date as! String
+//self.DateLabel.text = Date as! String
 var time_start = dict_data["event_start_time_format"] as! String
 var time_end = dict_data["event_end_time_format"] as! String
 var Time = "\(time_start) - \(time_end)"
 //print(Time)
-self.TimeLabel.text = Time as! String
-
+//self.TimeLabel.text = Time as! String
+self.DateLabel.text = "\(date_start) - \(date_end)\n\(time_start) - \(time_end)"
 self.AddressLabel.text = dict_data["event_address"] as! String
 self.DescriptionLabel.text = dict_data["event_heading"] as! String
 //self.description2.text = dict_data["event_details"] as! String
@@ -455,12 +456,12 @@ view.addSubview(scroller)
                //print(data)
                 var date_start = data["event_register_start_date"] as! String
                 var date_end = data["event_register_end_date"] as! String
-                self.DateLabel.text = date_start + "-" + date_end
+//                self.DateLabel.text = date_start + "-" + date_end
                 
                 var time_start = data["event_start_time_format"] as! String
                 var time_end = data["event_end_time_format"] as! String
-                self.TimeLabel.text = time_start + "-" + time_end
-                
+//                self.TimeLabel.text = time_start + "-" + time_end
+                self.DateLabel.text = "\(date_start) - \(date_end)\n\(time_start) - \(time_end)"
                 self.AddressLabel.text = data["event_address"] as! String
                 self.DescriptionLabel.text = data["event_heading"] as! String
                 //self.description2.text = data["event_details"] as! String
