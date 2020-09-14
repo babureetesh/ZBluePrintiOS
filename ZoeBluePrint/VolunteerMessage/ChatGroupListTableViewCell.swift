@@ -16,6 +16,8 @@ protocol delegateChatGroupList{
 class ChatGroupListTableViewCell: UITableViewCell {
     var delegate :delegateChatGroupList?
     @IBOutlet weak var lblChatGroupName: UILabel!
+    @IBOutlet weak var lblChatLastMsg: UILabel!
+     @IBOutlet weak var lblChatLastMsgDate: UILabel!
     @IBOutlet weak var imgGroupChat: UIImageView!
     @IBOutlet weak var btnMember: UIButton!
     @IBOutlet weak var btnPlus: UIButton!

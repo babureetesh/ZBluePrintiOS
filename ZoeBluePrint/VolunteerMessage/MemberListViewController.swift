@@ -62,6 +62,10 @@ class MemberListViewController: UIViewController,UITableViewDelegate,UITableView
             cell.delegate = self
             cell.btnWritePermission.tag = indexPath.row
             cell.imgViewUser.image = UIImage(named: "user_email.png")
+            cell.imgViewUser.downloadImageFrom(link: user.profileUrl! , contentMode: UIView.ContentMode.scaleAspectFill)
+            cell.imgViewUser.layer.cornerRadius = cell.imgViewUser.frame.size.width / 2
+            cell.imgViewUser.clipsToBounds = true
+            
             print(user.userId)
             print(self.channel.data as String!)
             if self.channel.data == self.userEmail {
@@ -153,3 +157,4 @@ class MemberListViewController: UIViewController,UITableViewDelegate,UITableView
     }
 
 }
+

@@ -8,12 +8,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Trade_Gothic_Bold.ttf">
+            <string>TradeGothicLT-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GroupChannelChatViewController" customModule="ZoeBluePrint" customModuleProvider="target">
             <connections>
                 <outlet property="inputMessageInnerContainerViewBottomMargin" destination="hNx-3k-Oaa" id="yUf-eo-bw0"/>
                 <outlet property="inputMessageTextField" destination="MUS-qO-qGJ" id="k3A-cz-xWs"/>
-                <outlet property="lblChannelName" destination="eXj-js-2HS" id="Hbm-T2-WQq"/>
+                <outlet property="lblChannelName" destination="nMi-46-9JU" id="dSx-bo-FC9"/>
                 <outlet property="loadingIndicatorView" destination="khe-tC-OtR" id="Dh8-uf-YUq"/>
                 <outlet property="messageTableView" destination="oAG-M7-VNE" id="fU3-YB-FYE"/>
                 <outlet property="messageTableViewBottomMargin" destination="eoZ-gS-1jP" id="WXi-wH-BXU"/>
@@ -32,31 +37,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nMi-46-9JU">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nMi-46-9JU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.0078431372550000003" green="0.1019607843" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="backgroundColor" red="0.12941176470588234" green="0.15294117647058825" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rzm-gm-Gla">
-                    <rect key="frame" x="320" y="20" width="27" height="24"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" image="newList.png"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yml-Dw-v3U">
-                    <rect key="frame" x="8" y="72" width="28" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yml-Dw-v3U">
+                    <rect key="frame" x="8" y="65" width="28" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="28" id="KiV-VH-gYF"/>
+                        <constraint firstAttribute="height" constant="25" id="gBM-A9-sf1"/>
+                    </constraints>
                     <state key="normal" title="Button" image="iphoneBackButton.png"/>
                     <connections>
                         <action selector="bcakButtonClick:" destination="-1" eventType="touchUpInside" id="Li7-YG-aTc"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" id="DRy-vD-dTL">
-                    <rect key="frame" x="19" y="17" width="31" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-M7-VNE" userLabel="Message Table View">
                     <rect key="frame" x="0.0" y="106" width="375" height="506"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -223,18 +222,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXj-js-2HS">
-                    <rect key="frame" x="58" y="7" width="254" height="48"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="oAG-M7-VNE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2sn-sG-ABt"/>
                 <constraint firstItem="j0C-oq-vkT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5Cb-qQ-55M"/>
+                <constraint firstItem="Yml-Dw-v3U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="7dK-On-q9f"/>
                 <constraint firstAttribute="bottom" secondItem="cvK-56-JdT" secondAttribute="bottom" id="7kd-k0-sqx"/>
                 <constraint firstItem="j0C-oq-vkT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F4C-1c-tUd"/>
                 <constraint firstItem="S75-zI-pfI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="P7y-ar-Xb7"/>
@@ -264,8 +257,6 @@
         <image name="img_btn_send_user_msg_pressed" width="25" height="25"/>
         <image name="img_toast_check" width="40" height="32"/>
         <image name="iphoneBackButton.png" width="225" height="225"/>
-        <image name="newList.png" width="22.5" height="22.5"/>
-        <image name="user2.png" width="18.75" height="18.75"/>
         <namedColor name="color_message_input_textfield_border">
             <color red="0.875" green="0.875" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
