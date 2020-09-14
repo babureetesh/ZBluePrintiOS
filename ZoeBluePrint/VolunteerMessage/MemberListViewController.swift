@@ -11,9 +11,22 @@ import SendBirdSDK
 class MemberListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,delegateWritePermissionSelection {
 
     @IBOutlet weak var tblMemberList: UITableView!
+    @IBOutlet weak var viewheight:NSLayoutConstraint!
     var mutedUsers: [SBDMember]!
     var userEmail = ""
     var channel: SBDGroupChannel!
+    
+    
+    
+    
+    override func viewDidLayoutSubviews() {
+        
+        let dataCount = 48 + channel.members!.count * 100
+        viewheight.constant = CGFloat(dataCount)
+        
+        super.viewDidLayoutSubviews()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
