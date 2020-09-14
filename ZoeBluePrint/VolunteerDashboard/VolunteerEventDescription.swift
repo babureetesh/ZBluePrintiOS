@@ -189,7 +189,7 @@ class VolunteerEventDescription: UIViewController {
            
                  if self.screen == "DISCOVER EVENTS"{
                 
-        self.btnstatusViewTapped.setTitle("View Status", for: UIControl.State.normal)
+        self.btnstatusViewTapped.setTitle("Shift", for: UIControl.State.normal)
                                 }
 
 let serviceHanlder = ServiceHandlers()
