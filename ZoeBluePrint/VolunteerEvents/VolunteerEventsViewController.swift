@@ -114,7 +114,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var withdrawImage: UIImageView!             // reject
     @IBOutlet weak var moreinfoimage: UIImageView!
     @IBOutlet weak var lblCSOEvents: UIButton!
-    @IBOutlet weak var UpdateView1: UIView!
+//    @IBOutlet weak var UpdateView1: UIView!
     @IBOutlet weak var updateView2: UIView!
     var strFromScreen : String!
     var screen:String!
@@ -147,8 +147,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         }else if button.tag == 1{
            //print("Mark Completed")
             
-           
-            UpdateView1.isHidden = false
+            statusMainStackView.isHidden = true
+//            UpdateView1.isHidden = false
             updateView2.isHidden=false
             self.map_status = "40"
             PreFilledData() // Show Withdraw view
@@ -481,8 +481,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
  
         
         let mytapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(handleTap3(_:)))
-        self.UpdateView1.addGestureRecognizer(mytapGestureRecognizer3)
-        self.UpdateView1.isUserInteractionEnabled = true
+//        self.UpdateView1.addGestureRecognizer(mytapGestureRecognizer3)
+//        self.UpdateView1.isUserInteractionEnabled = true
 //        let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
 //        self.StatsView1.addGestureRecognizer(mytapGestureRecognizer)
 //        self.StatsView1.isUserInteractionEnabled = true
@@ -493,7 +493,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         
      
 
-          timePickeSelected.isHidden = true
         timeView.isHidden = true
         
        
@@ -581,15 +580,14 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
   
     @IBAction func inPressed(_ sender: Any) {
         
-        self.timePickeSelected.isHidden = false
-        timeView.isHidden = false
+//        self.timePickeSelected.isHidden = false
+        timeView.isHidden = !timeView.isHidden
         boolInTimeselected = true
         
     }
     @IBAction func TimePicker(_ sender: Any) {
         
         
-        self.timePickeSelected.isHidden = true
         timeView.isHidden = true
         let formatter = DateFormatter()
                formatter.locale = Locale(identifier: "en_US_POSIX")
@@ -633,8 +631,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
        }
     
     @IBAction func OutPressed(_ sender: Any) {
-        self.timePickeSelected.isHidden = false
-        timeView.isHidden = false
+//        self.timePickeSelected.isHidden = false
+        timeView.isHidden = !timeView.isHidden
         boolInTimeselected = false
         
     }
@@ -764,7 +762,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 }
     func refreshLoadData(){
         
-        UpdateView1.isHidden = true
+//        UpdateView1.isHidden = true
         updateView2.isHidden=true
         EventShiftView1.isHidden = true
         EventShiftView2.isHidden = true
@@ -825,7 +823,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     }
     @objc func handleTap3(_ sender:UITapGestureRecognizer){
 
-           self.UpdateView1.isHidden = true
+//           self.UpdateView1.isHidden = true
            self.updateView2.isHidden = true
     }
     @objc func handleTap4(_ sender:UITapGestureRecognizer){
@@ -865,17 +863,17 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     @IBAction func UdateCancelButton(_ sender: Any) {
-        UpdateView1.isHidden = true
+//        UpdateView1.isHidden = true
         updateView2.isHidden = true
-        
+        eventStatusoverlayTapped(sender)
         
     }
     
     @IBAction func UpdateDoneButton(_ sender: Any) {
-        
+        eventStatusoverlayTapped(sender)
         if OutTime.titleLabel!.text != nil {
         self.UpdateHours()
-        UpdateView1.isHidden = true
+//        UpdateView1.isHidden = true
         updateView2.isHidden = true
         }else{
             
@@ -916,9 +914,14 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     }
     
     @IBAction func eventStatusoverlayTapped(_ sender: Any) {
-       self.StatsView1.isHidden = true
-       self.statusview2.isHidden = true
-         self.statusMainStackView.isHidden = true
+        if timeView.isHidden {
+            self.StatsView1.isHidden = true
+            self.statusview2.isHidden = true
+            self.statusMainStackView.isHidden = true
+            updateView2.isHidden = true
+        } else {
+            timeView.isHidden = true
+        }
     }
     
     @IBAction func eventAndShiftOverlayTapped(_ sender: Any) {
