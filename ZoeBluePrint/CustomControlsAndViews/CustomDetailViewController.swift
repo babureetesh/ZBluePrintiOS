@@ -62,8 +62,8 @@ class CustomDetailViewController: UIViewController {
         
         var heightConstraint = contentViewHeightConstraint.constant
         
-        if contentToShow.count < 2 {
-            heightConstraint = heightConstraint - 40
+        if contentToShow.count == 1 {
+            heightConstraint = heightConstraint - 93 // 93 is row height
             contentViewHeightConstraint.constant = heightConstraint
             self.view.layoutIfNeeded()
         }
@@ -292,6 +292,8 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
         }
     }
 
-   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 93
+    }
     
 }
