@@ -61,6 +61,7 @@
 		2AD703F622E323F700A40393 /* EventActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD703F522E323F700A40393 /* EventActionsViewController.xib */; };
 		2AD7040222E4C8E800A40393 /* CSOAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7040122E4C8E800A40393 /* CSOAddEventViewController.swift */; };
 		2AD70F6222EA289E0069A076 /* CSORegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */; };
+		2AF89D992510C6C30076A1E8 /* volmenuorg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AF89D982510C6C30076A1E8 /* volmenuorg.png */; };
 		38019E6324F10E8E00EB7657 /* newAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38019E6224F10E8E00EB7657 /* newAppIcon.png */; };
 		3805A4FB22B3BDD7005734AC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3805A4FA22B3BDD7005734AC /* AlertManager.swift */; };
 		381DFD6F22CB78E900C58A74 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */; };
@@ -72,7 +73,6 @@
 		3827253824F51BB90031DEF3 /* youareconnected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253324F51BB90031DEF3 /* youareconnected.png */; };
 		3827253924F51BB90031DEF3 /* trackyourhours.png in Resources */ = {isa = PBXBuildFile; fileRef = 3827253424F51BB90031DEF3 /* trackyourhours.png */; };
 		382F802C24ED973E000D9F59 /* OrganizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382F802B24ED973E000D9F59 /* OrganizationTableViewCell.swift */; };
-		38356517250F6A3900483DBA /* volmenuorg.png in Resources */ = {isa = PBXBuildFile; fileRef = 38356516250F6A3700483DBA /* volmenuorg.png */; };
 		383681EB22D864E200ABB209 /* cso_verified.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 383681D022D864E100ABB209 /* cso_verified.jpg */; };
 		383681EC22D864E200ABB209 /* vol_request.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 383681D122D864E100ABB209 /* vol_request.jpg */; };
 		383681ED22D864E200ABB209 /* cso_declined.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 383681D222D864E100ABB209 /* cso_declined.jpg */; };
@@ -473,6 +473,7 @@
 		2AD703F522E323F700A40393 /* EventActionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventActionsViewController.xib; sourceTree = "<group>"; };
 		2AD7040122E4C8E800A40393 /* CSOAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSOAddEventViewController.swift; sourceTree = "<group>"; };
 		2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSORegistrationViewController.swift; sourceTree = "<group>"; };
+		2AF89D982510C6C30076A1E8 /* volmenuorg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = volmenuorg.png; path = ../../../../../../Downloads/volmenuorg.png; sourceTree = "<group>"; };
 		38019E6224F10E8E00EB7657 /* newAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newAppIcon.png; sourceTree = "<group>"; };
 		3805A4FA22B3BDD7005734AC /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
@@ -484,7 +485,6 @@
 		3827253324F51BB90031DEF3 /* youareconnected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youareconnected.png; sourceTree = "<group>"; };
 		3827253424F51BB90031DEF3 /* trackyourhours.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackyourhours.png; sourceTree = "<group>"; };
 		382F802B24ED973E000D9F59 /* OrganizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationTableViewCell.swift; sourceTree = "<group>"; };
-		38356516250F6A3700483DBA /* volmenuorg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = volmenuorg.png; path = ../../../../Downloads/volmenuorg.png; sourceTree = "<group>"; };
 		383681D022D864E100ABB209 /* cso_verified.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cso_verified.jpg; sourceTree = "<group>"; };
 		383681D122D864E100ABB209 /* vol_request.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = vol_request.jpg; sourceTree = "<group>"; };
 		383681D222D864E100ABB209 /* cso_declined.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cso_declined.jpg; sourceTree = "<group>"; };
@@ -1530,7 +1530,7 @@
 		C2A75421238E970600D4010B /* Project_images */ = {
 			isa = PBXGroup;
 			children = (
-				38356516250F6A3700483DBA /* volmenuorg.png */,
+				2AF89D982510C6C30076A1E8 /* volmenuorg.png */,
 				38019E6224F10E8E00EB7657 /* newAppIcon.png */,
 				386148FA24DC28EB00B9627A /* Cover Images */,
 				C2A75422238E976100D4010B /* search2.png */,
@@ -1858,7 +1858,7 @@
 				383681F622D864E200ABB209 /* blocked.jpg in Resources */,
 				383681F022D864E200ABB209 /* cso_rejected.jpg in Resources */,
 				C29B693F23FA7743003ED683 /* newIconUser.png in Resources */,
-				38356517250F6A3900483DBA /* volmenuorg.png in Resources */,
+				2AF89D992510C6C30076A1E8 /* volmenuorg.png in Resources */,
 				383681FD22D864E200ABB209 /* im_student_selection.png in Resources */,
 				383681FF22D864E200ABB209 /* user.png in Resources */,
 				7CAF580D23244C7500017D9B /* timer.png in Resources */,
