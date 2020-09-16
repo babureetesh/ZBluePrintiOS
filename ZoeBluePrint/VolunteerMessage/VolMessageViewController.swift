@@ -296,6 +296,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
         let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
         vc.channel = self.channelList[indexPath.row]
         vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .fullScreen
         present(vc,animated: true)
     }
     

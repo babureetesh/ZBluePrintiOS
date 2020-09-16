@@ -193,7 +193,7 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
          //cell.lblCommentRemark.isHidden = false
         //cell.lblCommentRemark.text = (contents["map_status_comment"] as! String)
     }
-    cell.dateTimeLabel.sizeToFit()
+//    cell.dateTimeLabel.sizeToFit()
             if ((contents["map_status"] as! String) == "70" || (contents["map_status"] as! String) == "90" ) {
                 
                var strRank = contents["map_rank_comment"] as? String ?? ""
