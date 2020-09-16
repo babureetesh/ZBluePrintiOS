@@ -158,39 +158,45 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
     }
    
     func getCustomChannelName(channel: SBDGroupChannel) -> String{
-        var modifiedChannelName = ""
-        
-        print(channel.customType)
-        
-        if !(channel.customType == "Channel" ){
-        if (channel.memberCount < 2 || self.username == nil) {
-            return "No Members";
-        } else if (channel.memberCount == 2) { // logic for more than 2 member
-            for member in channel.members! {
-                let memberDet = member as! SBDMember
-                if (memberDet.userId == self.username){
-                    continue
-                }else if (memberDet.nickname == ""){
-                    modifiedChannelName.append(", " + memberDet.userId)
-                }else {
-                    modifiedChannelName.append(memberDet.nickname!)
+            var modifiedChannelName = ""
+            
+            print(channel.customType)
+            
+            if !(channel.customType == "Channel" ){
+            if (channel.memberCount < 2 || self.username == nil) {
+                return "No Members";
+            } else if (channel.memberCount == 2) { // logic for more than 2 member
+                for member in channel.members! {
+                    let memberDet = member as! SBDMember
+                    if (memberDet.userId == self.username){
+                        continue
+                    }else if (memberDet.nickname == ""){
+                        modifiedChannelName.append(", " + memberDet.userId)
+                    }else {
+                        modifiedChannelName.append(memberDet.nickname!)
+                    }
+                    print("MODIFIED CHANNEL NAME ->> " + modifiedChannelName )
                 }
-                print("MODIFIED CHANNEL NAME ->> " + modifiedChannelName )
+                return modifiedChannelName
             }
-            return modifiedChannelName
+            }else{
+                let components = channel.name.components(separatedBy: "(")
+                 var strNewName = ""
+                if (components.count > 1){
+               // print("***** " + components[1])
+                 strNewName = components[1]
+                 strNewName = strNewName.replacingOccurrences(of: ")", with: "")
+                strNewName = strNewName.trimmingCharacters(in: .whitespaces)
+                strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
+                    strNewName = "# " + strNewName
+                }else{
+                    strNewName = channel.name
+                }
+                return strNewName
+               
+            }
+            return channel.name
         }
-        }else{
-            let components = channel.name.components(separatedBy: "(")
-            print("***** " + components[1])
-            var strNewName = components[1]
-             strNewName = strNewName.replacingOccurrences(of: ")", with: "")
-            strNewName = strNewName.trimmingCharacters(in: .whitespaces)
-            strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
-            return "# " + strNewName
-           
-        }
-        return channel.name
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.channelList.count
@@ -217,7 +223,11 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             cell.imgGroupChat.downloadImageFrom(link: string_url, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.imgGroupChat.layer.cornerRadius = cell.imgGroupChat.frame.size.width / 2
             cell.imgGroupChat.clipsToBounds = true
+            if self.channelList[indexPath.row].data == self.username{
+                cell.btnPlus.isHidden = false
+            }else{
             cell.btnMember.isHidden = true
+            }
         }else{
             cell.imgGroupChat.downloadImageFrom(link: self.channelList[indexPath.row].coverUrl!, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.btnMember.isHidden = false

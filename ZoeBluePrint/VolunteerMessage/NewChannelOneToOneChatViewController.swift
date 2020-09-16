@@ -208,9 +208,8 @@ self.viewCreateChannel.isHidden = true
                        guard error == nil else {// Error.
                            return
                        }
-                    print(users![0].userId)
-                       print(users![0].connectionStatus)
                        //SBDUserConnectionStatus //SBDUserConnectionStatusNonAvailable = 0,
+                    if (users!.count > 0){
                        if Int(users![0].connectionStatus.rawValue) == 0{
                           let name = self.dataArray[myIndexPath.row]["user_f_name"] as! String
                                       let alert = UIAlertController(title: nil, message: " \(name) not registered in messenger", preferredStyle: UIAlertController.Style.alert)
@@ -220,6 +219,13 @@ self.viewCreateChannel.isHidden = true
                         self.selectedData.append(self.dataArray[myIndexPath.row]["user_email"] as! String)
                             cell.btnCheckMark.setImage(UIImage(named: "newtickbox.png"), for: .normal)
                         }
+                        
+                    }else{
+                        let name = self.dataArray[myIndexPath.row]["user_f_name"] as! String
+                        let alert = UIAlertController(title: nil, message: " \(name) not registered in messenger", preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
                     print(self.selectedData)
                    })
         }

@@ -166,45 +166,52 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
 //            super.viewWillDisappear(animated)
 //        }
 //    }
-    func getCustomChannelName(channelforName: SBDGroupChannel) -> String{
-          var modifiedChannelName = ""
-          
-        print(channel!.customType)
-        //self.title = Utils.createGroupChannelName(channel: self.channel!)
-          let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                    let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-          let username = userIDData["user_email"] as? String
+  func getCustomChannelName(channelforName: SBDGroupChannel) -> String{
+        var modifiedChannelName = ""
         
-        if !(self.channel!.customType == "Channel" ){
-            if (self.channel!.memberCount < 2 || username == nil) {
-              return "No Members";
-            } else if (self.channel!.memberCount == 2) { // logic for more than 2 member
-                for member in (self.channel?.members!)! {
-                  let memberDet = member as! SBDMember
-                    
-                  if (memberDet.userId == username){
-                      continue
-                  }else if (memberDet.nickname == ""){
-                      modifiedChannelName.append(", " + memberDet.userId)
-                  }else {
-                      modifiedChannelName.append(memberDet.nickname!)
-                  }
-                  print("MODIFIED CHANNEL NAME ->> " + modifiedChannelName )
-              }
-              return modifiedChannelName
-          }
-          }else{
-            let components = self.channel!.name.components(separatedBy: "(")
-              print("***** " + components[1])
-              var strNewName = components[1]
-               strNewName = strNewName.replacingOccurrences(of: ")", with: "")
-              strNewName = strNewName.trimmingCharacters(in: .whitespaces)
-             // strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
-              return strNewName
-             
-          }
-        return self.channel!.name
-      }
+      print(channel!.customType)
+      //self.title = Utils.createGroupChannelName(channel: self.channel!)
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                  let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+        let username = userIDData["user_email"] as? String
+      
+      if !(self.channel!.customType == "Channel" ){
+          if (self.channel!.memberCount < 2 || username == nil) {
+            return "No Members";
+          } else if (self.channel!.memberCount == 2) { // logic for more than 2 member
+              for member in (self.channel?.members!)! {
+                let memberDet = member as! SBDMember
+                  
+                if (memberDet.userId == username){
+                    continue
+                }else if (memberDet.nickname == ""){
+                    modifiedChannelName.append(", " + memberDet.userId)
+                }else {
+                    modifiedChannelName.append(memberDet.nickname!)
+                }
+                print("MODIFIED CHANNEL NAME ->> " + modifiedChannelName )
+            }
+            return modifiedChannelName
+        }
+        }else{
+          let components = channelforName.name.components(separatedBy: "(")
+            var strNewName = ""
+           if (components.count > 1){
+          // print("***** " + components[1])
+            strNewName = components[1]
+            strNewName = strNewName.replacingOccurrences(of: ")", with: "")
+           strNewName = strNewName.trimmingCharacters(in: .whitespaces)
+           strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
+            strNewName = "# " + strNewName
+           }else{
+               strNewName = channelforName.name
+           }
+           return strNewName
+           
+        }
+      return self.channel!.name
+    }
+
     
     func showToast(_ message: String) {
         self.toastView.alpha = 1
