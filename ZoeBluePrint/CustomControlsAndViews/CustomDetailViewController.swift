@@ -181,7 +181,7 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
     }else if ((contents["map_status"] as! String) == "20"){
         cell.dateTimeLabel.text = "Accepted"
     }else if ((contents["map_status"] as! String) == "30"){
-        cell.dateTimeLabel.text = "Decline"
+        cell.dateTimeLabel.text = "Decline" + "\n\(contents["map_status_comment"] as! String)"
     }else if ((contents["map_status"] as! String) == "40"){
         cell.dateTimeLabel.text = "Complete"
     }else if ((contents["map_status"] as! String) == "50"){
@@ -193,10 +193,7 @@ if strFromVolCal == "VOL"{//---------------------------VOL----------------------
          //cell.lblCommentRemark.isHidden = false
         //cell.lblCommentRemark.text = (contents["map_status_comment"] as! String)
     }
-    
-    
-    
-            
+    cell.dateTimeLabel.sizeToFit()
             if ((contents["map_status"] as! String) == "70" || (contents["map_status"] as! String) == "90" ) {
                 
                var strRank = contents["map_rank_comment"] as? String ?? ""

@@ -269,9 +269,13 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             cell.lblChatLastMsgDate.isHidden = true
         }
        
-       
-        
-        
+        if (self.channelList[indexPath.row].unreadMessageCount > 0 ){
+            cell.lblUnReadMsgCount.isHidden = false
+        cell.lblUnReadMsgCount.layer.cornerRadius = cell.lblUnReadMsgCount.frame.width/2
+        cell.lblUnReadMsgCount.text = String(self.channelList[indexPath.row].unreadMessageCount)
+        }else{
+            cell.lblUnReadMsgCount.isHidden = true
+        }
        // cell.lblChatLastMsgDate.text = String(self.channelList[indexPath.row].lastMessage!.createdAt)
                 return cell
           }
