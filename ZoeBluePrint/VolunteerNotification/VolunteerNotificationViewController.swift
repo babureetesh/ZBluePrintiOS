@@ -34,7 +34,8 @@ override func viewDidLoad() {
             self.notificationTable.reloadData()
         }
     }
-               
+    
+    
                
            }
     
@@ -85,9 +86,10 @@ override func viewDidLoad() {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 105.0
+        return 95
         
     }
+    
     @IBAction func backButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
         
