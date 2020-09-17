@@ -397,7 +397,7 @@ self.viewCreateChannel.isHidden = true
             var params = SBDGroupChannelParams()
             params.isPublic = false
             params.isEphemeral = false
-            params.isDistinct = true
+            params.isDistinct = false
             params.addUserIds(self.selectedData)
             params.operatorUserIds = ops        // Or .operators
             params.name = self.txtfldChannelName.text
@@ -413,10 +413,12 @@ self.viewCreateChannel.isHidden = true
                     self.present(alert, animated: true, completion: nil)// Error.
                     return
                 }
+                //print(groupChannel.data)
                     let newMetaData: NSDictionary = ["auto_invite" : String(self.btnCheckForInviteAll!.tag)]
 
                 groupChannel?.createMetaData(newMetaData as! [String : String], completionHandler: { (metaData, error) in
                         guard error == nil else {   // Error.
+                            print(error?.localizedDescription)
                             return
                             }
                     self.hitAPIToSyncChannelToServer(channel: groupChannel!)
