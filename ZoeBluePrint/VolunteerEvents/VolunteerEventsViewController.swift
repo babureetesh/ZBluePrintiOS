@@ -588,7 +588,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     @IBAction func TimePicker(_ sender: Any) {
         
         
-        timeView.isHidden = true
+       // timeView.isHidden = true
         let formatter = DateFormatter()
                formatter.locale = Locale(identifier: "en_US_POSIX")
                formatter.dateFormat = "h:mm a"
@@ -929,6 +929,10 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         self.EventShiftView2.isHidden = true
     }
     
+    @IBAction func doneTimeSel(_ sender: Any) {
+        timeView.isHidden = true
+        
+    }
     @IBAction func eventBookingInfoOverlayTapped(_ sender: Any) {
         self.ViewChangeStatusBackground.isHidden = true
         self.ViewChangeStatusPoMain.isHidden = true
@@ -969,8 +973,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         resetStatusStackView()
         
 //        Test cases
-//        let numbers = ["30", "50", "51", "60", "90","20","10","40","70"]
-     //   let mapStatus = "30"//numbers.randomElement()
+        //let numbers = ["30", "50", "51", "60", "90","20","10","40","70"]
+      //  let mapStatus = "20"//numbers.randomElement()
 //        print("map status = \(mapStatus)")
         
         

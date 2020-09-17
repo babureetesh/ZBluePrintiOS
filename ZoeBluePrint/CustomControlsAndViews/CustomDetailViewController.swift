@@ -69,6 +69,15 @@ class CustomDetailViewController: UIViewController {
         }
         
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if contentToShow.count > 1 {
+            let indexPath = NSIndexPath(row: 1, section: 0)
+            self.contentTableView.scrollToRow(at: indexPath as IndexPath,
+                                              at: UITableView.ScrollPosition.middle, animated: true)
+        }
+        
+    }
     func DarkMode(){
         
         

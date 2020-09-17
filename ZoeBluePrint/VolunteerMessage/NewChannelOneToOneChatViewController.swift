@@ -16,7 +16,8 @@ protocol delegateNewChannelremoved{
 
 class NewChannelOneToOneChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,delegateConnectedUserlistCell,UITextFieldDelegate {
 var delegate :delegateNewChannelremoved?
-    
+    @IBOutlet weak var imgProfilePic: UIImageView!
+    @IBOutlet weak var imgCoverPic: UIImageView!
     @IBOutlet weak var imgLoadingArrows: UIImageView!
     @IBOutlet weak var viewLoading: UIView!
     @IBOutlet weak var viewCreateChannel: UIView!
@@ -58,6 +59,67 @@ self.viewCreateChannel.isHidden = true
         self.viewLoading.isHidden = true
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.getCoverImageForRank()
+               
+              
+                let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                            let userID = userIDData["user_id"] as! String
+                                          //print(userID)
+                            
+                            let string_url = userIDData["user_profile_pic"] as! String
+               
+        
+              // }
+               if let url = URL(string: string_url){
+                            do {
+                              let imageData = try Data(contentsOf: url as URL)
+                                self.imgProfilePic.image = UIImage(data: imageData)
+                                self.imgProfilePic.layer.borderWidth = 1
+                                self.imgProfilePic.layer.masksToBounds = false
+                                self.imgProfilePic.layer.borderColor = UIColor.black.cgColor
+                                self.imgProfilePic.layer.cornerRadius = self.imgProfilePic.frame.height/2
+                                self.imgProfilePic.clipsToBounds = true
+                            } catch {
+                                //print("Unable to load data: \(error)")
+                            }
+                            }
+    }
+    func getCoverImageForRank(){
+          
+          var strImageNameCover = "cover_cloud.jpg"
+          
+    let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
+              let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+              //print(volData)
+              if (volData["user_avg_rank"] != nil){
+                  if let userAvgRank = volData["user_avg_rank"] as? String {
+                      
+                     let floatUserAverageRank = Float(userAvgRank)!
+                      
+                         
+                      if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
+                          strImageNameCover = "cover_riseandshine.jpg"
+                      }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
+                          strImageNameCover = "cover_cake.jpg"
+                      }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
+                          strImageNameCover = "cover_cool.jpg"
+                      }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
+                          strImageNameCover = "cover_truck.jpg"
+                      }else if (floatUserAverageRank > 80 ){
+                          strImageNameCover = "cover_cloud.jpg"
+                      }
+                     
+                  }
+              }
+          self.imgCoverPic.image = UIImage(named:strImageNameCover)
+          
+          
+      }
+    
     /*
     // MARK: - Navigation
 
