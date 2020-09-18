@@ -349,7 +349,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     @IBAction func csoAreaButton(_ sender: Any) {
         
         
-        if !(self.zipcode.count > 0){
+     /*   if !(self.zipcode.count > 0){
                                        if (CLLocationManager.locationServicesEnabled())
                                        {
                                            self.locationManager = CLLocationManager()
@@ -377,7 +377,11 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         }else {
             
             self.getNearByeventData()
-        }
+        }*/
+        
+        let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
+               vc.strFromScreen = "DASHBOARD"
+                self.tabBarController?.selectedIndex = 1
     }
     
     func getNearByeventData(){

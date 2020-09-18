@@ -42,6 +42,13 @@ self.viewCreateChannel.isHidden = true
         self.callforConnecteduser()
     }
     
+    @IBAction func notificationBellTapped(_ sender: Any) {
+                 
+                 let sb = UIStoryboard(name: "Main", bundle: nil)
+                 let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
+                        self.present(obj, animated: true)
+             }
+    
     func showLoader(){
         
         //ActivityLoaderView.startAnimating()
@@ -227,7 +234,8 @@ self.viewCreateChannel.isHidden = true
             let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                    vc.channel = groupChannel
                    vc.hidesBottomBarWhenPushed = true
-            self.present(vc,animated: true)
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc,animated: true)
         })
         
         
@@ -316,7 +324,7 @@ self.viewCreateChannel.isHidden = true
     }
     
     @IBAction func selectUserType(_ sender: Any) {
-        let contents = ["VOL","CSO","All"]
+        let contents = ["Volunteer","Organization","All"]
         showPopoverForView(view: sender, contents: contents)
     }
     
@@ -328,19 +336,19 @@ self.viewCreateChannel.isHidden = true
                //print(selectVal)
                switch selectVal{
                case "All":
-                self.lblUserType.text = "All"
+                //self.lblUserType.text = "All"
                 self.dataArray.removeAll()
                 self.dataArray = self.connectedUserList
                 self.selectedData.removeAll()
                 self.tblConnectedUserList.reloadData()
                 
                    break
-               case "CSO":
-                   self.lblUserType.text = "CSO"
+               case "Organization":
+                  // self.lblUserType.text = "CSO"
                    self.createArrayFor(str: "CSO")
                    break
                default:
-                   self.lblUserType.text = "VOL"
+                  // self.lblUserType.text = "VOL"
                 self.createArrayFor(str: "VOL")
                  
                }
@@ -468,10 +476,17 @@ self.viewCreateChannel.isHidden = true
                                        // self.present(alert, animated: true, completion: nil)
                     
                                         self.viewCreateChannel.isHidden = true
-                                        let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
+                                        /*let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                                vc.channel = channel
                                                vc.hidesBottomBarWhenPushed = true
+                                        self.present(vc,animated: true)*/
+                                        
+                                        let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
+                                        vc.channel = channel
+                                        vc.hidesBottomBarWhenPushed = true
+                                        vc.modalPresentationStyle = .fullScreen
                                         self.present(vc,animated: true)
+                                        
                                     }
                                         }
     }

@@ -92,16 +92,16 @@ class VolRightMenuOption: UIViewController {
                                       }
                                       }
                                       
-                                       let profile_pic_string = data["user_cover_pic"] as! String
-                                      if let profile_url = URL(string: profile_pic_string){
-                                          do {
-                                              let profile_data = try Data(contentsOf: profile_url as URL)
-                                             self.coverPicture.image = UIImage(data: profile_data)
-                                              
-                                          } catch {
-                                              //print("Unable to load data: \(error)")
-                                          }
-                                      }
+//                                       let profile_pic_string = data["user_cover_pic"] as! String
+//                                      if let profile_url = URL(string: profile_pic_string){
+//                                          do {
+//                                              let profile_data = try Data(contentsOf: profile_url as URL)
+//                                             self.coverPicture.image = UIImage(data: profile_data)
+//                                              
+//                                          } catch {
+//                                              //print("Unable to load data: \(error)")
+//                                          }
+//                                      }
                    }
                }
 

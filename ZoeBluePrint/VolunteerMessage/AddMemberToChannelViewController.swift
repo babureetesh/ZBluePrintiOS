@@ -27,6 +27,13 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
             
             self.callforConnecteduser()
         }
+    @IBAction func notificationBellTapped(_ sender: Any) {
+                 
+                 let sb = UIStoryboard(name: "Main", bundle: nil)
+                 let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
+                        self.present(obj, animated: true)
+             }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -50,26 +50,28 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBz-JC-jR8">
+                            <rect key="frame" x="11" y="48" width="22" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="22" id="NUd-VY-EDm"/>
+                                <constraint firstAttribute="height" constant="28" id="aMp-Df-U63"/>
+                            </constraints>
+                            <state key="normal" image="lefArrownew.png"/>
+                            <connections>
+                                <action selector="bcakButtonClick:" destination="-1" eventType="touchUpInside" id="4SG-61-QOZ"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.13182911280000001" green="0.14772698279999999" blue="0.305898279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="nMi-46-9JU" secondAttribute="bottom" constant="30" id="M0V-wu-Kps"/>
+                        <constraint firstItem="mBz-JC-jR8" firstAttribute="leading" secondItem="kpl-2B-fTw" secondAttribute="leading" constant="11" id="PBo-he-pzd"/>
                         <constraint firstAttribute="trailing" secondItem="nMi-46-9JU" secondAttribute="trailing" constant="20" id="hvE-ia-xt5"/>
+                        <constraint firstItem="mBz-JC-jR8" firstAttribute="top" secondItem="kpl-2B-fTw" secondAttribute="top" constant="48" id="i7w-W8-hox"/>
                         <constraint firstAttribute="height" constant="104" id="rET-EA-OFG"/>
                         <constraint firstItem="nMi-46-9JU" firstAttribute="leading" secondItem="kpl-2B-fTw" secondAttribute="leading" constant="20" id="wqd-ek-EL8"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yml-Dw-v3U">
-                    <rect key="frame" x="10" y="104" width="28" height="25"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="28" id="KiV-VH-gYF"/>
-                        <constraint firstAttribute="height" constant="25" id="gBM-A9-sf1"/>
-                    </constraints>
-                    <state key="normal" title="Button" image="iphoneBackButton.png"/>
-                    <connections>
-                        <action selector="bcakButtonClick:" destination="-1" eventType="touchUpInside" id="Li7-YG-aTc"/>
-                    </connections>
-                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oAG-M7-VNE" userLabel="Message Table View">
                     <rect key="frame" x="0.0" y="129" width="414" height="678"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -253,12 +255,10 @@
                 <constraint firstItem="WUb-Ix-5nj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="eec-AI-7Jk"/>
                 <constraint firstItem="cvK-56-JdT" firstAttribute="top" secondItem="oAG-M7-VNE" secondAttribute="bottom" id="eoZ-gS-1jP"/>
                 <constraint firstAttribute="trailing" secondItem="oAG-M7-VNE" secondAttribute="trailing" id="eyu-P2-GlP"/>
-                <constraint firstItem="Yml-Dw-v3U" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="fP7-3b-kQX"/>
                 <constraint firstItem="WUb-Ix-5nj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="geU-xH-Xaa"/>
                 <constraint firstItem="kpl-2B-fTw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h5r-Kf-YTG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WUb-Ix-5nj" secondAttribute="bottom" id="hNx-3k-Oaa"/>
                 <constraint firstAttribute="trailing" secondItem="cvK-56-JdT" secondAttribute="trailing" id="hsI-ZQ-ACN"/>
-                <constraint firstItem="Yml-Dw-v3U" firstAttribute="top" secondItem="kpl-2B-fTw" secondAttribute="bottom" id="lBf-lh-Czc"/>
                 <constraint firstAttribute="trailing" secondItem="khe-tC-OtR" secondAttribute="trailing" id="ndy-eC-XZ9"/>
                 <constraint firstItem="khe-tC-OtR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qFE-Vj-SGZ"/>
                 <constraint firstAttribute="bottom" secondItem="khe-tC-OtR" secondAttribute="bottom" id="ruK-vP-YuR"/>
@@ -274,7 +274,7 @@
         <image name="img_btn_send_user_msg_normal" width="25" height="25"/>
         <image name="img_btn_send_user_msg_pressed" width="25" height="25"/>
         <image name="img_toast_check" width="40" height="32"/>
-        <image name="iphoneBackButton.png" width="225" height="225"/>
+        <image name="lefArrownew.png" width="50" height="81"/>
         <namedColor name="color_message_input_textfield_border">
             <color red="0.875" green="0.875" blue="0.875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

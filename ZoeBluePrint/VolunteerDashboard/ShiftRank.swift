@@ -196,9 +196,9 @@ class ShiftRank: UIViewController {
       var changeRate = data1["volunteer_apply"] as! String
        ////print(changeRate)
        if changeRate == "1"{
-        self.ImageView.image = UIImage(named: "pending.png")
+        self.ImageView.image = UIImage(named: "complete-verified.png")
            
-        self.StatusName.text = "Waiting"
+        self.StatusName.text = "Applied"
         self.StatusName.textColor = UIColor.gray
 
        }else
