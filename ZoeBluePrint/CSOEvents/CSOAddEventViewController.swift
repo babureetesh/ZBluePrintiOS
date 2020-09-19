@@ -26,16 +26,12 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     
     @IBOutlet weak var lblEventType: UILabel!
     
-    @IBOutlet weak var eventImageType: UIImageView!
-    @IBOutlet weak var timezoneDropImage: UIImageView!
     
     
     @IBOutlet weak var startEndTimeView: UIView!
     @IBOutlet weak var startEndView: UIView!
-    @IBOutlet weak var stateImage: UIImageView!
     
     @IBOutlet weak var stateLbl: UILabel!
-    @IBOutlet weak var countryImage: UIImageView!
     
     @IBOutlet weak var countryLbl: UILabel!
     @IBOutlet weak var lblZoneTime: UILabel!
@@ -46,6 +42,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     var stateCode:String?
     var stateName = String()
    
+    
 @IBAction func showMap(_ sender: Any) {
     
     if(self.stateName != ""){
@@ -174,6 +171,30 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     var file:Data?
     var img:Data?
    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        addUnderLineToField(color: .black)
+        btnEventSelection.setDropDownImagWithInset()
+        btnTimeZoneSel.setDropDownImagWithInset()
+        btnStateSel.setDropDownImagWithInset()
+        btnCountrySel.setDropDownImagWithInset()
+        
+    }
+    
+    func addUnderLineToField(color:UIColor)  {
+        
+        
+        txtFldCity.setUnderLineOfColor(color: color)
+        txtFldEmail.setUnderLineOfColor(color: color)
+        txtFldPhone.setUnderLineOfColor(color: color)
+        txtFldAddress.setUnderLineOfColor(color: color)
+        txtfldEventName.setUnderLineOfColor(color: color)
+        txtFldPostalcode.setUnderLineOfColor(color: color)
+        txtFldEventDescription.setUnderLineOfColor(color: color)
+        
+    }
+    
     @IBOutlet weak var checkButtonOutlet: UIButton!
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -551,50 +572,50 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
 
       self.waiverViewHeight.constant = 0
         // Start : Bottom Line Code for all Text
-        /* 1. */
-        var bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: txtfldEventName.frame.height-1, width: 355.0, height: 1.0)
-        bottomLine.backgroundColor = UIColor.black.cgColor
-        txtfldEventName.borderStyle = UITextField.BorderStyle.none
-        txtfldEventName.layer.addSublayer(bottomLine)
-        /* 2. */
-        var bottomDescription = CALayer()
-        bottomDescription.frame = CGRect(x: 0.0, y: txtFldEventDescription.frame.height-1, width: 355.0, height: 1.0)
-        bottomDescription.backgroundColor = UIColor.black.cgColor
-        txtFldEventDescription.borderStyle = UITextField.BorderStyle.none
-        txtFldEventDescription.layer.addSublayer(bottomDescription)
-        /* 3. */
-        var bottomAddress = CALayer()
-        bottomAddress.frame = CGRect(x: 0.0, y: txtFldAddress.frame.height-1, width: 355.0, height: 1.0)
-        bottomAddress.backgroundColor = UIColor.black.cgColor
-        txtFldAddress.borderStyle = UITextField.BorderStyle.none
-        txtFldAddress.layer.addSublayer(bottomAddress)
-        /* 4. */
-        var bottomCity = CALayer()
-        bottomCity.frame = CGRect(x: 0.0, y: txtFldCity.frame.height-1, width: 355.0, height: 1.0)
-        bottomCity.backgroundColor = UIColor.black.cgColor
-        txtFldCity.borderStyle = UITextField.BorderStyle.none
-        txtFldCity.layer.addSublayer(bottomCity)
-        /* 5. */
-        var bottomZip = CALayer()
-        bottomZip.frame = CGRect(x: 0.0, y: txtFldPostalcode.frame.height-1, width: 355.0, height: 1.0)
-        bottomZip.backgroundColor = UIColor.black.cgColor
-        txtFldPostalcode.borderStyle = UITextField.BorderStyle.none
-        txtFldPostalcode.layer.addSublayer(bottomZip)
-        /* 6. */
-        var bottomPhone = CALayer()
-        bottomPhone.frame = CGRect(x: 0.0, y:txtFldPhone.frame.height-1 , width:355.0 , height: 1.0)
-        bottomPhone.backgroundColor = UIColor.black.cgColor
-        txtFldPhone.borderStyle = UITextField.BorderStyle.none
-        txtFldPhone.layer.addSublayer(bottomPhone)
-        /* 7. */
-        var bottomMail = CALayer()
-        bottomMail.frame = CGRect(x: 0.0, y: txtFldEmail.frame.height-1, width: 355.0, height: 1.0)
-        bottomMail.backgroundColor = UIColor.black.cgColor
-        txtFldEmail.borderStyle = UITextField.BorderStyle.none
-        txtFldEmail.layer.addSublayer(bottomMail)
-        /* 8. */
-      
+//        /* 1. */
+//        var bottomLine = CALayer()
+//        bottomLine.frame = CGRect(x: 0.0, y: txtfldEventName.frame.height-1, width: 355.0, height: 1.0)
+//        bottomLine.backgroundColor = UIColor.black.cgColor
+//        txtfldEventName.borderStyle = UITextField.BorderStyle.none
+//        txtfldEventName.layer.addSublayer(bottomLine)
+//        /* 2. */
+//        var bottomDescription = CALayer()
+//        bottomDescription.frame = CGRect(x: 0.0, y: txtFldEventDescription.frame.height-1, width: 355.0, height: 1.0)
+//        bottomDescription.backgroundColor = UIColor.black.cgColor
+//        txtFldEventDescription.borderStyle = UITextField.BorderStyle.none
+//        txtFldEventDescription.layer.addSublayer(bottomDescription)
+//        /* 3. */
+//        var bottomAddress = CALayer()
+//        bottomAddress.frame = CGRect(x: 0.0, y: txtFldAddress.frame.height-1, width: 355.0, height: 1.0)
+//        bottomAddress.backgroundColor = UIColor.black.cgColor
+//        txtFldAddress.borderStyle = UITextField.BorderStyle.none
+//        txtFldAddress.layer.addSublayer(bottomAddress)
+//        /* 4. */
+//        var bottomCity = CALayer()
+//        bottomCity.frame = CGRect(x: 0.0, y: txtFldCity.frame.height-1, width: 355.0, height: 1.0)
+//        bottomCity.backgroundColor = UIColor.black.cgColor
+//        txtFldCity.borderStyle = UITextField.BorderStyle.none
+//        txtFldCity.layer.addSublayer(bottomCity)
+//        /* 5. */
+//        var bottomZip = CALayer()
+//        bottomZip.frame = CGRect(x: 0.0, y: txtFldPostalcode.frame.height-1, width: 355.0, height: 1.0)
+//        bottomZip.backgroundColor = UIColor.black.cgColor
+//        txtFldPostalcode.borderStyle = UITextField.BorderStyle.none
+//        txtFldPostalcode.layer.addSublayer(bottomZip)
+//        /* 6. */
+//        var bottomPhone = CALayer()
+//        bottomPhone.frame = CGRect(x: 0.0, y:txtFldPhone.frame.height-1 , width:355.0 , height: 1.0)
+//        bottomPhone.backgroundColor = UIColor.black.cgColor
+//        txtFldPhone.borderStyle = UITextField.BorderStyle.none
+//        txtFldPhone.layer.addSublayer(bottomPhone)
+//        /* 7. */
+//        var bottomMail = CALayer()
+//        bottomMail.frame = CGRect(x: 0.0, y: txtFldEmail.frame.height-1, width: 355.0, height: 1.0)
+//        bottomMail.backgroundColor = UIColor.black.cgColor
+//        txtFldEmail.borderStyle = UITextField.BorderStyle.none
+//        txtFldEmail.layer.addSublayer(bottomMail)
+//        /* 8. */
+//      
      /* Stop */
         
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
@@ -929,14 +950,12 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
         
         btnEventSelection.setTitleColor(UIColor.white, for: UIControl.State.normal)
         btnEventSelection.backgroundColor = .black
-  self.eventImageType.image = UIImage(named: "whitedrop.png")
         btnEventSelection.borderColor = .white
       
         self.lblZoneTime.textColor = .white
         self.btnTimeZoneSel.setTitleColor(UIColor.white, for: UIControl.State.normal)
         btnTimeZoneSel.borderColor = .white
         btnTimeZoneSel.backgroundColor = .black
-        self.timezoneDropImage.image = UIImage(named: "whitedrop.png")
         
         self.txtFldAddress.textColor = .white
         txtFldAddress.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Address*", comment: ""),attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
@@ -949,7 +968,6 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
         self.btnStateSel.setTitleColor(UIColor.white, for: UIControl.State.normal)
         btnStateSel.backgroundColor = .black
         self.btnStateSel.borderColor = .white
-        self.stateImage.image = UIImage(named: "whitedrop.png")
         
         self.txtFldPostalcode.textColor = .white
         txtFldPostalcode.attributedPlaceholder = NSAttributedString(string: "Zipcode",
@@ -959,7 +977,6 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
         self.btnCountrySel.setTitleColor(UIColor.white, for: UIControl.State.normal)
         btnCountrySel.backgroundColor = .black
         btnCountrySel.borderColor = .white
-        self.countryImage.image = UIImage(named: "whitedrop.png")
         
         self.txtFldEmail.textColor = .white
         txtFldEmail.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("Email*", comment: ""),attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
