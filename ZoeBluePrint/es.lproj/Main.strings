@@ -620,8 +620,8 @@
 /* Class = "UITextField"; placeholder = " Please Enter the Document Name\n"; ObjectID = "O46-sJ-VZ2"; */
 "O46-sJ-VZ2.placeholder" = "  Por favor, introduzca el nombre del documento\n";
 
-/* Class = "UIButton"; normalTitle = "MANAGE REQUEST"; ObjectID = "OLp-yq-cfy"; */
-"OLp-yq-cfy.normalTitle" = "GESTIONAR SOLICITUD";
+/* Class = "UIButton"; normalTitle = "MANAGE REQUEST"; ObjectID = "Df6-Tw-Xdj"; */
+"Df6-Tw-Xdj.normalTitle" = "GESTIONAR SOLICITUD";
 
 /* Class = "UILabel"; text = "State"; ObjectID = "OQU-CG-KVo"; */
 "OQU-CG-KVo.text" = "Estado";
@@ -1346,8 +1346,8 @@
 /* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "odg-pq-Ntt"; */
 "odg-pq-Ntt.placeholder" = "Confirmar contraseña";
 
-/* Class = "UILabel"; text = "UPCOMING EVENTS"; ObjectID = "oeB-Jq-h8M"; */
-"oeB-Jq-h8M.text" = "Próximos Eventos";
+/* Class = "UILabel"; text = "UPCOMING EVENTS"; ObjectID = "rQF-bR-LmU"; */
+"rQF-bR-LmU.text" = "Próximos Eventos";
 
 /* Class = "UIButton"; normalTitle = "Yes"; ObjectID = "oeS-qd-TQi"; */
 "oeS-qd-TQi.normalTitle" = "Si";
