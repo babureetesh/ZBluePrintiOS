@@ -3015,11 +3015,11 @@
         <scene sceneID="goM-wk-7yV">
             <objects>
                 <viewController storyboardIdentifier="CSOAddEventViewController" modalPresentationStyle="fullScreen" id="qzy-qt-Yyn" customClass="CSOAddEventViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="j8D-hx-pFH">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-hx-pFH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z55-HW-tba">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="23"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEa-QE-fzK" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="-23" width="375" height="1300"/>
@@ -3635,7 +3635,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ro-0C-eAJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGX-Ex-lgK">
                                         <rect key="frame" x="0.0" y="56" width="375" height="611"/>
@@ -3685,7 +3685,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="0.0" height="0.0"/>
                     <connections>
                         <outlet property="DetailLabel" destination="b7r-tb-JCt" id="6Kt-Br-6Cf"/>
                         <outlet property="backgroundView_webView" destination="1Ro-0C-eAJ" id="FYu-Fm-5eF"/>
@@ -3705,9 +3704,7 @@
                         <outlet property="checkButtonOutlet" destination="Jwc-ED-eMf" id="EbL-it-8VN"/>
                         <outlet property="closeButton_webView" destination="A9r-zs-FR3" id="dOM-vH-0sZ"/>
                         <outlet property="contentView" destination="EEa-QE-fzK" id="C9S-O1-IXy"/>
-                        <outlet property="countryImage" destination="6aK-Ru-yqR" id="HbG-Ea-4RN"/>
                         <outlet property="countryLbl" destination="FeX-hr-dnr" id="TMN-QY-l6C"/>
-                        <outlet property="eventImageType" destination="ahU-Tm-DnY" id="9Uq-Je-2cf"/>
                         <outlet property="imageEndDate" destination="jsS-da-5ym" id="jkV-Ms-brQ"/>
                         <outlet property="imageEndTime" destination="YOE-yn-grZ" id="Wh4-yp-1de"/>
                         <outlet property="imageStartDate" destination="q5b-7A-0Z1" id="c7I-wE-z9K"/>
@@ -3725,9 +3722,7 @@
                         <outlet property="scrollView" destination="Z55-HW-tba" id="P0S-Re-SKz"/>
                         <outlet property="startEndTimeView" destination="u9A-O9-t0B" id="1Tp-Ay-iKG"/>
                         <outlet property="startEndView" destination="LKW-FC-wss" id="BnF-ze-YCX"/>
-                        <outlet property="stateImage" destination="nbi-NB-53S" id="JXm-m7-Ofn"/>
                         <outlet property="stateLbl" destination="4hB-n8-adK" id="0Q7-a3-bVV"/>
-                        <outlet property="timezoneDropImage" destination="WyT-MM-ZA1" id="Xpm-cd-EMR"/>
                         <outlet property="txtFldAddress" destination="fvS-br-6pT" id="O6u-Hh-8X1"/>
                         <outlet property="txtFldCity" destination="yHO-JA-ob6" id="Hos-1t-7rl"/>
                         <outlet property="txtFldEmail" destination="0ys-gN-TIJ" id="oGV-4y-4Vc"/>
