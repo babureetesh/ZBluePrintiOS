@@ -20,10 +20,9 @@ class CSODashboardViewController: BaseViewController {
     @IBOutlet weak var lblUpcomingEvents: UILabel!
     
     
-    @IBOutlet weak var timerLabelBegins: UILabel!
     
     @IBOutlet weak var sideButton: UIButton!
-    @IBOutlet weak var lblcount: UILabel!
+    @IBOutlet weak var lblcount: UIView!
     @IBOutlet weak var mangeRequest: UIButton!
     
     @IBOutlet weak var lblNoDataFound: UILabel!
@@ -43,11 +42,11 @@ class CSODashboardViewController: BaseViewController {
     @IBOutlet weak var counter_secondsValue: UILabel!
     @IBOutlet weak var counter_secondsText: UILabel!
     @IBOutlet weak var counterView: UIView!
-    
+    @IBOutlet weak var dataViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var mangerequest: UIButton!
-    @IBOutlet weak var requestimage: UIImageView!
+    //@IBOutlet weak var requestimage: UIImageView!
      let cal = FSCalendar()
-    @IBOutlet weak var counterimage: UIImageView!
+    //@IBOutlet weak var counterimage: UIImageView!
     
     
     @IBAction func menuSelected(_ sender: Any) {
@@ -60,6 +59,18 @@ class CSODashboardViewController: BaseViewController {
     
     var upcomingEvents = [[String:Any]]()
     var calendarEvents = [[String:Any]]()
+    
+    var showDataViewheight:CGFloat {
+        if upcomingEvents.count > 0 {
+            upcomingEventsTableView.isHidden = false
+            lblNoDataFound.isHidden = true
+            return 120.0
+        }
+        upcomingEventsTableView.isHidden = true
+        lblNoDataFound.isHidden = false
+        return 40.0
+    }
+    
     
     @IBOutlet weak var upcomingEventsTableView: UITableView!
     var userCsoLogindata: Dictionary<String, Any>?
@@ -79,8 +90,8 @@ class CSODashboardViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lblNoDataFound.isHidden = true
-                   viewNoDataFound.isHidden = true
+//        lblNoDataFound.isHidden = true
+//                   viewNoDataFound.isHidden = true
         
         self.profile_pic()
         self.DataFromServer()
@@ -88,9 +99,8 @@ class CSODashboardViewController: BaseViewController {
         self.calendar.reloadData()
         
         
-    timerLabelBegins.layer.cornerRadius = 5.0
-    timerLabelBegins.layer.masksToBounds = true
-
+   
+        adjustDataView()
     }
     
     @IBAction func manageRequestButton(_ sender: Any) {
@@ -164,7 +174,7 @@ class CSODashboardViewController: BaseViewController {
                 appearance.setTitleTextAttributes(attributes as [NSAttributedString.Key : Any], for:.normal)
                 
                 //requestimage.image = UIImage(named: "request.png")
-                counterimage.image = UIImage(named: "timer.png")
+                //counterimage.image = UIImage(named: "timer.png")
                 
                 self.setNavigationBarHidden(toHide: true)
         self.title = "Dashboard"
@@ -200,6 +210,7 @@ class CSODashboardViewController: BaseViewController {
                         self.upcomingEventsTableView.reloadData()
                         self.eventCalendar.reloadData()
                          self.configureCountDown()
+                        self.adjustDataView()
                     }
                 }
                 
@@ -298,11 +309,11 @@ class CSODashboardViewController: BaseViewController {
         self.mangerequest.setTitleColor(UIColor.white, for: UIControl.State.normal)
 //        self.mangerequest.backgroundColor = .white
         
-        requestimage.image = UIImage(named: "newIconInterview.png")
+        //requestimage.image = UIImage(named: "newIconInterview.png")
 
         self.lblCountdown.textColor = .black
         self.lblCountdown.backgroundColor = .white
-        self.counterimage.image = UIImage(named: "addShift.png")
+        //self.counterimage.image = UIImage(named: "addShift.png")
         
         self.sideButton.setImage(UIImage(named: "newlist.png"), for: UIControl.State.normal)
         lblNoDataFound.textColor = .white
@@ -320,11 +331,11 @@ class CSODashboardViewController: BaseViewController {
         
         self.mangerequest.setTitleColor(UIColor.white, for: UIControl.State.normal)
         self.mangerequest.backgroundColor = .black
-        requestimage.image = UIImage(named: "interview.png")
+        //requestimage.image = UIImage(named: "interview.png")
         
         self.lblCountdown.textColor = .white
         self.lblCountdown.backgroundColor = .black
-        self.counterimage.image = UIImage(named: "lightaddShift.png")
+        //self.counterimage.image = UIImage(named: "lightaddShift.png")
         self.sideButton.setImage(UIImage(named: "newList.png"), for: UIControl.State.normal)
         
         lblNoDataFound.textColor = .black
@@ -363,6 +374,11 @@ class CSODashboardViewController: BaseViewController {
 
         }
         
+    }
+    
+    func adjustDataView()  {
+        dataViewHeightConstraint.constant = showDataViewheight
+        self.view.layoutIfNeeded()
     }
 }
 
@@ -429,20 +445,7 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
         return cell
     }
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (upcomingEvents.count == 0)
-        {
-            lblNoDataFound.isHidden = false
-            viewNoDataFound.isHidden = false
-            
-            return 0
-        }else{
-            
-            lblNoDataFound.isHidden = true
-            viewNoDataFound.isHidden = true
-            
         return upcomingEvents.count
-        }
-        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 101.0

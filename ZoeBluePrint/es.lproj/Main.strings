@@ -491,8 +491,8 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "JlP-W2-1TV"; */
 "JlP-W2-1TV.text" = "Label";
 
-/* Class = "UILabel"; text = "Days"; ObjectID = "JoO-rJ-foh"; */
-"JoO-rJ-foh.text" = "Dias";
+/* Class = "UILabel"; text = "Days"; ObjectID = "3SP-0t-2v9"; */
+"3SP-0t-2v9.text" = "Dias";
 
 /* Class = "UITextField"; placeholder = " Last Name*"; ObjectID = "JpA-PK-0Sr"; */
 "JpA-PK-0Sr.placeholder" = " Apellido*";
@@ -1169,8 +1169,8 @@
 /* Class = "UITabBarItem"; title = "Booking"; ObjectID = "gFx-qj-P2d"; */
 "gFx-qj-P2d.title" = "Reserva";
 
-/* Class = "UILabel"; text = "Minutes"; ObjectID = "gGz-bX-w2T"; */
-"gGz-bX-w2T.text" = "Minutos";
+/* Class = "UILabel"; text = "Minutes"; ObjectID = "xna-cY-ScB"; */
+"xna-cY-ScB.text" = "Minutos";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gSQ-Dy-GJd"; */
 "gSQ-Dy-GJd.normalTitle" = "Button";
@@ -1235,8 +1235,8 @@
 /* Class = "UILabel"; text = "309 VOLUNTEER HOURS COMPLETED"; ObjectID = "iS7-59-K9H"; */
 "iS7-59-K9H.text" = "309 HORAS VOLUNTARIAS COMPLETADAS";
 
-/* Class = "UILabel"; text = "NEXT EVENT COUNTDOWN"; ObjectID = "ilC-Of-efe"; */
-"ilC-Of-efe.text" = "Cuenta atrás del siguiente evento";
+/* Class = "UILabel"; text = "NEXT EVENT COUNTDOWN"; ObjectID = "OWA-sE-lPx"; */
+"OWA-sE-lPx.text" = "Cuenta atrás del siguiente evento";
 
 /* Class = "UILabel"; text = "Basic Information"; ObjectID = "ip1-7r-Y4w"; */
 "ip1-7r-Y4w.text" = "Información básica";
@@ -1301,8 +1301,8 @@
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "lr3-BO-AAg"; */
 "lr3-BO-AAg.normalTitle" = "Registrarse";
 
-/* Class = "UILabel"; text = "Seconds"; ObjectID = "mm0-ZM-ys3"; */
-"mm0-ZM-ys3.text" = "Segundos";
+/* Class = "UILabel"; text = "Seconds"; ObjectID = "ZAn-Vf-e0i"; */
+"ZAn-Vf-e0i.text" = "Segundos";
 
 /* Class = "UILabel"; text = "22"; ObjectID = "mr2-4u-pGo"; */
 "mr2-4u-pGo.text" = "22";
@@ -1620,14 +1620,14 @@
 /* Class = "UIButton"; normalTitle = "NO"; ObjectID = "x0n-it-WRa"; */
 "x0n-it-WRa.normalTitle" = "NO";
 
-/* Class = "UILabel"; text = "00"; ObjectID = "x5W-97-UXl"; */
-"x5W-97-UXl.text" = "00";
+/* Class = "UILabel"; text = "00"; ObjectID = "hqv-d0-eYU"; */
+"hqv-d0-eYU.text" = "00";
 
 /* Class = "UILabel"; text = "22"; ObjectID = "x6e-7a-94g"; */
 "x6e-7a-94g.text" = "22";
 
-/* Class = "UILabel"; text = "00"; ObjectID = "xJZ-UU-wgz"; */
-"xJZ-UU-wgz.text" = "00";
+/* Class = "UILabel"; text = "00"; ObjectID = "gi0-bX-AGT"; */
+"gi0-bX-AGT.text" = "00";
 
 /* Class = "UILabel"; text = "Verifty your number"; ObjectID = "xaw-XO-G4b"; */
 "xaw-XO-G4b.text" = "Verifica tu número";
@@ -1671,8 +1671,8 @@
 /* Class = "UIButton"; normalTitle = NSLocalizedString("OK", comment: ""); ObjectID = "yR1-3y-KPO"; */
 "yR1-3y-KPO.normalTitle" = "Okay";
 
-/* Class = "UILabel"; text = "Hours"; ObjectID = "yYk-dh-JlX"; */
-"yYk-dh-JlX.text" = "Horas";
+/* Class = "UILabel"; text = "Hours"; ObjectID = "q9a-Zv-hnZ"; */
+"q9a-Zv-hnZ.text" = "Horas";
 
 /* Class = "UILabel"; text = "NO"; ObjectID = "yvx-IL-cJ6"; */
 "yvx-IL-cJ6.text" = "NO";
