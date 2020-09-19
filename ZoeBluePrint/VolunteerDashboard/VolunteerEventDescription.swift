@@ -36,7 +36,7 @@ class VolunteerEventDescription: UIViewController {
     
     @IBOutlet weak var scroller: UIScrollView!
     var imgName:String = ""
-    @IBOutlet weak var SignedInEvent: FloatRatingView!
+    //@IBOutlet weak var SignedInEvent: FloatRatingView!
     
     @IBOutlet weak var UpdatingRating: FloatRatingView!
     
@@ -67,7 +67,7 @@ class VolunteerEventDescription: UIViewController {
 //        //print(screen!)
         performSegueToReturnBack()
          // //print(ruserok)
-        SignedInEvent.delegate = self
+       // SignedInEvent.delegate = self
         lightStar.delegate = self
         if self.screen == "UPCOMING EVENT" {
         
@@ -103,18 +103,12 @@ class VolunteerEventDescription: UIViewController {
                 self.AddressLabel.text = add + "\n" + city + ", "  + state + " " + country
                let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
                var rate = Double(data["total_rating"] as! String) ?? 0.0
-//                if defaults == "Dark Mode"{
-//                self.lightStar.rating = rate
-//                if rate == 0{
-//                    self.ratingPresent.text = "No Ratings"
-//                }
-//                    self.SignedInEvent.isHidden = true
-//                }else if defaults == "Light Mode"{
-                    self.SignedInEvent.rating = rate
+
+                    self.lightStar.rating = rate
                     if rate == 0{
                         self.ratingPresent.text = "No Ratings"
                     }
-                    self.lightStar.isHidden = true
+                   
                 //}
                   
                    let strUrl = data["event_image"] as! String
@@ -160,14 +154,7 @@ class VolunteerEventDescription: UIViewController {
             self.AddressLabel.text = add + "\n" + city + ", "  + state + " " + country
            
              var rate = Double(dict_data["total_rating"] as! String) ?? 0.0
-//            if defaults == "Dark Mode"{
-//              self.lightStar.rating = Double(dict_data["total_rating"] as! String) ?? 0.0
-//                if rate == 0{
-//                    self.ratingPresent.text = "No Ratings"
-//                }
-//
-//            }else if defaults == "Light Mode"{
-                self.SignedInEvent.rating = Double(dict_data["total_rating"] as! String) ?? 0.0
+                self.lightStar.rating = Double(dict_data["total_rating"] as! String) ?? 0.0
                 if rate == 0{
                     self.ratingPresent.text = "No Ratings"
                 }
@@ -223,18 +210,9 @@ var zip = dict_data["event_postcode"] as! String
     let state = dict_data["event_state_code"] as! String
     let add = dict_data["event_address"] as! String
 self.AddressLabel.text = add + "\n" + city + ", "  + state + " " + country
-let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
      var rate = Double(dict_data["total_rating"] as! String) ?? 0.0
-//    if defaults == "Dark Mode"{
-//self.lightStar.rating = Double(dict_data["total_rating"] as! String) ?? 0.0
-//        self.SignedInEvent.isHidden = true
-//
-//        if rate == 0{
-//            self.ratingPresent.text = "No Ratings"
-//        }
-//    }else if defaults == "Light Mode"{
-        self.SignedInEvent.rating = Double(dict_data["total_rating"] as! String) ?? 0.0
-        self.lightStar.isHidden = true
+        self.lightStar.rating = Double(dict_data["total_rating"] as! String) ?? 0.0
+       
         if rate == 0{
             self.ratingPresent.text = "No Ratings"
         }
@@ -472,13 +450,8 @@ view.addSubview(scroller)
                     let state = data["event_state_code"] as! String
                     let add = data["event_address"] as! String
                 self.AddressLabel.text = add + "\n" + city + ", "  + state + " " + country
-  //              let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//                if defaults == "Dark Mode"{
-//                self.lightStar.rating = Double(data["total_rating"] as! String) ?? 0.0
-//                    self.SignedInEvent.isHidden = true
-//                }else if defaults == "Light Mode"{
-                self.SignedInEvent.rating = Double(data["total_rating"] as! String) ?? 0.0
-                    self.lightStar.isHidden = true
+                self.lightStar.rating = Double(data["total_rating"] as! String) ?? 0.0
+                  
               //  }
                 
                 let url = NSURL(string:data["event_image"] as! String)

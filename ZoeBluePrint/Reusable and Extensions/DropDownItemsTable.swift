@@ -129,6 +129,7 @@ class DropDownItemsTable: UITableViewController {
             }
         }
         cell.textLabel?.text = cellTitle //stringValues?[indexPath.row] ?? ""
+        cell.textLabel?.font = UIFont(name: "Roboto_Regular", size: 14) 
         return cell
     }
     
