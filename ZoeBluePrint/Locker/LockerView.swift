@@ -15,7 +15,6 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
     @IBOutlet weak var sideMenu: UIButton!
     
     @IBOutlet weak var lblHeadingMain: UILabel!
-    @IBOutlet weak var lblField: UILabel!
     @IBOutlet weak var dropdownImage: UIImageView!
     @IBOutlet weak var NoDataView1: UIView!
     
@@ -244,6 +243,11 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         }*/
         self.lockerlistfunction()
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        documentName.setUnderLineOfColor(color: .black)
+    }
     func DarkMode() {
     
         self.view.backgroundColor = .black
@@ -260,7 +264,6 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         NoDataView1.backgroundColor = .black
         
         documentName.attributedPlaceholder = NSAttributedString(string: "Please enter the Document Name",attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-       lblField.backgroundColor = .white
         documentName.textColor = .black
         
     sideMenu.setImage(UIImage(named: "newlist.png"), for: UIControl.State.normal)
@@ -284,7 +287,6 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         NoDataView1.backgroundColor = .white
         
         documentName.attributedPlaceholder = NSAttributedString(string: "Please enter the Document Name",attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
-        lblField.backgroundColor = .black
          documentName.textColor = .white
         sideMenu.setImage(UIImage(named: "newList.png"), for: UIControl.State.normal)
         
@@ -356,7 +358,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
                          }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 90
     }
     // MARK: - table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
