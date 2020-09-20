@@ -64,7 +64,7 @@ class CSODashboardViewController: BaseViewController {
         if upcomingEvents.count > 0 {
             upcomingEventsTableView.isHidden = false
             lblNoDataFound.isHidden = true
-            return 120.0
+            return 76.0
         }
         upcomingEventsTableView.isHidden = true
         lblNoDataFound.isHidden = false
@@ -448,7 +448,7 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
         return upcomingEvents.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 101.0
+        return 100.0
         
 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
