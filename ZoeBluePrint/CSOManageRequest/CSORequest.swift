@@ -16,8 +16,16 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     var c : ViewController! = nil
     
     
+    @IBOutlet weak var changeStatus_acceptView: UIView!
+    @IBOutlet weak var changeStatus_declineView: UIView!
+    @IBOutlet weak var changeStatus_verifyView: UIView!
+    @IBOutlet weak var changeStatus_rejectView: UIView!
+    @IBOutlet weak var changeStatus_moreInfoView: UIView!
+    @IBOutlet weak var changeStatus_stackView: UIStackView!
     
     
+    @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backButtonHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var lblEnterComment: UILabel!
     
@@ -85,11 +93,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     @IBOutlet weak var moreinfoimage: UIImageView!
     
     @IBOutlet weak var starViewcell: FloatRatingView!
-    @IBOutlet weak var lbnHeight: NSLayoutConstraint!
-    @IBOutlet weak var Label1: UILabel!
-    @IBOutlet weak var LAbel2: UILabel!
-    @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
+ 
     var mapID:String?
     var rating:String?
     @IBOutlet weak var topLable: UILabel!
@@ -123,18 +127,6 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     @IBOutlet weak var btnReject: UIButton!
     
     @IBOutlet weak var btnMoreInfo: UIButton!
-    
-    @IBOutlet weak var btnAcceptHeight: NSLayoutConstraint!
-    
-    
-    @IBOutlet weak var btnDeclineHeight: NSLayoutConstraint!
-    
-    
-    @IBOutlet weak var btnverifiedHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var btnRejectHeight: NSLayoutConstraint!
-    
-    @IBOutlet weak var btnmoreinfoHeight: NSLayoutConstraint!
     
     
     var csoallrequest:[[String:Any]] = []
@@ -217,19 +209,21 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         //print(strShowClose)
         if strShowClose == "YES"{
             backbuttonpressed.isHidden = false
-            
-            tblViewforAllRequest.frame = CGRect(x: 0.0, y: 145.0, width: 375.0, height: 522.0)
+            backButtonHeightConstraint.constant = 30
+//            tblViewforAllRequest.frame = CGRect(x: 0.0, y: 145.0, width: 375.0, height: 522.0)
             //viewRequesSelButtons.frame = CGRect(x: 34.0, y: 4.0, width: 324.0, height: 45.0)
         }else{
             backbuttonpressed.isHidden = true
+            backButtonHeightConstraint.constant = 0
             self.profilePicture.isHidden = true
-            
+            headerViewHeightConstraint.constant = 0
             self.sideMenu.isHidden = true
             self.topLable.isHidden = true
             //self.lbnHeight.constant = 0
-            viewRequesSelButtons.frame = CGRect(x: 9.0, y: 4.0, width: 324.0, height: 45.0)
-            self.topLable.frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
-            tblViewforAllRequest.frame = CGRect(x: 0.0, y: 50.0, width: 375.0, height: 300.0) // height is set from volunteerseefollower class
+//            viewRequesSelButtons.frame = CGRect(x: 9.0, y: 4.0, width: 324.0, height: 45.0)
+//            self.topLable.frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
+//            tblViewforAllRequest.frame = CGRect(x: 0.0, y: 50.0, width: 375.0, height: 300.0) // height is set from volunteerseefollower class
+            self.view.layoutIfNeeded()
         }
         
     }
@@ -251,10 +245,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         
         self.view.backgroundColor = .black
         self.StatusView.backgroundColor = .black
-        self.Label1.backgroundColor = .lightGray
-        self.LAbel2.backgroundColor = .lightGray
-        self.label3.backgroundColor = .lightGray
-        self.label4.backgroundColor = .lightGray
+     
         self.ChangeRank2View.backgroundColor = .black
         self.lblComent.backgroundColor = .black
         
@@ -617,7 +608,9 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         var statimg = self.findStatusImage(mapStatus: status as! String)
         cell.statusChanged.setBackgroundImage(UIImage(named:statimg), for: .normal)
         cell.delegateObj = self
-            
+            cell.preservesSuperviewLayoutMargins = false
+            cell.separatorInset = UIEdgeInsets.zero
+            cell.layoutMargins = UIEdgeInsets.zero
         return cell
             
         }
@@ -873,8 +866,23 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         return stat
     }
     
+    fileprivate func resetChangeStatusStackView(){
+        changeStatus_stackView.addArrangedSubview(changeStatus_acceptView)
+        changeStatus_stackView.addArrangedSubview(changeStatus_declineView)
+        changeStatus_stackView.addArrangedSubview(changeStatus_verifyView)
+        changeStatus_stackView.addArrangedSubview(changeStatus_rejectView)
+        changeStatus_stackView.addArrangedSubview(changeStatus_moreInfoView)
+        changeStatus_acceptView.isHidden = false
+        changeStatus_declineView.isHidden = false
+        changeStatus_verifyView.isHidden = false
+        changeStatus_rejectView.isHidden = false
+        changeStatus_moreInfoView.isHidden = false
+        
+        
+    }
     @IBAction func statusFunction(_ sender: Any) {
         
+        resetChangeStatusStackView()
         let data = self.server_data!
         print(data["map_status"])
         if !(((data["map_status"] as! String) == "90") || ((data["map_status"] as! String ) == "70") ){
@@ -898,10 +906,6 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnDecline.isHidden = false
                 self.btnAccept.isHidden = false
                
-                Label1.isHidden = false
-                LAbel2.isHidden = false
-                label3.isHidden = true
-                label4.isHidden = true
                 
                 verifyImage.isHidden = true
                 rejectImage.isHidden = true
@@ -909,13 +913,12 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 declineImage.isHidden = false
                 acceptImage.isHidden = false
                 
-                StatusView.frame = CGRect(x: 18, y: 155, width: 338, height: 258)
-                btnAccept.frame.origin = CGPoint (x: 0, y: 76)
-                btnDecline.frame.origin = CGPoint(x: 0, y: 135)
-                btnMoreInfo.frame.origin = CGPoint(x:0 , y: 199)
-                moreinfoimage.frame.origin = CGPoint(x:55 , y:209)
-                declineImage.frame.origin = CGPoint(x:55 , y:147)
-                acceptImage.frame.origin =  CGPoint(x:55 , y:86)
+                
+                changeStatus_stackView.removeArrangedSubview(changeStatus_verifyView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_rejectView)
+                changeStatus_verifyView.isHidden = true
+                changeStatus_rejectView.isHidden = true
+                
 
                 break
             case "20":   // Accepted : Green
@@ -925,10 +928,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnAccept.isHidden = true
                 self.btnDecline.isHidden = false
                 
-                Label1.isHidden = true
-                LAbel2.isHidden = true
-                label3.isHidden = true
-                label4.isHidden = true
+           
                                
                 verifyImage.isHidden = true
                 rejectImage.isHidden = true
@@ -936,11 +936,15 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 acceptImage.isHidden = true
                 declineImage.isHidden = false
                 
-            StatusView.frame = CGRect(x: 18, y: 100, width: 338, height: 140)
-                btnDecline.frame.origin = CGPoint (x: 0, y: 80)
-                declineImage.frame.origin = CGPoint(x:55,y:86)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_acceptView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_verifyView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_rejectView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_moreInfoView)
+                changeStatus_acceptView.isHidden = true
+                changeStatus_verifyView.isHidden = true
+                changeStatus_rejectView.isHidden = true
+                changeStatus_moreInfoView.isHidden = true
                 
-
                 break
             
             case "30":   // Declined : red
@@ -950,23 +954,22 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnDecline.isHidden = true
                 self.btnAccept.isHidden = false
                 
-                Label1.isHidden = true
-                LAbel2.isHidden = true
-                label3.isHidden = true
-                label4.isHidden = true
-                                              
+                   
                 verifyImage.isHidden = true
                 rejectImage.isHidden = true
                 moreinfoimage.isHidden = true
                 declineImage.isHidden = true
                 acceptImage.isHidden = false
                 
-                acceptImage.frame.origin = CGPoint(x:55,y:85)
-                StatusView.frame = CGRect (x: 18, y: 100, width: 338, height: 140)
-                btnAccept.frame.origin = CGPoint(x: 0, y: 76)
-
-                //btnDecline.frame.size.height = 0.0
-
+                changeStatus_stackView.removeArrangedSubview(changeStatus_declineView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_verifyView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_rejectView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_moreInfoView)
+                changeStatus_declineView.isHidden = true
+                changeStatus_verifyView.isHidden = true
+                changeStatus_rejectView.isHidden = true
+                changeStatus_moreInfoView.isHidden = true
+                
                 break
            
             case "40":        //Completed: green
@@ -977,10 +980,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnReject.isHidden = false
                 self.btnMoreInfo.isHidden = false
                 
-                Label1.isHidden = false
-                LAbel2.isHidden = false
-                label3.isHidden = true
-                label4.isHidden = true
+              
                                                             
                 verifyImage.isHidden = false
                 rejectImage.isHidden = false
@@ -988,16 +988,12 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 declineImage.isHidden = true
                 acceptImage.isHidden = true
                 
-                verifyImage.frame.origin = CGPoint(x:55,y:85)
-                rejectImage.frame.origin = CGPoint(x: 55, y: 147)
-                moreinfoimage.frame.origin = CGPoint(x:55 , y:209)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_acceptView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_declineView)
                 
-                btnVerified.frame.origin = CGPoint(x: 0, y: 76)
-                btnReject.frame.origin = CGPoint(x:0 ,y: 137)
-                btnMoreInfo.frame.origin = CGPoint(x:0 , y: 199)
+                changeStatus_acceptView.isHidden = true
+                changeStatus_declineView.isHidden = true
                 
-                
-                StatusView.frame = CGRect (x: 18, y: 100, width: 338, height: 258)
                 
                  break
          
@@ -1008,25 +1004,23 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnDecline.isHidden = true
                 self.btnAccept.isHidden = true
                 
-                
-                Label1.isHidden = false
-                LAbel2.isHidden = true
-                label3.isHidden = true
-                label4.isHidden = true
-                                                                           
+                                                                                    
                 verifyImage.isHidden = false
                 rejectImage.isHidden = false
                 moreinfoimage.isHidden = true
                 declineImage.isHidden = true
                 acceptImage.isHidden = true
                 
-              StatusView.frame = CGRect (x: 18, y: 100, width: 338, height: 196)
-//
-                btnVerified.frame.origin = CGPoint(x: 0, y: 76)
-                verifyImage.frame.origin = CGPoint(x: 55, y:86)
+
+                changeStatus_stackView.removeArrangedSubview(changeStatus_acceptView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_declineView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_moreInfoView)
                 
-                btnReject.frame.origin = CGPoint(x: 0, y: 137)
-                rejectImage.frame.origin = CGPoint(x: 55, y:147)
+                
+                changeStatus_acceptView.isHidden = true
+                changeStatus_declineView.isHidden = true
+                changeStatus_moreInfoView.isHidden = true
+                
 
                 break
                 
@@ -1036,24 +1030,21 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnVerified.isHidden = true
                 self.btnDecline.isHidden = false
                 self.btnAccept.isHidden = false
-                
-                Label1.isHidden = false
-                LAbel2.isHidden = true
-                label3.isHidden = true
-                label4.isHidden = true
-                                                                           
+                                                                                           
                 verifyImage.isHidden = true
                 rejectImage.isHidden = true
                 moreinfoimage.isHidden = true
                 declineImage.isHidden = false
                 acceptImage.isHidden = false
                 
-    StatusView.frame = CGRect (x: 18, y: 100, width: 338, height: 196)
-                btnAccept.frame.origin = CGPoint(x: 0, y: 76)
-                acceptImage.frame.origin = CGPoint(x: 55, y: 86)
-                               
-              btnDecline.frame.origin = CGPoint(x: 0, y: 137)
-              declineImage.frame.origin = CGPoint(x: 55, y: 147)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_verifyView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_rejectView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_moreInfoView)
+                
+                
+                changeStatus_verifyView.isHidden = true
+                changeStatus_rejectView.isHidden = true
+                changeStatus_moreInfoView.isHidden = true
 
                 break
                 
@@ -1064,10 +1055,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnMoreInfo.isHidden = false
                 self.btnVerified.isHidden = false
                 
-                Label1.isHidden = false
-                LAbel2.isHidden = true
-                label3.isHidden = true
-                label4.isHidden = true
+         
                                                                                           
                 verifyImage.isHidden = false
                 rejectImage.isHidden = true
@@ -1075,32 +1063,31 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 declineImage.isHidden = true
                 acceptImage.isHidden = true
                 
-        StatusView.frame = CGRect(x: 18, y: 100, width: 338, height: 191)
-                btnMoreInfo.frame.origin = CGPoint(x: 0, y: 76)
-                moreinfoimage.frame.origin = CGPoint(x: 55, y: 86)
- 
-                btnVerified.frame.origin = CGPoint(x: 0, y: 137)
-                verifyImage.frame.origin = CGPoint(x:55 , y:147)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_declineView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_rejectView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_acceptView)
+                
+                
+                changeStatus_declineView.isHidden = true
+                changeStatus_rejectView.isHidden = true
+                changeStatus_acceptView.isHidden = true
                 
                 break
                 
             default:
-                self.btnReject.isHidden = true
-                self.btnMoreInfo.isHidden = true
-                self.btnVerified.isHidden = true
-                self.btnDecline.isHidden = true
-                self.btnAccept.isHidden = true
+                changeStatus_stackView.removeArrangedSubview(changeStatus_declineView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_rejectView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_acceptView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_verifyView)
+                changeStatus_stackView.removeArrangedSubview(changeStatus_moreInfoView)
                 
-                Label1.isHidden = true
-                LAbel2.isHidden = true
-                label3.isHidden = true
-                label4.isHidden = true
-                                                                                          
-                verifyImage.isHidden = true
-                rejectImage.isHidden = true
-                moreinfoimage.isHidden = true
-                declineImage.isHidden = true
-                acceptImage.isHidden = true
+                
+                
+                changeStatus_declineView.isHidden = true
+                changeStatus_rejectView.isHidden = true
+                changeStatus_acceptView.isHidden = true
+                 changeStatus_verifyView.isHidden = true
+                 changeStatus_moreInfoView.isHidden = true
             }
     
         }
@@ -1108,6 +1095,8 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
             statusBackgroundView.isHidden = true
                    StatusView.isHidden = true
         }
+        
+//        self.view.layoutIfNeeded()
     }
     
     @IBAction func cancelStatus(_ sender: Any) {

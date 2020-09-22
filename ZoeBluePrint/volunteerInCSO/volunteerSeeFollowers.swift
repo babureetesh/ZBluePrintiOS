@@ -491,14 +491,16 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let obj = sb.instantiateViewController(withIdentifier: "request") as! CSORequest
         obj.strShowClose = "NO"
-         obj.view.frame.size.height = button2view.frame.size.height - 50
-        obj.tblViewforAllRequest.frame.size.height = button2view.frame.size.height - 100
+         obj.view.frame.size.height = button2view.frame.size.height
+//        obj.tblViewforAllRequest.frame.size.height = button2view.frame.size.height - 100
         obj.screen = "VolunteerSeeFollowers"
-        obj.table_height = button2view.frame.size.height
+//        obj.table_height = button2view.frame.size.height
         obj.willMove(toParent: self)
         button2view.addSubview(obj.view)
         self.addChild(obj)
         obj.didMove(toParent: self)
+    
+    self.view.layoutIfNeeded()
     }
  
     func findRankImages(rank:String)->String{
