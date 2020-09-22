@@ -89,12 +89,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
         keyboard.items = [DoneButton]
         txtfldVolReq.inputAccessoryView = keyboard
         
-        // Mention Line :-
-        var bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: txtfldVolReq.frame.height-1, width: 343.0, height: 1.0)
-        bottomLine.backgroundColor = UIColor.black.cgColor
-        txtfldVolReq.borderStyle = UITextField.BorderStyle.none
-        txtfldVolReq.layer.addSublayer(bottomLine)
+    
         
         let serviceHanlder = ServiceHandlers()
                                   serviceHanlder.getShiftList() { (responce, isSuccess) in
