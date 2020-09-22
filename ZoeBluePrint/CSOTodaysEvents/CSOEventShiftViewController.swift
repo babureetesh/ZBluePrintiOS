@@ -186,6 +186,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
                     self.getAllData()
                 }
         
+                tableGetAllShift.tableFooterView = UIView()
     }
     @objc func handleTap(_ sender:UITapGestureRecognizer) {
 
