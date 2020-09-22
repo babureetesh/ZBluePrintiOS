@@ -148,6 +148,9 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
     
     @IBOutlet weak var stage2uploadfilebuttons: UIStackView!
     
+      @IBOutlet weak var stage1MainStackView: UIStackView!
+    @IBOutlet weak var passwordStackView: UIStackView!
+    @IBOutlet weak var confirmPasswordStackView: UIStackView!
     
     @IBOutlet weak var stage2uploadbuttons: UIStackView!
     
@@ -426,6 +429,9 @@ class CSORegistration: UIViewController,UIImagePickerControllerDelegate,UINaviga
          self.Stage3Update.setTitle(NSLocalizedString("Update", comment: ""), for: UIControl.State.normal)
 
  
+                        self.stage1MainStackView.removeArrangedSubview(self.passwordStackView)
+                        self.stage1MainStackView.removeArrangedSubview(self.confirmPasswordStackView)
+                        
           self.stage1password.isHidden = true
            self.stage1confirmPassword.isHidden = true
             self.stage1confirmpasswordeyeButton.isHidden = true
