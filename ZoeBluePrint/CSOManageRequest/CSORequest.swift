@@ -15,7 +15,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     var selectedShiftTaskId = String()
     var c : ViewController! = nil
     
-    
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var changeStatus_acceptView: UIView!
     @IBOutlet weak var changeStatus_declineView: UIView!
     @IBOutlet weak var changeStatus_verifyView: UIView!
@@ -219,6 +219,8 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
             headerViewHeightConstraint.constant = 0
             self.sideMenu.isHidden = true
             self.topLable.isHidden = true
+            headerView.isHidden = true
+            
             //self.lbnHeight.constant = 0
 //            viewRequesSelButtons.frame = CGRect(x: 9.0, y: 4.0, width: 324.0, height: 45.0)
 //            self.topLable.frame = CGRect(x: 0.0, y: 0.0, width: 0.0, height: 0.0)
