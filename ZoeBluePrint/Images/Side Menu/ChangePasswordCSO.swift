@@ -22,6 +22,13 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
     
     
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        oldPassword.setUnderLineOfColor(color: .black)
+        newPassword.setUnderLineOfColor(color: .black)
+        confirmPassword.setUnderLineOfColor(color: .black)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,36 +44,6 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
         self.oldPassword.delegate = self
         self.newPassword.delegate = self
         self.confirmPassword.delegate = self
-        
-        var bottomlLine = CALayer()
-        bottomlLine.frame = CGRect(x:0.0,y:oldPassword.frame.height-1,width:302.0,height:1.0)
-      //  /*if defaults == "Light Mode" {
-        bottomlLine.backgroundColor = UIColor.darkGray.cgColor
-      //  } else   if defaults == "Dark Mode"{
-        //     bottomlLine.backgroundColor = UIColor.lightGray.cgColor
-        //}*/
-        oldPassword.borderStyle = UITextField.BorderStyle.none
-        oldPassword.layer.addSublayer(bottomlLine)
-        
-        var bottomlLine2 = CALayer()
-               bottomlLine2.frame = CGRect(x:0.0,y:newPassword.frame.height-1,width:302.0,height:1.0)
-       // /*if defaults == "Light Mode" {
-            bottomlLine2.backgroundColor = UIColor.darkGray.cgColor
-       // } else   if defaults == "Dark Mode"{
-         //   bottomlLine2.backgroundColor = UIColor.lightGray.cgColor
-        //}*/
-               newPassword.borderStyle = UITextField.BorderStyle.none
-               newPassword.layer.addSublayer(bottomlLine2)
-        
-        var bottomlLine3 = CALayer()
-        bottomlLine3.frame = CGRect(x:0.0,y:confirmPassword.frame.height-1,width:302.0,height:1.0)
-      // /* if defaults == "Light Mode" {
-            bottomlLine3.backgroundColor = UIColor.darkGray.cgColor
-        //} else   if defaults == "Dark Mode"{
-          //  bottomlLine3.backgroundColor = UIColor.lightGray.cgColor
-        //}*/
-        confirmPassword.borderStyle = UITextField.BorderStyle.none
-        confirmPassword.layer.addSublayer(bottomlLine3)
                
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
