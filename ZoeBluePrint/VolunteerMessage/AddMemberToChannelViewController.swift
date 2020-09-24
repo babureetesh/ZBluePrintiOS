@@ -10,7 +10,11 @@ import UIKit
 import SendBirdSDK
 class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelectionlistCell,UITableViewDelegate,UITableViewDataSource {
 
-    @IBOutlet weak var imgProfilePic: UIImageView!
+    @IBOutlet weak var csoProfilePic: UIImageView!
+    @IBOutlet weak var volProfilePic: UIImageView!
+    @IBOutlet weak var csoHeaderView:UIView!
+    @IBOutlet weak var volHeaderView:UIView!
+    @IBOutlet weak var headerViewHeightConstrain: NSLayoutConstraint!
     @IBOutlet weak var imgCoverPic: UIImageView!
     @IBOutlet weak var tblCnnctduserList: UITableView!
     var connectedUserList = [[String:Any]]()
@@ -35,6 +39,45 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
             }
             self.callforConnecteduser()
         }
+    
+    func setProfilePic(imageData:Data)  {
+       
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+        let usertype = userIDData["user_type"] as! String
+        if (usertype == "CSO"){
+            //time to handle Header acording to Cso
+            headerViewHeightConstrain.constant = 75 + 44 // 44 is safe area margin
+            imgCoverPic.isHidden = true
+            volHeaderView.isHidden = true
+            if let image = UIImage(data: imageData) {
+                self.csoProfilePic.image = image
+                self.csoProfilePic.layer.borderWidth = 1
+                self.csoProfilePic.layer.masksToBounds = false
+                self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                self.csoProfilePic.clipsToBounds = true
+            }
+          
+        } else {
+            //time to handle Header acording to VOL
+            headerViewHeightConstrain.constant = 150
+            self.getCoverImageForRank()
+            csoHeaderView.isHidden = true
+            if let image = UIImage(data: imageData) {
+                self.volProfilePic.image = image
+                self.volProfilePic.layer.borderWidth = 1
+                self.volProfilePic.layer.masksToBounds = false
+                self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                self.volProfilePic.clipsToBounds = true
+            }
+         
+        }
+        
+        self.view.layoutIfNeeded()
+    }
+    
     @IBAction func notificationBellTapped(_ sender: Any) {
                  
                  let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -60,12 +103,7 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
                if let url = URL(string: string_url){
                             do {
                               let imageData = try Data(contentsOf: url as URL)
-                                self.imgProfilePic.image = UIImage(data: imageData)
-                                self.imgProfilePic.layer.borderWidth = 1
-                                self.imgProfilePic.layer.masksToBounds = false
-                                self.imgProfilePic.layer.borderColor = UIColor.black.cgColor
-                                self.imgProfilePic.layer.cornerRadius = self.imgProfilePic.frame.height/2
-                                self.imgProfilePic.clipsToBounds = true
+                                setProfilePic(imageData: imageData)
                             } catch {
                                 //print("Unable to load data: \(error)")
                             }

@@ -16,7 +16,12 @@ protocol delegateNewChannelremoved{
 
 class NewChannelOneToOneChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,delegateConnectedUserlistCell,UITextFieldDelegate {
 var delegate :delegateNewChannelremoved?
-    @IBOutlet weak var imgProfilePic: UIImageView!
+    
+    @IBOutlet weak var csoProfilePic: UIImageView!
+    @IBOutlet weak var volProfilePic: UIImageView!
+    @IBOutlet weak var csoHeaderView:UIView!
+    @IBOutlet weak var volHeaderView:UIView!
+    @IBOutlet weak var headerViewHeightConstrain: NSLayoutConstraint!
     @IBOutlet weak var imgCoverPic: UIImageView!
     @IBOutlet weak var imgLoadingArrows: UIImageView!
     @IBOutlet weak var viewLoading: UIView!
@@ -33,16 +38,6 @@ var delegate :delegateNewChannelremoved?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-         let userid = userIDData["user_id"] as! String
-        let usertype = userIDData["user_type"] as! String
-        if (usertype == "CSO"){
-            //time to handle Header acording to Cso
-        }else{
-            //time to handle Header acording to VOL
-        }
-        //user_email
         
 self.viewCreateChannel.isHidden = true
         self.txtfldChannelName.delegate = self
@@ -50,6 +45,48 @@ self.viewCreateChannel.isHidden = true
         self.showLoader()
         self.callforConnecteduser()
     }
+    
+    
+    func setProfilePic(imageData:Data) {
+        
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+        let usertype = userIDData["user_type"] as! String
+        if (usertype == "CSO"){
+            //time to handle Header acording to Cso
+            headerViewHeightConstrain.constant = 75 + 44 // 44 is safe area margin
+            imgCoverPic.isHidden = true
+            volHeaderView.isHidden = true
+            if let image = UIImage(data: imageData) {
+                self.csoProfilePic.image = image
+                self.csoProfilePic.layer.borderWidth = 1
+                self.csoProfilePic.layer.masksToBounds = false
+                self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                self.csoProfilePic.clipsToBounds = true
+            }
+            
+        } else {
+            //time to handle Header acording to VOL
+            headerViewHeightConstrain.constant = 150
+            self.getCoverImageForRank()
+            csoHeaderView.isHidden = true
+            if let image = UIImage(data: imageData) {
+                self.volProfilePic.image = image
+                self.volProfilePic.layer.borderWidth = 1
+                self.volProfilePic.layer.masksToBounds = false
+                self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                self.volProfilePic.clipsToBounds = true
+            }
+            
+        }
+        
+        self.view.layoutIfNeeded()
+    }
+       
+    
+    
     
     @IBAction func notificationBellTapped(_ sender: Any) {
                  
@@ -78,7 +115,7 @@ self.viewCreateChannel.isHidden = true
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.getCoverImageForRank()
+       
                
               
                 let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -93,12 +130,9 @@ self.viewCreateChannel.isHidden = true
                if let url = URL(string: string_url){
                             do {
                               let imageData = try Data(contentsOf: url as URL)
-                                self.imgProfilePic.image = UIImage(data: imageData)
-                                self.imgProfilePic.layer.borderWidth = 1
-                                self.imgProfilePic.layer.masksToBounds = false
-                                self.imgProfilePic.layer.borderColor = UIColor.black.cgColor
-                                self.imgProfilePic.layer.cornerRadius = self.imgProfilePic.frame.height/2
-                                self.imgProfilePic.clipsToBounds = true
+                                
+                                setProfilePic(imageData: imageData)
+                                
                             } catch {
                                 //print("Unable to load data: \(error)")
                             }

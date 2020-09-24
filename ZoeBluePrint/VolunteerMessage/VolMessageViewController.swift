@@ -62,46 +62,46 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             
             
         }
-    
-    func setProfilePic(image:UIImage)  {
+    func setProfilePic(imageData:Data) {
+        
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let usertype = userIDData["user_type"] as! String
         if (usertype == "CSO"){
-            self.csoProfilePic.image = image
-                  self.csoProfilePic.layer.borderWidth = 1
-                  self.csoProfilePic.layer.masksToBounds = false
-                  self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
-                  self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-                  self.csoProfilePic.clipsToBounds = true
-        } else {
-            self.volProfilePic.image = image
-                  self.volProfilePic.layer.borderWidth = 1
-                  self.volProfilePic.layer.masksToBounds = false
-                  self.volProfilePic.layer.borderColor = UIColor.black.cgColor
-                  self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-                  self.volProfilePic.clipsToBounds = true
-        }
-        
-      
-    }
-    func customizeHeaderViewForUser(userType:String)  {
-        if (userType == "CSO"){
             //time to handle Header acording to Cso
             headerViewHeightConstrain.constant = 75 + 44 // 44 is safe area margin
             imgCoverPic.isHidden = true
             volHeaderView.isHidden = true
+            if let image = UIImage(data: imageData) {
+                self.csoProfilePic.image = image
+                self.csoProfilePic.layer.borderWidth = 1
+                self.csoProfilePic.layer.masksToBounds = false
+                self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                self.csoProfilePic.clipsToBounds = true
+            }
             
-        }else{
+        } else {
             //time to handle Header acording to VOL
             headerViewHeightConstrain.constant = 150
             self.getCoverImageForRank()
             csoHeaderView.isHidden = true
+            if let image = UIImage(data: imageData) {
+                self.volProfilePic.image = image
+                self.volProfilePic.layer.borderWidth = 1
+                self.volProfilePic.layer.masksToBounds = false
+                self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                self.volProfilePic.clipsToBounds = true
+            }
+            
         }
         
         self.view.layoutIfNeeded()
-        
     }
+    
+
+
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -109,7 +109,6 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             string_url = userIDData["user_profile_pic"] as! String
             let usertype = userIDData["user_type"] as! String
             
-        customizeHeaderViewForUser(userType: usertype)
          let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
                 let decodedUserdata  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                 let userIDdata = NSKeyedUnarchiver.unarchiveObject(with: decodedUserdata) as!  Dictionary<String, Any>
@@ -120,11 +119,8 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 if let url = URL(string: string_url){
                 do {
                   let imageData = try Data(contentsOf: url as URL)
-                    if let image = UIImage(data: imageData) {
-                        setProfilePic(image: image)
-                    }
-                    
-                   
+                    setProfilePic(imageData: imageData)
+  
                 } catch {
                     //print("Unable to load data: \(error)")
                 }
