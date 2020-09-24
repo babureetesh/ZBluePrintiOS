@@ -21,7 +21,7 @@ class ActivityLoaderView: UIView {
     }()
     
     var image : UIImageView?
-    
+    var activityView: UIActivityIndicatorView?
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -51,10 +51,15 @@ class ActivityLoaderView: UIView {
         let appDelagate = UIApplication.shared.delegate as! AppDelegate
         self.frame =  (appDelagate.window?.frame)!
         self.backgroundColor = Backgroud_Color
-        image = UIImageView(frame: CGRect(x: self.bounds.size.width/2, y: self.bounds.size.height/2, width: 48.0, height: 55.0))
-        image?.image = UIImage(named: "loading-large-icon")
-        self.addSubview(image!)
-        image?.frame.origin = CGPoint(x: self.bounds.size.width/2 - (image?.bounds.size.width)!/2, y: self.bounds.size.height/2 - (image?.bounds.size.height)!)
+//        image = UIImageView(frame: CGRect(x: self.bounds.size.width/2, y: self.bounds.size.height/2, width: 48.0, height: 55.0))
+//        image?.image = UIImage(named: "loading-large-icon")
+//        self.addSubview(image!)
+//        image?.frame.origin = CGPoint(x: self.bounds.size.width/2 - (image?.bounds.size.width)!/2, y: self.bounds.size.height/2 - (image?.bounds.size.height)!)
+         activityView = UIActivityIndicatorView(style: .whiteLarge)
+        activityView!.center = self.center
+        self.addSubview(activityView!)
+        activityView!.startAnimating()
+        
         self.tag = ACTIVITY_LOADER_TAG
     }
     class func startAnimating() {
@@ -62,7 +67,7 @@ class ActivityLoaderView: UIView {
         if loader.superview == nil {
             loader.loadActivityLoader()
         }
-        loader.rotate()
+        //loader.rotate()
         loader.accessibilityIdentifier = "App based Activity Loader"
         UIApplication.shared.sendAction(#selector(UIApplication.resignFirstResponder), to: nil, from: nil, for: nil)
         if let window = UIApplication.shared.keyWindow {

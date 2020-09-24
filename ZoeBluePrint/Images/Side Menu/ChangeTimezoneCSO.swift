@@ -221,14 +221,14 @@ class ChangeTimezoneCSO: UIViewController {
         controller.showPopoverInDestinationVC(destination: self, sourceView: view as! UIView) { (selectedValue) in
             if let selectVal = selectedValue as? String {
                 senderButton.setTitle(selectVal, for: .normal)
-                senderButton.setImage(nil, for: .normal)
+               // senderButton.setImage(nil, for: .normal)
             } else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetTimeZone.timeZoneName] as? String {
                 self.timezoneID = selectVal[GetTimeZone.timeZoneCode] as! String
                 let title2 = selectVal[GetTimeZone.timeZoneCode]
                 let title3 =  "\(title) [\(title2 ?? "")]"
                 print(title3)
                 senderButton.setTitle(title3, for: .normal)
-                senderButton.setImage(nil, for: .normal)
+              //  senderButton.setImage(nil, for: .normal)
             }
         }
     }
@@ -238,12 +238,12 @@ class ChangeTimezoneCSO: UIViewController {
         controller.showPopoverInDestinationVC(destination: self, sourceView: view as! UIView) { (selectedValue) in
             if let selectVal = selectedValue as? String {
                 senderButton.setTitle(selectVal, for: .normal)
-                senderButton.setImage(nil, for: .normal)
+               // senderButton.setImage(nil, for: .normal)
             } else if let selectVal = selectedValue as? [String:Any], let title = selectVal[DayLight.day_status] as? String {
                 self.dayLightID = selectVal[DayLight.day_id] as! String
                 
                 senderButton.setTitle(title, for: .normal)
-                senderButton.setImage(nil, for: .normal)
+               // senderButton.setImage(nil, for: .normal)
             }
         }
     }

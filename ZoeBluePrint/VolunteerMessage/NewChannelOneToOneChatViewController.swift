@@ -33,7 +33,16 @@ var delegate :delegateNewChannelremoved?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+         let userid = userIDData["user_id"] as! String
+        let usertype = userIDData["user_type"] as! String
+        if (usertype == "CSO"){
+            //time to handle Header acording to Cso
+        }else{
+            //time to handle Header acording to VOL
+        }
+        //user_email
         
 self.viewCreateChannel.isHidden = true
         self.txtfldChannelName.delegate = self

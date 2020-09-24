@@ -27,7 +27,12 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
     let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
     let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         string_url = userIDData["user_profile_pic"] as! String
-        
+        let usertype = userIDData["user_type"] as! String
+        if (usertype == "CSO"){
+            //time to handle Header acording to Cso
+        }else{
+            //time to handle Header acording to VOL
+        }
     }
     func getCoverImageForRank(){
             

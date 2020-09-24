@@ -113,6 +113,7 @@
 		3861490424DC28FF00B9627A /* cover_truck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 386148FF24DC28FF00B9627A /* cover_truck.jpg */; };
 		3862888024B9DFA2005A6687 /* downloading.png in Resources */ = {isa = PBXBuildFile; fileRef = 3862887F24B9DFA1005A6687 /* downloading.png */; };
 		387BF91A22A959520073DB74 /* CSODashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387BF91922A959520073DB74 /* CSODashboardViewController.swift */; };
+		387FD300251C5680001AFBAA /* newListCso.png in Resources */ = {isa = PBXBuildFile; fileRef = 387FD2FF251C567F001AFBAA /* newListCso.png */; };
 		389B382524B36A5100C5D9CC /* lightnewSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 389B382424B36A5000C5D9CC /* lightnewSettings.png */; };
 		389B382824B3A32B00C5D9CC /* lighteye-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 389B382724B3A32B00C5D9CC /* lighteye-open.png */; };
 		38A0906024D0652C00070C9A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A0903424D0652C00070C9A /* ChatViewController.swift */; };
@@ -525,6 +526,7 @@
 		386148FF24DC28FF00B9627A /* cover_truck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_truck.jpg; sourceTree = "<group>"; };
 		3862887F24B9DFA1005A6687 /* downloading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = downloading.png; path = ZoeBluePrint/Project_images/downloading.png; sourceTree = "<group>"; };
 		387BF91922A959520073DB74 /* CSODashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSODashboardViewController.swift; sourceTree = "<group>"; };
+		387FD2FF251C567F001AFBAA /* newListCso.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newListCso.png; sourceTree = "<group>"; };
 		389B382424B36A5000C5D9CC /* lightnewSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightnewSettings.png; sourceTree = "<group>"; };
 		389B382624B36B7F00C5D9CC /* lightnewSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lightnewSettings.png; path = "ZoeBluePrint/White Icons/lightnewSettings.png"; sourceTree = "<group>"; };
 		389B382724B3A32B00C5D9CC /* lighteye-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lighteye-open.png"; path = "ZoeBluePrint/White Icons/lighteye-open.png"; sourceTree = "<group>"; };
@@ -1535,6 +1537,7 @@
 				386148FA24DC28EB00B9627A /* Cover Images */,
 				C2A75422238E976100D4010B /* search2.png */,
 				38DB1EF024DE898A00C7FD27 /* newList.png */,
+				387FD2FF251C567F001AFBAA /* newListCso.png */,
 			);
 			path = Project_images;
 			sourceTree = "<group>";
@@ -1670,6 +1673,7 @@
 				7C8AC8FB233B34B100065BC9 /* icons8-speech-bubble-50.png in Resources */,
 				C2477DCC23867C0B006E28F9 /* calendar icon.png in Resources */,
 				7CAF58032324401F00017D9B /* Roboto_Regular.ttf in Resources */,
+				387FD300251C5680001AFBAA /* newListCso.png in Resources */,
 				7CAF58132324574600017D9B /* delete.png in Resources */,
 				C2A3A76A23FBED1600650F41 /* teal3.png in Resources */,
 				C27C1C3F23F3E0A4009C61B7 /* clock (1).png in Resources */,

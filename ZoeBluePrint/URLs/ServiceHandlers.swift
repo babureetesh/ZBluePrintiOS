@@ -12,7 +12,7 @@ import Alamofire
 class ServiceHandlers {
    
    let baseURL = "https://zbp.progocrm.com/api/" // Staging
-   //let baseURL = "https://www.zoeblueprint.com/api/" //Production
+  // let baseURL = "https://www.zoeblueprint.com/api/" //Production
     
     enum serviceMthodType :String {
         

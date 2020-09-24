@@ -24,7 +24,15 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
             super.viewDidLoad()
     //self.viewCreateChannel.isHidden = true
             // Do any additional setup after loading the view.
-            
+            let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+             let userid = userIDData["user_id"] as! String
+            let usertype = userIDData["user_type"] as! String
+            if (usertype == "CSO"){
+                //time to handle Header acording to Cso
+            }else{
+                //time to handle Header acording to VOL
+            }
             self.callforConnecteduser()
         }
     @IBAction func notificationBellTapped(_ sender: Any) {
