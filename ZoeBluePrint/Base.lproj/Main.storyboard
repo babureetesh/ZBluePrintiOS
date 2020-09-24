@@ -3713,8 +3713,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SET LOCATION" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Txw-83-l4u">
-                                        <rect key="frame" x="148.5" y="30" width="117.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="148.5" y="28" width="117" height="24"/>
+                                        <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="20"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -3749,33 +3749,32 @@
                                 <rect key="frame" x="0.0" y="124" width="414" height="738"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBl-Sq-Kqv">
-                                <rect key="frame" x="60" y="423" width="294" height="60"/>
+                                <rect key="frame" x="60" y="127" width="294" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place is not yet selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyl-M5-nzW">
-                                        <rect key="frame" x="68.5" y="21.5" width="157.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place is not yet selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyl-M5-nzW">
+                                        <rect key="frame" x="75.5" y="21.5" width="151" height="17"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="0.75628745719178081" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="pyl-M5-nzW" firstAttribute="centerY" secondItem="GBl-Sq-Kqv" secondAttribute="centerY" id="V57-mK-F7u"/>
-                                    <constraint firstItem="pyl-M5-nzW" firstAttribute="centerX" secondItem="GBl-Sq-Kqv" secondAttribute="centerX" id="c5N-zx-X2c"/>
-                                    <constraint firstAttribute="height" constant="60" id="uqS-cN-mBw"/>
+                                    <constraint firstAttribute="width" constant="294" id="BFR-HI-mJx"/>
+                                    <constraint firstAttribute="height" constant="60" id="cxo-9e-eKO"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qhx-IR-Ogv" firstAttribute="bottom" secondItem="ce4-aF-xIZ" secondAttribute="bottom" id="0Hm-48-iL8"/>
-                            <constraint firstItem="GBl-Sq-Kqv" firstAttribute="centerY" secondItem="Qhx-IR-Ogv" secondAttribute="centerY" id="CIy-6g-t1g"/>
-                            <constraint firstItem="Qhx-IR-Ogv" firstAttribute="trailing" secondItem="GBl-Sq-Kqv" secondAttribute="trailing" constant="60" id="D6s-Lj-2nI"/>
                             <constraint firstItem="Qhx-IR-Ogv" firstAttribute="trailing" secondItem="R9K-vy-k8D" secondAttribute="trailing" id="NkD-ZF-cvK"/>
                             <constraint firstItem="ce4-aF-xIZ" firstAttribute="trailing" secondItem="Qhx-IR-Ogv" secondAttribute="trailing" id="Nt4-Ic-KZN"/>
                             <constraint firstItem="R9K-vy-k8D" firstAttribute="leading" secondItem="vfZ-20-O0N" secondAttribute="leading" id="Rpg-nU-QW5"/>
+                            <constraint firstItem="GBl-Sq-Kqv" firstAttribute="centerX" secondItem="Qhx-IR-Ogv" secondAttribute="centerX" id="VRs-8X-Kxi"/>
                             <constraint firstItem="ce4-aF-xIZ" firstAttribute="leading" secondItem="Qhx-IR-Ogv" secondAttribute="leading" id="VVg-uF-h5Z"/>
-                            <constraint firstItem="GBl-Sq-Kqv" firstAttribute="leading" secondItem="Qhx-IR-Ogv" secondAttribute="leading" constant="60" id="kzF-SG-RS5"/>
+                            <constraint firstItem="GBl-Sq-Kqv" firstAttribute="top" secondItem="R9K-vy-k8D" secondAttribute="bottom" constant="3" id="epw-Qs-uqo"/>
                             <constraint firstItem="R9K-vy-k8D" firstAttribute="top" secondItem="Qhx-IR-Ogv" secondAttribute="top" id="sNt-Fb-QaY"/>
                             <constraint firstItem="ce4-aF-xIZ" firstAttribute="top" secondItem="R9K-vy-k8D" secondAttribute="bottom" id="yII-bi-DAs"/>
                         </constraints>
