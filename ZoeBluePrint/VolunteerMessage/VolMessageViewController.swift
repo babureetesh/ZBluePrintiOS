@@ -12,27 +12,24 @@ import SendBirdSDK
 
 class VolMessageViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,delegateChatGroupList,delegateNewChannelremoved,UIGestureRecognizerDelegate{
     
+    @IBOutlet weak var csoProfilePic: UIImageView!
+    @IBOutlet weak var volProfilePic: UIImageView!
+    @IBOutlet weak var csoHeaderView:UIView!
+    @IBOutlet weak var volHeaderView:UIView!
     
-    @IBOutlet weak var imguserProfilePic: UIImageView!
-    
+    @IBOutlet weak var headerViewHeightConstrain: NSLayoutConstraint!
     @IBOutlet weak var imgCoverPic: UIImageView!
     @IBOutlet weak var tblChatList: UITableView!
     private var groupChannelListQuery: SBDGroupChannelListQuery?
     var channelList = [SBDGroupChannel]()
     var username: String!
     var string_url: String!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLongPressGesture()
-    let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-    let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-        string_url = userIDData["user_profile_pic"] as! String
-        let usertype = userIDData["user_type"] as! String
-        if (usertype == "CSO"){
-            //time to handle Header acording to Cso
-        }else{
-            //time to handle Header acording to VOL
-        }
+    
     }
     func getCoverImageForRank(){
             
@@ -65,27 +62,69 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             
             
         }
+    
+    func setProfilePic(image:UIImage)  {
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+        let usertype = userIDData["user_type"] as! String
+        if (usertype == "CSO"){
+            self.csoProfilePic.image = image
+                  self.csoProfilePic.layer.borderWidth = 1
+                  self.csoProfilePic.layer.masksToBounds = false
+                  self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+                  self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                  self.csoProfilePic.clipsToBounds = true
+        } else {
+            self.volProfilePic.image = image
+                  self.volProfilePic.layer.borderWidth = 1
+                  self.volProfilePic.layer.masksToBounds = false
+                  self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                  self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                  self.volProfilePic.clipsToBounds = true
+        }
+        
+      
+    }
+    func customizeHeaderViewForUser(userType:String)  {
+        if (userType == "CSO"){
+            //time to handle Header acording to Cso
+            headerViewHeightConstrain.constant = 75 + 44 // 44 is safe area margin
+            imgCoverPic.isHidden = true
+            volHeaderView.isHidden = true
+            
+        }else{
+            //time to handle Header acording to VOL
+            headerViewHeightConstrain.constant = 150
+            self.getCoverImageForRank()
+            csoHeaderView.isHidden = true
+        }
+        
+        self.view.layoutIfNeeded()
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-        
-        self.getCoverImageForRank()
-        
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+            string_url = userIDData["user_profile_pic"] as! String
+            let usertype = userIDData["user_type"] as! String
+            
+        customizeHeaderViewForUser(userType: usertype)
          let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-                let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-                let userID = userIDData["user_id"] as! String
+                let decodedUserdata  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                let userIDdata = NSKeyedUnarchiver.unarchiveObject(with: decodedUserdata) as!  Dictionary<String, Any>
+                let userID = userIDdata["user_id"] as! String
                               //print(userID)
                 
-                let string_url = userIDData["user_profile_pic"] as! String
+                let string_url = userIDdata["user_profile_pic"] as! String
                 if let url = URL(string: string_url){
                 do {
                   let imageData = try Data(contentsOf: url as URL)
-                    self.imguserProfilePic.image = UIImage(data: imageData)
-                    self.imguserProfilePic.layer.borderWidth = 1
-                    self.imguserProfilePic.layer.masksToBounds = false
-                    self.imguserProfilePic.layer.borderColor = UIColor.black.cgColor
-                    self.imguserProfilePic.layer.cornerRadius = self.imguserProfilePic.frame.height/2
-                    self.imguserProfilePic.clipsToBounds = true
+                    if let image = UIImage(data: imageData) {
+                        setProfilePic(image: image)
+                    }
+                    
+                   
                 } catch {
                     //print("Unable to load data: \(error)")
                 }
