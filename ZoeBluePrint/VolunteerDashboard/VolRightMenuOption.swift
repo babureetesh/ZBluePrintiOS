@@ -138,8 +138,8 @@ class VolRightMenuOption: UIViewController {
 //        UserDefaults.standard.removePersistentDomain(forName: domain)
 //
 //
-//        UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
-//        UserDefaults.standard.synchronize()
+        UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
+        UserDefaults.standard.synchronize()
 //
 //        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
 //            //print("\(key) = \(value) \n")

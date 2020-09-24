@@ -53,6 +53,8 @@ class ViewController: BaseViewController {
             UserDefaults.standard.set(true, forKey: "introshown")
         }
         
+        self.checkForLAreadyLogin()
+        
         // Do any additional setup after loading the view.
         addTextFieldEventHandling()
         customizeUIElements()
@@ -395,5 +397,46 @@ extension ViewController:UITabBarControllerDelegate {
             vc.removeFromParent()
         }
         
+    }
+    
+    func checkForLAreadyLogin(){
+       
+        if let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data! {
+                         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+        
+        let usertype = userIDData["user_type"] as! String
+        
+        if(usertype == "CSO"){
+                                print("Login to CSO")
+                                
+                                if  let tabBarController = UIStoryboard.init(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier: "tabbar") as? UITabBarController {
+                                    tabBarController.delegate = self as UITabBarControllerDelegate
+                                   
+                                    for viewController in tabBarController.viewControllers! {
+                                        if let dashboardVC = viewController as? CSODashboardViewController {
+                                            tabBarController.selectedViewController = dashboardVC
+                                        }
+                                    }
+                                    self.present(tabBarController, animated: false, completion: nil)
+                                }
+                                
+                            }else if(usertype == "VOL"){
+                                 print("Login to VOL")
+                                
+                               
+              
+                if  let tabBarController = UIStoryboard.init(name: "Main", bundle:Bundle.main).instantiateViewController(withIdentifier: "tab") as? UITabBarController {
+                tabBarController.delegate = self as UITabBarControllerDelegate
+                for viewController in tabBarController.viewControllers! {
+                    if let dashboardVol = viewController as? NewVolunteerDashboard {
+                        tabBarController.selectedViewController = dashboardVol
+                    }
+                }
+                    tabBarController.modalPresentationStyle = .fullScreen
+            self.present(tabBarController, animated: false, completion: nil)
+        }
+            }
+        
+    }
     }
 }
