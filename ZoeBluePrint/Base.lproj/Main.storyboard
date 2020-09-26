@@ -3975,6 +3975,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="bell.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="notificationButton:" destination="R4X-h1-9yp" eventType="touchUpInside" id="2AQ-Mb-Zs6"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-gR-Ir7">
                                         <rect key="frame" x="369" y="30" width="30" height="30"/>
@@ -4474,6 +4477,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="bell.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="notificationButton:" destination="Dt6-G9-r0i" eventType="touchUpInside" id="ZxJ-f7-Muc"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="9s5-iM-ErM">
                                         <rect key="frame" x="15" y="0.0" width="45" height="45"/>
@@ -4724,6 +4730,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="bell.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="notification_button:" destination="jvG-bv-SSP" eventType="touchUpInside" id="nfw-GL-CvS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.15294117647058825" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -6927,6 +6936,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="bell.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="NotificationButton:" destination="bub-WN-B9w" eventType="touchUpInside" id="nSJ-Ja-4jd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-Sv-cRa">
                                         <rect key="frame" x="369" y="22.5" width="30" height="30"/>
@@ -7615,6 +7627,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="bell.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="notificationButton:" destination="BLc-OE-4NT" eventType="touchUpInside" id="zCo-e3-qH6"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z0N-fk-wEr">
                                         <rect key="frame" x="15" y="15" width="45" height="45"/>
@@ -8249,19 +8264,20 @@
                                     <constraint firstAttribute="width" constant="41" id="FT8-XX-hBn"/>
                                     <constraint firstAttribute="height" constant="34" id="dGX-TF-ad4"/>
                                 </constraints>
+                                <state key="normal" image="iphoneButton.png"/>
                                 <connections>
                                     <action selector="back_button:" destination="zpx-Gf-egP" eventType="touchUpInside" id="9HW-Hf-vTg"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6mW-Rz-qqJ">
-                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <rect key="frame" x="15" y="100" width="384" height="762"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="notification_cell" rowHeight="76" id="de8-xL-3Ph" customClass="notificationCell" customModule="ZoeBluePrint" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="76"/>
+                                        <rect key="frame" x="0.0" y="28" width="384" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="de8-xL-3Ph" id="V0a-cw-WE0">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="384" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty3-wv-y9l">
@@ -8306,12 +8322,12 @@
                             <constraint firstItem="6mW-Rz-qqJ" firstAttribute="top" secondItem="1KO-20-TGS" secondAttribute="bottom" id="0Qx-ec-H54"/>
                             <constraint firstItem="eU6-5g-w37" firstAttribute="leading" secondItem="jXd-tz-zdu" secondAttribute="leading" constant="16" id="3sU-6y-8ts"/>
                             <constraint firstItem="jXd-tz-zdu" firstAttribute="trailing" secondItem="1KO-20-TGS" secondAttribute="trailing" id="Bvl-K4-nOa"/>
-                            <constraint firstItem="6mW-Rz-qqJ" firstAttribute="leading" secondItem="jXd-tz-zdu" secondAttribute="leading" id="DHG-vB-GdS"/>
+                            <constraint firstItem="6mW-Rz-qqJ" firstAttribute="leading" secondItem="jXd-tz-zdu" secondAttribute="leading" constant="15" id="DHG-vB-GdS"/>
                             <constraint firstItem="1KO-20-TGS" firstAttribute="top" secondItem="qaa-g9-guz" secondAttribute="top" id="Gzo-JJ-2Ra"/>
                             <constraint firstItem="eU6-5g-w37" firstAttribute="bottom" secondItem="1KO-20-TGS" secondAttribute="bottom" constant="-10" id="VpZ-bx-2Vm"/>
                             <constraint firstItem="jXd-tz-zdu" firstAttribute="bottom" secondItem="6mW-Rz-qqJ" secondAttribute="bottom" id="Y69-SO-UIw"/>
                             <constraint firstItem="1KO-20-TGS" firstAttribute="leading" secondItem="jXd-tz-zdu" secondAttribute="leading" id="hBD-g1-pgd"/>
-                            <constraint firstItem="jXd-tz-zdu" firstAttribute="trailing" secondItem="6mW-Rz-qqJ" secondAttribute="trailing" id="r2K-RO-C1d"/>
+                            <constraint firstItem="jXd-tz-zdu" firstAttribute="trailing" secondItem="6mW-Rz-qqJ" secondAttribute="trailing" constant="15" id="r2K-RO-C1d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jXd-tz-zdu"/>
                     </view>
@@ -8691,6 +8707,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="bell.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="notificationButton:" destination="5sP-Ar-G6s" eventType="touchUpInside" id="CXF-ej-V0N"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12941176470588234" green="0.15294117647058825" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -15249,7 +15268,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="xDt-Yx-Q4a"/>
         <segue reference="4Ea-rk-YRR"/>
-        <segue reference="TSH-ju-LtO"/>
+        <segue reference="1Ox-bY-Z47"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
 </document>
