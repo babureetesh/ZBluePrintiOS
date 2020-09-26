@@ -147,7 +147,9 @@ class VolRightMenuOption: UIViewController {
 //        let sb :UIStoryboard =  UIStoryboard(name: "Main", bundle:nil)
 //        let homeView  = sb.instantiateViewController(withIdentifier: "login") as! ViewController
 //        self.present(homeView, animated: true, completion: nil)
-         UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
+        
+        self.dismiss(animated: false, completion: nil)
+        // UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
         
     }
     

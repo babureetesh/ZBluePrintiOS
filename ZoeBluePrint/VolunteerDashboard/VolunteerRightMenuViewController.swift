@@ -46,7 +46,8 @@ class VolunteerRightMenuViewController: UIViewController {
 //                   //Perform segue or push some view with your code
 //                   UIApplication.shared.keyWindow?.rootViewController = newViewController
 //             }
-         UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
+        self.tabBarController?.view.removeFromSuperview()
+       //  UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
                
     }
     

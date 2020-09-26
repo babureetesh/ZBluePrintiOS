@@ -6,6 +6,8 @@
 //  Copyright © 2019 Reetesh Bajpai. All rights reserved.
 //
 //https://github.com/jonkykong/SideMenu
+
+// CSO SIDE MENU
 import UIKit
 
 class RightMenuViewController: UIViewController{
@@ -200,9 +202,12 @@ class RightMenuViewController: UIViewController{
     }
     
     @IBAction func Logout(_ sender: Any) {
-        UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
+        //UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
                UserDefaults.standard.synchronize()
-         UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
+       // self.dismiss(animated: false, completion: nil)
+        NotificationCenter.default.post(name: Notification.Name("Removetabbar"), object: nil)
 
+         UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
+       
   }
 }

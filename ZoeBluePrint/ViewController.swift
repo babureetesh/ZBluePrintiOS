@@ -45,7 +45,14 @@ class ViewController: BaseViewController {
         self.present(objIntro, animated: false, completion: nil)
         
     }
+    @objc func methodOfReceivedNotificationforLogout(notification: Notification) {
+        // self.tabBarController?.view.removeFromSuperview()
+        //self.dismiss(animated: true, completion: {});
+    }
+
     override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotificationforLogout(notification:)), name: Notification.Name("Removetabbar"), object: nil)
+
         super.viewDidLoad()
         if !(UserDefaults.standard.bool(forKey: "introshown")){
             
