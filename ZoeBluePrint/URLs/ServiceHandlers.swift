@@ -1588,7 +1588,7 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
     }
     func editProfile(user_id:String , onCompletion:@escaping CompletionHandler){
          
-         ActivityLoaderView.startAnimating()
+     //    ActivityLoaderView.startAnimating()
          
          let params = ["user_id": user_id]
          let urlString = baseURL+"user-access.php?api_key=1234&action=getprofilemob"
@@ -1603,18 +1603,18 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
                      if(message == "200") {
                          let eventData = JSON["res_data"] as! NSDictionary
                          
-                         ActivityLoaderView.stopAnimating()
+                       //  ActivityLoaderView.stopAnimating()
                          onCompletion(eventData,true)
                      }else
                          if(message == "401"){
-                             ActivityLoaderView.stopAnimating()
+                         //    ActivityLoaderView.stopAnimating()
                              onCompletion(nil,true)
                      }
                      
                  }
                  break
              case .failure(let error):
-                 ActivityLoaderView.stopAnimating()
+              //   ActivityLoaderView.stopAnimating()
                  //print(error)
                  onCompletion(nil,false)
              }

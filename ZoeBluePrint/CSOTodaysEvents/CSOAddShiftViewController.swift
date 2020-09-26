@@ -271,7 +271,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
         dateFormatter.dateFormat = "MM-dd-yyyy"
         //print(eventDetail["event_register_start_date"]!)
        // //print(eventDetail["event_register_end_date"]!)
-        let startDate = dateFormatter.date(from: eventDetail["event_register_start_date"]! as! String )
+        let startDate = dateFormatter.date(from: eventDetail["FShift"]! as! String )
       //  //print(startDate)
         let endDate = dateFormatter.date(from: eventDetail["event_register_end_date"]! as! String )
       //  //print(endDate)

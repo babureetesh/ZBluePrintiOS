@@ -56,7 +56,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.back_button.isHidden = true
         self.buttonShift.isHidden = true
-        self.shiftViewImage.isHidden = true
+        //self.shiftViewImage.isHidden = true
       
         if screen == "DASHBOARD"{
         self.back_button.isHidden = false
@@ -110,7 +110,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
            
             self.buttonShift.isHidden = false
             self.back_button.isHidden = false
-            self.shiftViewImage.isHidden = false
+           // self.shiftViewImage.isHidden = false
             pubunpubLabel.isHidden = true
             pubunpubImage.isHidden = true
             //self.eventTitle.text = selectedEvent["event_heading"] as! String

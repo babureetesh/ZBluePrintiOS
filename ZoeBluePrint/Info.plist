@@ -34,6 +34,13 @@
 		<dict/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>https://zbp.progocrm.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
 			<key>ztp.hashtaglabs.in</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>

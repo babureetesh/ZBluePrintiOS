@@ -277,11 +277,11 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
             */
             
             self.view.backgroundColor = .white
-            self.RequestLabel.textColor = .blue
-            self.ShiftDateLAbel.textColor = .blue
-            self.ShiftTimeLabel.textColor = .blue
-            self.shiftRank.textColor = .blue
-            self.task_name.textColor = UIColor.blue
+           // self.RequestLabel.textColor = .blue
+            //self.ShiftDateLAbel.textColor = .blue
+            //self.ShiftTimeLabel.textColor = .blue
+            //self.shiftRank.textColor = .blue
+            //self.task_name.textColor = UIColor.blue
             self.shift_time.textColor = UIColor.black
             self.vol_requested.textColor = UIColor.black
             self.shift_date.textColor = UIColor.black
@@ -329,8 +329,8 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
         
         if intVolunteerApply != 0{
             
-            StatusImage.image = UIImage(named: "pending.png")
-                   StatusLabel.text = "Waiting"
+            StatusImage.image = UIImage(named: "complete-verified.png")
+                   StatusLabel.text = "Applied"
                    self.StatusLabel.textColor = UIColor.gray
         }else if intVolunteerApply == 0{
             
@@ -491,10 +491,10 @@ let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
             
             */
             self.view.backgroundColor = .white
-            self.RequestLabel.textColor = .blue
-            self.ShiftDateLAbel.textColor = .blue
-            self.ShiftTimeLabel.textColor = .blue
-            self.shiftRank.textColor = .blue
+            //self.RequestLabel.textColor = .blue
+            //self.ShiftDateLAbel.textColor = .blue
+            //self.ShiftTimeLabel.textColor = .blue
+            //self.shiftRank.textColor = .blue
             self.task_name.textColor = UIColor.black
             self.shift_time.textColor = UIColor.black
             self.vol_requested.textColor = UIColor.black

@@ -430,7 +430,7 @@ extension CSOEventsViewController:UITableViewDelegate,UITableViewDataSource {
                         }
                     }
                 }))
-                alert.addAction(UIAlertAction(title: "NO", style: .destructive, handler: nil))
+                alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
                 
             } else {
@@ -458,7 +458,7 @@ extension CSOEventsViewController:UITableViewDelegate,UITableViewDataSource {
                     }
                     
                 }))
-                alert.addAction(UIAlertAction(title: "NO", style: .destructive, handler: nil))
+                alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
         }

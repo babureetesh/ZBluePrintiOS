@@ -1479,7 +1479,7 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
         guard let currentUser = SBDMain.getCurrentUser() else { return }
         
         if sender.userId == currentUser.userId {
-            actionDeleteMessage = UIAlertAction(title: "Delete message", style: .destructive, handler: { (action) in
+            actionDeleteMessage = UIAlertAction(title: "Delete message", style: .default, handler: { (action) in
                 let subVc = UIAlertController(title: "Are you sure you want to delete this message?", message: nil, preferredStyle: .actionSheet)
                 let subActionDeleteMessage = UIAlertAction(title: "Yes. Delete the message", style: .default, handler: { (action) in
                     channel.delete(message, completionHandler: { (error) in
@@ -1558,7 +1558,7 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
             var actionDelete: UIAlertAction?
             
             if sender.userId == currentUser.userId {
-                actionDelete = UIAlertAction(title: "Delete", style: .destructive, handler: { (action) in
+                actionDelete = UIAlertAction(title: "Delete", style: .default, handler: { (action) in
                     let subVc = UIAlertController(title: "Are you sure you want to delete this message?", message: nil, preferredStyle: .actionSheet)
                     let subActionDeleteMessage = UIAlertAction(title: "Yes. Delete the message", style: .default, handler: { (action) in
                         channel.delete(message, completionHandler: { (error) in
@@ -1695,7 +1695,7 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
             guard let sender = message.sender else { return }
             guard let currentUser = SBDMain.getCurrentUser() else { return }
             if sender.userId == currentUser.userId {
-                actionDeleteMessage = UIAlertAction(title: deleteMessageActionTitle, style: .destructive, handler: { (action) in
+                actionDeleteMessage = UIAlertAction(title: deleteMessageActionTitle, style: .default, handler: { (action) in
                     let subVc = UIAlertController(title: deleteMessageSubAlertTitle, message: nil, preferredStyle: .actionSheet)
                     let subActionDeleteMessage = UIAlertAction(title: deleteMessageSubActionTitle, style: .default, handler: { (action) in
                         guard let channel = self.channel else { return }

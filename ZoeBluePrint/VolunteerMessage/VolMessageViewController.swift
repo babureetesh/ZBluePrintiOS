@@ -412,7 +412,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                     let alert = UIAlertController(title: self.channelList[indexPath.row].name , message: nil, preferredStyle: UIAlertController.Style.alert)
 
                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Delete Channel", style: UIAlertAction.Style.destructive, handler: { action in
+                    alert.addAction(UIAlertAction(title: "Delete Channel", style: UIAlertAction.Style.default, handler: { action in
                         
                         self.delChannel(channel: self.channelList[indexPath.row])
 
@@ -428,7 +428,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                     let alert = UIAlertController(title: self.channelList[indexPath.row].name , message: nil, preferredStyle: UIAlertController.Style.alert)
 
                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
-                    alert.addAction(UIAlertAction(title: "Leave Channel", style: UIAlertAction.Style.destructive, handler: { action in
+                    alert.addAction(UIAlertAction(title: "Leave Channel", style: UIAlertAction.Style.default, handler: { action in
                         
                         self.leaveChannel(channel: self.channelList[indexPath.row])
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 public enum UIButtonBorderSide {
     case  Bottom
@@ -502,7 +503,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     {
         let tappedImage = tapGestureRecognizer.view as! UIImageView
 
-        let alert = UIAlertController(title: NSLocalizedString("UPLOAD PHOTO", comment: ""), message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: NSLocalizedString("Select image from", comment: ""), message: "", preferredStyle: .alert)
         let gallery = UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
             /** What we write here???????? **/
              let image = UIImagePickerController()
@@ -622,9 +623,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
        imgEvent.isUserInteractionEnabled = true
        imgEvent.addGestureRecognizer(tapGestureRecognizer)
         
-        
-        
-        mapview.image = UIImage(named: "map.png")
         
        // //print(screenTitle)
 
@@ -1101,13 +1099,27 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
     
     @objc func TapOnLabel(){
         let wav = self.edit_event_data!["event_waiver_doc"] as! String
-        self.view.bringSubviewToFront(webV)
-        self.backgroundView_webView.isHidden = false
-        webV.scalesPageToFit = true
-       
-        webV.loadRequest(NSURLRequest(url: NSURL(string: wav) as! URL) as URLRequest)
-        webV.delegate = self as! UIWebViewDelegate;
-        self.view.addSubview(webV)
+//        self.view.bringSubviewToFront(webV)
+//        self.backgroundView_webView.isHidden = false
+//        webV.scalesPageToFit = true
+//
+//        webV.loadRequest(NSURLRequest(url: NSURL(string: wav)! as URL) as URLRequest)
+//        webV.delegate = self as UIWebViewDelegate;
+//        self.view.addSubview(webV)
+        
+        ActivityLoaderView.startAnimating()
+         let destination = DownloadRequest.suggestedDownloadDestination()
+
+         Alamofire.download(wav, to: destination).downloadProgress(queue: DispatchQueue.global(qos: .utility)) { (progress) in
+             print("Progress: \(progress.fractionCompleted)")
+         } .validate().responseData { ( response ) in
+             print(response.destinationURL!.lastPathComponent)
+            ActivityLoaderView.stopAnimating()
+            let alert = UIAlertController(title: "Download Completed!", message: nil, preferredStyle: UIAlertController.Style.alert)
+                                             
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+         }
        
     }
  

@@ -1462,7 +1462,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                    let alert = UIAlertController(title: "Group Accept", message: "Are you sure to accept requests in group?", preferredStyle: UIAlertController.Style.alert)
 
                    // add the actions (buttons)
-                   alert.addAction(UIAlertAction(title: "NO", style: UIAlertAction.Style.destructive, handler: nil))
+                   alert.addAction(UIAlertAction(title: "NO", style: UIAlertAction.Style.default, handler: nil))
                   alert.addAction(UIAlertAction(title: "YES", style: UIAlertAction.Style.default, handler: { action in
 
                        // do something like...
