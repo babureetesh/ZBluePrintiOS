@@ -561,6 +561,7 @@ extension CSOEventsViewController:EventActionsViewControllerDelegate {
                     addShiftVC.eventId = self.checkForNilAndReturnDefaultValue(checkString: eventDetail!["event_id"], defaultValue: "")
                     //  //print(eventDetail as Any)
                     addShiftVC.eventDetail = eventDetail!
+                    addShiftVC.view.frame.size.height = (self.view.frame.size.height)
                     self.addViewController(viewController: addShiftVC)
                     
                 }
