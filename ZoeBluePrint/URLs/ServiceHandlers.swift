@@ -20,6 +20,9 @@ class ServiceHandlers {
         case POST = "POST"
     }
     
+    init() {
+        print("service handler init called")
+    }
     
     var session:URLSession?
 typealias CompletionHandler = (_ result:Any?,_ isSuccess:Bool)->Void;
