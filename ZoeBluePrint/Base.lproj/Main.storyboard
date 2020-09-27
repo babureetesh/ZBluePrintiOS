@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jhf-DC-BWT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jhf-DC-BWT">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="4352" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2541,7 +2541,7 @@
                                                                 <state key="normal" title="Button"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhZ-HQ-Wyt" userLabel="Step2 Organization Upload Button">
-                                                                <rect key="frame" x="-630" y="0.0" width="1024" height="31.5"/>
+                                                                <rect key="frame" x="-118" y="0.0" width="512" height="31.5"/>
                                                                 <state key="normal" image="upload.png"/>
                                                                 <connections>
                                                                     <action selector="step2UploadOrganizationDocument:" destination="7dW-yf-X5k" eventType="touchUpInside" id="grk-PE-Yqu"/>
@@ -2635,11 +2635,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fj-Rb-7qD">
                                 <rect key="frame" x="0.0" y="145" width="414" height="522"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EoH-S8-uI2" userLabel="Final Step Content View">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EoH-S8-uI2" userLabel="Final Step Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="909"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="pC2-v9-tNh">
-                                                <rect key="frame" x="10" y="0.0" width="394" height="834"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="pC2-v9-tNh">
+                                                <rect key="frame" x="10" y="0.0" width="394" height="821"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your Organization a not-for-profit Organisation?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuc-6F-KiO">
                                                         <rect key="frame" x="0.0" y="0.0" width="394" height="20.5"/>
@@ -2648,10 +2648,10 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Cwr-rF-RbH">
-                                                        <rect key="frame" x="0.0" y="31.5" width="394" height="80"/>
+                                                        <rect key="frame" x="0.0" y="31.5" width="394" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i21-3T-ocr" userLabel="yes">
-                                                                <rect key="frame" x="0.0" y="0.0" width="197" height="80"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="197" height="40"/>
                                                                 <state key="normal" image="radioYES.png"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -2663,7 +2663,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzk-PQ-yQt" userLabel="no">
-                                                                <rect key="frame" x="197" y="0.0" width="197" height="80"/>
+                                                                <rect key="frame" x="197" y="0.0" width="197" height="40"/>
                                                                 <state key="normal" image="radioNO.png"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -2677,13 +2677,13 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What type of services and activities does your organisation offer?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89i-ih-Jfe">
-                                                        <rect key="frame" x="0.0" y="122.5" width="394" height="41"/>
+                                                        <rect key="frame" x="0.0" y="82.5" width="394" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trE-op-V29">
-                                                        <rect key="frame" x="0.0" y="174.5" width="394" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="trE-op-V29">
+                                                        <rect key="frame" x="0.0" y="134.5" width="394" height="61"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2693,14 +2693,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is your target client group?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxy-wO-s00">
-                                                        <rect key="frame" x="0.0" y="219.5" width="394" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What is your target client group?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxy-wO-s00">
+                                                        <rect key="frame" x="0.0" y="206.5" width="394" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dw3-JC-OWC">
-                                                        <rect key="frame" x="0.0" y="251" width="394" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dw3-JC-OWC">
+                                                        <rect key="frame" x="0.0" y="238" width="394" height="34"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2710,14 +2710,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please describe the person you require for the voluteer role (age,sex,characteristics etc.) ?)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoY-KF-3at">
-                                                        <rect key="frame" x="0.0" y="296" width="394" height="41"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Please describe the person you require for the voluteer role (age,sex,characteristics etc.) ?)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MoY-KF-3at">
+                                                        <rect key="frame" x="0.0" y="283" width="394" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUg-M3-QWf" userLabel="Please describe Round Style Text Field">
-                                                        <rect key="frame" x="0.0" y="348" width="394" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FUg-M3-QWf" userLabel="Please describe Round Style Text Field">
+                                                        <rect key="frame" x="0.0" y="335" width="394" height="34"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2727,14 +2727,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What is the minimum time period you would like the volunteers for (eg 3months, 6months, 12months)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ8-5z-MKW">
-                                                        <rect key="frame" x="0.0" y="393" width="394" height="41"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="What is the minimum time period you would like the volunteers for (eg 3months, 6months, 12months)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJ8-5z-MKW">
+                                                        <rect key="frame" x="0.0" y="380" width="394" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-hY-zw5" userLabel="Please describe Round Style Text Field">
-                                                        <rect key="frame" x="0.0" y="445" width="394" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZF-hY-zw5" userLabel="Please describe Round Style Text Field">
+                                                        <rect key="frame" x="0.0" y="432" width="394" height="34"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2744,14 +2744,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many volunteer in the total does your organisation have and how many do you need?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx6-KA-HWR">
-                                                        <rect key="frame" x="0.0" y="490" width="394" height="41"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="How many volunteer in the total does your organisation have and how many do you need?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jx6-KA-HWR">
+                                                        <rect key="frame" x="0.0" y="477" width="394" height="41"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnA-57-m8k" userLabel="How many volunteer Round Style Text Field">
-                                                        <rect key="frame" x="0.0" y="542" width="394" height="34"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MnA-57-m8k" userLabel="How many volunteer Round Style Text Field">
+                                                        <rect key="frame" x="0.0" y="529" width="394" height="34"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -2761,14 +2761,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do your volunteer require a policy check?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-cc-uto">
-                                                        <rect key="frame" x="0.0" y="587" width="394" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Do your volunteer require a policy check?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-cc-uto">
+                                                        <rect key="frame" x="0.0" y="574" width="394" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5iM-mo-39T" userLabel="Voluteer policy Stack View">
-                                                        <rect key="frame" x="0.0" y="618.5" width="394" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5iM-mo-39T" userLabel="Voluteer policy Stack View">
+                                                        <rect key="frame" x="0.0" y="605.5" width="394" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeS-qd-TQi">
                                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="30"/>
@@ -2796,14 +2796,14 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Is your Organization (or the location where volunteers will work) easily  accessible by Public Transport?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeI-Yl-3RZ">
-                                                        <rect key="frame" x="0.0" y="659.5" width="394" height="61"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Is your Organization (or the location where volunteers will work) easily  accessible by Public Transport?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeI-Yl-3RZ">
+                                                        <rect key="frame" x="0.0" y="646.5" width="394" height="61"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-qA-vJo">
-                                                        <rect key="frame" x="0.0" y="731.5" width="394" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="fVB-qA-vJo">
+                                                        <rect key="frame" x="0.0" y="718.5" width="394" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbm-BY-25X">
                                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="30"/>
@@ -2831,14 +2831,14 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you 501C3 certified? " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px9-z9-i21">
-                                                        <rect key="frame" x="0.0" y="772.5" width="394" height="20.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Are you 501C3 certified? " textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="13" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px9-z9-i21">
+                                                        <rect key="frame" x="0.0" y="759.5" width="394" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jf7-6p-qtX">
-                                                        <rect key="frame" x="0.0" y="804" width="394" height="30"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jf7-6p-qtX">
+                                                        <rect key="frame" x="0.0" y="791" width="394" height="30"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XC-Sx-FjO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="197" height="30"/>
@@ -2868,7 +2868,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qu1-kO-xFf" userLabel="Botton final Stack View">
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qu1-kO-xFf" userLabel="Botton final Stack View">
                                                 <rect key="frame" x="10" y="844" width="394" height="45"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lq-nu-LOP">
@@ -5826,7 +5826,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojp-YT-PkY">
-                                                <rect key="frame" x="10" y="193" width="97.5" height="21"/>
+                                                <rect key="frame" x="10" y="193" width="99" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="21" id="LSP-No-kXE"/>
                                                 </constraints>
@@ -7147,7 +7147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lwa-wD-mrj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3868" y="-356"/>
+            <point key="canvasLocation" x="-3426.4000000000001" y="130.88455772113943"/>
         </scene>
         <!--Message-->
         <scene sceneID="l0I-Bp-9za">
@@ -7158,14 +7158,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Gqc-wo-ttv">
-                                <rect key="frame" x="0.0" y="24" width="375" height="140"/>
+                                <rect key="frame" x="0.0" y="195" width="414" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="375" id="avj-9z-HnJ"/>
                                     <constraint firstAttribute="height" constant="140" id="jGL-iJ-Woq"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5x-HV-Mf4">
-                                <rect key="frame" x="293" y="123" width="30" height="35"/>
+                                <rect key="frame" x="332" y="123" width="30" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="spb-FW-mRi"/>
                                     <constraint firstAttribute="height" constant="35" id="xVl-IS-X5q"/>
@@ -7173,7 +7173,7 @@
                                 <state key="normal" image="bell.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDl-Wv-Fqr">
-                                <rect key="frame" x="330" y="123" width="32" height="35"/>
+                                <rect key="frame" x="369" y="123" width="32" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Du3-kU-16I"/>
                                     <constraint firstAttribute="height" constant="35" id="aTG-FE-djm"/>
@@ -7181,14 +7181,14 @@
                                 <state key="normal" image="newList.png"/>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="vxq-6y-mXl">
-                                <rect key="frame" x="10" y="123" width="37" height="36"/>
+                                <rect key="frame" x="10" y="123" width="37" height="207"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="H3V-yf-FV5"/>
                                     <constraint firstAttribute="height" constant="36" id="OVI-vA-orW"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MESSAGE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2K-tO-0pO">
-                                <rect key="frame" x="60" y="132" width="81" height="19"/>
+                                <rect key="frame" x="60" y="132" width="120" height="190"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="3AE-1I-zkg"/>
                                     <constraint firstAttribute="width" constant="81" id="Y42-j7-xz8"/>
@@ -7198,7 +7198,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxQ-HQ-lZX">
-                                <rect key="frame" x="328" y="587" width="34" height="36"/>
+                                <rect key="frame" x="328" y="758" width="73" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="18u-qg-L0B"/>
                                     <constraint firstAttribute="height" constant="36" id="r45-mH-Oh6"/>
@@ -7478,7 +7478,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No documents found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4w-mW-p7K">
-                                        <rect key="frame" x="132" y="375" width="150.5" height="19"/>
+                                        <rect key="frame" x="131.5" y="375" width="151.5" height="19"/>
                                         <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -8121,7 +8121,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Rel-Uo-5B4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8150,21 +8150,21 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ty3-wv-y9l">
                                                     <rect key="frame" x="52" y="13" width="318" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="72g-k5-zAB">
                                                     <rect key="frame" x="52" y="30" width="323" height="19"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWh-fe-Mij">
                                                     <rect key="frame" x="52" y="47" width="318" height="16"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -8425,7 +8425,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Unpublished  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wD9-3E-Z3G">
-                                                <rect key="frame" x="316" y="4" width="88" height="23"/>
+                                                <rect key="frame" x="313" y="4" width="91" height="23"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="WHu-xA-enH"/>
@@ -8440,7 +8440,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwR-fe-0QC">
-                                                <rect key="frame" x="296" y="4" width="20" height="23"/>
+                                                <rect key="frame" x="293" y="4" width="20" height="23"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="23" id="Dwk-qr-JN4"/>
                                                     <constraint firstAttribute="width" constant="20" id="bHx-Jh-wWe"/>
@@ -9250,7 +9250,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Organization Events" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c31-LU-Ib1">
-                                        <rect key="frame" x="52" y="66" width="146.5" height="22"/>
+                                        <rect key="frame" x="52" y="66" width="148.5" height="22"/>
                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -10774,7 +10774,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="309 VOLUNTEER HOURS COMPLETED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iS7-59-K9H">
-                                        <rect key="frame" x="48" y="132" width="238" height="24"/>
+                                        <rect key="frame" x="41.5" y="132" width="251.5" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="Dsh-AK-hAm"/>
                                         </constraints>
@@ -11523,10 +11523,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIp-kn-OEi">
-                                <rect key="frame" x="0.0" y="197" width="414" height="460"/>
+                                <rect key="frame" x="0.0" y="197" width="414" height="509"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLK-je-BO9">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="460"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="509"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editprofile.png" translatesAutoresizingMaskIntoConstraints="NO" id="S86-eW-Ckr">
                                                 <rect key="frame" x="21" y="24" width="23" height="23"/>
@@ -12447,9 +12447,6 @@
                                                     <constraint firstAttribute="height" constant="30" id="iAM-UB-eXt"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="newListCso.png"/>
-                                                <connections>
-                                                    <segue destination="HYc-wm-WP5" kind="presentation" id="LoX-33-BX4"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WNw-w5-3hV" userLabel="Notif Button">
                                                 <rect key="frame" x="329" y="38.5" width="30" height="29.5"/>
@@ -12460,9 +12457,6 @@
                                                 </constraints>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" backgroundImage="bell.fill" catalog="system"/>
-                                                <connections>
-                                                    <action selector="notificationBellTapped:" destination="IQU-MJ-J9C" eventType="touchUpInside" id="GB9-D4-91C"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -12695,7 +12689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zSG-Oe-ESd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543" y="-1777"/>
+            <point key="canvasLocation" x="708" y="-2875"/>
         </scene>
         <!--Member List View Controller-->
         <scene sceneID="czs-60-XTd">
@@ -13024,11 +13018,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-vs-G7Q" userLabel="CSO Header View">
                                         <rect key="frame" x="0.0" y="44" width="414" height="106"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-kc-dcg">
-                                                <rect key="frame" x="15" y="35.5" width="35" height="35"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-kc-dcg">
+                                                <rect key="frame" x="15" y="20.5" width="65" height="65"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="cBM-DT-Y39"/>
-                                                    <constraint firstAttribute="width" constant="35" id="jL5-Ut-lKY"/>
+                                                    <constraint firstAttribute="height" constant="65" id="cBM-DT-Y39"/>
+                                                    <constraint firstAttribute="width" constant="65" id="jL5-Ut-lKY"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGF-t1-BVr">
@@ -13207,11 +13201,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNu-Dv-bpB" userLabel="CSO Header View">
                                         <rect key="frame" x="0.0" y="44" width="414" height="106"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="faK-fq-t24">
-                                                <rect key="frame" x="15" y="35.5" width="35" height="35"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="faK-fq-t24">
+                                                <rect key="frame" x="15" y="20.5" width="65" height="65"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="R2f-my-CIM"/>
-                                                    <constraint firstAttribute="height" constant="35" id="ZPT-CJ-mdY"/>
+                                                    <constraint firstAttribute="width" constant="65" id="R2f-my-CIM"/>
+                                                    <constraint firstAttribute="height" constant="65" id="ZPT-CJ-mdY"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74A-17-jQP">
@@ -13737,7 +13731,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bS4-Mp-NjS" userLabel="Control -locker" customClass="UIControl">
                                         <rect key="frame" x="0.0" y="55" width="394" height="55"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockernew.png" translatesAutoresizingMaskIntoConstraints="NO" id="U3Y-pE-dan">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockernew.png" translatesAutoresizingMaskIntoConstraints="NO" id="U3Y-pE-dan">
                                                 <rect key="frame" x="20" y="9.5" width="36" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="E5E-BG-vo2"/>
@@ -13900,7 +13894,7 @@
                                 <rect key="frame" x="0.0" y="515" width="414" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D8C-ns-dsZ">
-                                        <rect key="frame" x="85.5" y="3" width="20" height="22"/>
+                                        <rect key="frame" x="68" y="3" width="20" height="22"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="M2d-4g-6y4"/>
@@ -13912,7 +13906,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEXT EVENT COUNTDOWN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfI-9V-Lv3">
-                                        <rect key="frame" x="115.5" y="3" width="183.5" height="22"/>
+                                        <rect key="frame" x="98" y="3" width="218" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="UFQ-zp-i1p"/>
                                         </constraints>
@@ -15139,8 +15133,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1yn-aE-mhV"/>
-        <segue reference="4Ea-rk-YRR"/>
-        <segue reference="GwZ-Rv-4cF"/>
+        <segue reference="UpT-eH-Ytl"/>
+        <segue reference="1Ox-bY-Z47"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
 </document>
