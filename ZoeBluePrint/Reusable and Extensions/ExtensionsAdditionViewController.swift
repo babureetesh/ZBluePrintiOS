@@ -29,6 +29,7 @@ class ExtensionsAdditionViewController: UIViewController {
 
 }
 
+
 extension UIView {
     @IBInspectable var cornerRadius: Double {
         get {
@@ -68,6 +69,16 @@ extension UIView {
         set {
             self.layer.shadowOpacity = newValue
         }
+    }
+    
+    func setUnderLineOfColor(color:UIColor)  {
+        let border = CALayer()
+        let width = CGFloat(0.5)
+        border.borderColor = color.cgColor
+        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
+        border.borderWidth = width
+        self.layer.addSublayer(border)
+        self.layer.masksToBounds = true
     }
 }
 extension UITextField{
