@@ -13018,11 +13018,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltw-vs-G7Q" userLabel="CSO Header View">
                                         <rect key="frame" x="0.0" y="44" width="414" height="106"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-kc-dcg">
-                                                <rect key="frame" x="15" y="35.5" width="35" height="35"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRw-kc-dcg">
+                                                <rect key="frame" x="15" y="20.5" width="65" height="65"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="cBM-DT-Y39"/>
-                                                    <constraint firstAttribute="width" constant="35" id="jL5-Ut-lKY"/>
+                                                    <constraint firstAttribute="height" constant="65" id="cBM-DT-Y39"/>
+                                                    <constraint firstAttribute="width" constant="65" id="jL5-Ut-lKY"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGF-t1-BVr">
@@ -13201,11 +13201,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNu-Dv-bpB" userLabel="CSO Header View">
                                         <rect key="frame" x="0.0" y="44" width="414" height="106"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="faK-fq-t24">
-                                                <rect key="frame" x="15" y="35.5" width="35" height="35"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="faK-fq-t24">
+                                                <rect key="frame" x="15" y="20.5" width="65" height="65"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="R2f-my-CIM"/>
-                                                    <constraint firstAttribute="height" constant="35" id="ZPT-CJ-mdY"/>
+                                                    <constraint firstAttribute="width" constant="65" id="R2f-my-CIM"/>
+                                                    <constraint firstAttribute="height" constant="65" id="ZPT-CJ-mdY"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74A-17-jQP">
@@ -15133,7 +15133,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="1yn-aE-mhV"/>
-        <segue reference="f8w-ht-7Ve"/>
+        <segue reference="UpT-eH-Ytl"/>
         <segue reference="1Ox-bY-Z47"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
