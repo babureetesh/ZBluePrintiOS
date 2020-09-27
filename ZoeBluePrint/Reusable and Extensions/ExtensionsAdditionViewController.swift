@@ -70,7 +70,9 @@ extension UIView {
             self.layer.shadowOpacity = newValue
         }
     }
-    
+}
+
+extension UILabel {
     func setUnderLineOfColor(color:UIColor)  {
         let border = CALayer()
         let width = CGFloat(0.5)
