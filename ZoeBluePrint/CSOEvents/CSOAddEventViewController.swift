@@ -870,7 +870,10 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                      if let imgData = data as? Data {
                          DispatchQueue.main.async() { () -> Void in
                              self.img = imgData
-                             self.imgEvent.image = UIImage(data: imgData)
+                            if let image = UIImage(data: imgData) {
+                                self.imgEvent.image = image
+                            }
+                             
                          }
                      }
                  }
