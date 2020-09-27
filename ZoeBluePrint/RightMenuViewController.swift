@@ -203,7 +203,7 @@ class RightMenuViewController: UIViewController{
     
     @IBAction func Logout(_ sender: Any) {
         //UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
-               UserDefaults.standard.synchronize()
+            //   UserDefaults.standard.synchronize()
        // self.dismiss(animated: false, completion: nil)
         NotificationCenter.default.post(name: Notification.Name("Removetabbar"), object: nil)
 
