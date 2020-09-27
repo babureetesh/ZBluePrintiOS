@@ -843,6 +843,9 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                 
                 self.DetailLabel.addGestureRecognizer(tapGesture)
                 self.DetailLabel.isUserInteractionEnabled = true
+                self.DetailLabel.attributedText = NSAttributedString(string: self.DetailLabel.text as? String ?? "", attributes:
+                [.underlineStyle: NSUnderlineStyle.single.rawValue])
+                    
                     self.fileName = data_of_event["event_waiver_doc_name"] as! String
                 self.waiverDocument.isHidden = false
                 self.checkButtonOutlet.setImage(UIImage(named: "tick.jpg"), for: .normal)
