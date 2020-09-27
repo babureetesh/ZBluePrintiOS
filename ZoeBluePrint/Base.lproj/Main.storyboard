@@ -7513,7 +7513,7 @@
                                             <action selector="notificationButton:" destination="BLc-OE-4NT" eventType="touchUpInside" id="zCo-e3-qH6"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z0N-fk-wEr">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Z0N-fk-wEr">
                                         <rect key="frame" x="15" y="5" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="B2m-4G-uIS"/>
@@ -15132,9 +15132,9 @@
         <image name="zoeInfo.png" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xDt-Yx-Q4a"/>
+        <segue reference="1yn-aE-mhV"/>
         <segue reference="f8w-ht-7Ve"/>
-        <segue reference="Rod-B6-UgH"/>
+        <segue reference="1Ox-bY-Z47"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
 </document>
