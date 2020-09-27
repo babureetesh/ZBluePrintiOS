@@ -76,7 +76,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 self.csoProfilePic.image = image
                 self.csoProfilePic.layer.borderWidth = 1
                 self.csoProfilePic.layer.masksToBounds = false
-                self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+               // self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
                 self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
                 self.csoProfilePic.clipsToBounds = true
             }
@@ -90,7 +90,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 self.volProfilePic.image = image
                 self.volProfilePic.layer.borderWidth = 1
                 self.volProfilePic.layer.masksToBounds = false
-                self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                //self.volProfilePic.layer.borderColor = UIColor.black.cgColor
                 self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
                 self.volProfilePic.clipsToBounds = true
             }
@@ -496,7 +496,8 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
 }
 extension UIImageView {
     func downloadImageFrom(link:String, contentMode: UIView.ContentMode) {
-        URLSession.shared.dataTask( with: NSURL(string:link)! as URL, completionHandler: {
+        let replacedStr = link.replacingOccurrences(of: " ", with: "%20")
+        URLSession.shared.dataTask( with: NSURL(string:replacedStr)! as URL, completionHandler: {
             (data, response, error) -> Void in
             DispatchQueue.main.async {
                 self.contentMode =  contentMode
