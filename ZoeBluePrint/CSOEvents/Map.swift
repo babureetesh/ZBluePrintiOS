@@ -25,8 +25,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     var state_code:String?
     let locationManager = CLLocationManager()
    // locationManager.requestWhenInUseAuthorization()
-    var latitu:String = ""
-    var longitu:String = ""
+    var latitu:String!
+    var longitu:String!
     var flag:Bool = false
     var delegate:LatLongdata!
     @IBAction func btnOk(_ sender: Any) {
@@ -56,6 +56,17 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
      
      let tap = UITapGestureRecognizer(target: self, action: #selector(longTap))
      map.addGestureRecognizer(tap)
+        print(self.latitu)
+        print(self.longitu)
+        let lat = Double(self.latitu)
+        let lon = Double(self.longitu)
+
+         let coordinates = CLLocationCoordinate2D(latitude:lat!, longitude:lon!)
+        self.addAnnotation(location: coordinates)
+        
+      
+
+        
     }
     
     @objc func longTap(sender: UIGestureRecognizer){

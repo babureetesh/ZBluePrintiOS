@@ -62,6 +62,7 @@
 		2AD70F6222EA289E0069A076 /* CSORegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */; };
 		38019E6324F10E8E00EB7657 /* newAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38019E6224F10E8E00EB7657 /* newAppIcon.png */; };
 		3805A4FB22B3BDD7005734AC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3805A4FA22B3BDD7005734AC /* AlertManager.swift */; };
+		381988262521BE8200ED023D /* eventscalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 381988252521BE8200ED023D /* eventscalendar.png */; };
 		381DFD6F22CB78E900C58A74 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */; };
 		381F37F924DEF199009426B6 /* volSliderMenuCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 381F37F824DEF198009426B6 /* volSliderMenuCover.png */; };
 		3827252E24F518560031DEF3 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827252D24F518560031DEF3 /* IntroScreenViewController.swift */; };
@@ -480,6 +481,7 @@
 		2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSORegistrationViewController.swift; sourceTree = "<group>"; };
 		38019E6224F10E8E00EB7657 /* newAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newAppIcon.png; sourceTree = "<group>"; };
 		3805A4FA22B3BDD7005734AC /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		381988252521BE8200ED023D /* eventscalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventscalendar.png; sourceTree = "<group>"; };
 		381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
 		381F37F824DEF198009426B6 /* volSliderMenuCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volSliderMenuCover.png; sourceTree = "<group>"; };
 		3827252D24F518560031DEF3 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
@@ -961,6 +963,7 @@
 				2A09041522AAE60F00AEC13D /* CustomCells */,
 				C2A75421238E970600D4010B /* Project_images */,
 				2A23678D22A830EA00FF6549 /* eyeOff.png */,
+				381988252521BE8200ED023D /* eventscalendar.png */,
 				38DBBD0B24EC0C290068A585 /* zoe-cso-connect.png */,
 				7CAF57F223243E9B00017D9B /* top.jpg */,
 				7CAF57FC23243F5100017D9B /* eye-close2.png */,
@@ -1927,6 +1930,7 @@
 				7C9FF8A22359840E006E6790 /* addShift.png in Resources */,
 				C288993423F2BF5000A411CD /* grayEye.png in Resources */,
 				38A0907224D0652C00070C9A /* GroupChannelChatViewController.xib in Resources */,
+				381988262521BE8200ED023D /* eventscalendar.png in Resources */,
 				3836820222D864E200ABB209 /* not_available.png in Resources */,
 				7CAF57F723243EAC00017D9B /* tick.png in Resources */,
 				C287D53D238516DF005E7D2F /* filefordoc.png in Resources */,

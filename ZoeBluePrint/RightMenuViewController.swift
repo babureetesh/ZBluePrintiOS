@@ -151,7 +151,6 @@ class RightMenuViewController: UIViewController{
                         //print("Unable to load data: \(error)")
                     }
                     }
-                    
                      let profile_pic_string = data["user_cover_pic"] as! String
                     if let profile_url = URL(string: profile_pic_string){
                         do {

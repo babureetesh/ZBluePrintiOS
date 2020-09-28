@@ -52,6 +52,8 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             UserDefaults.standard.set("open", forKey: "map")
             mapVC.state_code = self.stateCode
             mapVC.state_name = self.stateName
+            mapVC.longitu = self.lang
+             mapVC.latitu = self.lat
             mapVC.delegate = self
             self.present(mapVC, animated: true, completion: nil)
         
