@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import CoreLocation
+
 protocol LatLongdata {
     func mapData(lang:String,lat:String,city:String,postal_code:String,address:String)
     
@@ -17,7 +19,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     
     @IBOutlet weak var map: MKMapView!
-    var city:String = ""
+    var city:String?
+    var country:String?
     var postalcode:String = ""
     var address:String = ""
     @IBOutlet weak var lbnLocation: UILabel!
@@ -36,7 +39,7 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
           // let a = longitu as! String
          //  let b = latitu as! String
            // if ((longitu != nil) && (latitu != nil)) {
-            self.delegate.mapData(lang: longitu, lat: latitu, city: self.city, postal_code: self.postalcode, address: self.address)
+            self.delegate.mapData(lang: longitu, lat: latitu, city: self.city!, postal_code: self.postalcode, address: self.address)
             self.dismiss(animated: true, completion: nil)
            // }
             
@@ -58,16 +61,39 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
      map.addGestureRecognizer(tap)
         print(self.latitu)
         print(self.longitu)
-        let lat = Double(self.latitu)
-        let lon = Double(self.longitu)
-
-         let coordinates = CLLocationCoordinate2D(latitude:lat!, longitude:lon!)
-        self.addAnnotation(location: coordinates)
         
-      
-
         
+       
+        if !(self.latitu ?? "").isEmpty{
+            let lat = Double(self.latitu)
+            let lon = Double(self.longitu)
+            let coordinates = CLLocationCoordinate2D(latitude:lat!, longitude:lon!)
+            self.addAnnotation(location: coordinates)
+        }else{
+
+         let cty = self.city
+         let staten = self.state_name
+        let countyName = self.country
+        
+        let address = "\(cty ?? ""), \(staten ?? ""), \(countyName ?? "")"
+        getCoordinateFrom(address: address) { coordinate, error in
+            guard let coordinate = coordinate, error == nil else { return }
+            // don't forget to update the UI from the main thread
+            DispatchQueue.main.async {
+                print(address, "Location:", coordinate) // Rio de Janeiro, Brazil Location: CLLocationCoordinate2D(latitude: -22.9108638, longitude: -43.2045436)
+                self.addAnnotation(location: coordinate)
+                self.map.showAnnotations(self.map.annotations, animated: true)
+            }
+
+            }
+            
+        }
     }
+    
+    func getCoordinateFrom(address: String, completion: @escaping(_ coordinate: CLLocationCoordinate2D?, _ error: Error?) -> () ) {
+        CLGeocoder().geocodeAddressString(address) { completion($0?.first?.location?.coordinate, $1) }
+    }
+    
     
     @objc func longTap(sender: UIGestureRecognizer){
          

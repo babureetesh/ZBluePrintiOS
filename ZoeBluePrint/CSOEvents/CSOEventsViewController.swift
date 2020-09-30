@@ -217,6 +217,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         if let previousSelection = selectedButton, previousSelection == newEventButton {
             return
         }
+        
         addEventsView.isHidden = true
         
         selectedButton = newEventButton
@@ -225,6 +226,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         myEventLabl.isHidden = true
         lblNoEventsFound.isHidden = true
         viewNoEventsFound.isHidden = true
+        
     }
     
     
@@ -256,7 +258,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
     
     
     func changeButtonStates(selectedButton:UIButton)  {
-        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
+        
         if selectedButton == myEventsButton {
             
            // if defaults == "Light Mode" {
@@ -280,19 +282,8 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
             
         } else {
             
-            //if defaults == "Light Mode"{
-           
             myEventsButton.setTitleColor(.gray, for: .normal)
             newEventButton.setTitleColor(.black, for: .normal)
-           
-            //}else if defaults == "Dark Mode" {
-                
-              //  myEventsButton.setTitleColor(.gray, for: .normal)
-                //newEventButton.setTitleColor(.white, for: .normal)
-                
-            //}
-        
-                
             addEventsView.isHidden = false
             myEventsView.isHidden = true
             lbl2NotFound.isHidden = true
@@ -303,6 +294,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
                         subVC.removeFromSuperview()
                     }
                 }
+                selectedEventVC.screenTitle = "ADD EVENT DETAILS"
                 tableViewEventList.isHidden = true
                 selectedEventVC.data_refresh = self
                 selectedEventVC.myeventview = myEventsView
@@ -536,10 +528,10 @@ extension CSOEventsViewController:EventActionsViewControllerDelegate {
             if (eventDetail!["event_status"] as! String) != "10"{
                 let mainSB = UIStoryboard(name: "Main", bundle: nil)
                 if  let selectedEventVC =  mainSB.instantiateViewController(withIdentifier: "CSOAddEventViewController") as? CSOAddEventViewController {
+                    selectedEventVC.screenTitle = NSLocalizedString("UPDATE EVENT DETAILS", comment: "")
                     selectedEventVC.data_refresh = self
                     selectedEventVC.view.tag = 100
                     selectedEventVC.eventDetail = eventDetail!
-                    selectedEventVC.screenTitle = NSLocalizedString("UPDATE EVENT DETAILS", comment: "")
                     selectedEventVC.view.frame.size.height = (self.view.frame.size.height)
                     tableViewEventList.isHidden = true
                     self.addViewController(viewController: selectedEventVC)

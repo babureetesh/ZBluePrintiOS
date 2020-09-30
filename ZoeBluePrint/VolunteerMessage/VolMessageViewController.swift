@@ -190,9 +190,6 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                             self.tblChatList.reloadData()
                             ActivityLoaderView.stopAnimating()
                         }
-         
-            
-            
         })
         
     }
@@ -227,6 +224,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                  strNewName = components[1]
                  strNewName = strNewName.replacingOccurrences(of: ")", with: "")
                 strNewName = strNewName.trimmingCharacters(in: .whitespaces)
+                 strNewName = strNewName.capitalized
                 strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
                     strNewName = "# " + strNewName
                 }else{

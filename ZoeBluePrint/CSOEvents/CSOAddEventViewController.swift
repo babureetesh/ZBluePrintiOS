@@ -52,6 +52,8 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             UserDefaults.standard.set("open", forKey: "map")
             mapVC.state_code = self.stateCode
             mapVC.state_name = self.stateName
+            mapVC.city = self.txtFldCity.text
+            mapVC.country = self.btnCountrySel.titleLabel?.text
             mapVC.longitu = self.lang
              mapVC.latitu = self.lat
             mapVC.delegate = self
@@ -380,7 +382,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
             {
 
-             self.file = (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+             self.file = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
              guard let fileUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
                  else {
                     self.fileName = "File"
@@ -393,7 +395,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
         }else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
            {
             self.imgEvent.image = image
-            self.img = (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+            self.img = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
             guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
             else {
                 self.imgName = "image1"
@@ -637,54 +639,49 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
         self.backgroundView_webView.isHidden = true
         
         if screenTitle == "ADD EVENT DETAILS"{
-            self.lblScreenTitle.text = NSLocalizedString("UPDATE EVENT DETAILS", comment: "")
-           
-        }else{
             self.lblScreenTitle.text = NSLocalizedString("ADD EVENT DETAILS", comment: "")
-         
-        
-        
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-                        let user_id = userIDData["user_id"] as! String
-        
-        let serviceHanlder = ServiceHandlers()
-        serviceHanlder.getProfileData1(user_id: user_id) { (data, isSuccess) in
-                    if isSuccess{
-                     //  //print(data!)
-                        var a = data as? Dictionary<String, Any>
-                       // //print(a)
-                        
-                        self.txtFldEmail.text = a!["user_email"] as? String
-                        self.txtFldAddress.text = a!["user_address"] as? String
-          
-                        self.txtFldPhone.text =  self.formattedNumber(number:(a!["user_phone"] as? String)!)
-                        self.txtFldPostalcode.text = a!["user_zipcode"] as? String
-                        self.txtFldCity.text = a!["user_city"] as? String
-                        self.btnStateSel.setTitle(a!["user_state_name"] as? String, for: .normal)
-                        self.btnCountrySel.setTitle(a!["user_country_name"] as? String, for: .normal)
-                        self.countryID = (a!["user_country"] as? String)!
-                        self.stateID = (a!["user_state"] as? String)!
-                        let serviceHanlder = ServiceHandlers()
-                        serviceHanlder.getStateList(country_id: self.countryID){(responce,isSuccess) in
-                            if isSuccess{
-                                let state = responce as! Array<Any>
-                                for state_code in state{
-                                    let state_code1 = state_code as! Dictionary<String,Any>
-                                    if ((state_code1["state_id"] as! String) == (self.stateID )){
-                                        self.stateCode = (state_code1["state_code"] as! String)
-                                        self.stateName = (state_code1["state_name"] as! String)
-                                    }
-                                }
-                            }
-                            
-                        }
-                       
-                        self.countryID = (a!["user_country"] as? String)!
-                        self.stateID = (a!["user_state"] as? String)!
-            }
-                          
-        }
+
+                 let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                                 let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                                 let user_id = userIDData["user_id"] as! String
+                 
+                 let serviceHanlder = ServiceHandlers()
+                 serviceHanlder.getProfileData1(user_id: user_id) { (data, isSuccess) in
+                             if isSuccess{
+                              //  //print(data!)
+                                 var a = data as? Dictionary<String, Any>
+                                // //print(a)
+                                 
+                                 self.txtFldEmail.text = a!["user_email"] as? String
+                                 self.txtFldAddress.text = a!["user_address"] as? String
+                   
+                                 self.txtFldPhone.text =  self.formattedNumber(number:(a!["user_phone"] as? String)!)
+                                 self.txtFldPostalcode.text = a!["user_zipcode"] as? String
+                                 self.txtFldCity.text = a!["user_city"] as? String
+                                 self.btnStateSel.setTitle(a!["user_state_name"] as? String, for: .normal)
+                                 self.btnCountrySel.setTitle(a!["user_country_name"] as? String, for: .normal)
+                                 self.countryID = (a!["user_country"] as? String)!
+                                 self.stateID = (a!["user_state"] as? String)!
+                                 let serviceHanlder = ServiceHandlers()
+                                 serviceHanlder.getStateList(country_id: self.countryID){(responce,isSuccess) in
+                                     if isSuccess{
+                                         let state = responce as! Array<Any>
+                                         for state_code in state{
+                                             let state_code1 = state_code as! Dictionary<String,Any>
+                                             if ((state_code1["state_id"] as! String) == (self.stateID )){
+                                                 self.stateCode = (state_code1["state_code"] as! String)
+                                                 self.stateName = (state_code1["state_name"] as! String)
+                                             }
+                                         }
+                                     }
+                                 }
+                                self.countryID = (a!["user_country"] as? String)!
+                                 self.stateID = (a!["user_state"] as? String)!
+                     }
+                                   
+                 }
+        }else{
+         self.lblScreenTitle.text = NSLocalizedString("UPDATE EVENT DETAILS", comment: "")
         }
                        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -751,8 +748,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
         
        
       if(screenTitle.caseInsensitiveCompare(NSLocalizedString("UPDATE EVENT DETAILS", comment: "")) == .orderedSame){
-            
-        
         let servicehandler = ServiceHandlers()
         servicehandler.getSelectedEventDetails(eventId: eventDetail["event_id"] as! String){ (responce, isSuccess) in
         if isSuccess {
@@ -794,7 +789,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             
             //let phone = data_of_event["event_phone"]!
             //let strphone = String(describing: phone)
-            self.txtFldPhone.text = data_of_event["event_phone"] as? String ?? "default value"
+            self.txtFldPhone.text = self.formattedNumber(number:(data_of_event["event_phone"] as? String)!)
 
             
             self.timeZoneID = (data_of_event["event_timezone"] as? String)!
@@ -940,9 +935,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
 
     func DarkMode() {
     
-        
-        
-        
         self.contentView.backgroundColor = .black
         self.lblScreenTitle.textColor = .white
         self.lblScreenTitle.backgroundColor = .black

@@ -45,7 +45,7 @@ if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
 {
 
 self.profileImage.image = image
-self.profilePhoto = (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+self.profilePhoto = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
 guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
     else {
         self.ImagePro = "image2"
@@ -63,7 +63,7 @@ self.ChooseProfileImage()
 if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
 {
 self.coverImage.image = image
-self.img = (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+self.img = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
 guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
     else {
         self.imgName = "Cover_image_name"

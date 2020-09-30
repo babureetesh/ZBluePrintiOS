@@ -133,8 +133,8 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
         self.inputMessageTextField.addTarget(self, action: #selector(self.inputMessageTextFieldChanged(_:)), for: .editingChanged)
         self.sendUserMessageButton.isEnabled = false
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: UIWindow.keyboardDidHideNotification, object: nil)
+       // NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification, object: nil)
+       // NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: UIWindow.keyboardDidHideNotification, object: nil)
         
         self.view.bringSubviewToFront(self.loadingIndicatorView)
         self.loadingIndicatorView.isHidden = true
@@ -201,6 +201,7 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
             strNewName = components[1]
             strNewName = strNewName.replacingOccurrences(of: ")", with: "")
            strNewName = strNewName.trimmingCharacters(in: .whitespaces)
+            strNewName = strNewName.capitalized
            strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
             strNewName = "# " + strNewName
            }else{

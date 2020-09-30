@@ -150,7 +150,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
              if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
              {
-                self.img =  (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+                self.img =  (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
                 self.mainView.isHidden = false
                 self.backgroundView.isHidden = false
              }else{

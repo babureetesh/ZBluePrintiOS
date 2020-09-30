@@ -223,6 +223,7 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
                                               let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                                      vc.channel = groupChannel
                                                      vc.hidesBottomBarWhenPushed = true
+                                        vc.modalPresentationStyle = .fullScreen
                                               self.present(vc,animated: true)
                                              // self.ChangeStatusSelection()
                                   //

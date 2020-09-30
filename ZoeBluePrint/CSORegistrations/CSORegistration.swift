@@ -1058,7 +1058,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                             else { return }
         
             let selFileName = fileUrl.lastPathComponent
-            let selFileData =  (image as? UIImage)!.jpegData(compressionQuality: 1.0)!
+            let selFileData =  (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
             
             if (getFileSizeMBfromData(selFileData) > 5.0 ){
                    let alert = UIAlertController(title: nil, message: "File size must be less than 5 MB.", preferredStyle: .alert)

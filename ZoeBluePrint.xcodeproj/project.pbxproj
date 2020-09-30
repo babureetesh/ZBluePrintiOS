@@ -63,6 +63,7 @@
 		38019E6324F10E8E00EB7657 /* newAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38019E6224F10E8E00EB7657 /* newAppIcon.png */; };
 		3805A4FB22B3BDD7005734AC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3805A4FA22B3BDD7005734AC /* AlertManager.swift */; };
 		381988262521BE8200ED023D /* eventscalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 381988252521BE8200ED023D /* eventscalendar.png */; };
+		3819882825233CA000ED023D /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 3819882725233CA000ED023D /* notification.png */; };
 		381DFD6F22CB78E900C58A74 /* RightMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */; };
 		381F37F924DEF199009426B6 /* volSliderMenuCover.png in Resources */ = {isa = PBXBuildFile; fileRef = 381F37F824DEF198009426B6 /* volSliderMenuCover.png */; };
 		3827252E24F518560031DEF3 /* IntroScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3827252D24F518560031DEF3 /* IntroScreenViewController.swift */; };
@@ -223,7 +224,6 @@
 		7CAAFEB92424CE4A002B1B08 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAFEB82424CE4A002B1B08 /* Language.swift */; };
 		7CAAFEBB242507F5002B1B08 /* tealCirclePlus.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFEBA242507F0002B1B08 /* tealCirclePlus.png */; };
 		7CAAFEBF24252E9B002B1B08 /* language.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFEBE24252E96002B1B08 /* language.png */; };
-		7CAAFEC124252EA8002B1B08 /* notification.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFEC024252EA4002B1B08 /* notification.png */; };
 		7CAAFEC524252EC6002B1B08 /* theme.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAAFEC424252EC2002B1B08 /* theme.png */; };
 		7CAF57F123243E4E00017D9B /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF57F023243E4D00017D9B /* back.png */; };
 		7CAF57F323243E9C00017D9B /* top.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF57F223243E9B00017D9B /* top.jpg */; };
@@ -482,6 +482,7 @@
 		38019E6224F10E8E00EB7657 /* newAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newAppIcon.png; sourceTree = "<group>"; };
 		3805A4FA22B3BDD7005734AC /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		381988252521BE8200ED023D /* eventscalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventscalendar.png; sourceTree = "<group>"; };
+		3819882725233CA000ED023D /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
 		381DFD6E22CB78E900C58A74 /* RightMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightMenuViewController.swift; sourceTree = "<group>"; };
 		381F37F824DEF198009426B6 /* volSliderMenuCover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = volSliderMenuCover.png; sourceTree = "<group>"; };
 		3827252D24F518560031DEF3 /* IntroScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroScreenViewController.swift; sourceTree = "<group>"; };
@@ -654,7 +655,6 @@
 		7CAAFEB82424CE4A002B1B08 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		7CAAFEBA242507F0002B1B08 /* tealCirclePlus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tealCirclePlus.png; sourceTree = "<group>"; };
 		7CAAFEBE24252E96002B1B08 /* language.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = language.png; sourceTree = "<group>"; };
-		7CAAFEC024252EA4002B1B08 /* notification.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notification.png; sourceTree = "<group>"; };
 		7CAAFEC424252EC2002B1B08 /* theme.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = theme.png; sourceTree = "<group>"; };
 		7CAF57F023243E4D00017D9B /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		7CAF57F223243E9B00017D9B /* top.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = top.jpg; sourceTree = "<group>"; };
@@ -1103,7 +1103,6 @@
 				C29B693623FA75D4003ED683 /* newIconLocker.png */,
 				C2A3A76323FBEC6F00650F41 /* teal1.png */,
 				7CAAFEBA242507F0002B1B08 /* tealCirclePlus.png */,
-				7CAAFEC024252EA4002B1B08 /* notification.png */,
 				7CAAFEC424252EC2002B1B08 /* theme.png */,
 				C288993123F2B1B300A411CD /* icons8.png */,
 				7CAAFEBE24252E96002B1B08 /* language.png */,
@@ -1318,6 +1317,7 @@
 		384D1F232372A90900D6826B /* Side Menu */ = {
 			isa = PBXGroup;
 			children = (
+				3819882725233CA000ED023D /* notification.png */,
 				384D1F262372B37E00D6826B /* back_button.png */,
 				384D1F282372B5E800D6826B /* ChangeTimezoneCSO.swift */,
 				384D1F242372A95700D6826B /* ChangePasswordCSO.swift */,
@@ -1815,6 +1815,7 @@
 				38E4DAD322D74B51001D6F9D /* halfEllipticalblue.png in Resources */,
 				38A0906C24D0652C00070C9A /* GroupChannelOutgoingAudioFileMessageTableViewCell.xib in Resources */,
 				C288993823F2C51D00A411CD /* Volunteer.png in Resources */,
+				3819882825233CA000ED023D /* notification.png in Resources */,
 				7CD26CF4236060D2004BD8E4 /* available.svg in Resources */,
 				2A23677D22A58DE800FF6549 /* LaunchScreen.storyboard in Resources */,
 				2AD703F022E30A2500A40393 /* Speaker_OFF.png in Resources */,
@@ -1860,7 +1861,6 @@
 				2A671F6123083ACC00F0CFBD /* ShiftDate.png in Resources */,
 				C255EF3F23A7863C0078541A /* whiteLeftarrow.png in Resources */,
 				C261917423D06FD900DFE1E8 /* cirlce+PNG.png in Resources */,
-				7CAAFEC124252EA8002B1B08 /* notification.png in Resources */,
 				C2477DD223868593006E28F9 /* lion.png in Resources */,
 				C22BBB8523A8992300AF5912 /* plusblack.png in Resources */,
 				383681FE22D864E200ABB209 /* scene.jpg in Resources */,
