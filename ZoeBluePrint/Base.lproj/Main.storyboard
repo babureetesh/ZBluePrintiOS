@@ -6985,7 +6985,7 @@
         <!--Right Menu View Controller-->
         <scene sceneID="HXY-iD-6ia">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="j8I-kb-Mlq" customClass="RightMenuViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overFullScreen" id="j8I-kb-Mlq" customClass="RightMenuViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C1g-fy-qDN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -8070,7 +8070,7 @@
         <!--Project Notification View Controller-->
         <scene sceneID="up2-lL-xYz">
             <objects>
-                <viewController storyboardIdentifier="noti" modalPresentationStyle="fullScreen" id="zpx-Gf-egP" customClass="ProjectNotificationViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="noti" modalPresentationStyle="overFullScreen" id="zpx-Gf-egP" customClass="ProjectNotificationViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qaa-g9-guz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -8202,7 +8202,7 @@
         <!--Todays Event Details View Controller-->
         <scene sceneID="OKz-tJ-V4B">
             <objects>
-                <viewController storyboardIdentifier="CSOTodaysEventDetailsViewController" modalPresentationStyle="fullScreen" id="8zf-0d-uhl" customClass="CSOTodaysEventDetailsViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CSOTodaysEventDetailsViewController" modalPresentationStyle="overFullScreen" id="8zf-0d-uhl" customClass="CSOTodaysEventDetailsViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="34L-YT-Yh0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -15116,7 +15116,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="1yn-aE-mhV"/>
         <segue reference="4Ea-rk-YRR"/>
-        <segue reference="Mup-EQ-yd4"/>
+        <segue reference="TSH-ju-LtO"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
 </document>

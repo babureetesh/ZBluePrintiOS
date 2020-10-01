@@ -19,8 +19,7 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        self.tableNotification.delegate = self
-        self.tableNotification.dataSource = self
+        
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let user_id = userIDData["user_id"] as! String
@@ -28,9 +27,11 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
         serviceHandler.getNotification(userData: user_id){(responce,isSucess) in
             if isSucess{
                 self.noti_data = (responce as! Array<Any>)
+                self.tableNotification.delegate = self
+                self.tableNotification.dataSource = self
                 self.tableNotification.reloadData()
             }
-            
+
         }
         // Do any additional setup after loading the view.
     }
@@ -85,6 +86,7 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
    
     @IBAction func back_button(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+        //self.view.removeFromSuperview()
     }
     
 }

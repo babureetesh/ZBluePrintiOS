@@ -121,6 +121,15 @@ class CSODashboardViewController: BaseViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
           present(obj,animated: true)
+
+        
+//        let  eventAlert = ProjectNotificationViewController()
+//
+//        eventAlert.view.frame = self.view.frame
+//        //eventAlert.willMove(toParent: self)
+//        self.view.addSubview(eventAlert.view)
+//       // self.addChild(eventAlert)
+//       // eventAlert.didMove(toParent: self)
     }
     
     func profile_pic()  {
@@ -151,23 +160,11 @@ class CSODashboardViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
+      
         self.DataFromServer()
-//        if defaults == "Dark Mode"{
-//
-//            DarkMode()
-           // self.sideButton.setImage(UIImage(named: "newList.png"), for: UIControl.State.normal)
-//        }else if defaults == "Light Mode"{
-//            LightMode()
-        //   self.sideButton.setImage(UIImage(named: "newList.png"), for: UIControl.State.normal)
-//        }
-        
-        
     }
     func DataFromServer() {
-                
-                
-                self.upcomingEventsTableView.rowHeight = 120
+       self.upcomingEventsTableView.rowHeight = 120
                 
                 let appearance = UITabBarItem.appearance()
                 let attributes = [NSAttributedString.Key.font:UIFont(name: "OpenSans-Semibold", size: 14)]
