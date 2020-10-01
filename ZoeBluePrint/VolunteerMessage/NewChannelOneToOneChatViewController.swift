@@ -54,7 +54,6 @@ self.viewCreateChannel.isHidden = true
         let usertype = userIDData["user_type"] as! String
         if (usertype == "CSO"){
             //time to handle Header acording to Cso
-            headerViewHeightConstrain.constant = 75 + 44 // 44 is safe area margin
             imgCoverPic.isHidden = true
             volHeaderView.isHidden = true
             if let image = UIImage(data: imageData) {
@@ -68,7 +67,6 @@ self.viewCreateChannel.isHidden = true
             
         } else {
             //time to handle Header acording to VOL
-            headerViewHeightConstrain.constant = 150
             self.getCoverImageForRank()
             csoHeaderView.isHidden = true
             if let image = UIImage(data: imageData) {
