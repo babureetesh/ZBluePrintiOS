@@ -96,7 +96,6 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
  
     var mapID:String?
     var rating:String?
-    @IBOutlet weak var topLable: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBOutlet weak var sideMenu: UIButton!
@@ -218,7 +217,6 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
             self.profilePicture.isHidden = true
             headerViewHeightConstraint.constant = 0
             self.sideMenu.isHidden = true
-            self.topLable.isHidden = true
             headerView.isHidden = true
             
             //self.lbnHeight.constant = 0
