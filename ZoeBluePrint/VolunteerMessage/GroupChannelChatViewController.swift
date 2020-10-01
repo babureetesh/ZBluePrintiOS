@@ -205,7 +205,11 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
            strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
             strNewName = "# " + strNewName
            }else{
-               strNewName = channelforName.name
+            strNewName = self.channel!.name
+                   strNewName = strNewName.trimmingCharacters(in: .whitespaces)
+                    strNewName = strNewName.capitalized
+                   strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
+                   strNewName = "# " + strNewName
            }
            return strNewName
            

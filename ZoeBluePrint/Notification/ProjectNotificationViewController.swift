@@ -60,7 +60,7 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
                 let date = dateFormatter.date(from: (data["notifiation_add_date"] as! String))
 //
 //                // To convert the date into an HH:mm format (where a stands for AM/PM)
-                dateFormatter.dateFormat = "yyyy-MM-dd , HH:mm a"
+                dateFormatter.dateFormat = "yyyy-MM-dd, HH:mm a"
                 let dateString = dateFormatter.string(from: date!)
              //  //print(dateString)
                 cell.lbnDateAndTime.text = dateString

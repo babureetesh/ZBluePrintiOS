@@ -111,11 +111,14 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
     }
     func getCoverImageForRank(){
           
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+         let userid = userIDData["user_id"] as! String
+        let usertype = userIDData["user_type"] as! String
+        if (usertype == "VOL"){
           var strImageNameCover = "cover_cloud.jpg"
-          
     let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
               let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-              //print(volData)
               if (volData["user_avg_rank"] != nil){
                   if let userAvgRank = volData["user_avg_rank"] as? String {
                       
@@ -138,7 +141,7 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
               }
           self.imgCoverPic.image = UIImage(named:strImageNameCover)
           
-          
+        }
       }
         /*
         // MARK: - Navigation
@@ -331,9 +334,9 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
         @IBAction func createChannel(_ sender: Any) {
             if self.selectedData.count>0{
                 if self.selectedData.count > 1 {
-                    self.strChannelType = "Individual"
-                }else{
                     self.strChannelType = "Channel"
+                }else{
+                    self.strChannelType = "Individual"
                 }
                // self.viewCreateChannel.isHidden = false
             }else{

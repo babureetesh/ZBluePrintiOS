@@ -413,9 +413,9 @@ self.viewCreateChannel.isHidden = true
     @IBAction func createChannel(_ sender: Any) {
         if self.selectedData.count>0{
             if self.selectedData.count > 1 {
-                self.strChannelType = "Individual"
-            }else{
                 self.strChannelType = "Channel"
+            }else{
+                self.strChannelType = "Individual"
             }
             self.viewCreateChannel.isHidden = false
         }else{

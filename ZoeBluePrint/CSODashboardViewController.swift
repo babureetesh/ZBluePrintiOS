@@ -429,6 +429,14 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
         let mon1:String =  String(month.prefix(3)) 
         //print(mon1)
         
+        dateFormatter.dateFormat = "EEE"
+                   //print("Week: \(dateFormatter.string(from: dateObj!))")
+                   let weekday = Calendar.current.component(.weekday, from: dateObj!)
+                   let week:String = dateFormatter.weekdaySymbols![weekday - 1]
+                   let WD = String(week.prefix(3))
+                   print(WD)
+                   
+        
         var event_start = event["event_register_start_date"] as! String
         var event_end = event["event_register_end_date"] as! String
         var shift_start_time = event["shift_start_time"] as! String
@@ -437,9 +445,9 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
         var taskName = event["shift_task_name"] as! String
         var labn3 = "\(taskName) : \(date) - \(shift_start_time) to \(shift_end_time)"
         
-        cell.lblDate.text = dated as! String
+        cell.lblDate.text =  "\(dated)\n\(mon1)\n\(WD)"
         cell.TitleLabel.text = event["event_heading"] as? String
-        cell.lblMonth.text = mon1 as! String
+       // cell.lblMonth.text = "\(mon1) \n \(WD)"
         cell.lblDescription1.text = labn2 as! String
         cell.lblDescription2.text = labn3 as! String
         return cell

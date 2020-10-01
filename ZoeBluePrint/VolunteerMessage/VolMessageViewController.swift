@@ -190,6 +190,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                             self.tblChatList.reloadData()
                             ActivityLoaderView.stopAnimating()
                         }
+         
         })
         
     }
@@ -220,7 +221,6 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 let components = channel.name.components(separatedBy: "(")
                  var strNewName = ""
                 if (components.count > 1){
-               // print("***** " + components[1])
                  strNewName = components[1]
                  strNewName = strNewName.replacingOccurrences(of: ")", with: "")
                 strNewName = strNewName.trimmingCharacters(in: .whitespaces)
@@ -229,6 +229,10 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                     strNewName = "# " + strNewName
                 }else{
                     strNewName = channel.name
+                    strNewName = strNewName.trimmingCharacters(in: .whitespaces)
+                     strNewName = strNewName.capitalized
+                    strNewName = strNewName.replacingOccurrences(of: " ", with: "_")
+                    strNewName = "# " + strNewName
                 }
                 return strNewName
                
@@ -248,27 +252,22 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 cell.delegate = self
                 cell.btnMember.tag = indexPath.row
         cell.btnPlus.tag = indexPath.row
-        cell.btnMember .setTitle("\(String(self.channelList[indexPath.row].memberCount)) Members", for: .normal)
+        cell.btnMember.setTitle("\(String(self.channelList[indexPath.row].memberCount)) Members", for: .normal)
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        if self.channelList[indexPath.row].data == self.username{
+        if self.channelList[indexPath.row].data == self.username &&  self.channelList[indexPath.row].customType == "Channel" && self.channelList[indexPath.row].memberCount > 2 {
             cell.btnPlus.isHidden = false
         }else{
+            
             cell.btnPlus.isHidden = true
         }
-        //print("*********\(self.channelList[indexPath.row].channelUrl)***********")
-
         if self.channelList[indexPath.row].coverUrl!.hasPrefix("https://static.sendbird.com") { // true
             cell.imgGroupChat.downloadImageFrom(link: string_url, contentMode: UIView.ContentMode.scaleAspectFill)
             cell.imgGroupChat.layer.cornerRadius = cell.imgGroupChat.frame.size.width / 2
             cell.imgGroupChat.clipsToBounds = true
-            if self.channelList[indexPath.row].data == self.username{
-                cell.btnPlus.isHidden = false
-            }else{
-            cell.btnMember.isHidden = true
-            }
+            
         }else{
             cell.imgGroupChat.downloadImageFrom(link: self.channelList[indexPath.row].coverUrl!, contentMode: UIView.ContentMode.scaleAspectFill)
-            cell.btnMember.isHidden = false
+           
         }
         
         
@@ -406,25 +405,17 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 
                 if self.channelList[indexPath.row].data == self.username{
                    // Delete Channel
-                    
                     let alert = UIAlertController(title: self.channelList[indexPath.row].name , message: nil, preferredStyle: UIAlertController.Style.alert)
-
                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
                     alert.addAction(UIAlertAction(title: "Delete Channel", style: UIAlertAction.Style.default, handler: { action in
-                        
                         self.delChannel(channel: self.channelList[indexPath.row])
-
                     }))
-
                     // show the alert
                     self.present(alert, animated: true, completion: nil)
-                    
                 }else{
                     //cell.btnPlus.isHidden = true
                     //Leave channel
-                    
                     let alert = UIAlertController(title: self.channelList[indexPath.row].name , message: nil, preferredStyle: UIAlertController.Style.alert)
-
                     alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
                     alert.addAction(UIAlertAction(title: "Leave Channel", style: UIAlertAction.Style.default, handler: { action in
                         
