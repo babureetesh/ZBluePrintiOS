@@ -453,7 +453,7 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
         return upcomingEvents.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 76.0
         
 }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
