@@ -15,7 +15,7 @@ import MobileCoreServices
 import Alamofire
 import AlamofireImage
 import FLAnimatedImage
-
+import IQKeyboardManagerSwift
 
 class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate, SBDChannelDelegate, GroupChannelMessageTableViewCellDelegate, UIDocumentPickerDelegate, SBDNetworkDelegate, SBDConnectionDelegate {
     
@@ -74,9 +74,14 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
     
     var typingIndicatorTimer: Timer?
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        IQKeyboardManager.shared.enable = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        IQKeyboardManager.shared.enable = false
         // Do any additional setup after loading the view.
         self.navigationItem.largeTitleDisplayMode = .never
 //        self.settingBarButton = UIBarButtonItem(image: UIImage(named: "img_btn_channel_settings"), style: .plain, target: self, action: #selector(GroupChannelChatViewController.clickSettingBarButton(_:)))
@@ -133,8 +138,8 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
         self.inputMessageTextField.addTarget(self, action: #selector(self.inputMessageTextFieldChanged(_:)), for: .editingChanged)
         self.sendUserMessageButton.isEnabled = false
         
-       // NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification, object: nil)
-       // NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: UIWindow.keyboardDidHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow(_:)), name: UIWindow.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidHide(_:)), name: UIWindow.keyboardDidHideNotification, object: nil)
         
         self.view.bringSubviewToFront(self.loadingIndicatorView)
         self.loadingIndicatorView.isHidden = true
