@@ -434,19 +434,19 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
                    print(WD)
                    
         
-        var event_start = event["event_register_start_date"] as! String
-        var event_end = event["event_register_end_date"] as! String
-        var shift_start_time = event["shift_start_time"] as! String
-        var shift_end_time = event["shift_end_time"] as! String
-        var labn2 = "Event Date : \(event_start) to \(event_end)"
-        var taskName = event["shift_task_name"] as! String
-        var labn3 = "\(taskName) : \(date) - \(shift_start_time) to \(shift_end_time)"
+        let event_start = event["event_register_start_date"] as! String
+        let event_end = event["event_register_end_date"] as! String
+        let shift_start_time = event["shift_start_time"] as! String
+        let shift_end_time = event["shift_end_time"] as! String
+        let labn2 = "Event Date : \(event_start) to \(event_end)"
+        let taskName = event["shift_task_name"] as! String
+        let labn3 = "\(taskName) : \(shift_start_time) to \(shift_end_time)"
         
         cell.lblDate.text =  "\(dated)\n\(mon1)\n\(WD)"
         cell.TitleLabel.text = event["event_heading"] as? String
        // cell.lblMonth.text = "\(mon1) \n \(WD)"
-        cell.lblDescription1.text = labn2 as! String
-        cell.lblDescription2.text = labn3 as! String
+        cell.lblDescription1.text = labn2 
+        cell.lblDescription2.text = labn3 
         return cell
     }
    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
