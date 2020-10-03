@@ -23,7 +23,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
     var selectedButton:UIButton?
     
     
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var lbl2NotFound : UILabel!
     @IBOutlet weak var lblNoEventsFound: UILabel!
     @IBOutlet weak var viewNoEventsFound: UIView!
@@ -91,6 +91,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
       /*  let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
         if defaults == "Dark Mode"{
             

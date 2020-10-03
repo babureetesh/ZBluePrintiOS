@@ -27,7 +27,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
     
     @IBOutlet weak var RatingLabel: UILabel!
     @IBOutlet weak var sideMenu: UIButton!
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var lightStarView: FloatRatingView!
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
@@ -54,6 +54,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
     var event_id:String?
     
     override func viewWillAppear(_ animated: Bool) {
+         self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         self.back_button.isHidden = true
         self.buttonShift.isHidden = true
         //self.shiftViewImage.isHidden = true

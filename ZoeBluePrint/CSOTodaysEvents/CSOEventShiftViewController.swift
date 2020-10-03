@@ -22,7 +22,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageDelete: UIImageView!
     @IBOutlet weak var imageEdit: UIImageView!
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var StatusImage: UIImageView!
     
     @IBOutlet weak var StatusLabel: UILabel!
@@ -75,6 +75,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+         self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
        // //print("view will appear called")
  /*  let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
         if defaults == "Dark Mode"{

@@ -13,7 +13,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
    
     
     @IBOutlet weak var sideMenu: UIButton!
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var lblHeadingMain: UILabel!
     @IBOutlet weak var dropdownImage: UIImageView!
     @IBOutlet weak var NoDataView1: UIView!
@@ -233,14 +233,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
 }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       /* let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-        if defaults == "Dark Mode" {
-            
-            DarkMode()
-        }else  if defaults == "Light Mode"{
-         
-            LightMode()
-        }*/
+      self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         self.lockerlistfunction()
     }
     

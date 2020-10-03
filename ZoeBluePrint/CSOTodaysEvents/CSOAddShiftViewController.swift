@@ -16,7 +16,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var lblShiftTask: UILabel!
     @IBOutlet weak var lblEndTime: UILabel!
     @IBOutlet weak var HeadingLabel: UILabel!
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var lblShiftDate: UILabel!
     @IBOutlet weak var RankShiftSelectedLists: UIButton!
     
@@ -125,7 +125,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
         }
         
         */
-        
+         self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         self.profile_pic()
         self.backButton.isHidden = true
         

@@ -21,7 +21,8 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var VolunteerLabel: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var SearchKey: UITextField!
     
     @IBOutlet weak var tblView: UITableView!
@@ -66,6 +67,7 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
 //
 //            LightMode()
 //        }
+         self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
       self.searchBar.delegate = self
         self.tblView.delegate = self
         self.tblView.dataSource = self

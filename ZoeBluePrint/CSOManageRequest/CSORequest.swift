@@ -22,7 +22,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     @IBOutlet weak var changeStatus_rejectView: UIView!
     @IBOutlet weak var changeStatus_moreInfoView: UIView!
     @IBOutlet weak var changeStatus_stackView: UIStackView!
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     
     @IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var backButtonHeightConstraint: NSLayoutConstraint!
@@ -229,7 +229,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     }
     override func viewWillAppear(_ animated:Bool) {
            super.viewWillAppear(true)
-        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
+        self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         tblViewforAllRequest.reloadData()
         self.profile_pic()
 //        if defaults == "Dark Mode"{

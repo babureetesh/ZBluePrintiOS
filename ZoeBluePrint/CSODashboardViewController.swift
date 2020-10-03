@@ -19,6 +19,7 @@ class CSODashboardViewController: BaseViewController {
     @IBOutlet weak var lblCountdown: UILabel!
     @IBOutlet weak var lblUpcomingEvents: UILabel!
     
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     
     
     @IBOutlet weak var sideButton: UIButton!
@@ -89,10 +90,7 @@ class CSODashboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        lblNoDataFound.isHidden = true
-//                   viewNoDataFound.isHidden = true
-        
+       
         self.profile_pic()
         self.DataFromServer()
         
@@ -160,7 +158,7 @@ class CSODashboardViewController: BaseViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-      
+      self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         self.DataFromServer()
     }
     func DataFromServer() {
