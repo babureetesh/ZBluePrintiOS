@@ -178,7 +178,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                                             let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                                    vc.channel = groupChannel
                                                    vc.hidesBottomBarWhenPushed = true
-                                        vc.modalPresentationStyle = .fullScreen
+                                        vc.modalPresentationStyle = .overFullScreen
                                         self.present(vc,animated: true)
                                            // self.ChangeStatusSelection()
                                 //
@@ -1427,15 +1427,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
                             // show the alert
                             self.present(alert, animated: true, completion: nil)
-                
             }
             
-            
         }
-        
-        
-
-        
     }
     func UpdateHours(){
         

@@ -14,31 +14,19 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var coverPicImagearray = Array<Any>()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         SBDMain.initWithApplicationId("F46FE267-AE82-45B2-9F44-0BD7266FCFDE")
          IQKeyboardManager.shared.enable = true
-        //Thanks Rishi
-        // Override point for customization after application launch.
-       //UILabel.appearance(whenContainedInInstancesOf: [UITextField.self]).textColor = UIColor.black
-        //UILabel.appearance(whenContainedInInstancesOf: [UITextField.self]).placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
-//self.attributedPlaceholder = NSAttributedString(string:self.placeholder != nil ? self.placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: newValue!])
-//        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//
-//        if defaults == "Light Mode"{
+       
         UITabBar.appearance().barTintColor = .white
        UITabBar.appearance().tintColor = .black
-//
-//        }else if defaults == "Dark Mode"{
-//            UITabBar.appearance().barTintColor = UIColor(red: 33.0/255.0, green: 33.0/255.0, blue: 33.0/255.0, alpha: 1.0)
-//            UITabBar.appearance().tintColor = .white
-//        }else{
-//            UserDefaults.standard.set("Light Mode", forKey: "ChangeTheme")
-//            UITabBar.appearance().barTintColor = .white
-//            UITabBar.appearance().tintColor = .black
-//        }
+
+        
+         coverPicImagearray = ["cover_riseandshine.jpg", "cover_cake.jpg", "cover_cool.jpg", "cover_truck.jpg","cover_cloud.jpg"]
+          UserDefaults.standard.set(coverPicImagearray.randomElement(), forKey: "csocoverpic")
         return true
     }
 
@@ -54,8 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        let coverPicImagearray = ["cover_riseandshine.jpg", "cover_cake.jpg", "cover_cool.jpg", "cover_truck.jpg","cover_cloud.jpg"]
-        
         print(coverPicImagearray.randomElement()!)
         UserDefaults.standard.set(coverPicImagearray.randomElement(), forKey: "csocoverpic") //setObject
         

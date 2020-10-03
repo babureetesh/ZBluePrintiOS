@@ -16,7 +16,7 @@ protocol delegateNewChannelremoved{
 
 class NewChannelOneToOneChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,delegateConnectedUserlistCell,UITextFieldDelegate {
 var delegate :delegateNewChannelremoved?
-    
+    @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var csoProfilePic: UIImageView!
     @IBOutlet weak var volProfilePic: UIImageView!
     @IBOutlet weak var csoHeaderView:UIView!
@@ -113,11 +113,13 @@ self.viewCreateChannel.isHidden = true
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-       
+       let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                     let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                     let usertype = userIDData["user_type"] as! String
+                     if (usertype == "CSO"){
+                         self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
+                     }
                
-              
-                let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                             let userID = userIDData["user_id"] as! String
                                           //print(userID)
                             
@@ -275,7 +277,7 @@ self.viewCreateChannel.isHidden = true
             let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                    vc.channel = groupChannel
                    vc.hidesBottomBarWhenPushed = true
-                    vc.modalPresentationStyle = .fullScreen
+                    vc.modalPresentationStyle = .overFullScreen
                     self.present(vc,animated: true)
         })
         
@@ -525,7 +527,7 @@ self.viewCreateChannel.isHidden = true
                                         let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                         vc.channel = channel
                                         vc.hidesBottomBarWhenPushed = true
-                                        vc.modalPresentationStyle = .fullScreen
+                                        vc.modalPresentationStyle = .overFullScreen
                                         self.present(vc,animated: true)
                                         
                                     }

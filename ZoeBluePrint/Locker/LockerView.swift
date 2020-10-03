@@ -320,14 +320,11 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let params = userIDData["user_id"] as! String
-        //print(params)
-        
-          let serviceHanlder = ServiceHandlers()
+        let serviceHanlder = ServiceHandlers()
               serviceHanlder.lockerList(user_id: params) { (responce, isSuccess) in
                              if isSuccess {
                                  if let EventTypeData = responce as? [[String:Any] ] {
                                   self.typeList = EventTypeData
-                                  //print(self.typeList!)
                                   let utility = Utility()
                                          utility.fetchDocumentType() { (countryList, isValueFetched) in
             if let list = countryList {
@@ -342,6 +339,8 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
                    
                                  }else{
              
+                                    self.NoDataView1.isHidden = true
+                                    self.NoDataFound2.isHidden = true
              self.typeList = nil
              self.tblView.reloadData()
                                     
@@ -358,18 +357,11 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
       
         if let cc = typeList?.count
         {
-            //print(cc)
-            
-                       NoDataView1.isHidden = true
-                       NoDataFound2.isHidden = true
             return cc
             
        
         }else{
-            
-            NoDataView1.isHidden = false
-            NoDataFound2.isHidden = false
-            
+
             return 0
         }
        }

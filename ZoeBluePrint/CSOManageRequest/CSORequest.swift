@@ -1368,7 +1368,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                                         let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                                vc.channel = groupChannel
                                                vc.hidesBottomBarWhenPushed = true
-                                    vc.modalPresentationStyle = .fullScreen
+                                    vc.modalPresentationStyle = .overFullScreen
                                         self.present(vc,animated: true)
                                        // self.ChangeStatusSelection()
                             //

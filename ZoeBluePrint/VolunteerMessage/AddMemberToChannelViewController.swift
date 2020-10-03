@@ -12,6 +12,7 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
 
     @IBOutlet weak var csoProfilePic: UIImageView!
     @IBOutlet weak var volProfilePic: UIImageView!
+     @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var csoHeaderView:UIView!
     @IBOutlet weak var volHeaderView:UIView!
     @IBOutlet weak var headerViewHeightConstrain: NSLayoutConstraint!
@@ -86,11 +87,15 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+               let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+               let usertype = userIDData["user_type"] as! String
+               if (usertype == "CSO"){
+                   self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
+               }
+        
         self.getCoverImageForRank()
                
-              
-                let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                             let userID = userIDData["user_id"] as! String
                                           //print(userID)
                             
