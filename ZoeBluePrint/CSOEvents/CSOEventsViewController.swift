@@ -210,14 +210,23 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         newEventLabl.isHidden = true
         myEventLabl.isHidden = false
         
+        
+        
     }
     @IBAction func newEventButtonClicked(_ sender: Any) {
+
         
-        
+        // removing edit event view from my events. 
+        for subVC in myEventsView.subviews {
+            if subVC.tag == 100 {
+                subVC.removeFromSuperview()
+            }
+        }
         
         if let previousSelection = selectedButton, previousSelection == newEventButton {
             return
         }
+        
         
         addEventsView.isHidden = true
         
@@ -255,8 +264,51 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         eventAlert.view.layoutIfNeeded()
         eventAlert.eventDetail = event
         addViewController(viewController: eventAlert)
+    
     }
     
+    func showAddEventViewControllerWithTitle(title:String, eventDetail:[String:Any]?) {
+        
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        if  let selectedEventVC =  mainSB.instantiateViewController(withIdentifier: "CSOAddEventViewController") as? CSOAddEventViewController {
+            
+            selectedEventVC.screenTitle = title
+            tableViewEventList.isHidden = true
+            selectedEventVC.data_refresh = self
+            selectedEventVC.myeventview = myEventsView
+            selectedEventVC.selectbutton = selectedButton
+            selectedEventVC.myeventbtn = myEventsButton
+            selectedEventVC.neweventbutton =  newEventButton
+            selectedEventVC.view.tag = 100
+            selectedEventVC.view.frame.size.height = myEventsView.frame.size.height
+            if let eventData = eventDetail {
+                selectedEventVC.eventDetail = eventData
+            }
+            selectedEventVC.willMove(toParent: self)
+           
+            if title.caseInsensitiveCompare("ADD EVENT DETAILS") == .orderedSame {
+                for subVC in addEventsView.subviews {
+                    if subVC.tag == 100 {
+                        subVC.removeFromSuperview()
+                    }
+                }
+                addEventsView.addSubview(selectedEventVC.view)
+            } else {
+                
+                myEventsView.addSubview(selectedEventVC.view)
+            }
+            
+            self.addChild(selectedEventVC)
+            selectedEventVC.didMove(toParent: self)
+            
+            
+            
+            
+
+            
+            
+        }
+    }
     
     func changeButtonStates(selectedButton:UIButton)  {
         
@@ -288,32 +340,14 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
             addEventsView.isHidden = false
             myEventsView.isHidden = true
             lbl2NotFound.isHidden = true
-            let mainSB = UIStoryboard(name: "Main", bundle: nil)
-            if  let selectedEventVC =  mainSB.instantiateViewController(withIdentifier: "CSOAddEventViewController") as? CSOAddEventViewController {
-                for subVC in addEventsView.subviews {
-                    if subVC.tag == 100 {
-                        subVC.removeFromSuperview()
-                    }
-                }
-                selectedEventVC.screenTitle = "ADD EVENT DETAILS"
-                tableViewEventList.isHidden = true
-                selectedEventVC.data_refresh = self
-                selectedEventVC.myeventview = myEventsView
-                selectedEventVC.selectbutton = selectedButton
-                selectedEventVC.myeventbtn = myEventsButton
-                selectedEventVC.neweventbutton =  newEventButton
-                selectedEventVC.view.tag = 100
-                selectedEventVC.view.frame.size.height = myEventsView.frame.size.height
-                
-                selectedEventVC.willMove(toParent: self)
-                addEventsView.addSubview(selectedEventVC.view)
-                self.addChild(selectedEventVC)
-                selectedEventVC.didMove(toParent: self)
-                
-                
-            }
+            
+            showAddEventViewControllerWithTitle(title:"ADD EVENT DETAILS", eventDetail: nil)
+
         }
     }
+    
+    
+
     
     func checkForNilAndReturnDefaultValue(checkString:Any?, defaultValue:String) -> String {
         if let notNil = checkString as? String {
@@ -527,17 +561,9 @@ extension CSOEventsViewController:EventActionsViewControllerDelegate {
             
             //print("edit")
             if (eventDetail!["event_status"] as! String) != "10"{
-                let mainSB = UIStoryboard(name: "Main", bundle: nil)
-                if  let selectedEventVC =  mainSB.instantiateViewController(withIdentifier: "CSOAddEventViewController") as? CSOAddEventViewController {
-                    selectedEventVC.screenTitle = NSLocalizedString("UPDATE EVENT DETAILS", comment: "")
-                    selectedEventVC.data_refresh = self
-                    selectedEventVC.view.tag = 100
-                    selectedEventVC.eventDetail = eventDetail!
-                    selectedEventVC.view.frame.size.height = (self.view.frame.size.height)
-                    tableViewEventList.isHidden = true
-                    self.addViewController(viewController: selectedEventVC)
-                    //                self.view.addSubview(selectedEventVC.view)}
-                }
+
+                showAddEventViewControllerWithTitle(title:"UPDATE EVENT DETAILS", eventDetail: eventDetail)
+               
                 
             }else{
                 let alert = UIAlertController(title: nil, message: NSLocalizedString("Please Unpublish event first", comment: ""), preferredStyle: .alert)
