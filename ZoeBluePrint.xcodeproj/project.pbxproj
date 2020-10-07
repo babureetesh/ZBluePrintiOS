@@ -117,7 +117,6 @@
 		387FD300251C5680001AFBAA /* newListCso.png in Resources */ = {isa = PBXBuildFile; fileRef = 387FD2FF251C567F001AFBAA /* newListCso.png */; };
 		389B382524B36A5100C5D9CC /* lightnewSettings.png in Resources */ = {isa = PBXBuildFile; fileRef = 389B382424B36A5000C5D9CC /* lightnewSettings.png */; };
 		389B382824B3A32B00C5D9CC /* lighteye-open.png in Resources */ = {isa = PBXBuildFile; fileRef = 389B382724B3A32B00C5D9CC /* lighteye-open.png */; };
-		38A0906024D0652C00070C9A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A0903424D0652C00070C9A /* ChatViewController.swift */; };
 		38A0906124D0652C00070C9A /* GroupChannelNeutralAdminMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A0903524D0652C00070C9A /* GroupChannelNeutralAdminMessageTableViewCell.swift */; };
 		38A0906224D0652C00070C9A /* GroupChannelIncomingUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A0903624D0652C00070C9A /* GroupChannelIncomingUserMessageTableViewCell.swift */; };
 		38A0906324D0652C00070C9A /* String+SendBird.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A0903724D0652C00070C9A /* String+SendBird.swift */; };
@@ -537,7 +536,6 @@
 		389B382424B36A5000C5D9CC /* lightnewSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightnewSettings.png; sourceTree = "<group>"; };
 		389B382624B36B7F00C5D9CC /* lightnewSettings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lightnewSettings.png; path = "ZoeBluePrint/White Icons/lightnewSettings.png"; sourceTree = "<group>"; };
 		389B382724B3A32B00C5D9CC /* lighteye-open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lighteye-open.png"; path = "ZoeBluePrint/White Icons/lighteye-open.png"; sourceTree = "<group>"; };
-		38A0903424D0652C00070C9A /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		38A0903524D0652C00070C9A /* GroupChannelNeutralAdminMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChannelNeutralAdminMessageTableViewCell.swift; sourceTree = "<group>"; };
 		38A0903624D0652C00070C9A /* GroupChannelIncomingUserMessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupChannelIncomingUserMessageTableViewCell.swift; sourceTree = "<group>"; };
 		38A0903724D0652C00070C9A /* String+SendBird.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+SendBird.swift"; sourceTree = "<group>"; };
@@ -1341,7 +1339,6 @@
 		38A0903324D0652C00070C9A /* VolunteerMessage */ = {
 			isa = PBXGroup;
 			children = (
-				38A0903424D0652C00070C9A /* ChatViewController.swift */,
 				38A0903524D0652C00070C9A /* GroupChannelNeutralAdminMessageTableViewCell.swift */,
 				38A0903624D0652C00070C9A /* GroupChannelIncomingUserMessageTableViewCell.swift */,
 				38A0903724D0652C00070C9A /* String+SendBird.swift */,
@@ -2059,7 +2056,6 @@
 				C2914665238D5CF800A7A33A /* VolRegistration.swift in Sources */,
 				2A09044B22B8E8CE00AEC13D /* CustomDetailTableViewCell.swift in Sources */,
 				38A0907E24D0652C00070C9A /* NewChannelOneToOneChatViewController.swift in Sources */,
-				38A0906024D0652C00070C9A /* ChatViewController.swift in Sources */,
 				38A0908524D0652C00070C9A /* VolMessageViewController.swift in Sources */,
 				2A1594CE22EA34DD0066D84A /* ExtensionsAdditionViewController.swift in Sources */,
 				382F802C24ED973E000D9F59 /* OrganizationTableViewCell.swift in Sources */,
@@ -2294,10 +2290,10 @@
 			baseConfigurationReference = D3A65177A365339037AE4184 /* Pods-ZoeBluePrint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 9UJ38R4J79;
+				DEVELOPMENT_TEAM = QD43V52NRF;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
@@ -2313,10 +2309,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eLIteSisHE;
+				MARKETING_VERSION = 1.8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoeblueprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ZoeBlueAppstoreProv;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2327,20 +2323,20 @@
 			baseConfigurationReference = BFCDD69A6DB946925A746410 /* Pods-ZoeBluePrint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0;
-				DEVELOPMENT_TEAM = 9UJ38R4J79;
+				DEVELOPMENT_TEAM = QD43V52NRF;
 				INFOPLIST_FILE = ZoeBluePrint/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
-				PRODUCT_BUNDLE_IDENTIFIER = com.eLIteSisHE;
+				MARKETING_VERSION = 1.8;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zoeblueprint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = ZoeBlueAppstoreProv;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
