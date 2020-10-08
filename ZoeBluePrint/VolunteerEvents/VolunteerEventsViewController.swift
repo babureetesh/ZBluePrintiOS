@@ -129,7 +129,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     var floatYcoordinateView2: CGFloat!
     var floatHeightView2: CGFloat!
     var strSearchCategorySel: String!
-    
+    var strPostalCode: String!
     @IBOutlet weak var imgViewCover: UIImageView!
     
     
@@ -478,22 +478,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         self.tabBarController?.delegate = self
      
         self.DiscoverEventsTapped.setTitleColor(UIColor.gray, for: UIControl.State.normal)
-        
-//        let mytapGestureRecognizer4 = UITapGestureRecognizer(target: self, action: #selector(handleTap4(_:)))
-//              self.EventShiftView1.addGestureRecognizer(mytapGestureRecognizer4)
-//              self.EventShiftView1.isUserInteractionEnabled = true
-              
  
         
         let mytapGestureRecognizer3 = UITapGestureRecognizer(target: self, action: #selector(handleTap3(_:)))
-//        self.UpdateView1.addGestureRecognizer(mytapGestureRecognizer3)
-//        self.UpdateView1.isUserInteractionEnabled = true
-//        let mytapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-//        self.StatsView1.addGestureRecognizer(mytapGestureRecognizer)
-//        self.StatsView1.isUserInteractionEnabled = true
-//        let mytapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(handleTap2(_:)))
-//               self.ViewChangeStatusBackground.addGestureRecognizer(mytapGestureRecognizer2)
-//               self.ViewChangeStatusBackground.isUseInteractionEnabled = true
         self.searchTab.delegate = self
         timeView.isHidden = true
         floatYcoordinateView2 = CGFloat(View2.frame.origin.y)
@@ -502,6 +489,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     
     
     @IBAction func csoEvents(_ sender: Any) {
+        self.searchTab.text = ""
         
  if check {
            lblCSOEvents.setImage(UIImage(named: "black-square-png.png"), for: .normal)
@@ -748,6 +736,11 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             self.bookButtonTapped.setTitleColor(UIColor.gray, for: UIControl.State.normal)
                        self.DiscoverEventsTapped.setTitleColor(UIColor.black, for: UIControl.State.normal)
             strFromScreen = ""
+            if (strPostalCode != nil) {
+                self.searchTab.text = self.strPostalCode
+                 self.searchEventByCategory()
+            }
+            
         }else{
             self.View2.frame = CGRect(x: View2.frame.origin.x, y: floatYcoordinateView2, width: View2.frame.width, height: floatHeightView2)
             
@@ -774,15 +767,16 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         ViewChangeStatusBackground.isHidden = true
         ViewChangeStatusPoMain.isHidden = true
         
-        
-        
         volunteerCalender()
         self.searchTab.delegate = self
         View2.isHidden = true
         DiscoverLabel.isHidden = true
         BookLabel.isHidden = false
+        
+        if self.strPostalCode == nil {
+            self.searchTab.text = ""
         let serviceHandler = ServiceHandlers()
-        serviceHandler.searchEvents(search_keyword: "", seach_row_number: "0", search_page_size: "20")
+        serviceHandler.searchEvents(search_keyword: "", seach_row_number: "0", search_page_size: "30")
         { (responce, isSuccess) in
             if isSuccess {
                 let data = responce as! Array<Any>
@@ -792,8 +786,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 self.SearchList = self.FilterList
                 self.Table1.reloadData()
                 //print(self.SearchList)
-                    
             }
+        }
             self.StatsView1.isHidden = true
             self.ViewChangeStatusBackground.isHidden = true
             self.ViewChangeStatusPoMain.isHidden = true
@@ -1525,26 +1519,26 @@ let formatter = DateFormatter()
                 if let selectVal = selectedValue as? String {
                    // self.user_gender = String(selectVal.prefix(1))
                     senderButton.setTitle(selectVal, for: .normal)
-                    senderButton.setImage(nil, for: .normal)
+                   // senderButton.setImage(nil, for: .normal)
                     self.strSearchCategorySel = selectVal
                 } else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetCountryServiceStrings.keyCountryName] as? String {
                    // self.user_countryID = selectVal[GetCountryServiceStrings.keyCountryId] as! String
                     senderButton.setTitle(title, for: .normal)
-                    senderButton.setImage(nil, for: .normal)
+                   // senderButton.setImage(nil, for: .normal)
                 }  else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetStateServiceStrings.keyStateName] as? String {
                    // self.user_stateID = selectVal[GetStateServiceStrings.keyStateId] as! String
                     senderButton.setTitle(title, for: .normal)
-                    senderButton.setImage(nil, for: .normal)
+                   // senderButton.setImage(nil, for: .normal)
                 }else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetDocumentType.documentTypeName] as? String {
                    //self.documentName = selectVal[GetDocumentType.documentTypeName] as! String
                    
                    //self.documentID = selectVal[GetDocumentType.documentTypeID] as! String
                                senderButton.setTitle(title, for: .normal)
-                               senderButton.setImage(nil, for: .normal)
+                              // senderButton.setImage(nil, for: .normal)
                 }else if let selectVal = selectedValue as? [String:Any],
                    let title = selectVal[GetQuestionType.answer_detail] as? String {
                                        senderButton.setTitle(title, for: .normal)
-                                       senderButton.setImage(nil, for: .normal)
+                                //       senderButton.setImage(nil, for: .normal)
                 }
             }
         }
@@ -1555,7 +1549,7 @@ let formatter = DateFormatter()
         self.searchEventByCategory()
   }
     func searchEventByCategory(){
-        if searchTab.text!.count > 0{
+       
             
             var strCheckforCso = ""
             if check{
@@ -1636,21 +1630,26 @@ print(data)
             servicehandler.FilterEvents(params: data!) { (responce, isSuccess) in
                             if isSuccess{
                              let data = responce as! Array<Any>
-
+                                 self.FilterList?.removeAll()
                                self.FilterList = data as! [[String : Any]]
-                             
+                             self.SearchList?.removeAll()
                        self.SearchList = self.FilterList
+                                self.Table1.delegate = self
+                                self.Table1.dataSource = self
                              self.Table1.reloadData()
-                            }
+                            }else{
+                                self.SearchList?.removeAll()
+                                self.Table1.delegate = nil
+                                self.Table1.dataSource = nil
+                                self.Table1.reloadData()
+                                let alert = UIAlertController(title: nil, message: NSLocalizedString("No Data found!", comment: ""), preferredStyle: .alert)
+                                                           alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_alert)->Void in
+                                                       
+                                                           }))
+                                                           self.present(alert,animated: true)
+                }
             }
-        }else{
-            let alert = UIAlertController(title: nil, message: NSLocalizedString("Please provide Search keyword!", comment: ""), preferredStyle: .alert)
-                            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_alert)->Void in
-                        
-                            }))
-                            self.present(alert,animated: true)
-            
-        }
+        
     }
     
     @IBAction func BookingButtonPressed(_ sender: Any) {

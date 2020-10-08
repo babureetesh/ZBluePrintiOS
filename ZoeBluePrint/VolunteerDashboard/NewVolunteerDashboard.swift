@@ -320,6 +320,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
        
         let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
         vc.strFromScreen = "DASHBOARD"
+        vc.strPostalCode = nil
          self.tabBarController?.selectedIndex = 1
 //        let vc = (UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Volunteer Events") as? VolunteerEventsViewController)!
 //        vc.strFromScreen = "DASHBOARD"
@@ -381,6 +382,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         
         let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
                vc.strFromScreen = "DASHBOARD"
+        vc.strPostalCode = self.zipcode
                 self.tabBarController?.selectedIndex = 1
     }
     
@@ -426,7 +428,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
             }*/
         let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
         vc.strFromScreen = "DASHBOARD"
-         self.tabBarController?.selectedIndex = 1
+        self.tabBarController?.selectedIndex = 1
         
     }
     
