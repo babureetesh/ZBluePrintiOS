@@ -21,6 +21,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
            }
        }
 
+    @IBOutlet weak var btnSearchCategory: UIButton!
     var check = false
     var SelectData:Dictionary<String,Any>?
      var calendarEvents = [[String:Any]]()
@@ -127,6 +128,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     var map_status: String!
     var floatYcoordinateView2: CGFloat!
     var floatHeightView2: CGFloat!
+    var strSearchCategorySel: String!
     
     @IBOutlet weak var imgViewCover: UIImageView!
     
@@ -468,6 +470,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     let EventList : Array<Any>! = nil
     override func viewDidLoad() {
         super.viewDidLoad()
+        btnSearchCategory.setDropDownImagWithInset()
+        self.strSearchCategorySel = "Postal Code"
         Table1.estimatedRowHeight = 109.0
         Table1.rowHeight = UITableView.automaticDimension
         Table1.tableFooterView = UIView(frame: .zero)
@@ -491,17 +495,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
 //               self.ViewChangeStatusBackground.addGestureRecognizer(mytapGestureRecognizer2)
 //               self.ViewChangeStatusBackground.isUseInteractionEnabled = true
         self.searchTab.delegate = self
-        
-     
-
         timeView.isHidden = true
-        
-       
-        
         floatYcoordinateView2 = CGFloat(View2.frame.origin.y)
         floatHeightView2 = CGFloat(View2.frame.size.height)
-       
-
       }
     
     
@@ -514,7 +510,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                          let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                         let user_id = userIDData["user_id"] as! String
-              
                     let data = ["user_id": user_id,
                                   "seach_row_number" : "0",
                                   "search_page_size" : "30",
@@ -525,7 +520,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                                   "search_event_type" :"",
                                   "search_my_cso" :"0",
                                   "search_keyword":""]
-                                   
                       print(data)
                let servicehandler = ServiceHandlers()
                servicehandler.FilterEvents(params: data) { (responce, isSuccess) in
@@ -546,7 +540,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                       let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                      let user_id = userIDData["user_id"] as! String
-           
+
                  let data = ["user_id": user_id,
                                "seach_row_number" : "0",
                                "search_page_size" : "30",
@@ -1125,31 +1119,16 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                       changeacceptImage.isHidden = true
                       completedImage.isHidden = false
                 completedImage.image = UIImage(named: "completed-volunteer.png")
-                      
                 changestatusLabel.isHidden = false
-                
-                
-                
-
-                
-                              
                 eventStatus_ChatView.isHidden = true
                 Label1.isHidden = false
-                
-                
                 //  statusview2.frame = CGRect(x: 19, y: 189, width: 338, height: 236)
-                      
-                      
-
                       break
                   
                   case "30":
                     
                     currentStatusImage.image = UIImage(named: "declined-cso.png")
                     currentstatusName.text = "Decline"
-                    
-                    
-                    
                       self.withdraw.isHidden = false
                       self.chat.isHidden = false
                       self.markCompleted.isHidden = true
@@ -1254,11 +1233,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                    // statusview2.frame = CGRect (x: 18, y: 123, width: 338, height: 333)
                       
                     chat.isHidden = false
-                    
-                    
-                  
-
-
+                
                       break
                       
                   case "51":
@@ -1509,8 +1484,6 @@ let formatter = DateFormatter()
                 for name in names {
                     //print(name["shift_date"] as Any)
                     self.datesWithEvent.append(name["shift_date"] as! String)
-                    
-                    
                 }
                 //print(self.datesWithEvent)
                 
@@ -1539,7 +1512,147 @@ let formatter = DateFormatter()
         self.SearchList! = searchText.isEmpty ? FilterList! : FilterList!.filter{(($0 as AnyObject)["event_heading"] as! String).localizedCaseInsensitiveContains(searchText)}
         Table1.reloadData()
         }
-  
+    @IBAction func searchTypeSelection(_ sender: UIButton) {
+        
+       let contents = ["Event Name","Event City","Postal Code","State","Organization"]
+                     showPopoverForView(view: sender, contents: contents)
+        
+    }
+    fileprivate func showPopoverForView(view:Any, contents:Any) {
+            let controller = DropDownItemsTable(contents)
+            let senderButton = view as! UIButton
+            controller.showPopoverInDestinationVC(destination: self, sourceView: view as! UIView) { (selectedValue) in
+                if let selectVal = selectedValue as? String {
+                   // self.user_gender = String(selectVal.prefix(1))
+                    senderButton.setTitle(selectVal, for: .normal)
+                    senderButton.setImage(nil, for: .normal)
+                    self.strSearchCategorySel = selectVal
+                } else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetCountryServiceStrings.keyCountryName] as? String {
+                   // self.user_countryID = selectVal[GetCountryServiceStrings.keyCountryId] as! String
+                    senderButton.setTitle(title, for: .normal)
+                    senderButton.setImage(nil, for: .normal)
+                }  else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetStateServiceStrings.keyStateName] as? String {
+                   // self.user_stateID = selectVal[GetStateServiceStrings.keyStateId] as! String
+                    senderButton.setTitle(title, for: .normal)
+                    senderButton.setImage(nil, for: .normal)
+                }else if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetDocumentType.documentTypeName] as? String {
+                   //self.documentName = selectVal[GetDocumentType.documentTypeName] as! String
+                   
+                   //self.documentID = selectVal[GetDocumentType.documentTypeID] as! String
+                               senderButton.setTitle(title, for: .normal)
+                               senderButton.setImage(nil, for: .normal)
+                }else if let selectVal = selectedValue as? [String:Any],
+                   let title = selectVal[GetQuestionType.answer_detail] as? String {
+                                       senderButton.setTitle(title, for: .normal)
+                                       senderButton.setImage(nil, for: .normal)
+                }
+            }
+        }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    print(searchBar.text as Any)
+      searchBar.resignFirstResponder()
+        self.searchEventByCategory()
+  }
+    func searchEventByCategory(){
+        if searchTab.text!.count > 0{
+            
+            var strCheckforCso = ""
+            if check{
+                strCheckforCso = "1"
+            }else{
+                strCheckforCso = "0"
+            }
+            let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                                          let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                                         let user_id = userIDData["user_id"] as! String
+            var data:Dictionary<String,String>?
+            if let instruction = self.strSearchCategorySel {
+                print(instruction)
+                switch instruction {
+                case "Event Name" :
+                    data = ["user_id": user_id,
+                                                           "seach_row_number" : "0",
+                                                           "search_page_size" : "30",
+                                                           "search_city": "",
+                                                           "search_state":"",
+                                                           "search_org":"",
+                                                           "search_postcode" :"",
+                                                           "search_event_type" :"",
+                                                           "search_my_cso" :strCheckforCso,
+                                                           "search_keyword":searchTab.text!]
+                case "Event City" :
+                    data = ["user_id": user_id,
+                    "seach_row_number" : "0",
+                    "search_page_size" : "30",
+                    "search_city": searchTab.text!,
+                    "search_state":"",
+                    "search_org":"",
+                    "search_postcode" :"",
+                    "search_event_type" :"",
+                    "search_my_cso" :strCheckforCso,
+                    "search_keyword":""]
+                case "Postal Code" :
+                    data = ["user_id": user_id,
+                    "seach_row_number" : "0",
+                    "search_page_size" : "30",
+                    "search_city": "",
+                    "search_state":"",
+                    "search_org":"",
+                    "search_postcode" :searchTab.text!,
+                    "search_event_type" :"",
+                    "search_my_cso" :strCheckforCso,
+                    "search_keyword":""]
+                case "State" :
+                    data = ["user_id": user_id,
+                    "seach_row_number" : "0",
+                    "search_page_size" : "30",
+                    "search_city": "",
+                    "search_state":searchTab.text!,
+                    "search_org":"",
+                    "search_postcode" :"",
+                    "search_event_type" :"",
+                    "search_my_cso" :strCheckforCso,
+                    "search_keyword":""]
+                case "Organization" :
+                    data = ["user_id": user_id,
+                    "seach_row_number" : "0",
+                    "search_page_size" : "30",
+                    "search_city": "",
+                    "search_state":"",
+                    "search_org":searchTab.text!,
+                    "search_postcode" :"",
+                    "search_event_type" :"",
+                    "search_my_cso" :strCheckforCso,
+                    "search_keyword":""]
+                default:
+                    print("WASNT RECOGNISED CHARACTER")
+                }
+            }else{
+                return
+            }
+print(data)
+                     let servicehandler = ServiceHandlers()
+            servicehandler.FilterEvents(params: data!) { (responce, isSuccess) in
+                            if isSuccess{
+                             let data = responce as! Array<Any>
+
+                               self.FilterList = data as! [[String : Any]]
+                             
+                       self.SearchList = self.FilterList
+                             self.Table1.reloadData()
+                            }
+            }
+        }else{
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Please provide Search keyword!", comment: ""), preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_alert)->Void in
+                        
+                            }))
+                            self.present(alert,animated: true)
+            
+        }
+    }
+    
     @IBAction func BookingButtonPressed(_ sender: Any) {
         self.view.endEditing(true)
        // let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")

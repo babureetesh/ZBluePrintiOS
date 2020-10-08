@@ -385,7 +385,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     }
     
     func getNearByeventData(){
-        
+       /*
         let serviceHandler = ServiceHandlers()
         serviceHandler.DiscoveringEvents(search_row_number: "0", search_keyword: "", search_page_size: "10", search_city: "", search_event_type: "", search_org: "", search_postcode: self.zipcode as? String ?? "", search_state: "")
         { (responce, isSuccess) in
@@ -423,7 +423,11 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                   alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }
-            }
+            }*/
+        let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
+        vc.strFromScreen = "DASHBOARD"
+         self.tabBarController?.selectedIndex = 1
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
