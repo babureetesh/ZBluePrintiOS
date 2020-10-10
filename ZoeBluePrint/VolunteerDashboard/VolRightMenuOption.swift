@@ -38,28 +38,14 @@ class VolRightMenuOption: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//        if defaults == "Dark Mode"{
-//            
-//            DarkMode()
-//            
-//        }else if defaults == "Light Mode"{
-//            
-//            LightMode()
-//            
-//            
-//        }
-        
        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                let params = userIDData["user_id"] as! String
-        print(params)
-        
-               var timeZone =  userIDData["user_timezone"] as! String ?? ""
-        print(timeZone)
-               self.btlTimezone.text = timeZone
-       
-               
+        if let timeZone = userIDData["user_timezone"] {
+            self.btlTimezone.text = timeZone as? String
+        }else{
+            self.btlTimezone.text = ""
+        }
                let serivehandler = ServiceHandlers()
                serivehandler.editProfile(user_id: params){(responce,isSuccess) in
                    if isSuccess{

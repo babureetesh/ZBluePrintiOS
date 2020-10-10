@@ -164,34 +164,39 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                 ActivityLoaderView.stopAnimating()
                 return
             }
-            print(channels![0].name)
+         //   print(channels![0].name)
             self.channelList.removeAll()
             for channel in channels! {
                 self.channelList.append(channel)
-               print(channel.joinedMemberCount)
+              // print(channel.joinedMemberCount)
                 let channelMember = channel.members!
-                print(channelMember[0])
+                //print(channelMember[0])
                 
-                print(channel.memberCount)
-                print(channel.channelUrl)
-                print(channel.coverUrl)
-                print(channel.name)
-                print(channel.lastMessage)
+                //print(channel.memberCount)
+                //print(channel.channelUrl)
+                //print(channel.coverUrl)
+                //print(channel.name)
+                //print(channel.lastMessage)
                 let arrMembers = channel.members //as! SBDMember)
                 let member = (arrMembers![0] as! SBDMember)
                 let url = member.profileUrl
-                print(url as Any)
-                 print("********************")
+                //print(url as Any)
+                 //print("********************")
                 
             }
-                        if self.channelList.count>0{
+                        if self.channelList.count > 0{
                             self.tblChatList.delegate = nil
                             self.tblChatList.dataSource = nil
                             self.tblChatList.delegate = self
                             self.tblChatList.dataSource = self
                             self.tblChatList.reloadData()
                             ActivityLoaderView.stopAnimating()
-                        }
+                        }else{
+                            ActivityLoaderView.stopAnimating()
+                            let alert = UIAlertController(title: nil, message: NSLocalizedString("No Data Found", comment: ""), preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                            self.present(alert, animated: true)
+            }
          
         })
         

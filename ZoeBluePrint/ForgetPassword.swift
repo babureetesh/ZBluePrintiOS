@@ -27,36 +27,7 @@ class ForgetPassword: UIViewController,UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-        let usertype = userIDData["user_type"] as! String
-        if (usertype == "CSO"){
-            self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)}else{
-          var strImageNameCover = "cover_cloud.jpg"
-              
-        let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
-                  let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-                  //print(volData)
-                  if (volData["user_avg_rank"] != nil){
-                      if let userAvgRank = volData["user_avg_rank"] as? String {
-                          
-                         let floatUserAverageRank = Float(userAvgRank)!
-                          if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
-                              strImageNameCover = "cover_riseandshine.jpg"
-                          }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
-                              strImageNameCover = "cover_cake.jpg"
-                          }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
-                              strImageNameCover = "cover_cool.jpg"
-                          }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
-                              strImageNameCover = "cover_truck.jpg"
-                          }else if (floatUserAverageRank > 80 ){
-                              strImageNameCover = "cover_cloud.jpg"
-                          }
-                         
-                      }
-                  }
-              self.imgViewCsoCover.image = UIImage(named:strImageNameCover)
-          }
+    
         
     }
     
