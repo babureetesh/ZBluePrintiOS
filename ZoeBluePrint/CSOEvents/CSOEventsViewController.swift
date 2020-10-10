@@ -50,7 +50,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         
         lblNoEventsFound.isHidden = true
         viewNoEventsFound.isHidden = true
-        self.profile_pic()
+        
         myEventLabl.isHidden = false
         newEventLabl.isHidden = true
         self.tabBarController?.delegate = self
@@ -64,7 +64,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         self.getCountryList()
     }
     func profile_pic()  {
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+      /*  let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let params = userIDData["user_id"] as! String
         let serivehandler = ServiceHandlers()
@@ -87,10 +87,27 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
                     }
                 }
             }
+        }*/
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+        {
+           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+            if let image    = UIImage(contentsOfFile: imageURL.path){
+                                    self.profilePic.image = image
+                                      self.profilePic.layer.borderWidth = 1
+                                      self.profilePic.layer.masksToBounds = false
+                                      self.profilePic.layer.borderColor = UIColor.black.cgColor
+                                      self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+                                      self.profilePic.clipsToBounds = true
+            }
+           // Do whatever you want with the image
         }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.profile_pic()
          self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
       /*  let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
         if defaults == "Dark Mode"{

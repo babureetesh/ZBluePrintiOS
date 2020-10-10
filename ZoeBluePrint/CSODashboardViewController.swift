@@ -90,8 +90,6 @@ class CSODashboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        self.profile_pic()
         self.DataFromServer()
         
         self.calendar.reloadData()
@@ -140,25 +138,69 @@ class CSODashboardViewController: BaseViewController {
                 let data = responce as! Dictionary<String,Any>
                 let string_url = data["user_profile_pic"] as! String
                 if let url = URL(string: string_url){
+                    
                 do {
-                  let imageData = try Data(contentsOf: url as URL)
-                    self.profilePic.image = UIImage(data: imageData)
-                    self.profilePic.layer.borderWidth = 1
-                    self.profilePic.layer.masksToBounds = false
-                    self.profilePic.layer.borderColor = UIColor.black.cgColor
-                    self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
-                    self.profilePic.clipsToBounds = true
-                } catch {
-                    //print("Unable to load data: \(error)")
+                    DispatchQueue.global().async {
+                        let imageData = try? Data(contentsOf: url) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        self.saveImageInDocsDir(dataImage: imageData!)
+                        DispatchQueue.main.async {
+                            self.profilePic.image = UIImage(data: imageData!)
+                                               self.profilePic.layer.borderWidth = 1
+                                               self.profilePic.layer.masksToBounds = false
+                                               self.profilePic.layer.borderColor = UIColor.black.cgColor
+                                               self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+                                               self.profilePic.clipsToBounds = true
+                        }
+                    }
                 }
                 }
-                
             }
         }
+//        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+//        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+//        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+//        if let dirPath          = paths.first
+//        {
+//           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+//            if let image    = UIImage(contentsOfFile: imageURL.path){
+//                                    self.profilePic.image = image
+//                                      self.profilePic.layer.borderWidth = 1
+//                                      self.profilePic.layer.masksToBounds = false
+//                                      self.profilePic.layer.borderColor = UIColor.black.cgColor
+//                                      self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+//                                      self.profilePic.clipsToBounds = true
+//            }
+//           // Do whatever you want with the image
+//        }
+    }
+    
+    func saveImageInDocsDir(dataImage: Data ) {
+         
+                       if (dataImage != nil) {
+                         // get the documents directory url
+                         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                         // choose a name for your image
+                         let fileName = "profilepic.jpg"
+                         // create the destination file url to save your image
+                         let fileURL = documentsDirectory.appendingPathComponent(fileName)
+                         // get your UIImage jpeg data representation and check if the destination file url already exists
+                             do {
+                                 // writes the image data to disk
+                                 try dataImage.write(to: fileURL, options: Data.WritingOptions.atomic)
+                                 print("file saved")
+                                 print(fileURL)
+                             } catch {
+                                 print("error saving file:", error)
+                             }
+                         
+                       }
+                
+         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
       self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
+        self.profile_pic()
         self.DataFromServer()
     }
     func DataFromServer() {

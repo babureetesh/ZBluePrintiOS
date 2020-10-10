@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VolRightMenuOption: UIViewController {
+class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     
     
@@ -28,11 +28,15 @@ class VolRightMenuOption: UIViewController {
     @IBOutlet weak var btnChangePassword: UIButton!
     @IBOutlet weak var imageLogout: UIImageView!
     @IBOutlet weak var btnLogout: UIButton!
-    
+    var dataProfilePhoto:Data?
+    var ImagePro:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let imageTap = UITapGestureRecognizer(target: self, action: #selector(self.handleImageTap(_:)))
+        self.profilePicture.isUserInteractionEnabled = true
+               self.profilePicture.addGestureRecognizer(imageTap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,48 +55,130 @@ class VolRightMenuOption: UIViewController {
                    if isSuccess{
                        let data = responce as! Dictionary<String,Any>
                        
-                       var firstname = data["user_f_name"] as! String
-                       var lastname = data["user_l_name"] as! String
-                       var names = "\(firstname) \(lastname)"
+                    let firstname = data["user_f_name"] as! String
+                    let lastname = data["user_l_name"] as! String
+                    let names = "\(firstname) \(lastname)"
                        //print(names)
-                    
                     self.lblnames.text = names.uppercased()
                     print(names.uppercased())
-                       
-                       
-                       let string_url = data["user_profile_pic"] as! String
-                       
-                       if let url = URL(string: string_url){
-                                      do {
-                                        //  let profile_data = try Data(contentsOf: profile_url as URL)
-                                          let imageData = try Data(contentsOf: url as URL)
-                                          //self.coverPicture.image = UIImage(data: profile_data)
-                                          self.profilePicture.image = UIImage(data: imageData)
-                                          self.profilePicture.layer.borderWidth = 1
-                                          self.profilePicture.layer.masksToBounds = false
-                                          self.profilePicture.layer.borderColor = UIColor.black.cgColor
-                                          self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
-                                          self.profilePicture.clipsToBounds = true
-                                      } catch {
-                                          //print("Unable to load data: \(error)")
-                                      }
-                                      }
-                                      
-//                                       let profile_pic_string = data["user_cover_pic"] as! String
-//                                      if let profile_url = URL(string: profile_pic_string){
-//                                          do {
-//                                              let profile_data = try Data(contentsOf: profile_url as URL)
-//                                             self.coverPicture.image = UIImage(data: profile_data)
-//                                              
-//                                          } catch {
-//                                              //print("Unable to load data: \(error)")
-//                                          }
-//                                      }
                    }
                }
-
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+        {
+           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+            if let image    = UIImage(contentsOfFile: imageURL.path){
+                                    self.profilePicture.image = image
+                                      self.profilePicture.layer.borderWidth = 1
+                                      self.profilePicture.layer.masksToBounds = false
+                                      self.profilePicture.layer.borderColor = UIColor.black.cgColor
+                                      self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
+                                      self.profilePicture.clipsToBounds = true
+            }
+           // Do whatever you want with the image
+        }
      
      }
+    @objc func handleImageTap(_ sender: UITapGestureRecognizer? = nil) {
+          let alert = UIAlertController(title: NSLocalizedString("UPLOAD FILES FROM", comment: ""), message: "", preferredStyle: .alert)
+                 let gallery = UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
+                     /** What we write here???????? **/
+                      let image = UIImagePickerController()
+                            image.delegate = self
+                            image.sourceType = UIImagePickerController.SourceType.photoLibrary
+                            image.allowsEditing = true
+                            self.present(image, animated: true)
+                            {
+                                
+                            }
+                     // call method whatever u need
+                 })
+                 let camera = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
+                            /** What we write here???????? **/
+                            let image = UIImagePickerController()
+                             image.delegate = self
+                            image.sourceType = UIImagePickerController.SourceType.camera
+                            image.allowsEditing = true
+                            self.present(image, animated: true)
+                            {
+                              //self.mainView.isHidden = false
+                              
+                              //self.backgroundView.isHidden = false
+                            }
+                            // call method whatever u need
+                        })
+        
+                 let noButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .default, handler: nil)
+                 alert.addAction(gallery)
+                 alert.addAction(camera)
+                 alert.addAction(noButton)
+                 present(alert, animated: true)
+          
+      }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.profilePicture?.contentMode = .scaleAspectFill
+            self.profilePicture?.backgroundColor = UIColor.clear
+            self.profilePicture?.image = pickedImage
+            self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
+            self.profilePicture.clipsToBounds = true
+            self.dataProfilePhoto = (pickedImage as? UIImage)!.jpegData(compressionQuality: 0.5)!
+            
+        }
+        guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+            else {
+                self.ImagePro = "image2"
+                return
+        }
+        //                let url = NSURL(string:self.ImagePro)
+            self.ImagePro = fileURL.lastPathComponent
+          self.dismiss(animated: true, completion: nil)
+        ActivityLoaderView.startAnimating()
+        self.uploadProfileImage()
+      }
+
+  
+    
+      func imagePickerControllerDidCancel(_ picker: UIImagePickerController)    {
+          dismiss(animated: true, completion: nil)
+      }
+      
+     func uploadProfileImage() {
+         
+         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+         
+         let params = userIDData["user_id"] as! String
+         let api_key = "1234"
+         let action = "user_profile_pic_upload"
+         
+     let data2:[String:Any] = ["user_id":params,
+                                   "api_key":api_key,
+                                   "action":action,
+                                   "img_name":ImagePro]
+         print(data2)
+         
+         let serviceHanlder = ServiceHandlers()
+     serviceHanlder.profilePicture(data2: data2, imgData: self.dataProfilePhoto!) { (responce, isSuccess) in
+             if isSuccess {
+                 let ImageResponse = responce as? [String: Any]
+                 print(ImageResponse as Any)
+               // let resdata = ImageResponse? ["res_data"] as! [String: Any]
+               // let strProfilePicUrl = resdata["user_profile_pic"] as! String
+                self.saveImageInDocsDir()
+         
+             }else{
+               ActivityLoaderView.stopAnimating()
+                 let alert = UIAlertController(title: "Error Occured!", message: "Please try again!", preferredStyle: UIAlertController.Style.alert)
+                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+                 self.present(alert, animated: true, completion: nil)
+         }
+         }
+     }
+    
   @IBAction func editProfile(_ sender: Any) {
       
     let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
@@ -193,6 +279,25 @@ class VolRightMenuOption: UIViewController {
 //
     }
 
-   
+    func saveImageInDocsDir() {
+        if !(self.dataProfilePhoto == nil) {
+                        // get the documents directory url
+                        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                        // choose a name for your image
+                        let fileName = "profilepic.jpg"
+                        // create the destination file url to save your image
+                        let fileURL = documentsDirectory.appendingPathComponent(fileName)
+                        // get your UIImage jpeg data representation and check if the destination file url already exists
+                            do {
+                                // writes the image data to disk
+                                try self.dataProfilePhoto!.write(to: fileURL, options: Data.WritingOptions.atomic)
+                                print("file saved")
+                                print(fileURL)
+                            } catch {
+                                print("error saving file:", error)
+                            }
+                      }
+                ActivityLoaderView.stopAnimating()
+            }
     
 }

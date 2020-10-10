@@ -41,7 +41,7 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
             self.callforConnecteduser()
         }
     
-    func setProfilePic(imageData:Data)  {
+    func setProfilePic()  {
        
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
@@ -50,26 +50,60 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
             //time to handle Header acording to Cso
             imgCoverPic.isHidden = true
             volHeaderView.isHidden = true
-            if let image = UIImage(data: imageData) {
-                self.csoProfilePic.image = image
-                self.csoProfilePic.layer.borderWidth = 1
-                self.csoProfilePic.layer.masksToBounds = false
-                self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
-                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-                self.csoProfilePic.clipsToBounds = true
+//            if let image = UIImage(data: imageData) {
+//                self.csoProfilePic.image = image
+//                self.csoProfilePic.layer.borderWidth = 1
+//                self.csoProfilePic.layer.masksToBounds = false
+//                self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+//                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+//                self.csoProfilePic.clipsToBounds = true
+//            }
+            
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+               let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+                if let image    = UIImage(contentsOfFile: imageURL.path){
+                                        self.csoProfilePic.image = image
+                                          self.csoProfilePic.layer.borderWidth = 1
+                                          self.csoProfilePic.layer.masksToBounds = false
+                                          self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+                                          self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                                          self.csoProfilePic.clipsToBounds = true
+                }
+               // Do whatever you want with the image
             }
           
         } else {
             //time to handle Header acording to VOL
             self.getCoverImageForRank()
             csoHeaderView.isHidden = true
-            if let image = UIImage(data: imageData) {
-                self.volProfilePic.image = image
-                self.volProfilePic.layer.borderWidth = 1
-                self.volProfilePic.layer.masksToBounds = false
-                self.volProfilePic.layer.borderColor = UIColor.black.cgColor
-                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-                self.volProfilePic.clipsToBounds = true
+//            if let image = UIImage(data: imageData) {
+//                self.volProfilePic.image = image
+//                self.volProfilePic.layer.borderWidth = 1
+//                self.volProfilePic.layer.masksToBounds = false
+//                self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+//                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+//                self.volProfilePic.clipsToBounds = true
+//            }
+            
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+               let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+                if let image    = UIImage(contentsOfFile: imageURL.path){
+                                        self.volProfilePic.image = image
+                                          self.volProfilePic.layer.borderWidth = 1
+                                          self.volProfilePic.layer.masksToBounds = false
+                                          self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                                          self.volProfilePic.layer.cornerRadius = self.volProfilePic.frame.height/2
+                                          self.volProfilePic.clipsToBounds = true
+                }
+               // Do whatever you want with the image
             }
          
         }
@@ -95,22 +129,8 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
                }
         
         self.getCoverImageForRank()
-               
-                            let userID = userIDData["user_id"] as! String
-                                          //print(userID)
-                            
-                            let string_url = userIDData["user_profile_pic"] as! String
-               
-        
-              // }
-               if let url = URL(string: string_url){
-                            do {
-                              let imageData = try Data(contentsOf: url as URL)
-                                setProfilePic(imageData: imageData)
-                            } catch {
-                                //print("Unable to load data: \(error)")
-                            }
-                            }
+                setProfilePic()
+                           
     }
     func getCoverImageForRank(){
           

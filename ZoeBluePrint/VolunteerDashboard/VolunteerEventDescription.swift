@@ -264,57 +264,23 @@ view.addSubview(scroller)
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.getCoverImageForRank()
-//        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//        if defaults == "Dark Mode"{
-//
-//            DarkMode()
-//        }else if defaults == "Light Mode"{
-//            LightMode()
-//        }
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-            let params = userIDData["user_id"] as! String
-            let serivehandler = ServiceHandlers()
-       
-            serivehandler.editProfile(user_id: params){(responce,isSuccess) in
-                if isSuccess{
-                    let data = responce as! Dictionary<String,Any>
-                    
-//                    if defaults == "Dark Mode"{
-//
-//                        var headingName = userIDData["user_f_name"] as! String
-//                    headingName = "\(headingName)'S Booking"
-//                    self.lblHeadingName.textColor = .white
-//                    self.lblHeadingName.text = headingName.uppercased()
-//
-//                    }else  if defaults == "Light Mode"{
-                        
-                        var headingName = userIDData["user_f_name"] as! String
-                        headingName = "\(headingName)'S Booking"
-//                        self.lblHeadingName.textColor = .black
-//                        self.lblHeadingName.text = headingName.uppercased()
-                        
-                        
-                 //   }
-                    
-                   let string_url = data["user_profile_pic"] as! String
-                    if let url = URL(string: string_url){
-                    do {
-                      let imageData = try Data(contentsOf: url as URL)
-                        self.profilePic.image = UIImage(data: imageData)
-                        self.profilePic.layer.borderWidth = 1
-                        self.profilePic.layer.masksToBounds = false
-                        self.profilePic.layer.borderColor = UIColor.black.cgColor
-                        self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
-                        self.profilePic.clipsToBounds = true
-                    } catch {
-                        //print("Unable to load data: \(error)")
-                    }
-                    }
+        
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+        {
+           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+            if let image    = UIImage(contentsOfFile: imageURL.path){
+                                    self.profilePic.image = image
+                                      self.profilePic.layer.borderWidth = 1
+                                      self.profilePic.layer.masksToBounds = false
+                                      self.profilePic.layer.borderColor = UIColor.black.cgColor
+                                      self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+                                      self.profilePic.clipsToBounds = true
             }
+           // Do whatever you want with the image
         }
-        
-        
     }
     func getCoverImageForRank(){
           

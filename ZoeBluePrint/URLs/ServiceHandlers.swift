@@ -2658,12 +2658,8 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
     
     func profilePicture(data2:[String:Any],imgData:Data ,onCompletion:@escaping CompletionHandler){
         
-        ActivityLoaderView.startAnimating()
-        
         let ImageUpload = baseURL + "file-upload.php"
-        
-        
-        
+    
         Alamofire.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imgData, withName: "user_profile_pic",fileName: data2["img_name"] as! String, mimeType: "image/jpeg")
             for (key, value) in data2 {
@@ -2684,13 +2680,13 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
                     
                     if let JSON = response.result.value {
                         //print("JSON: \(JSON)"
-                        ActivityLoaderView.stopAnimating()
+                       
                         onCompletion(JSON,true)
                         
                         
                     }
                 }
-                ActivityLoaderView.stopAnimating()
+                
             case .failure(let encodingError):
                 print(encodingError)
                 

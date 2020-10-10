@@ -62,7 +62,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             
             
         }
-    func setProfilePic(imageData:Data) {
+    func setProfilePic() {
         
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
@@ -71,26 +71,58 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             //time to handle Header acording to Cso
             imgCoverPic.isHidden = true
             volHeaderView.isHidden = true
-            if let image = UIImage(data: imageData) {
-                self.csoProfilePic.image = image
-                self.csoProfilePic.layer.borderWidth = 1
-                self.csoProfilePic.layer.masksToBounds = false
-               // self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
-                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-                self.csoProfilePic.clipsToBounds = true
+//            if let image = UIImage(data: imageData) {
+//                self.csoProfilePic.image = image
+//                self.csoProfilePic.layer.borderWidth = 1
+//                self.csoProfilePic.layer.masksToBounds = false
+//               // self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+//                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+//                self.csoProfilePic.clipsToBounds = true
+//            }
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+               let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+                if let image    = UIImage(contentsOfFile: imageURL.path){
+                                        self.csoProfilePic.image = image
+                                          self.csoProfilePic.layer.borderWidth = 1
+                                          self.csoProfilePic.layer.masksToBounds = false
+                                          self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
+                                          self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+                                          self.csoProfilePic.clipsToBounds = true
+                }
+               // Do whatever you want with the image
             }
             
         } else {
             //time to handle Header acording to VOL
             self.getCoverImageForRank()
             csoHeaderView.isHidden = true
-            if let image = UIImage(data: imageData) {
-                self.volProfilePic.image = image
-                self.volProfilePic.layer.borderWidth = 1
-                self.volProfilePic.layer.masksToBounds = false
-                //self.volProfilePic.layer.borderColor = UIColor.black.cgColor
-                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-                self.volProfilePic.clipsToBounds = true
+//            if let image = UIImage(data: imageData) {
+//                self.volProfilePic.image = image
+//                self.volProfilePic.layer.borderWidth = 1
+//                self.volProfilePic.layer.masksToBounds = false
+//                //self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+//                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
+//                self.volProfilePic.clipsToBounds = true
+//            }
+            let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+            let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+            let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+            if let dirPath          = paths.first
+            {
+               let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+                if let image    = UIImage(contentsOfFile: imageURL.path){
+                                        self.volProfilePic.image = image
+                                          self.volProfilePic.layer.borderWidth = 1
+                                          self.volProfilePic.layer.masksToBounds = false
+                                          self.volProfilePic.layer.borderColor = UIColor.black.cgColor
+                                          self.volProfilePic.layer.cornerRadius = self.volProfilePic.frame.height/2
+                                          self.volProfilePic.clipsToBounds = true
+                }
+               // Do whatever you want with the image
             }
             
         }
@@ -108,26 +140,20 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
         if (usertype == "CSO"){
             self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         }
+                    setProfilePic()
         
-            string_url = userIDData["user_profile_pic"] as! String
-            
-         let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-                let decodedUserdata  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                let userIDdata = NSKeyedUnarchiver.unarchiveObject(with: decodedUserdata) as!  Dictionary<String, Any>
-                let userID = userIDdata["user_id"] as! String
-                              //print(userID)
-                
-                let string_url = userIDdata["user_profile_pic"] as! String
-                if let url = URL(string: string_url){
-                do {
-                  let imageData = try Data(contentsOf: url as URL)
-                    setProfilePic(imageData: imageData)
-  
-                } catch {
-                    //print("Unable to load data: \(error)")
-                }
-                }
        
+              let params = userIDData["user_id"] as! String
+              let serivehandler = ServiceHandlers()
+              serivehandler.editProfile(user_id: params){(responce,isSuccess) in
+                  if isSuccess{
+                      let data = responce as! Dictionary<String,Any>
+                      // //print(data)
+                    self.string_url = data["user_profile_pic"] as! String
+                    
+                  }
+              }
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(true)

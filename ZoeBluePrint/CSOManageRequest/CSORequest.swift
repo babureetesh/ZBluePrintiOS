@@ -293,7 +293,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         
     }
    func profile_pic()  {
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+       /* let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let params = userIDData["user_id"] as! String
         let serivehandler = ServiceHandlers()
@@ -316,7 +316,23 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 }
 
             }
+        }*/
+    let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+    let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+    let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+    if let dirPath          = paths.first
+    {
+       let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+        if let image    = UIImage(contentsOfFile: imageURL.path){
+                                self.profilePicture.image = image
+                                  self.profilePicture.layer.borderWidth = 1
+                                  self.profilePicture.layer.masksToBounds = false
+                                  self.profilePicture.layer.borderColor = UIColor.black.cgColor
+                                  self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
+                                  self.profilePicture.clipsToBounds = true
         }
+       // Do whatever you want with the image
+    }
     }
      @objc func handleTap(){
         self.statusBackgroundView.isHidden = true

@@ -38,7 +38,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         self.flag1 = true
     }
     func profile_pic()  {
-           let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+         /*  let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
            let params = userIDData["user_id"] as! String
            let serivehandler = ServiceHandlers()
@@ -60,7 +60,27 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
                    }
                    }
            }
-       }
+       }*/
+        
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+        if let dirPath          = paths.first
+        {
+           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+            if let image    = UIImage(contentsOfFile: imageURL.path){
+                                    self.profilePic.image = image
+                                      self.profilePic.layer.borderWidth = 1
+                                      self.profilePic.layer.masksToBounds = false
+                                      self.profilePic.layer.borderColor = UIColor.black.cgColor
+                                      self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+                                      self.profilePic.clipsToBounds = true
+            }
+           // Do whatever you want with the image
+        }
+        
+        
+        
     }
     @IBAction func btnSubmit(_ sender: Any) {
         
@@ -156,11 +176,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
              }else{
                  //print("error")
              }
-//    if (fileType == "jpg"){
-//        fileImage = ""
-//    }else if(fileType == "png"){
-//        fileImage = ""
-//    }
+
              self.dismiss(animated: true, completion: nil)
          }
          
@@ -224,7 +240,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         NoDataView1.isHidden = true
         NoDataFound2.isHidden = true
                    
-        self.profile_pic()
+        
         self.EventTypeButton.setTitle(NSLocalizedString("Document Type", comment: ""), for: .normal)
         self.lockerlistfunction()
         documentName.delegate = self
@@ -233,6 +249,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
 }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.profile_pic()
       self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
         self.lockerlistfunction()
     }

@@ -59,46 +59,26 @@ class VolunteerShifts: UIViewController,UITableViewDataSource,UITableViewDelegat
     }
 override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//    let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//    if defaults == "Dark Mode"{
-//
-//        DarkMode()
-//    }else if defaults == "Light Mode"{
-//        LightMode()
-//    }
+
     self.getCoverImageForRank()
-                   let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-             let userID = userIDData["user_id"] as! String
     
-//    if defaults == "Dark Mode"{
-//
-//        var headingName = userIDData["user_f_name"] as! String
-//        headingName = "\(headingName)'S DASHBOARD"
-//        self.lblHeadingName.textColor = .white
-//        lblHeadingName.text = headingName.uppercased()
-//
-//    }else if defaults == "Light Mode"{
-        
-        var headingName = userIDData["user_f_name"] as! String
-         headingName = "\(headingName)'S BOOKING"
-//         self.lblHeadingName.textColor = .black
-//         lblHeadingName.text = headingName.uppercased()
-   // }
-     let string_url = userIDData["user_profile_pic"] as! String
-         if let url = URL(string: string_url){
-                 do {
-                 let imageData = try Data(contentsOf: url as URL)
-                 self.profilepic.image = UIImage(data: imageData)
-                 self.profilepic.layer.borderWidth = 1
-                 self.profilepic.layer.masksToBounds = false
-             self.profilepic.layer.borderColor = UIColor.black.cgColor
-                 self.profilepic.layer.cornerRadius = self.profilepic.frame.height/2
-                 self.profilepic.clipsToBounds = true
-             } catch {
-                       //print("Unable to load data: \(error)")
-                     }
-                 }
+    let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+    let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+    let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+    if let dirPath          = paths.first
+    {
+       let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+        if let image    = UIImage(contentsOfFile: imageURL.path){
+                                self.profilepic.image = image
+                                  self.profilepic.layer.borderWidth = 1
+                                  self.profilepic.layer.masksToBounds = false
+                                  self.profilepic.layer.borderColor = UIColor.black.cgColor
+                                  self.profilepic.layer.cornerRadius = self.profilepic.frame.height/2
+                                  self.profilepic.clipsToBounds = true
+        }
+       // Do whatever you want with the image
+    }
+    
              }
     
     func getCoverImageForRank(){

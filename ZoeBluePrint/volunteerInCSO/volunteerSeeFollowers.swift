@@ -52,21 +52,14 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
         
        // VolunteerLabel.isHidden = false
 //              seeFollowersLabels.isHidden = false
-        self.profile_pic()
+        
         tblView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom:150, right: 0)
         
         
     }
     override func viewWillAppear(_ animated: Bool) {
         
-//        if defaults == "Dark Mode"{
-//
-//            DarkMode()
-//
-//        }else if defaults == "Light Mode"{
-//
-//            LightMode()
-//        }
+self.profile_pic()
          self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
       self.searchBar.delegate = self
         self.tblView.delegate = self
@@ -122,7 +115,7 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
   }
     
   func profile_pic()  {
-         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+        /* let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                let params = userIDData["user_id"] as! String
                let serivehandler = ServiceHandlers()
@@ -144,7 +137,23 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
                        }
                        }
                    }
-               }
+               }*/
+    let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+    let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+    let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+    if let dirPath          = paths.first
+    {
+       let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+        if let image    = UIImage(contentsOfFile: imageURL.path){
+                                self.profilePicture.image = image
+                                  self.profilePicture.layer.borderWidth = 1
+                                  self.profilePicture.layer.masksToBounds = false
+                                  self.profilePicture.layer.borderColor = UIColor.black.cgColor
+                                  self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
+                                  self.profilePicture.clipsToBounds = true
+        }
+       // Do whatever you want with the image
+    }
            }
     func getList() {
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data

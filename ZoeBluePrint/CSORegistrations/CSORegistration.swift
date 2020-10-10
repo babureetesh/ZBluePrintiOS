@@ -1365,11 +1365,6 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
             }
         }
             }
-            
-            
-        
-    
-    
     
     @IBAction func stage2OrgDocumentTypeButton(_ sender: Any) {
         if !(self.documentID == nil){

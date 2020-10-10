@@ -198,30 +198,12 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     override func viewWillAppear(_ animated: Bool) {
         self.viewTblEvenList.isHidden = true
         super.viewWillAppear(animated)
-      //  let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
+     /*
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let userID = userIDData["user_id"] as! String
     print(userIDData)
-        
-        let string_url = userIDData["user_profile_pic"] as! String
-        
-    //    if  defaults == "Light Mode"{
-            var headingName = userIDData["user_f_name"] as! String
-            headingName = "\(headingName)'S DASHBOARD"
-          
-      //      LightMode()
-            
-        //}else if defaults == "Dark Mode"{
-            
-          //  var headingName = userIDData["user_f_name"] as! String
-            //headingName = "\(headingName)'S DASHBOARD"
-            //self.heading.textColor = .white
-            //heading.text = headingName.uppercased()
-            //DarkMode()
-            
-      //  }
-        
+          let string_url = userIDData["user_profile_pic"] as! String
         if let url = URL(string: string_url){
             do {
                 let imageData = try Data(contentsOf: url as URL)
@@ -235,7 +217,8 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                 //print("Unable to load data: \(error)")
             }
         }
-        
+        */
+        self.profile_pic()
         
         if (!boolShoOrg){
             
@@ -249,6 +232,80 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         boolShoOrg = false
 
     }
+    
+    func profile_pic()  {
+          let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+          let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+          let params = userIDData["user_id"] as! String
+          let serivehandler = ServiceHandlers()
+          serivehandler.editProfile(user_id: params){(responce,isSuccess) in
+              if isSuccess{
+                  let data = responce as! Dictionary<String,Any>
+                  let string_url = data["user_profile_pic"] as! String
+                  if let url = URL(string: string_url){
+                      
+                  do {
+                      DispatchQueue.global().async {
+                          let imageData = try? Data(contentsOf: url) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        self.saveImageInDocsDir(dataImage: imageData!)
+                          DispatchQueue.main.async {
+                            
+                              self.profilePic.image = UIImage(data: imageData!)
+                                                self.profilePic.layer.borderWidth = 1
+                                                 self.profilePic.layer.masksToBounds = false
+                                                 self.profilePic.layer.borderColor = UIColor.black.cgColor
+                                                 self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+                                                 self.profilePic.clipsToBounds = true
+                          }
+                      }
+                  }
+                  }
+              }
+          }
+        
+//        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+//        let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+//        let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+//        if let dirPath          = paths.first
+//        {
+//           let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+//            if let image    = UIImage(contentsOfFile: imageURL.path){
+//                                    self.profilePic.image = image
+//                                      self.profilePic.layer.borderWidth = 1
+//                                      self.profilePic.layer.masksToBounds = false
+//                                      self.profilePic.layer.borderColor = UIColor.black.cgColor
+//                                      self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+//                                      self.profilePic.clipsToBounds = true
+//            }
+//           // Do whatever you want with the image
+//        }
+      }
+      
+      func saveImageInDocsDir(dataImage: Data ) {
+           
+       //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+              
+                         if (dataImage != nil) {
+                           // get the documents directory url
+                           let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+                           // choose a name for your image
+                           let fileName = "profilepic.jpg"
+                           // create the destination file url to save your image
+                           let fileURL = documentsDirectory.appendingPathComponent(fileName)
+                           // get your UIImage jpeg data representation and check if the destination file url already exists
+                               do {
+                                   // writes the image data to disk
+                                try dataImage.write(to: fileURL, options: Data.WritingOptions.atomic)
+                                   print("file saved")
+                                   print(fileURL)
+                               } catch {
+                                   print("error saving file:", error)
+                               }
+                           
+                         }
+                   }
+      
+    
     @objc func methodOfReceivedNotification(notification: Notification) {
         
         print("Notification called")
