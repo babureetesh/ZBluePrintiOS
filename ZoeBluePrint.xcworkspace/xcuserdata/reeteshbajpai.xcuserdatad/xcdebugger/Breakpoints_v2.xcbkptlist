@@ -41,23 +41,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A4EBAC49-FA07-4137-841D-71CCCABD7BC6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
-            timestampString = "594393831.29291"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "305"
-            endingLineNumber = "305"
-            landmarkName = "changeButtonStates(selectedButton:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "00F396DD-8178-4DC3-B258-4408CC8FD921"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -67,8 +50,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
             endingLineNumber = "110"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "btnSubmit(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -83,40 +66,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "242"
             endingLineNumber = "242"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "BF6F1D2B-98F4-4656-828A-47C2E6B70922 - a8496d7114debbcc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in ZoeBluePrint.ChangeTimezoneCSO.(showPopoverForView1 in _B62D34EE601DA973E6ED2632C8CC1F62)(view: Any, contents: Any) -&gt; ()"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/Images/Side%20Menu/ChangeTimezoneCSO.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "458">
-               </Location>
-               <Location
-                  uuid = "BF6F1D2B-98F4-4656-828A-47C2E6B70922 - a8496d7114debbcc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in ZoeBluePrint.ChangeTimezoneCSO.(showPopoverForView1 in _B62D34EE601DA973E6ED2632C8CC1F62)(view: Any, contents: Any) -&gt; ()"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/Images/Side%20Menu/ChangeTimezoneCSO.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "242"
-                  endingLineNumber = "242"
-                  offsetFromSymbolStart = "719">
-               </Location>
-            </Locations>
+            landmarkName = "showPopoverForView(view:contents:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -131,8 +82,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "btnSubmit(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -147,40 +98,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
             endingLineNumber = "225"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  uuid = "0967D125-6A4D-456A-A923-E12FD7BD0C0C - 5cce5280fa7c5fe3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in ZoeBluePrint.ChangeTimezoneCSO.(showPopoverForView in _B62D34EE601DA973E6ED2632C8CC1F62)(view: Any, contents: Any) -&gt; ()"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/Images/Side%20Menu/ChangeTimezoneCSO.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "225"
-                  endingLineNumber = "225"
-                  offsetFromSymbolStart = "514">
-               </Location>
-               <Location
-                  uuid = "0967D125-6A4D-456A-A923-E12FD7BD0C0C - 5cce5280fa7c5fe3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Any) -&gt; () in ZoeBluePrint.ChangeTimezoneCSO.(showPopoverForView in _B62D34EE601DA973E6ED2632C8CC1F62)(view: Any, contents: Any) -&gt; ()"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/Images/Side%20Menu/ChangeTimezoneCSO.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "225"
-                  endingLineNumber = "225"
-                  offsetFromSymbolStart = "775">
-               </Location>
-            </Locations>
+            landmarkName = "validate()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -196,38 +115,6 @@
             startingLineNumber = "222"
             endingLineNumber = "222"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D97D8E13-F4D1-4AF7-83F0-6D375FCB789B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/Locker/LockerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "53807F2E-0DAD-4F07-9652-A654B8396C31"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/Locker/LockerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
-            landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -275,8 +162,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "217"
             endingLineNumber = "217"
-            landmarkName = "btnChangePassword(_:)"
-            landmarkType = "7">
+            landmarkName = "ChangePasswordCSO"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -291,8 +178,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "226"
             endingLineNumber = "226"
-            landmarkName = "btnChangePassword(_:)"
-            landmarkType = "7">
+            landmarkName = "ChangePasswordCSO"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -337,8 +224,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1317"
-            endingLineNumber = "1317"
+            startingLineNumber = "1315"
+            endingLineNumber = "1315"
             landmarkName = "ChangeStatusButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -387,8 +274,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1138"
             endingLineNumber = "1138"
-            landmarkName = "CSORequest"
-            landmarkType = "3">
+            landmarkName = "ChangingRank()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -403,8 +290,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1305"
             endingLineNumber = "1305"
-            landmarkName = "CSORequest"
-            landmarkType = "3">
+            landmarkName = "btnCancel(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -497,8 +384,8 @@
             filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "613"
-            endingLineNumber = "613"
+            startingLineNumber = "605"
+            endingLineNumber = "605"
             landmarkName = "reloadTableData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -507,6 +394,86 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "63C227F5-18D5-4FF0-8257-569DBC65EA2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "431"
+            endingLineNumber = "431"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CB973F0-DECD-4139-9B06-AEE25AEAE045"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9932AE6B-0634-41EE-B230-2546E46DF495"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "062B1773-F43D-415B-B62A-8EB88B8480BC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "313473F3-E22C-4228-B107-CBCF177F55F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "609"
+            endingLineNumber = "609"
+            landmarkName = "reloadTableData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7439FB83-41C6-4E41-9796-83A61F04DFFA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -522,86 +489,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5CB973F0-DECD-4139-9B06-AEE25AEAE045"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "422"
-            endingLineNumber = "422"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9932AE6B-0634-41EE-B230-2546E46DF495"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "062B1773-F43D-415B-B62A-8EB88B8480BC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "426"
-            endingLineNumber = "426"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "313473F3-E22C-4228-B107-CBCF177F55F0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "617"
-            endingLineNumber = "617"
-            landmarkName = "reloadTableData()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7439FB83-41C6-4E41-9796-83A61F04DFFA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "610C3EE3-DB95-4E1B-949F-A24A6E0FE94D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -609,8 +496,8 @@
             filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "777"
-            endingLineNumber = "777"
+            startingLineNumber = "772"
+            endingLineNumber = "772"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -629,38 +516,6 @@
             endingLineNumber = "1357"
             landmarkName = "tagNumberForchat(tag:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BE9FEEBD-3927-46A8-BE32-4A6F6A41D10B - da1ce27d3826276d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.CSORequest.tagNumberForchat(tag: Swift.Int) -&gt; ()"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/CSOManageRequest/CSORequest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1357"
-                  endingLineNumber = "1357"
-                  offsetFromSymbolStart = "3404">
-               </Location>
-               <Location
-                  uuid = "BE9FEEBD-3927-46A8-BE32-4A6F6A41D10B - be1946d2d046e5c0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.SBDUser&gt;, Swift.Optional&lt;__C.SBDError&gt;) -&gt; () in ZoeBluePrint.CSORequest.tagNumberForchat(tag: Swift.Int) -&gt; ()"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/CSOManageRequest/CSORequest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1358"
-                  endingLineNumber = "1358"
-                  offsetFromSymbolStart = "286">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -677,6 +532,38 @@
             endingLineNumber = "1364"
             landmarkName = "tagNumberForchat(tag:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "40295A6E-F5CA-4A6D-86A7-1CDCF5D424BE - be1946d2d046e5c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.SBDUser&gt;, Swift.Optional&lt;__C.SBDError&gt;) -&gt; () in ZoeBluePrint.CSORequest.tagNumberForchat(tag: Swift.Int) -&gt; ()"
+                  moduleName = "ZoeBluePrint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/CSOManageRequest/CSORequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1364"
+                  endingLineNumber = "1364"
+                  offsetFromSymbolStart = "395">
+               </Location>
+               <Location
+                  uuid = "40295A6E-F5CA-4A6D-86A7-1CDCF5D424BE - cf0dbc03f450794a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.SBDGroupChannel&gt;, Swift.Optional&lt;__C.SBDError&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.SBDUser&gt;, Swift.Optional&lt;__C.SBDError&gt;) -&gt; () in ZoeBluePrint.CSORequest.tagNumberForchat(tag: Swift.Int) -&gt; ()"
+                  moduleName = "ZoeBluePrint"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/CSOManageRequest/CSORequest.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1365"
+                  endingLineNumber = "1365"
+                  offsetFromSymbolStart = "118">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -823,11 +710,11 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - 4bca8a460ad04b53"
+                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - 2987897f174f5635"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.arrExistingUser.getter : Swift.Array&lt;Swift.String&gt;"
+                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.channel.getter : Swift.Optional&lt;__C.SBDGroupChannel&gt;"
                   moduleName = "ZoeBluePrint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/AddMemberToChannelViewController.swift"
@@ -835,14 +722,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "122">
+                  offsetFromSymbolStart = "126">
                </Location>
                <Location
-                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - 8cad09c6b955334b"
+                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - 2dd4cb438d117e49"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.arrExistingUser.setter : Swift.Array&lt;Swift.String&gt;"
+                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.channel.setter : Swift.Optional&lt;__C.SBDGroupChannel&gt;"
                   moduleName = "ZoeBluePrint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/AddMemberToChannelViewController.swift"
@@ -850,14 +737,14 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "144">
+                  offsetFromSymbolStart = "160">
                </Location>
                <Location
-                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - ee7c9a1e26bbed55"
+                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - 8748275e672d7804"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.arrExistingUser.modify : Swift.Array&lt;Swift.String&gt;"
+                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.channel.modify : Swift.Optional&lt;__C.SBDGroupChannel&gt;"
                   moduleName = "ZoeBluePrint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/AddMemberToChannelViewController.swift"
@@ -868,11 +755,11 @@
                   offsetFromSymbolStart = "18">
                </Location>
                <Location
-                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - cf1b014dc7952aa6"
+                  uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - 5ca3deb729bab27c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.arrExistingUser.modify : Swift.Array&lt;Swift.String&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  symbolName = "ZoeBluePrint.AddMemberToChannelViewController.channel.modify : Swift.Optional&lt;__C.SBDGroupChannel&gt; with unmangled suffix &quot;.resume.0&quot;"
                   moduleName = "ZoeBluePrint"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/AddMemberToChannelViewController.swift"
@@ -895,7 +782,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "1116">
+                  offsetFromSymbolStart = "1130">
                </Location>
                <Location
                   uuid = "2FDBAB9F-ACB8-48B0-ACDA-9F3793297053 - c3dad38fb0f1da3f"
@@ -910,115 +797,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "22"
                   endingLineNumber = "22"
-                  offsetFromSymbolStart = "1048">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19 - 380a86d6ed24ebd6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.NewChannelOneToOneChatViewController.dataArray.getter : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "122">
-               </Location>
-               <Location
-                  uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19 - 41fd6bc50a87a2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.NewChannelOneToOneChatViewController.dataArray.setter : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19 - 2186c86c240472d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.NewChannelOneToOneChatViewController.dataArray.modify : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "18">
-               </Location>
-               <Location
-                  uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19 - b13d99dfd218d592"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.NewChannelOneToOneChatViewController.dataArray.modify : Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19 - 6757ca4e9f2b304"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.NewChannelOneToOneChatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ZoeBluePrint.NewChannelOneToOneChatViewController"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "1795">
-               </Location>
-               <Location
-                  uuid = "51D52E3B-0D88-4730-89ED-0298650ACA19 - 412d7d3ef3bb4247"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ZoeBluePrint.NewChannelOneToOneChatViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ZoeBluePrint.NewChannelOneToOneChatViewController&gt;"
-                  moduleName = "ZoeBluePrint"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/reeteshbajpai/Desktop/ZBluePrintiOS/ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "1733">
+                  offsetFromSymbolStart = "1062">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1033,9 +812,9 @@
             filePath = "ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "callforConnecteduser()"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "getCoverImageForRank()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1049,8 +828,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "changeStatusBtnClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1065,8 +844,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "415"
-            endingLineNumber = "415"
+            startingLineNumber = "417"
+            endingLineNumber = "417"
             landmarkName = "LightMode()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1081,8 +860,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "changeStatusBtnClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1097,8 +876,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "changeStatusBtnClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1179,7 +958,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "231"
             endingLineNumber = "231"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1561,8 +1340,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "511"
-            endingLineNumber = "511"
+            startingLineNumber = "502"
+            endingLineNumber = "502"
             landmarkName = "csoEvents(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1577,8 +1356,8 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "543"
-            endingLineNumber = "543"
+            startingLineNumber = "534"
+            endingLineNumber = "534"
             landmarkName = "csoEvents(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1593,57 +1372,9 @@
             filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "showEventsList(data:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14D28E20-26DD-4ED7-BB1B-C00BB016DDC4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/VolunteerMessage/VolMessageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "loadChannels()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "67A3BEA6-BB12-40A6-A7CC-C5FECE668C59"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/VolunteerMessage/VolMessageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "loadChannels()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5A66E97A-3980-43E1-96AD-15B887D0269B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/VolunteerMessage/VolMessageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1730,22 +1461,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "269DD821-F7B9-46D2-BBB3-A57784DC098A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZoeBluePrint/CSOEvents/Map.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "longTap(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A383D95E-4B4E-4752-AA93-7D15519ECDFC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -1762,16 +1477,384 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "52C7644D-7205-4C49-AD1A-A4B532F871F8"
+            uuid = "7E7F5C0F-8542-455F-9659-4B24F4D30208"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1221"
+            endingLineNumber = "1221"
+            landmarkName = "showPopoverForView2(view:contents:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2ED4B4A1-DB43-4053-A27F-B47F6816D7D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1008"
+            endingLineNumber = "1008"
+            landmarkName = "DarkMode()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D82AD49E-9DC7-459D-8E05-99D0743DC54C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1338"
+            endingLineNumber = "1338"
+            landmarkName = "addUpdateEvent(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15EB1552-F5DF-4746-98B9-EAE27ED4BC54"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/Map.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "553D131C-6475-4165-B19B-7500079F74B6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "358"
+            endingLineNumber = "358"
+            landmarkName = "mapData(lang:lat:city:postal_code:address:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE009752-D6C1-4FBD-BDEE-90753DBFC658"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "359"
+            endingLineNumber = "359"
+            landmarkName = "mapData(lang:lat:city:postal_code:address:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E1E65ABF-3FF1-49EB-9508-E2BCCFC0C115"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/Map.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "599FA3C1-2431-41ED-B61E-CC91559883CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "641"
+            endingLineNumber = "641"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAF9BF10-117B-4ED1-AFCF-78EFDF855B02"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "750"
+            endingLineNumber = "750"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05676CD6-70C2-441D-B697-6B794519ACB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1267"
+            endingLineNumber = "1267"
+            landmarkName = "addUpdateEvent(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1D018BA-AE0E-4280-91F2-AAAFFC75AA38"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "532"
+            endingLineNumber = "532"
+            landmarkName = "eventSelected(eventDetail:eventType:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "475DE83A-5FF8-4707-9956-1000A286382A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
+            landmarkName = "newEventButtonClicked(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D2E84ED-DC13-4062-AB91-91545EE3A6C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/CSOEvents/CSOAddEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1258"
+            endingLineNumber = "1258"
+            landmarkName = "addUpdateEvent(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFA85CFF-42F0-465A-901A-C65F534B37A2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerMessage/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD1ED8D7-77DE-4718-B0DB-D2B878C990CD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerMessage/AddMemberToChannelViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
+            landmarkName = "AddMemberToChannelViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F541D80-51FC-467D-8FA3-56001339C067"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerMessage/NewChannelOneToOneChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "416"
+            endingLineNumber = "416"
+            landmarkName = "createChannel(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "18D4C750-6FDB-4400-81F6-75B128BC21D9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZoeBluePrint/VolunteerMessage/VolMessageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "499"
-            endingLineNumber = "499"
-            landmarkName = "downloadImageFrom(link:contentMode:)"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB4A8825-F2F2-49D2-A1DE-A86E265E7980"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/Notification/ProjectNotificationViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E49111DA-48EB-4F44-BB6F-4A9130F416B1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1629"
+            endingLineNumber = "1629"
+            landmarkName = "searchEventByCategory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D569092-166C-4535-BF5E-2F016A3D646A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerDashboard/NewVolunteerDashboard.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
+            landmarkName = "getAdressName(coords:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "760BCB4C-C4A4-40F1-AA88-6FBEEFBB9D9F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1632"
+            endingLineNumber = "1632"
+            landmarkName = "searchEventByCategory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9BF11C3-77A1-4A09-B157-1819E530710D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "740"
+            endingLineNumber = "740"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A87C3CC2-B16F-4DF1-A1C3-78CAF950FDBE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1554"
+            endingLineNumber = "1554"
+            landmarkName = "searchEventByCategory()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAFC7811-92D3-4291-B99F-D25770739302"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ZoeBluePrint/VolunteerEvents/VolunteerEventsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "780"
+            endingLineNumber = "780"
+            landmarkName = "refreshLoadData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

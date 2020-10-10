@@ -723,12 +723,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
         if strFromScreen == "DASHBOARD" {
             
             View2.isHidden = false
-//            DiscoverLabel.isHidden = true
-//            BookLabel.isHidden = true
-//
-//            DiscoverLabel.isHidden = true
-//            BookLabel.isHidden = true
-            
 
             self.View2.frame = CGRect(x: View2.frame.origin.x, y: floatYcoordinateView2 - 60.0, width: View2.frame.width, height: floatHeightView2 + 60.0)
             DiscoverLabel.isHidden = false
@@ -738,7 +732,10 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             strFromScreen = ""
             if (strPostalCode != nil) {
                 self.searchTab.text = self.strPostalCode
+                btnSearchCategory.setTitle("Postal Code", for: .normal)
                  self.searchEventByCategory()
+            }else{
+                btnSearchCategory.setTitle("Search By", for: .normal)
             }
             
         }else{
@@ -1546,6 +1543,8 @@ let formatter = DateFormatter()
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     print(searchBar.text as Any)
       searchBar.resignFirstResponder()
+        lblCSOEvents.setImage(UIImage(named: "black-square-png.png"), for: .normal)
+        check = false
         self.searchEventByCategory()
   }
     func searchEventByCategory(){

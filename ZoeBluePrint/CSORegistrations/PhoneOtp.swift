@@ -78,6 +78,7 @@ var countdownTimer: Timer!
                                            self.otptxtfld.text = ""
                                        }))
                             self.present(alert, animated: true)
+                    self.totalTime = 240
                     self.startTimer()
                
                 }else{
@@ -140,7 +141,8 @@ var countdownTimer: Timer!
 
     @IBAction func ResendOTP(_ sender: Any) {
        // self.dismiss(animated: true, completion: nil)
-       
+       self.btnResendOTP.isHidden = true
+        self.timeExpirelbn.isHidden = false
         self.callForSendOtp()
     }
     
