@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SendBirdSDK
 
 class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
  
@@ -331,6 +331,27 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                         let message = addShiftResponce!["res_status"] as! String
                        // //print(message)
                         if(message == "200"){
+                            
+                            let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                                                         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                                                         let userEmail = userIDData["user_email"] as! String
+                                                         let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
+                                         
+                                     ActivityLoaderView.startAnimating()
+                                                      SBDMain.connect(withUserId: userEmail) { (user, error) in
+                                                                guard error == nil else {   // Error.
+                                                                    return
+                                                                  ActivityLoaderView.stopAnimating()
+                                                                }
+                                                         ActivityLoaderView.stopAnimating()
+                                                              SBDGroupChannel.createChannel(withName: userFullName, isDistinct: true, userIds: [ userEmail ], coverUrl: nil, data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                                                                     guard error == nil else {   // Error.
+                                                                         return
+                                                                     }
+                                                                
+                                                                    })
+                                                      }
+                                     
                             let alert = UIAlertController(title: NSLocalizedString("Success!", comment: ""), message: NSLocalizedString("Shift Added Succesfully!", comment: ""), preferredStyle: UIAlertController.Style.alert)
                             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
