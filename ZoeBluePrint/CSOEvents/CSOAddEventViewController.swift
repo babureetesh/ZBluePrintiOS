@@ -379,7 +379,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
            picker.dismiss(animated: true)
         if (self.waiver == "waiverClassUpload"){
-            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
             {
 
              self.file = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
@@ -392,7 +392,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                 self.DetailLabel.text = fileUrl.lastPathComponent
               // //print(fileName)
             }
-        }else if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+        }else if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
            {
             self.imgEvent.image = image
             self.img = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
@@ -513,7 +513,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
              let image = UIImagePickerController()
                    image.delegate = self
                    image.sourceType = UIImagePickerController.SourceType.photoLibrary
-                 //  image.allowsEditing = false
+                   image.allowsEditing = true
              image.modalPresentationStyle = .overCurrentContext
                    self.present(image, animated: true)
                    {
