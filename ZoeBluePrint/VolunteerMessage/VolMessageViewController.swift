@@ -29,7 +29,22 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLongPressGesture()
-    
+    let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+           let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+           let usertype = userIDData["user_type"] as! String
+           if (usertype == "CSO"){
+               self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
+           }
+                       setProfilePic()
+                 let params = userIDData["user_id"] as! String
+                 let serivehandler = ServiceHandlers()
+                 serivehandler.editProfile(user_id: params){(responce,isSuccess) in
+                     if isSuccess{
+                         let data = responce as! Dictionary<String,Any>
+                       self.string_url = data["user_profile_pic"] as! String
+                        self.refreshChannelList()
+                     }
+                 }
     }
     func getCoverImageForRank(){
             
@@ -71,14 +86,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             //time to handle Header acording to Cso
             imgCoverPic.isHidden = true
             volHeaderView.isHidden = true
-//            if let image = UIImage(data: imageData) {
-//                self.csoProfilePic.image = image
-//                self.csoProfilePic.layer.borderWidth = 1
-//                self.csoProfilePic.layer.masksToBounds = false
-//               // self.csoProfilePic.layer.borderColor = UIColor.black.cgColor
-//                self.csoProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-//                self.csoProfilePic.clipsToBounds = true
-//            }
+
             let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
             let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
             let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
@@ -100,14 +108,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             //time to handle Header acording to VOL
             self.getCoverImageForRank()
             csoHeaderView.isHidden = true
-//            if let image = UIImage(data: imageData) {
-//                self.volProfilePic.image = image
-//                self.volProfilePic.layer.borderWidth = 1
-//                self.volProfilePic.layer.masksToBounds = false
-//                //self.volProfilePic.layer.borderColor = UIColor.black.cgColor
-//                self.volProfilePic.layer.cornerRadius = self.csoProfilePic.frame.height/2
-//                self.volProfilePic.clipsToBounds = true
-//            }
+
             let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
             let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
             let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
@@ -134,46 +135,24 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
 
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-        let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-        let usertype = userIDData["user_type"] as! String
-        if (usertype == "CSO"){
-            self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
-        }
-                    setProfilePic()
-        
        
-              let params = userIDData["user_id"] as! String
-              let serivehandler = ServiceHandlers()
-              serivehandler.editProfile(user_id: params){(responce,isSuccess) in
-                  if isSuccess{
-                      let data = responce as! Dictionary<String,Any>
-                      // //print(data)
-                    self.string_url = data["user_profile_pic"] as! String
-                    
-                  }
-              }
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super .viewDidAppear(true)
-        
-        // Do any additional setup after loading the view.
-                   let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
-                             let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-                   self.username = userIDData["user_email"] as? String
-                   
-                   ActivityLoaderView.startAnimating()
-                   SBDMain.connect(withUserId: username) { (user, error) in
-                             guard error == nil else {   // Error.
-                                 return
-                               ActivityLoaderView.stopAnimating()
-                             }
-                       //print(user?.userId as Any)
-                             //print(user?.nickname)
-                             //print(user?.profileUrl)
-                       self.loadChannels()
-                   }
+//
+//        // Do any additional setup after loading the view.
+//                   let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+//                             let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+//                   self.username = userIDData["user_email"] as? String
+//                   ActivityLoaderView.startAnimating()
+//                   SBDMain.connect(withUserId: username) { (user, error) in
+//                             guard error == nil else {   // Error.
+//                                 return
+//                               ActivityLoaderView.stopAnimating()
+//                             }
+//                       self.loadChannels()
+//                   }
     }
     
     func loadChannels() {
@@ -194,21 +173,10 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             self.channelList.removeAll()
             for channel in channels! {
                 self.channelList.append(channel)
-              // print(channel.joinedMemberCount)
                 let channelMember = channel.members!
-                //print(channelMember[0])
-                
-                //print(channel.memberCount)
-                //print(channel.channelUrl)
-                //print(channel.coverUrl)
-                //print(channel.name)
-                //print(channel.lastMessage)
                 let arrMembers = channel.members //as! SBDMember)
                 let member = (arrMembers![0] as! SBDMember)
                 let url = member.profileUrl
-                //print(url as Any)
-                 //print("********************")
-                
             }
                         if self.channelList.count > 0{
                             self.tblChatList.delegate = nil

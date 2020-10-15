@@ -217,7 +217,7 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
     }
     
         func profile_pic()  {
-           /* let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+            let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
             let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
             let params = userIDData["user_id"] as! String
             let serivehandler = ServiceHandlers()
@@ -232,25 +232,9 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
                       var names = "\(firstname) \(lastname)"
                       //print(names)
                     self.lblnames.text = names.uppercased()
-                     print(names.uppercased())
-                                   
+                     
                     let string_url = data["user_profile_pic"] as! String
-                   
-                    if let url = URL(string: string_url){
-                    do {
-                      //  let profile_data = try Data(contentsOf: profile_url as URL)
-                        let imageData = try Data(contentsOf: url as URL)
-                        //self.coverPicture.image = UIImage(data: profile_data)
-                        self.profilePicture.image = UIImage(data: imageData)
-                        self.profilePicture.layer.borderWidth = 1
-                        self.profilePicture.layer.masksToBounds = false
-                        self.profilePicture.layer.borderColor = UIColor.black.cgColor
-                        self.profilePicture.layer.cornerRadius = self.profilePicture.frame.height/2
-                        self.profilePicture.clipsToBounds = true
-                    } catch {
-                        //print("Unable to load data: \(error)")
-                    }
-                    }
+
                      let profile_pic_string = data["user_cover_pic"] as! String
                     if let profile_url = URL(string: profile_pic_string){
                         do {
@@ -260,7 +244,7 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
                     }
                     
                 }
-            }*/
+            }
             let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
             let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
             let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
@@ -278,6 +262,7 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
                // Do whatever you want with the image
             }
         }
+                
 
 
     @IBAction func EditProfile(_ sender: Any) {
