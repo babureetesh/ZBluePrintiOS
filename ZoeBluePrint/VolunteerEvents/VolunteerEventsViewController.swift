@@ -316,9 +316,9 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
        }
     @IBAction func notificationBellTapped(_ sender: Any) {
            
-           let sb = UIStoryboard(name: "Main", bundle: nil)
-           let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
-                  self.present(obj, animated: true)
+          let sb = UIStoryboard(name: "Main", bundle: nil)
+           let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+             present(obj,animated: true)
        }
     
     func DarkMode() {

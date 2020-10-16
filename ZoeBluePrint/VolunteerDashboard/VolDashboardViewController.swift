@@ -151,9 +151,9 @@ class VolDashboardViewController: UIViewController,UITableViewDelegate,UITableVi
     
     @IBAction func bellIconTapped(_ sender: Any) {
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
-               self.present(obj, animated: true)
+       let sb = UIStoryboard(name: "Main", bundle: nil)
+        let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+          present(obj,animated: true)
 }
 
     

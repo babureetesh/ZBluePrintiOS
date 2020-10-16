@@ -479,8 +479,8 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
     @IBAction func notificationBellTapped(_ sender: Any) {
               
               let sb = UIStoryboard(name: "Main", bundle: nil)
-              let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
-                     self.present(obj, animated: true)
+              let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+                present(obj,animated: true)
           }
     
 }

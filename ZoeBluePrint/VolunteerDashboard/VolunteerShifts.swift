@@ -116,9 +116,9 @@ override func viewWillAppear(_ animated: Bool) {
 
     @IBAction func notificationBellTapped(_ sender: Any) {
            
-           let sb = UIStoryboard(name: "Main", bundle: nil)
-           let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
-                  self.present(obj, animated: true)
+          let sb = UIStoryboard(name: "Main", bundle: nil)
+           let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+             present(obj,animated: true)
        }
     func DarkMode(){
         
@@ -372,9 +372,9 @@ override func viewWillAppear(_ animated: Bool) {
                 
      @IBAction func backbutton(_ sender: Any) {
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let obj = sb.instantiateViewController(withIdentifier: "notify") as! VolunteerNotificationViewController
-               self.present(obj, animated: true)
+     let sb = UIStoryboard(name: "Main", bundle: nil)
+        let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+          present(obj,animated: true)
     }
     @IBAction func btnSideMenu(_ sender: Any) {
     }

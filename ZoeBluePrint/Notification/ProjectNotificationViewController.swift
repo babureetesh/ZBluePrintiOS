@@ -15,10 +15,12 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
   
     @IBOutlet weak var tableNotification: UITableView!
     
-    
+    @IBOutlet weak var imgProfilePic: UIImageView!
+   @IBOutlet weak var imgCoverPic: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        self.getCoverImageForRank()
+        self.profile_pic()
         
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
@@ -35,6 +37,62 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
         }
         // Do any additional setup after loading the view.
     }
+    
+    func getCoverImageForRank(){
+           
+            let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                  let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                  let usertype = userIDData["user_type"] as! String
+                  if (usertype == "CSO"){
+                      self.imgCoverPic.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)}else{
+                    var strImageNameCover = "cover_cloud.jpg"
+                        
+                  let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
+                            let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                            //print(volData)
+                            if (volData["user_avg_rank"] != nil){
+                                if let userAvgRank = volData["user_avg_rank"] as? String {
+                                    
+                                   let floatUserAverageRank = Float(userAvgRank)!
+                                    if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
+                                        strImageNameCover = "cover_riseandshine.jpg"
+                                    }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
+                                        strImageNameCover = "cover_cake.jpg"
+                                    }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
+                                        strImageNameCover = "cover_cool.jpg"
+                                    }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
+                                        strImageNameCover = "cover_truck.jpg"
+                                    }else if (floatUserAverageRank > 80 ){
+                                        strImageNameCover = "cover_cloud.jpg"
+                                    }
+                                   
+                                }
+                            }
+                        self.imgCoverPic.image = UIImage(named:strImageNameCover)
+                    }
+           
+           
+       }
+    func profile_pic()  {
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+                   let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+                   let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+                   if let dirPath          = paths.first
+                   {
+                      let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+                       if let image    = UIImage(contentsOfFile: imageURL.path){
+                                               self.imgProfilePic.image = image
+                                                 self.imgProfilePic.layer.borderWidth = 1
+                                                 self.imgProfilePic.layer.masksToBounds = false
+                                                 self.imgProfilePic.layer.borderColor = UIColor.black.cgColor
+                                                 self.imgProfilePic.layer.cornerRadius = self.imgProfilePic.frame.height/2
+                                                 self.imgProfilePic.clipsToBounds = true
+                       }
+                      // Do whatever you want with the image
+                   }
+        
+    }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            if self.noti_data != nil {
