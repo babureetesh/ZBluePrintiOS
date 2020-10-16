@@ -10,12 +10,17 @@ import UIKit
 
 class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
 
+    
+    @IBOutlet weak var btnCSOSideMenu: UIButton!
+    
+    @IBOutlet weak var btnVOLSideMenu: UIButton!
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var imgViewCsoCover: UIImageView!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var newPassword: UITextField!
     @IBOutlet weak var btnBack: UIButton!
     
+    @IBOutlet weak var imgprofilepic: UIImageView!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var confirmPassword: UITextField!
     var strChange : String!
@@ -51,7 +56,7 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
          }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-       
+       profile_pic()
          btnBack.setImage(UIImage(named: "lefArrownew.png"), for: UIControl.State.normal)
         
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -86,7 +91,30 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
           }
 
     }
-    
+    func profile_pic()  {
+        let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+                   let nsUserDomainMask    = FileManager.SearchPathDomainMask.userDomainMask
+                   let paths               = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+                   if let dirPath          = paths.first
+                   {
+                      let imageURL = URL(fileURLWithPath: dirPath).appendingPathComponent("profilepic.jpg")
+                       if let image    = UIImage(contentsOfFile: imageURL.path){
+                                               self.imgprofilepic.image = image
+                                                 self.imgprofilepic.layer.borderWidth = 1
+                                                 self.imgprofilepic.layer.masksToBounds = false
+                                                 self.imgprofilepic.layer.borderColor = UIColor.black.cgColor
+                                                 self.imgprofilepic.layer.cornerRadius = self.imgprofilepic.frame.height/2
+                                                 self.imgprofilepic.clipsToBounds = true
+                       }
+                      // Do whatever you want with the image
+                   }
+        
+    }
+    @IBAction func NotificationBellClicked(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+               let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+                 present(obj,animated: true)
+    }
     func DarkMode() {
     
         view.backgroundColor = UIColor(red: 49.0/255.0, green: 49.0/255.0, blue: 49.0/255.0, alpha: 1.0)

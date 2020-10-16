@@ -78,10 +78,6 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                          }
                      }
         
-        
-       // self.tblVolEventList.estimatedRowHeight = 350
-        //self.tblVolEventList.rowHeight = UITableView.automaticDimension
-        
         let tabbar = UITabBarController()
         tabbar.delegate = self
     }
