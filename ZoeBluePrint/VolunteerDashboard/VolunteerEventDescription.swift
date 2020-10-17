@@ -364,7 +364,7 @@ view.addSubview(scroller)
     let obj = sb.instantiateViewController(withIdentifier: "volunteershifts") as! VolunteerShifts
     obj.eventID = self.event_id
     
-    self.present(obj,animated: true)
+    self.navigationController?.pushViewController(obj, animated: true)
     }
     
     
