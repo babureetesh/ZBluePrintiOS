@@ -11802,10 +11802,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIp-kn-OEi">
-                                <rect key="frame" x="0.0" y="151" width="414" height="555"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="506"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLK-je-BO9">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="555"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="506"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editprofile.png" translatesAutoresizingMaskIntoConstraints="NO" id="S86-eW-Ckr">
                                                 <rect key="frame" x="21" y="24" width="23" height="23"/>
@@ -15315,7 +15315,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kZd-32-re3"/>
-        <segue reference="DIR-K9-Zhf"/>
+        <segue reference="4Ea-rk-YRR"/>
         <segue reference="Mup-EQ-yd4"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>

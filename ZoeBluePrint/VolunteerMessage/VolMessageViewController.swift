@@ -345,7 +345,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
         vc.channel = self.channelList[indexPath.row]
         vc.hidesBottomBarWhenPushed = true
         vc.modalPresentationStyle = .overFullScreen
-        present(vc,animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func memberClicked(selectedRow:Int){
@@ -383,7 +383,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
         let sb = UIStoryboard(name: "Main", bundle: nil)
                       let obj = sb.instantiateViewController(withIdentifier: "newchannel") as! NewChannelOneToOneChatViewController
         obj.delegate = self
-                        present(obj,animated: true)
+        self.navigationController?.pushViewController(obj, animated: true)
     }
     
     func viewRemoved(){

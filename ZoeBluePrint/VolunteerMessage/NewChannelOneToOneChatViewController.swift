@@ -295,7 +295,7 @@ self.viewCreateChannel.isHidden = true
                    vc.channel = groupChannel
                    vc.hidesBottomBarWhenPushed = true
                     vc.modalPresentationStyle = .overFullScreen
-                    self.present(vc,animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         })
         
         
@@ -558,7 +558,7 @@ self.viewCreateChannel.isHidden = true
     
     @IBAction func backbuttonClick(_ sender: Any) {
         delegate?.viewRemoved()
-        self.dismiss(animated: true, completion: nil)
+       performSegueToReturnBack()
     }
     
 }
