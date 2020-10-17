@@ -133,6 +133,17 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     @IBOutlet weak var imgViewCover: UIImageView!
     
     
+    
+    
+    fileprivate func presentWithNavigationController(viewController:UIViewController) {
+//        let navController = UINavigationController(rootViewController: viewController)
+//
+//        navController.navigationBar.isHidden = true
+//        navController.modalPresentationStyle = .overFullScreen
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+    }
+    
     @IBAction func changeStatusBtnClick(_ sender: Any) {
         
        
@@ -858,6 +869,10 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
     
     
     @IBAction func DiscoverEventPressed(_ sender: Any) {
+        
+        
+        
+        
         EventShiftView1.isHidden = true
         EventShiftView2.isHidden = true
         
@@ -874,7 +889,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                  obj.eventData = data
                 obj.event_id = param // Reetesh 24Jan
 
-                self.present(obj, animated: true)
+                self.navigationController?.pushViewController(obj, animated: true)
+                //Utility.presentWithNavigationController(destinationVC: obj, currentVC: self)
                 }
 
                //
@@ -1368,7 +1384,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
             if isSuccess{
                 let data1 = responce as! Array<Any>
                 obj.eventID = self.SelectData!["event_id"] as! String
-                self.present(obj, animated: true)
+                self.presentWithNavigationController(viewController: obj)
             }else{
                 
                 let alert = UIAlertController(title: NSLocalizedString("Alert!", comment: ""), message: NSLocalizedString("No Data Found", comment: ""), preferredStyle: UIAlertController.Style.alert)

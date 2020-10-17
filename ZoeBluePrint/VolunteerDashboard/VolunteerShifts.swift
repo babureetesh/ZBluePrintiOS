@@ -393,7 +393,7 @@ override func viewWillAppear(_ animated: Bool) {
     
     
     @IBAction func backButtonFunction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     

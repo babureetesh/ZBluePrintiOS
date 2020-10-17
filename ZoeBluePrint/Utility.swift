@@ -7,8 +7,25 @@
 //
 
 import Foundation
+import UIKit
+
 class Utility: NSObject {
     typealias CompletionHandler = (_ result:[[String:Any]]?,_ isSuccess:Bool)->Void;
+    
+    
+    public class func presentWithNavigationController(destinationVC:UIViewController, currentVC:UIViewController) {
+           let navController = UINavigationController(rootViewController: destinationVC)
+           navController.navigationBar.isHidden = true
+           navController.modalPresentationStyle = .overFullScreen
+        
+           //present(navController, animated: true)
+       
+            currentVC.present(navController, animated: true)
+            
+        
+           
+       }
+    
     class func getShortMonthString(monthNumber:Int) -> String {
         switch monthNumber {
         case 1:

@@ -65,7 +65,7 @@ class VolunteerEventDescription: UIViewController {
         view1.isHidden = true
         View2.isHidden = true
 //        //print(screen!)
-        performSegueToReturnBack()
+       // performSegueToReturnBack()
          // //print(ruserok)
         SignedInEvent.delegate = self
         lightStar.delegate = self
