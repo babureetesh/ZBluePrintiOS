@@ -73,7 +73,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     
     
     @IBAction func back_Button(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+       performSegueToReturnBack()
   
     }
     override func viewDidLoad() {

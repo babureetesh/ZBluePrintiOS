@@ -241,7 +241,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
     }
       
     @IBAction func backButtonFunction(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
     }
     
    @objc func methodOfReceivedNotification(notification: Notification) {
@@ -442,7 +442,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
         secondViewController.data_for_update = data
         secondViewController.screen = "EDIT SCREEN"
         secondViewController.eventDetail = shiftDetails
-        self.present(secondViewController, animated:true, completion:nil)
+        navigationController?.pushViewController(secondViewController, animated: true)
         
     }
     

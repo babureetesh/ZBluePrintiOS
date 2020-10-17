@@ -55,10 +55,7 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         newEventLabl.isHidden = true
         self.tabBarController?.delegate = self
         configureTableView()
-        changeButtonStates(selectedButton: myEventsButton)
-        //getEventList// Do any additional setup after loading the view.
-        
-        self.addEventsView.isHidden = true
+       
         
         self.getEventListFromServer()
         self.getCountryList()
@@ -107,6 +104,10 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        changeButtonStates(selectedButton: myEventsButton)
+               //getEventList// Do any additional setup after loading the view.
+               
+               self.addEventsView.isHidden = true
         self.profile_pic()
          self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
       /*  let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
@@ -614,7 +615,7 @@ extension CSOEventsViewController:EventActionsViewControllerDelegate {
             if let shiftVC = mainSB.instantiateViewController(withIdentifier: "CSOEventShiftViewController") as? CSOEventShiftViewController, eventDetail != nil {
                 NSLog("%@",eventDetail!)
                 shiftVC.shiftDetails = eventDetail!
-                self.present(shiftVC, animated: true)
+                navigationController?.pushViewController(shiftVC, animated: true)
                 
                 //                self.addViewController(viewController: shiftVC)
             }

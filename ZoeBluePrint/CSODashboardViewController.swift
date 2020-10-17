@@ -109,7 +109,7 @@ class CSODashboardViewController: BaseViewController {
        
      let vc = (UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "request") as? CSORequest)!
         vc.strShowClose = "YES"
-        self.present(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
      
     }
     
@@ -407,7 +407,8 @@ class CSODashboardViewController: BaseViewController {
             //CSOTodaysEventDetailsViewController()
             selectedEventVC.selectedEvent = eventData
             selectedEventVC.screen = "calender"
-            self.present(selectedEventVC,animated: true)
+//            self.present(selectedEventVC,animated: true)
+            navigationController?.pushViewController(selectedEventVC, animated: true)
 
         }
         
@@ -503,7 +504,7 @@ extension CSODashboardViewController:UITableViewDelegate,UITableViewDataSource {
         let obj = sb.instantiateViewController(withIdentifier: "CSOTodaysEventDetailsViewController") as! CSOTodaysEventDetailsViewController
         obj.event_id = event["event_id"] as! String
         obj.screen = "DASHBOARD"
-        self.present(obj, animated: true)
+        navigationController?.pushViewController(obj, animated: true)
     }
     
     func getDayOfWeek(_ today:String) -> Int? {

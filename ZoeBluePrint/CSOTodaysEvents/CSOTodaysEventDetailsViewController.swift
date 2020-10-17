@@ -258,7 +258,8 @@ class CSOTodaysEventDetailsViewController: UIViewController {
         
     }
     @IBAction func backButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
     }
 
     func setEventData()  {
