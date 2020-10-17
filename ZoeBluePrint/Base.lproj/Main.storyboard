@@ -11241,6 +11241,22 @@
             <point key="canvasLocation" x="7212" y="-4067"/>
         </scene>
         <!--Target-->
+        <scene sceneID="khI-dX-uge">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="overFullScreen" navigationBarHidden="YES" id="Jkp-Pm-GGV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Target" image="target.png" id="xgN-qK-6eU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hby-ua-skc">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zbI-3A-1K3" kind="relationship" relationship="rootViewController" id="QL2-LU-xsj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmO-Ym-7Xl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8253" y="-4882"/>
+        </scene>
+        <!--Target-->
         <scene sceneID="4m4-rY-ysp">
             <objects>
                 <viewController modalPresentationStyle="overFullScreen" id="zbI-3A-1K3" customClass="Volunteer_Targets" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
@@ -11358,6 +11374,7 @@
                         <viewLayoutGuide key="safeArea" id="lUP-iF-00g"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Target" image="target.png" id="ApP-mP-mAj"/>
+                    <navigationItem key="navigationItem" id="f1c-bq-9Y2"/>
                     <connections>
                         <outlet property="CircluarProgress" destination="s0e-yz-P6T" id="USr-ct-lJl"/>
                         <outlet property="btnList" destination="RGR-KI-ljM" id="7bT-6N-HbR"/>
@@ -11369,7 +11386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yB8-EZ-ohO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7510.1449275362329" y="-1245.5357142857142"/>
+            <point key="canvasLocation" x="8309" y="-4067"/>
         </scene>
         <!--My Tab Bar Controller View Controller-->
         <scene sceneID="srg-F4-b5a">
@@ -11384,8 +11401,8 @@
                         <segue destination="74u-ws-BYe" kind="relationship" relationship="viewControllers" id="ztg-R9-h85"/>
                         <segue destination="C4a-gS-Tez" kind="relationship" relationship="viewControllers" id="NWe-l4-Rlo"/>
                         <segue destination="Cci-Yg-Pcm" kind="relationship" relationship="viewControllers" id="aut-9k-Ue6"/>
-                        <segue destination="zbI-3A-1K3" kind="relationship" relationship="viewControllers" id="c5V-df-EdH"/>
                         <segue destination="Qzf-18-GDM" kind="relationship" relationship="viewControllers" id="RIo-pM-rVN"/>
+                        <segue destination="Jkp-Pm-GGV" kind="relationship" relationship="viewControllers" id="9Fp-Lf-er3"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jWW-k0-sxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -11785,10 +11802,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIp-kn-OEi">
-                                <rect key="frame" x="0.0" y="151" width="414" height="506"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="555"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLK-je-BO9">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="506"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="555"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="editprofile.png" translatesAutoresizingMaskIntoConstraints="NO" id="S86-eW-Ckr">
                                                 <rect key="frame" x="21" y="24" width="23" height="23"/>
@@ -15285,7 +15302,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kZd-32-re3"/>
-        <segue reference="4Ea-rk-YRR"/>
+        <segue reference="oKG-Xe-HOT"/>
         <segue reference="Mup-EQ-yd4"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
