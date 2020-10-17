@@ -192,7 +192,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                                                    vc.channel = groupChannel
                                                    vc.hidesBottomBarWhenPushed = true
                                         vc.modalPresentationStyle = .overFullScreen
-                                        self.present(vc,animated: true)
+                                        self.navigationController?.pushViewController(vc, animated: true)
                                            // self.ChangeStatusSelection()
                                 //
                                 //            //print("Chat")
@@ -890,7 +890,6 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 obj.event_id = param // Reetesh 24Jan
 
                 self.navigationController?.pushViewController(obj, animated: true)
-                //Utility.presentWithNavigationController(destinationVC: obj, currentVC: self)
                 }
 
                //
@@ -942,7 +941,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                 obj.eventID = self.SelectData!["event_id"] as! String
                self.ViewChangeStatusBackground.isHidden = true
                 self.ViewChangeStatusPoMain.isHidden = true
-                self.present(obj, animated: true)
+                self.navigationController?.pushViewController(obj, animated: true)
             }
         }
     }

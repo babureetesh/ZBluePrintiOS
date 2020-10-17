@@ -2426,7 +2426,6 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func bcakButtonClick(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        
+        performSegueToReturnBack()
     }
 }

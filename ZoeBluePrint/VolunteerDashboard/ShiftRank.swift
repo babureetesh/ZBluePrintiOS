@@ -134,7 +134,7 @@ class ShiftRank: UIViewController {
     
     @IBAction func backButto(_ sender: Any) {
         
-    dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
     }
     
 

@@ -384,16 +384,19 @@ override func viewWillAppear(_ animated: Bool) {
   OuterView.isHidden = true
   StackView.isHidden = true
    let mainSB = UIStoryboard(name: "Main", bundle: nil)
-   let selectedEventVC =  mainSB.instantiateViewController(withIdentifier: "Cell") as? ShiftRank
-        selectedEventVC!.data1 = self.dataDetails
-   self.present(selectedEventVC!,animated: true)
+        if let selectedEventVC =  mainSB.instantiateViewController(withIdentifier: "Cell") as? ShiftRank{
+            selectedEventVC.data1 = self.dataDetails
+            self.navigationController?.pushViewController(selectedEventVC, animated: true)
+        }
+        
         
    
     }
     
     
     @IBAction func backButtonFunction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+//        self.navigationController?.popViewController(animated: true)
+        performSegueToReturnBack()
     }
     
     
