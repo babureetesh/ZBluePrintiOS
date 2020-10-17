@@ -63,7 +63,11 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let usertype = userIDData["user_type"] as! String
         if (usertype == "CSO"){
+            self.btnCSOSideMenu.isHidden = false
+                               self.btnVOLSideMenu.isHidden = true
             self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)}else{
+            self.btnCSOSideMenu.isHidden = true
+                               self.btnVOLSideMenu.isHidden = false
           var strImageNameCover = "cover_cloud.jpg"
               
         let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data

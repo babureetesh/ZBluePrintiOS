@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SideMenu
 class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     
@@ -184,14 +184,17 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
     let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
              let change_timezone_view  = sampleStoryBoard.instantiateViewController(withIdentifier: "volreg") as! VolRegistration
              change_timezone_view.screen = "EDIT VIEW"
-             self.present(change_timezone_view, animated: true, completion: nil)
+            // self.present(change_timezone_view, animated: true, completion: nil)
+    SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(change_timezone_view, animated: true)
     
     }
     @IBAction func timeZoneChange(_ sender: Any) {
         
         let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                let change_timezone_view  = sampleStoryBoard.instantiateViewController(withIdentifier: "changetimezonecso") as! ChangeTimezoneCSO
-               self.present(change_timezone_view, animated: true, completion: nil)
+              // self.present(change_timezone_view, animated: true, completion: nil)
+        
+        SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(change_timezone_view, animated: true)
         
         
     }
@@ -231,7 +234,9 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
         
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let password  = storyboard.instantiateViewController(withIdentifier: "changepasswordcso") as! ChangePasswordCSO
-        self.present(password, animated: true, completion: nil)
+       // self.present(password, animated: true, completion: nil)
+        SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(password, animated: true)
+        
 }
     
     @IBAction func showOrganization(_ sender: Any) {

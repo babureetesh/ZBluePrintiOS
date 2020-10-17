@@ -23,6 +23,8 @@ class ChangeTimezoneCSO: UIViewController {
     @IBOutlet weak var lblSelectDayLight: UILabel!
     @IBOutlet weak var lblTimezone: UILabel!
     
+    @IBOutlet weak var btnMenuCso: UIButton!
+    @IBOutlet weak var btnMenuVol: UIButton!
     var screen:String!
     var timezoneID:String?
     var dayLightID:String?
@@ -83,7 +85,11 @@ class ChangeTimezoneCSO: UIViewController {
                   let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                   let usertype = userIDData["user_type"] as! String
                   if (usertype == "CSO"){
+                    self.btnMenuCso.isHidden = false
+                    self.btnMenuVol.isHidden = true
                       self.imgCoverPic.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)}else{
+                    self.btnMenuCso.isHidden = true
+                    self.btnMenuVol.isHidden = false
                     var strImageNameCover = "cover_cloud.jpg"
                         
                   let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data

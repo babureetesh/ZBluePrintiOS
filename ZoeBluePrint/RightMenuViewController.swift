@@ -9,7 +9,7 @@
 
 // CSO SIDE MENU
 import UIKit
-
+import SideMenu
 class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     
@@ -269,13 +269,17 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
         let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let change_timezone_view  = sampleStoryBoard.instantiateViewController(withIdentifier: "CSORegistrationViewController") as! CSORegistration
         change_timezone_view.screen = "EDIT VIEW"
-        self.present(change_timezone_view, animated: true, completion: nil)
+       // self.present(change_timezone_view, animated: true, completion: nil)
+        SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(change_timezone_view, animated: true)
+        
+
     }
     
     @IBAction func TimeZone(_ sender: Any) {
         let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let change_timezone_view  = sampleStoryBoard.instantiateViewController(withIdentifier: "changetimezonecso") as! ChangeTimezoneCSO
-        self.present(change_timezone_view, animated: true, completion: nil)
+        //self.present(change_timezone_view, animated: true, completion: nil)
+        SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(change_timezone_view, animated: true)
     }
     
     @IBAction func TimeZoneEDT(_ sender: Any) {
@@ -294,7 +298,8 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
     @IBAction func ChangePassword(_ sender: Any) {
         let sampleStoryBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let change_password_view  = sampleStoryBoard.instantiateViewController(withIdentifier: "changepasswordcso") as! ChangePasswordCSO
-        self.present(change_password_view, animated: true, completion: nil)
+      //  self.present(change_password_view, animated: true, completion: nil)
+        SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(change_password_view, animated: true)
         
     }
     
