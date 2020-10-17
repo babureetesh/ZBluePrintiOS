@@ -480,7 +480,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
               
               let sb = UIStoryboard(name: "Main", bundle: nil)
               let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
-                present(obj,animated: true)
+        self.navigationController?.pushViewController(obj, animated: true)
           }
     
 }
