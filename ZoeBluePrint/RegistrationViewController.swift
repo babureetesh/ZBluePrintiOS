@@ -59,7 +59,7 @@ class RegistrationViewController: BaseViewController {
    
     
     @IBAction func back_button(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+       performSegueToReturnBack()
     }
     
     

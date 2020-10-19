@@ -370,11 +370,13 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     
     @IBAction func eventButton(_ sender: Any) {
        
-       
-        let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
-        vc.strFromScreen = "DASHBOARD"
-        vc.strPostalCode = nil
-         self.tabBarController?.selectedIndex = 1
+        if let navController = self.tabBarController?.viewControllers?[1] as? UINavigationController, let firstVC = navController.viewControllers.first, let eventVC = firstVC as? VolunteerEventsViewController
+        {
+                eventVC.strFromScreen = "DASHBOARD"
+                eventVC.strPostalCode = nil
+                 self.tabBarController?.selectedIndex = 1
+        }
+    
 //        let vc = (UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "Volunteer Events") as? VolunteerEventsViewController)!
 //        vc.strFromScreen = "DASHBOARD"
 //        self.present(vc, animated: true)
@@ -433,12 +435,17 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
             self.getNearByeventData()
         }*/
         
-        let vc = self.tabBarController?.viewControllers?[1] as! VolunteerEventsViewController
-               vc.strFromScreen = "DASHBOARD"
-        vc.strPostalCode = self.zipcode
-                self.tabBarController?.selectedIndex = 1
+        if let navController = self.tabBarController?.viewControllers?[1] as? UINavigationController, let firstVC = navController.viewControllers.first, let eventVC = firstVC as? VolunteerEventsViewController
+              {
+                      eventVC.strFromScreen = "DASHBOARD"
+                      eventVC.strPostalCode = self.zipcode
+                              self.tabBarController?.selectedIndex = 1
+              }
+        
+               
     }
     
+
     func getNearByeventData(){
        /*
         let serviceHandler = ServiceHandlers()

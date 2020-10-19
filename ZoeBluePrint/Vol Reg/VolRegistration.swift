@@ -905,11 +905,11 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
                                       style: UIAlertAction.Style.default,
                                       handler: {(_: UIAlertAction!) in
                                         //Sign out action
-                                         self.dismiss(animated: true, completion: nil)
+                                        self.performSegueToReturnBack()
         }))
         self.present(alert, animated: true, completion: nil)
         }else{
-            self.dismiss(animated: true, completion: nil)
+            self.performSegueToReturnBack()
         }
     }
     
