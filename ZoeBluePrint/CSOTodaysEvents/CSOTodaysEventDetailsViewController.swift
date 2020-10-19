@@ -236,7 +236,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
         let obj = sb.instantiateViewController(withIdentifier: "CSOEventShiftViewController") as! CSOEventShiftViewController
         obj.calenderData = selectedEvent
         obj.screen = "calender" //reetesh jan8
-        self.present(obj, animated: true)
+        self.navigationController?.pushViewController(obj, animated: true)
         
     }
     

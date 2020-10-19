@@ -291,7 +291,7 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
         
         let lang : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let changeLanguage  = lang.instantiateViewController(withIdentifier: "language") as! Language
-        self.present(changeLanguage, animated: true, completion: nil)
+       self.navigationController?.pushViewController(changeLanguage, animated: true)
     }
     
 

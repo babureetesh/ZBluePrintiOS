@@ -150,7 +150,7 @@ class VolunteerUpcmingEvents: UIViewController,UITableViewDelegate,UITableViewDa
                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Description") as! VolunteerEventDescription
                        nextViewController.eventData = event2
                     nextViewController.event_id = a["event_id"] as! String
-                       self.present(nextViewController, animated:true, completion:nil)
+                       self.navigationController?.pushViewController(nextViewController, animated: true)
             }
             
         }

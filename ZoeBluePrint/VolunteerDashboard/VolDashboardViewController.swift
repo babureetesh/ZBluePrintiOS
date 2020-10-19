@@ -160,7 +160,7 @@ class VolDashboardViewController: UIViewController,UITableViewDelegate,UITableVi
     @IBAction func SeeAllUpcomingEvents(_ sender: Any) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let obj = sb.instantiateViewController(withIdentifier: "cell23") as! VolunteerUpcmingEvents
-        self.present(obj, animated: true)
+        self.navigationController?.pushViewController(obj, animated: true)
     }
     
     func getDiscoverEventsArea() {
@@ -234,7 +234,7 @@ class VolDashboardViewController: UIViewController,UITableViewDelegate,UITableVi
         selectedEventVC.event_id = a["event_id"] as! String
         selectedEventVC.screen = "DISCOVER EVENTS"
         
-        self.present(selectedEventVC,animated: true)
+        self.navigationController?.pushViewController(selectedEventVC, animated: true)
         
     }
 
@@ -391,7 +391,7 @@ class VolDashboardViewController: UIViewController,UITableViewDelegate,UITableVi
         selectedEventVC!.data1 = a
         
         selectedEventVC!.screen = "UPCOMING EVENT"
-        self.present(selectedEventVC!,animated: true)
+        self.navigationController?.pushViewController(selectedEventVC!, animated: true)
     }
 
 }

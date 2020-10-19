@@ -13,6 +13,11 @@ class Utility: NSObject {
     typealias CompletionHandler = (_ result:[[String:Any]]?,_ isSuccess:Bool)->Void;
     
     
+    public class func removeChildVC(vc:UIViewController) {
+        vc.willMove(toParent: nil)
+               vc.view.removeFromSuperview()
+               vc.removeFromParent()
+    }
     public class func presentWithNavigationController(destinationVC:UIViewController, currentVC:UIViewController) {
            let navController = UINavigationController(rootViewController: destinationVC)
            navController.navigationBar.isHidden = true

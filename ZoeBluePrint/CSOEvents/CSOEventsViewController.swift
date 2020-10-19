@@ -159,6 +159,16 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
         }else{
             UserDefaults.standard.set("close", forKey: "map")
         }
+        
+        
+        if self.children.count > 0{
+               let viewControllers:[UIViewController] = self.children
+               for viewContoller in viewControllers{
+                Utility.removeChildVC(vc: viewContoller)
+               }
+           }
+        
+        
     }
     
     func DarkMode() {
