@@ -9156,7 +9156,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sea-sn-guC">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Sl-Eo-eFo">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="9Sl-Eo-eFo">
                                         <rect key="frame" x="15" y="80" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="898-oB-t9S"/>
@@ -10766,7 +10766,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eja-Lo-f1k">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q9I-eP-Ooz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q9I-eP-Ooz">
                                         <rect key="frame" x="15" y="80" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Guk-ny-5AG"/>
@@ -11298,7 +11298,7 @@
                                             <action selector="notificationBellTapped:" destination="zbI-3A-1K3" eventType="touchUpInside" id="g2M-X9-axb"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-P6-Yla">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="kxE-P6-Yla">
                                         <rect key="frame" x="15" y="80" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="cNY-bf-gL3"/>
@@ -12008,7 +12008,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-4A-GHa">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kbt-oc-4wu">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kbt-oc-4wu">
                                         <rect key="frame" x="15" y="80" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="d2F-Vk-Vl3"/>
@@ -12258,7 +12258,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="eJY-R0-6Ap">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-OC-wDj">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="a9T-OC-wDj">
                                         <rect key="frame" x="15" y="80" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="5TC-dN-jpE"/>
@@ -12808,7 +12808,7 @@
                                                     <action selector="notificationBellTapped:" destination="IQU-MJ-J9C" eventType="touchUpInside" id="9eL-19-iN1"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-ai-KEf">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newUserImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="QDR-ai-KEf">
                                                 <rect key="frame" x="15" y="80" width="60" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="Ij8-tc-Kpm"/>
@@ -15350,9 +15350,9 @@
         <image name="zoeInfo.png" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EMa-du-1HZ"/>
+        <segue reference="L81-J2-QTP"/>
         <segue reference="RIo-pM-rVN"/>
-        <segue reference="siV-0m-ckg"/>
+        <segue reference="Mup-EQ-yd4"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
 </document>
