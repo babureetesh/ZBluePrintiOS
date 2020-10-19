@@ -224,10 +224,25 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
 //        self.present(homeView, animated: true, completion: nil)
         
       //  self.dismiss(animated: false, completion: nil)
+        self.removeImage(itemName: "profilepic", fileExtension: "jpg")
     UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
         
     }
     
+    func removeImage(itemName:String, fileExtension: String) {
+      let fileManager = FileManager.default
+      let nsDocumentDirectory = FileManager.SearchPathDirectory.documentDirectory
+      let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+      let paths = NSSearchPathForDirectoriesInDomains(nsDocumentDirectory, nsUserDomainMask, true)
+      guard let dirPath = paths.first else {
+          return
+      }
+      let filePath = "\(dirPath)/\(itemName).\(fileExtension)"
+      do {
+        try fileManager.removeItem(atPath: filePath)
+      } catch let error as NSError {
+        print(error.debugDescription)
+      }}
     
     @IBAction func volChangePassword(_ sender: Any) {
       
