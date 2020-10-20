@@ -26,6 +26,7 @@
 		2A23678922A78E2C00FF6549 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A23678822A78E2C00FF6549 /* RegistrationViewController.swift */; };
 		2A23678E22A830EA00FF6549 /* eyeOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A23678C22A830E900FF6549 /* eyeOn.png */; };
 		2A23678F22A830EA00FF6549 /* eyeOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A23678D22A830EA00FF6549 /* eyeOff.png */; };
+		2A2A4C9D253F2A23009DEC15 /* CSOTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2A4C9C253F2A23009DEC15 /* CSOTabViewController.swift */; };
 		2A671F53230830CF00F0CFBD /* CSOAddShiftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A671F52230830CF00F0CFBD /* CSOAddShiftViewController.swift */; };
 		2A671F572308369E00F0CFBD /* Shift_End_Date.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A671F542308369D00F0CFBD /* Shift_End_Date.png */; };
 		2A671F6023083ACC00F0CFBD /* Shift_Start_Date.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A671F5E23083ACC00F0CFBD /* Shift_Start_Date.png */; };
@@ -444,6 +445,7 @@
 		2A23678822A78E2C00FF6549 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		2A23678C22A830E900FF6549 /* eyeOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeOn.png; sourceTree = "<group>"; };
 		2A23678D22A830EA00FF6549 /* eyeOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eyeOff.png; sourceTree = "<group>"; };
+		2A2A4C9C253F2A23009DEC15 /* CSOTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSOTabViewController.swift; sourceTree = "<group>"; };
 		2A671F52230830CF00F0CFBD /* CSOAddShiftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSOAddShiftViewController.swift; sourceTree = "<group>"; };
 		2A671F542308369D00F0CFBD /* Shift_End_Date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shift_End_Date.png; sourceTree = "<group>"; };
 		2A671F5E23083ACC00F0CFBD /* Shift_Start_Date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shift_Start_Date.png; sourceTree = "<group>"; };
@@ -1139,6 +1141,7 @@
 				387BF91922A959520073DB74 /* CSODashboardViewController.swift */,
 				C29DA3722396717100D14B8B /* ForgetPassword.swift */,
 				7C4781B52481446600F5AD5B /* MyTabBarControllerViewController.swift */,
+				2A2A4C9C253F2A23009DEC15 /* CSOTabViewController.swift */,
 				7CFB580E2372026A004DE79B /* DashboardEventsTableViewCell.swift */,
 				38DBBD0D24EC0DF90068A585 /* Organization */,
 				C2A75426238EA4BF00D4010B /* volunteerInCSO */,
@@ -2063,6 +2066,7 @@
 				38A0906624D0652C00070C9A /* MemberListTableViewCell.swift in Sources */,
 				38A0907724D0652C00070C9A /* CustomPhotosViewController.swift in Sources */,
 				C2914660238D4A3A00A7A33A /* VolDashboardViewController.swift in Sources */,
+				2A2A4C9D253F2A23009DEC15 /* CSOTabViewController.swift in Sources */,
 				7CDF791424ACAE7A00E1B4B0 /* NewVolunteerDashboard.swift in Sources */,
 				38A0906F24D0652C00070C9A /* AddChannelMemberSelectionTableViewCell.swift in Sources */,
 				2A6732B522F729E9007F98FB /* DropDownItemsTable.swift in Sources */,

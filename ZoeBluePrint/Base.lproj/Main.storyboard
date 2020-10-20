@@ -6816,10 +6816,10 @@
             </objects>
             <point key="canvasLocation" x="-5015.9420289855079" y="1824.1071428571427"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab View Controller-->
         <scene sceneID="6ga-Rq-wz9">
             <objects>
-                <tabBarController storyboardIdentifier="tabbar" modalPresentationStyle="overFullScreen" id="Mu5-Pw-OcC" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbar" modalPresentationStyle="overFullScreen" id="Mu5-Pw-OcC" customClass="CSOTabViewController" customModule="ZoeBluePrint" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="ce3-jN-VKS">
@@ -15351,7 +15351,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L81-J2-QTP"/>
-        <segue reference="RIo-pM-rVN"/>
+        <segue reference="jTM-t6-CnA"/>
         <segue reference="Mup-EQ-yd4"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
