@@ -20,6 +20,7 @@ class getShiftDataCell: UITableViewCell {
     @IBOutlet weak var lbnEventName: UILabel!
     
     @IBOutlet weak var lbnEventTime: UILabel!
+    @IBOutlet weak var lblMemberCount: UILabel!
     
     
     override func awakeFromNib() {

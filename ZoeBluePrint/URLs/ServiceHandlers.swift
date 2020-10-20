@@ -189,9 +189,19 @@ typealias CompletionHandler = (_ result:Any?,_ isSuccess:Bool)->Void;
     
 func getDashboardUpComingEventData(userData:String, onCompletion:@escaping CompletionHandler)  {
     ActivityLoaderView.startAnimating()
+     var strUserTimezone = "EST"
+    let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+     if let timeZone = userIDData["user_timezone"] {
+        strUserTimezone = timeZone as? String ?? "EST"
+     }else{
+        strUserTimezone = "EST"
+     }
+    
         let date = Date()
     let formatter = DateFormatter()
     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    formatter.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
     let result = formatter.string(from: date)
     
     let now = Date()
@@ -207,6 +217,8 @@ func getDashboardUpComingEventData(userData:String, onCompletion:@escaping Compl
                   "event_month": nameOfMonth,
                   "event_year": nameOfyear,
                   "countdown_date":result]
+    print(params)
+    
     let urlString = baseURL+"cso-action.php?api_key=1234&action=cso_dashboard_combine_mob"
     Alamofire.request(urlString, method: .post, parameters: params,encoding: JSONEncoding.default, headers: nil).responseJSON {
         response in

@@ -261,6 +261,17 @@ class CSODashboardViewController: BaseViewController {
     
     fileprivate func configureCountDown() {
         if(self.upcomingEvents.count != 0){
+            
+            
+            var strUserTimezone = "EST"
+           let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                   let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+            if let timeZone = userIDData["user_timezone"] {
+               strUserTimezone = timeZone as? String ?? "EST"
+            }else{
+               strUserTimezone = "EST"
+            }
+            
         let shift_date = self.upcomingEvents.first!["shift_date"] as? String
         let shift_time = self.upcomingEvents.first!["shift_start_time_timer"] as? String
         var shift_date_time = shift_date! + " " + shift_time!
@@ -270,6 +281,7 @@ class CSODashboardViewController: BaseViewController {
             dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX") as Locale // edited
          //   dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+            dateFormatter.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
             let date = dateFormatter.date(from: shift_date_time)
            // dateFormatter.dateFormat = "dd/MM/yyyy"
             let dateString = dateFormatter.string(from: date!)
@@ -277,6 +289,7 @@ class CSODashboardViewController: BaseViewController {
       let releaseDateString =  dateFormatter.string(from: date!)
         let releaseDateFormatter = DateFormatter()
         releaseDateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+            releaseDateFormatter.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
             //print(releaseDateString)
         releaseDate = releaseDateFormatter.date(from: releaseDateString)! as NSDate
         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)

@@ -60,7 +60,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
         //self.shiftViewImage.isHidden = true
       
         if screen == "DASHBOARD"{
-        self.back_button.isHidden = false
+       // self.back_button.isHidden = false
             pubunpubLabel.isHidden = true
             pubunpubImage.isHidden = true
             
@@ -110,7 +110,7 @@ class CSOTodaysEventDetailsViewController: UIViewController {
         if (screen  == "calender" ){
            
             self.buttonShift.isHidden = false
-            self.back_button.isHidden = false
+          //  self.back_button.isHidden = false
            // self.shiftViewImage.isHidden = false
             pubunpubLabel.isHidden = true
             pubunpubImage.isHidden = true

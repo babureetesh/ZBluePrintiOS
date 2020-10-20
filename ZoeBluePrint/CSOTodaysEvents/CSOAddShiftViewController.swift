@@ -130,7 +130,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
         self.backButton.isHidden = true
         
         if(self.screen == "EDIT SCREEN"){
-            self.backButton.isHidden = false
+            //self.backButton.isHidden = false
             self.HeadingLabel.text = NSLocalizedString("Update Shift", comment: "")
             
             self.profile_pic()

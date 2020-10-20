@@ -93,7 +93,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
      //   }*/
        
         self.lightStarRating.isHidden = true
-        self.backButton.isHidden = false
+       // self.backButton.isHidden = false
         self.starView.isHidden = true
         self.starView.isUserInteractionEnabled = false
         self.lightStarRating.isUserInteractionEnabled = false
@@ -312,7 +312,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
         
                    self.tableGetAllShift.isHidden = true
                    self.getShiftDetailsBackgroundView.isHidden = true
-                   self.backButton.isHidden = false
+                  // self.backButton.isHidden = false
                    RequestLabel.isHidden = false
                           ShiftDateLAbel.isHidden = false
                           ShiftTimeLabel.isHidden = false
@@ -405,8 +405,9 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
     dateFormatter.dateFormat = "dd"
    // //print("Dateobj: \(dateFormatter.string(from: dateObj!))")
     let dated = dateFormatter.string(from: dateObj!)
-    
-     
+    cell.lblMemberCount.layer.cornerRadius = cell.lblMemberCount.frame.width/2
+    cell.lblMemberCount.layer.masksToBounds = true
+    cell.lblMemberCount.text = shiftdata[indexPath.row]["shift_vol_req"] as! String
     cell.shiftDate.text = dated as! String
     cell.shiftMonth.text = shiftdata[indexPath.row]["shift_month"] as! String
      var day = shiftdata[indexPath.row]["shift_day"] as! String
