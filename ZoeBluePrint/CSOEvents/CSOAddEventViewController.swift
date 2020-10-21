@@ -514,7 +514,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                    image.delegate = self
                    image.sourceType = UIImagePickerController.SourceType.photoLibrary
                    image.allowsEditing = true
-             image.modalPresentationStyle = .overCurrentContext
+             image.modalPresentationStyle = .overFullScreen
                    self.present(image, animated: true)
                    {
                        
@@ -527,7 +527,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                    let imagePicker = UIImagePickerController()
                    imagePicker.delegate = self
                    imagePicker.sourceType = UIImagePickerController.SourceType.camera
-//                   imagePicker.allowsEditing = false
+                   imagePicker.allowsEditing = true
             imagePicker.modalPresentationStyle = .overFullScreen
             self.present(imagePicker, animated: true)
                    // call method whatever u need

@@ -204,7 +204,7 @@ class ChangeTimezoneCSO: UIViewController {
                     let alert = UIAlertController(title: nil, message: NSLocalizedString("Time Zone Update Successfully", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { action in
                         //run your function here
-                        self.dism()
+                       // self.dism()
                     }))
                     self.present(alert, animated: true)
                     self.setDataToView()

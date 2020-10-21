@@ -2191,9 +2191,20 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
     //Mark:- Volunteer Event Lists
     func VolunteerEventList(userData:String , onCompletion:@escaping CompletionHandler){
             ActivityLoaderView.startAnimating()
+        
+        var strUserTimezone = "EST"
+       let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+               let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+        if let timeZone = userIDData["user_timezone"] {
+           strUserTimezone = timeZone as? String ?? "EST"
+        }else{
+           strUserTimezone = "EST"
+        }
+       
             let date = Date()
             let format = DateFormatter()
-            format.dateFormat = "MM-dd-yyyy"
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        format.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
             let formattedDate = format.string(from: date)
             //print(formattedDate)
             

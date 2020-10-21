@@ -249,7 +249,7 @@ class ChangePasswordCSO: UIViewController,UITextFieldDelegate {
                     if isSuccess {
                         let alert = UIAlertController(title: nil, message: NSLocalizedString("Password change successfully", comment: ""), preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_action:UIAlertAction) -> Void in
-                            self.dismiss(animated: true, completion: nil)
+                           // self.dismiss(animated: true, completion: nil)
                         }))
                         self.present(alert, animated: true)
                     }else{

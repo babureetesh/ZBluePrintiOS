@@ -100,6 +100,14 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     // Creating Countdown Timer:
        fileprivate func configureCountDown() {
            if(self.volunteerEventlist != nil){
+            var strUserTimezone = "EST"
+           let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                   let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+            if let timeZone = userIDData["user_timezone"] {
+               strUserTimezone = timeZone as? String ?? "EST"
+            }else{
+               strUserTimezone = "EST"
+            }
                let shift_date = self.volunteerEventlist!.first!["shift_date"] as? String
                let shift_time = self.volunteerEventlist!.first!["shift_start_time_timer"] as? String
             let shift_date_time = self.utcToLocal(dateStr: shift_date! + " " + shift_time!)
@@ -113,6 +121,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                let releaseDateString =  dateFormatter.string(from: date!)
                let releaseDateFormatter = DateFormatter()
                releaseDateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+            releaseDateFormatter.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
                releaseDate = releaseDateFormatter.date(from: releaseDateString) as NSDate?
                countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
            }else{
