@@ -17,7 +17,7 @@ protocol refreshData {
     func refreshDataList(flagr:Bool)
 }
 
-class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate,UIDocumentPickerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate,LatLongdata,UIWebViewDelegate,XMLParserDelegate,CropViewControllerDelegate, TOCropViewControllerDelegate {
+class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate,UIDocumentPickerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate,LatLongdata,UIWebViewDelegate,XMLParserDelegate {
     
      
     @IBOutlet weak var closeButton_webView: UIButton!
@@ -48,6 +48,8 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     private var croppedRect = CGRect.zero
     private var croppedAngle = 0
    
+    let imagePicker = UIImagePickerController()
+    
     
 @IBAction func showMap(_ sender: Any) {
     
@@ -382,8 +384,9 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     }
     
  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-           picker.dismiss(animated: true)
+//           picker.dismiss(animated: true)
         if (self.waiver == "waiverClassUpload"){
+            picker.dismiss(animated: true)
             if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
             {
 
@@ -399,6 +402,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             }
         }else if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
            {
+            picker.dismiss(animated: true)
             self.imgEvent.image = image
             self.img = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
             guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
@@ -416,21 +420,19 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             let cropViewController = CropViewController(image: cameraImage)
               cropViewController.delegate = self
             cropViewController.modalPresentationStyle = .overFullScreen
-              present(cropViewController, animated: false, completion: nil)
-            
+
+            imagePicker.pushViewController(cropViewController, animated: true)
+//              present(cropViewController, animated: false, completion: nil)
         
         }else{
             // print("error")
     }
 
-           picker.dismiss(animated: true, completion: nil)
+//           picker.dismiss(animated: true, completion: nil)
        }
     
-    private func cropViewController(_ cropViewController: CropViewController, didCropTo image: UIImage, with cropRect: CGRect, angle: Int) {
-            // 'image' is the newly cropped version of the original image
-        self.imgEvent.image = image
-                   self.imgEvent.contentMode = .scaleToFill
-        }
+    
+
     
     @IBAction func startEventTime(_ sender: Any) {
         let dateSelectionPicker = DateSelectionViewController(startDate: nil, endDate:  nil)
@@ -525,12 +527,12 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
         let alert = UIAlertController(title: NSLocalizedString("Select image from", comment: ""), message: "", preferredStyle: .alert)
         let gallery = UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
             /** What we write here???????? **/
-             let image = UIImagePickerController()
-                   image.delegate = self
-                   image.sourceType = UIImagePickerController.SourceType.photoLibrary
-                   image.allowsEditing = false
-             image.modalPresentationStyle = .overFullScreen
-                   self.present(image, animated: true)
+            self.imagePicker.delegate = self
+            self.imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
+            self.imagePicker.allowsEditing = false
+            self.imagePicker.modalPresentationStyle = .overFullScreen
+            
+            self.present(self.imagePicker, animated: true)
                    {
                        
                    }
@@ -1831,3 +1833,16 @@ extension UIViewController {
 }
 
 
+extension CSOAddEventViewController:CropViewControllerDelegate {
+    func cropViewController(_ cropViewController: CropViewController, didCropImageToRect rect: CGRect, angle: Int) {
+//        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+        self.imagePicker.dismiss(animated: true, completion: nil)
+       
+    }
+    
+    func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
+        self.imgEvent.image = image
+                   self.imgEvent.contentMode = .scaleToFill
+    }
+}
