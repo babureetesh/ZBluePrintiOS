@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-ZoeBluePrint/Pods-ZoeBluePrint-frameworks
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework
 ${BUILT_PRODUCTS_DIR}/BRCountDownView/BRCountDownView.framework
+${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework
 ${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework
 ${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/FloatingLabelInput/FloatingLabelInput.framework

@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
   - BRCountDownView (0.2.1)
+  - CropViewController (2.5.5)
   - FLAnimatedImage (1.0.12)
   - FloatingLabelInput (0.1.0)
   - FSCalendar (2.8.0)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - BRCountDownView
+  - CropViewController
   - FLAnimatedImage (~> 1.0)
   - FloatingLabelInput
   - FSCalendar
@@ -46,6 +48,7 @@ SPEC REPOS:
     - SideMenu
   trunk:
     - AlamofireImage
+    - CropViewController
     - FLAnimatedImage
     - FloatingLabelInput
     - IQKeyboardManagerSwift
@@ -58,6 +61,7 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   BRCountDownView: c94d362aa7227a47582eddf8bb132cc10f7b4749
+  CropViewController: bd3ff11eeeaadc1e267bb9c3f3e9ee67a52d3285
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   FloatingLabelInput: b8d6ee9c5161fb3e85685cfa52698b58f3ced37b
   FSCalendar: 3a5ed3636e2ba1b83ebebfcf0c2603105a6f5efe
@@ -69,6 +73,6 @@ SPEC CHECKSUMS:
   SendBirdSDK: d89d5797ae87fd5aaea8e99a1578162be004de0d
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: 87642b93ed094f88f64a9e82aa9aa067b65bbb9e
+PODFILE CHECKSUM: 83bfa6f0a87e90533df317250ccd45ccb20cae77
 
 COCOAPODS: 1.8.4

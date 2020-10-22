@@ -20,4 +20,5 @@ pod 'FLAnimatedImage', '~> 1.0'
 pod 'RSKImageCropper'
 pod 'NYTPhotoViewer', '~> 1.0.0'
 pod 'IQKeyboardManagerSwift'
+pod 'CropViewController'
 end

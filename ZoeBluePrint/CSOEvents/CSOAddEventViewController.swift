@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CropViewController
 
 public enum UIButtonBorderSide {
     case  Bottom
@@ -16,7 +17,7 @@ protocol refreshData {
     func refreshDataList(flagr:Bool)
 }
 
-class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate,UIDocumentPickerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate,LatLongdata,UIWebViewDelegate,XMLParserDelegate {
+class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate,UIDocumentPickerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UIGestureRecognizerDelegate,LatLongdata,UIWebViewDelegate,XMLParserDelegate,CropViewControllerDelegate, TOCropViewControllerDelegate {
     
      
     @IBOutlet weak var closeButton_webView: UIButton!
@@ -42,6 +43,10 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
      var typeList: [[String:Any]]?
     var stateCode:String?
     var stateName = String()
+    private var croppingStyle = CropViewCroppingStyle.default
+    
+    private var croppedRect = CGRect.zero
+    private var croppedAngle = 0
    
     
 @IBAction func showMap(_ sender: Any) {
@@ -288,7 +293,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                                  image.delegate = self
                                  image.sourceType = UIImagePickerController.SourceType.photoLibrary
                                  image.allowsEditing = false
-                         image.modalPresentationStyle = .overCurrentContext
+                         image.modalPresentationStyle = .overFullScreen
                                  self.present(image, animated: true)
                                  {
                                      
@@ -406,8 +411,12 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
       
         }else if let cameraImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
             
-            self.imgEvent.image = cameraImage
-            self.imgEvent.contentMode = .scaleToFill
+//            self.imgEvent.image = cameraImage
+//            self.imgEvent.contentMode = .scaleToFill
+            let cropViewController = CropViewController(image: cameraImage)
+              cropViewController.delegate = self
+            cropViewController.modalPresentationStyle = .overFullScreen
+              present(cropViewController, animated: false, completion: nil)
             
         
         }else{
@@ -416,7 +425,13 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
 
            picker.dismiss(animated: true, completion: nil)
        }
-
+    
+    private func cropViewController(_ cropViewController: CropViewController, didCropTo image: UIImage, with cropRect: CGRect, angle: Int) {
+            // 'image' is the newly cropped version of the original image
+        self.imgEvent.image = image
+                   self.imgEvent.contentMode = .scaleToFill
+        }
+    
     @IBAction func startEventTime(_ sender: Any) {
         let dateSelectionPicker = DateSelectionViewController(startDate: nil, endDate:  nil)
         dateSelectionPicker.view.frame = self.view.frame
@@ -513,7 +528,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
              let image = UIImagePickerController()
                    image.delegate = self
                    image.sourceType = UIImagePickerController.SourceType.photoLibrary
-                   image.allowsEditing = true
+                   image.allowsEditing = false
              image.modalPresentationStyle = .overFullScreen
                    self.present(image, animated: true)
                    {
@@ -527,7 +542,7 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                    let imagePicker = UIImagePickerController()
                    imagePicker.delegate = self
                    imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                   imagePicker.allowsEditing = true
+                   imagePicker.allowsEditing = false
             imagePicker.modalPresentationStyle = .overFullScreen
             self.present(imagePicker, animated: true)
                    // call method whatever u need
@@ -1814,6 +1829,5 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
-
 
 
