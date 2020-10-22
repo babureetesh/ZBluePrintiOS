@@ -55,7 +55,6 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
        // self.delegate = self
         // Do any additional setup after loading the view.
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("showorg"), object: nil)
         objOrganization = self.storyboard!.instantiateViewController(withIdentifier: "organization") as? OrganizationViewController
         
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -302,27 +301,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                    }
       
     
-    @objc func methodOfReceivedNotification(notification: Notification) {
-        
-        print("Notification called")
-        self.tabBarController!.selectedIndex = 0
-        self.setupViewForOrganization()
-    }
     
-    func setupViewForOrganization(){
-        
-        boolShoOrg = true
-        
-              
-             
-              objOrganization.view.frame = self.view.bounds;
-              objOrganization.willMove(toParent: self)
-              self.view.addSubview(objOrganization.view)
-              self.addChild(objOrganization)
-              objOrganization.didMove(toParent: self)
-        
-        
-    }
     
     
     func DarkMode() {
