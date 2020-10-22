@@ -255,8 +255,9 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
 }
     
     @IBAction func showOrganization(_ sender: Any) {
-//let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//       let org  = storyboard.instantiateViewController(withIdentifier: "organization") as! OrganizationViewController
+let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+       let org  = storyboard.instantiateViewController(withIdentifier: "organization") as! OrganizationViewController
+        SideMenuManager.defaultManager.menuRightNavigationController?.pushViewController(org, animated: true)
 //       self.present(org, animated: true, completion: nil)
         
       //  let vc = self.tabBarController?.viewControllers?[1] as! NewVolunteerDashboard
