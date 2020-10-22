@@ -538,15 +538,14 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                    }
             // call method whatever u need
         })
-        let camera = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
+        let camera = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: { [self](_ action: UIAlertAction) -> Void in
                    /** What we write here???????? **/
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.camera){
-                   let imagePicker = UIImagePickerController()
-                   imagePicker.delegate = self
-                   imagePicker.sourceType = UIImagePickerController.SourceType.camera
-                   imagePicker.allowsEditing = false
-            imagePicker.modalPresentationStyle = .overFullScreen
-            self.present(imagePicker, animated: true)
+                self.imagePicker.delegate = self
+                self.imagePicker.sourceType = UIImagePickerController.SourceType.camera
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.modalPresentationStyle = .overFullScreen
+                self.present(self.imagePicker, animated: true)
                    // call method whatever u need
             }
                })
