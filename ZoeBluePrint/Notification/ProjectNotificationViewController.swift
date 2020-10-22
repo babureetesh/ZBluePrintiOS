@@ -143,7 +143,7 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
     
    
     @IBAction func back_button(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
         //self.view.removeFromSuperview()
     }
     
