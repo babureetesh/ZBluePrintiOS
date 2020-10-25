@@ -320,8 +320,8 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
                           vol_requested.isHidden = false
                           shift_date.isHidden = false
                           shift_time.isHidden = false
-                          StatusImage.isHidden = false
-                          StatusLabel.isHidden = false
+                         // StatusImage.isHidden = false
+                         // StatusLabel.isHidden = false
        
         task_name.text = shiftdata1["shift_task_name"] as! String
     

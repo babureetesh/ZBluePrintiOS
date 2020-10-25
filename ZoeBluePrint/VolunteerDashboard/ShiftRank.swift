@@ -41,6 +41,7 @@ class ShiftRank: UIViewController {
         
         //print(data1)
         
+       
         self.setValues()
         
       }

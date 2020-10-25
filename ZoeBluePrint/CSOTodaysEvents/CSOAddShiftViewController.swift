@@ -524,7 +524,20 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
         
         let editedDateEndTime = self.shiftEndTime.replacingOccurrences(of: ":", with: "")
        // //print(editedDateEndTime)
-        
+    
+    let formatter = DateFormatter()
+      // formatter.locale = Locale(identifier: "en_US_POSIX")
+       formatter.dateFormat = "h:mm a"
+       formatter.amSymbol = "AM"
+       formatter.pmSymbol = "PM"
+       let firstTime = formatter.date(from: shiftStartTime)
+       let secondTime = formatter.date(from: shiftEndTime)
+
+//
+//       if firstTime?.compare(secondTime!) == .orderedAscending {
+//           print("First Time is smaller then Second Time")
+//       }
+//
         if (self.sDate == "")
         {
             
@@ -555,8 +568,8 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
             
             return false;
             
-        }else if (shiftEndTime < shiftStartTime){
-            
+        }else if firstTime?.compare(secondTime!) == .orderedDescending {
+        
             let alert = UIAlertController(title: NSLocalizedString("Alert!", comment: ""), message: NSLocalizedString("End Time can't be before Start Time", comment: ""), preferredStyle: UIAlertController.Style.alert)
                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
                        self.present(alert, animated: true, completion: nil)

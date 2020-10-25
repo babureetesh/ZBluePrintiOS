@@ -420,7 +420,16 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             let cropViewController = CropViewController(image: cameraImage)
               cropViewController.delegate = self
             cropViewController.modalPresentationStyle = .overFullScreen
-
+            if let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+             {
+                self.imgName = fileURL.lastPathComponent
+               
+                //return
+            }else{
+                self.imgName = "image1"
+            }
+            
+           
             imagePicker.pushViewController(cropViewController, animated: true)
 //              present(cropViewController, animated: false, completion: nil)
         
@@ -1843,5 +1852,17 @@ extension CSOAddEventViewController:CropViewControllerDelegate {
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
         self.imgEvent.image = image
                    self.imgEvent.contentMode = .scaleToFill
+        
+        self.imgEvent.image = image
+        self.img = (image as? UIImage)!.jpegData(compressionQuality: 0.5)!
+//        guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+//        else {
+//            self.imgName = "image1"
+//            return
+//        }
+        
+     //   self.imgName = fileURL.lastPathComponent
+        
+        
     }
 }

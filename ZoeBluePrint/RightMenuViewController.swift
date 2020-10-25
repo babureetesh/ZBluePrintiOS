@@ -29,6 +29,7 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
     @IBOutlet weak var imageSetting: UIImageView!
     @IBOutlet weak var imageLogout: UIImageView!
     @IBOutlet weak var imagePassword: UIImageView!
+    let image = UIImagePickerController()
     var dataProfilePhoto:Data?
     var ImagePro:String = ""
     
@@ -64,11 +65,11 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
         let alert = UIAlertController(title: NSLocalizedString("UPLOAD FILES FROM", comment: ""), message: "", preferredStyle: .alert)
                let gallery = UIAlertAction(title: NSLocalizedString("Gallery", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
                    /** What we write here???????? **/
-                    let image = UIImagePickerController()
-                          image.delegate = self
-                          image.sourceType = UIImagePickerController.SourceType.photoLibrary
-                          image.allowsEditing = true
-                          self.present(image, animated: true)
+                   
+                self.image.delegate = self
+                self.image.sourceType = UIImagePickerController.SourceType.photoLibrary
+                self.image.allowsEditing = true
+                self.present(self.image, animated: true)
                           {
                               
                           }
@@ -76,11 +77,11 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
                })
                let camera = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
                           /** What we write here???????? **/
-                          let image = UIImagePickerController()
-                           image.delegate = self
-                          image.sourceType = UIImagePickerController.SourceType.camera
-                          image.allowsEditing = true
-                          self.present(image, animated: true)
+                         // let image = UIImagePickerController()
+                self.image.delegate = self
+                self.image.sourceType = UIImagePickerController.SourceType.camera
+                self.image.allowsEditing = true
+                self.present(self.image, animated: true)
                           {
                             //self.mainView.isHidden = false
                             
@@ -109,14 +110,18 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
             self.dataProfilePhoto = (pickedImage as? UIImage)!.jpegData(compressionQuality: 0.5)!
             
         }
-        guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
-            else {
-                self.ImagePro = "image2"
-                return
+        if let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+             {
+            self.ImagePro = fileURL.lastPathComponent
+                
+               // return
+        }else{
+            self.ImagePro = "image2"
         }
         //                let url = NSURL(string:self.ImagePro)
-            self.ImagePro = fileURL.lastPathComponent
-          self.dismiss(animated: true, completion: nil)
+            
+          //self.dismiss(animated: true, completion: nil)
+    self.image.dismiss(animated: true, completion: nil)
     ActivityLoaderView.startAnimating()
         self.uploadProfileImage()
       }

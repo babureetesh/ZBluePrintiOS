@@ -128,19 +128,19 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
             self.dataProfilePhoto = (pickedImage as? UIImage)!.jpegData(compressionQuality: 0.5)!
             
         }
-        guard let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
-            else {
-                self.ImagePro = "image2"
-                return
+        if let fileURL = info[UIImagePickerController.InfoKey.imageURL] as? URL
+             {
+            self.ImagePro = fileURL.lastPathComponent
+        }else{
+            self.ImagePro = "image2"
         }
         //                let url = NSURL(string:self.ImagePro)
-            self.ImagePro = fileURL.lastPathComponent
+            
           self.dismiss(animated: true, completion: nil)
         ActivityLoaderView.startAnimating()
         self.uploadProfileImage()
       }
 
-  
     
       func imagePickerControllerDidCancel(_ picker: UIImagePickerController)    {
           dismiss(animated: true, completion: nil)
