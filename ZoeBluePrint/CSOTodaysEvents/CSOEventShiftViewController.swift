@@ -23,9 +23,6 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
     @IBOutlet weak var imageDelete: UIImageView!
     @IBOutlet weak var imageEdit: UIImageView!
     @IBOutlet weak var imgViewCsoCover: UIImageView!
-    @IBOutlet weak var StatusImage: UIImageView!
-    
-    @IBOutlet weak var StatusLabel: UILabel!
     
     @IBOutlet weak var lightStarRating: FloatRatingView!
     
@@ -104,8 +101,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
         vol_requested.isHidden = true
         shift_date.isHidden = true
         shift_time.isHidden = true
-        StatusLabel.isHidden = true
-        StatusLabel.isHidden = true
+      
         
         if screen == "calender"{
      
@@ -320,8 +316,7 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
                           vol_requested.isHidden = false
                           shift_date.isHidden = false
                           shift_time.isHidden = false
-                         // StatusImage.isHidden = false
-                         // StatusLabel.isHidden = false
+                   
        
         task_name.text = shiftdata1["shift_task_name"] as! String
     
@@ -344,27 +339,27 @@ class CSOEventShiftViewController: UIViewController,UITableViewDelegate,UITableV
         let intVolReq = Int(shiftdata1["shift_vol_req"]as! String)
         let intVolunteerreqAccepted = Int(shiftdata1["volunteer_req_accepted"]as! String)
         
-        if intVolunteerApply != 0{
-            
-            StatusImage.image = UIImage(named: "complete-verified.png")
-                   StatusLabel.text = "Applied"
-                   self.StatusLabel.textColor = UIColor.gray
-        }else if intVolunteerApply == 0{
-            
-            if intVolunteerreqAccepted == intVolReq{
-                
-                StatusImage.image = UIImage(named: "not-available.png")
-                StatusLabel.text = "Not Available"
-                self.StatusLabel.textColor = UIColor.gray
-                
-            }else{
-                
-                StatusImage.image = UIImage(named: "csoavailable.png")
-                StatusLabel.text = "Available"
-                self.StatusLabel.textColor = UIColor(red: 39/255.0, green: 174/255.0, blue: 96/255.0, alpha: 1.0)
-                
-            }
-        }
+//        if intVolunteerApply != 0{
+//
+////            StatusImage.image = UIImage(named: "complete-verified.png")
+////                   StatusLabel.text = "Applied"
+////                   self.StatusLabel.textColor = UIColor.gray
+//        }else if intVolunteerApply == 0{
+//
+//            if intVolunteerreqAccepted == intVolReq{
+//
+//                StatusImage.image = UIImage(named: "not-available.png")
+//                StatusLabel.text = "Not Available"
+//                self.StatusLabel.textColor = UIColor.gray
+//
+//            }else{
+//
+//                StatusImage.image = UIImage(named: "csoavailable.png")
+//                StatusLabel.text = "Available"
+//                self.StatusLabel.textColor = UIColor(red: 39/255.0, green: 174/255.0, blue: 96/255.0, alpha: 1.0)
+//
+//            }
+//        }
         
     }
     
@@ -541,8 +536,8 @@ let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
         vol_requested.isHidden = false
         shift_date.isHidden = false
         shift_time.isHidden = false
-        StatusLabel.isHidden = false
-        StatusLabel.isHidden = false
+//        StatusLabel.isHidden = false
+//        StatusLabel.isHidden = false
         
 
         self.starView.rating = Double(shiftdata[index!]["shift_rank"]as! String ) ?? 0.0
