@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControllerDelegate,CLLocationManagerDelegate,UITableViewDelegate,UITableViewDataSource {
+class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControllerDelegate,CLLocationManagerDelegate{
 
     
     @IBOutlet weak var btnSideMenu: UIButton!
@@ -23,14 +23,12 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
 //    @IBOutlet weak var btnMessage: UIButton!
 //    @IBOutlet weak var btnCSOArea: UIButton!
     
-    @IBOutlet weak var viewTblEvenList: UIView!
     @IBOutlet weak var imageEvent: UIImageView!
     @IBOutlet weak var imageLocker: UIImageView!
     @IBOutlet weak var imageTarget: UIImageView!
     @IBOutlet weak var imageMessage: UIImageView!
     @IBOutlet weak var imageArea: UIImageView!
     
-    @IBOutlet weak var tblVolEventList: UITableView!
     
     @IBOutlet weak var Days_counter_value: UILabel!
        @IBOutlet weak var Days_counter: UILabel!
@@ -63,7 +61,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                      //print(userID)
                      let servicehandler = ServiceHandlers()
                     
-                     servicehandler.VolunteerEventList(userData: userID as! String) { (responce, isSuccess) in
+        servicehandler.VolunteerEventList(userData: userID ) { (responce, isSuccess) in
                          if isSuccess {
                              let data = responce as! Dictionary<String,Any>
                            self.volunteerEventlist = data["event_data"] as? [[String : Any]]
@@ -170,29 +168,28 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         
         var strImageNameCover = "cover_cloud.jpg"
         
-  let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
-            let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-            //print(volData)
-            if (volData["user_avg_rank"] != nil){
-                if let userAvgRank = volData["user_avg_rank"] as? String {
-                    
-                   let floatUserAverageRank = Float(userAvgRank)!
-                    
-                       
-                    if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
-                        strImageNameCover = "cover_riseandshine.jpg"
-                    }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
-                        strImageNameCover = "cover_cake.jpg"
-                    }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
-                        strImageNameCover = "cover_cool.jpg"
-                    }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
-                        strImageNameCover = "cover_truck.jpg"
-                    }else if (floatUserAverageRank > 80 ){
-                        strImageNameCover = "cover_cloud.jpg"
-                    }
-                   
-                }
+        if let decoded  = UserDefaults.standard.object(forKey: "VolData") as? Data, let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? Dictionary<String, Any>, let userAvgRank = volData["user_avg_rank"] as? String
+        //print(volData)
+        {
+            
+            
+            let floatUserAverageRank = Float(userAvgRank)!
+            
+            
+            if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
+                strImageNameCover = "cover_riseandshine.jpg"
+            }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
+                strImageNameCover = "cover_cake.jpg"
+            }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
+                strImageNameCover = "cover_cool.jpg"
+            }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
+                strImageNameCover = "cover_truck.jpg"
+            }else if (floatUserAverageRank > 80 ){
+                strImageNameCover = "cover_cloud.jpg"
             }
+            
+            
+        }
         self.image.image = UIImage(named:strImageNameCover)
         
         
@@ -200,7 +197,6 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.viewTblEvenList.isHidden = true
         super.viewWillAppear(animated)
      /*
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -539,109 +535,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     
          
   
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (volunteerEvent != nil)
-        {
-            return volunteerEvent!.count
-        }else{
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tblVolEventList.dequeueReusableCell(withIdentifier: "voleventlistcell", for: indexPath) as! VolEventsListTableViewCell
-        
-        
-        var a = volunteerEvent[indexPath.row]
-
-        let dateString = a["event_register_start_date"] as! String
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy"
-        dateFormatter.locale = Locale.init(identifier: "en_GB")
-
-        let dateObj = dateFormatter.date(from: dateString)    //date is changing into string
-
-        dateFormatter.dateFormat = "dd"
-        //print("Dateobj: \(dateFormatter.string(from: dateObj!))")  // the date data is coming now to again change from from string to date
-        let dated = dateFormatter.string(from: dateObj!)
-        print(dated)
-       // cell.lblEventDate.text = dated as! String
-
-
-
-        dateFormatter.dateFormat = "MM"
-        //print("Monobj: \(dateFormatter.string(from: dateObj!))")
-        let Month = dateFormatter.string(from: dateObj!)  // String coming
-        let mon = Int(Month)     // changing String into Int
-        let month = dateFormatter.monthSymbols[mon! - 1]    // data according to array [0....12]
-        let mon2:String = String(month.prefix(3))       // e.g., oct,Nov,Dec....
-        print(mon2)
-      //  cell.lblMonth.text = mon2 as! String
-
-
-        dateFormatter.dateFormat = "EEEE"
-        //print("Week: \(dateFormatter.string(from: dateObj!))")
-        let weekday = Calendar.current.component(.weekday, from: dateObj!)
-        let week:String = dateFormatter.weekdaySymbols![weekday - 1]
-        print(week)
-       // a.weekdaySymbols[Calendar.current.component(.weekday, from: dateObj)]
-        cell.lblEventDate.text = "\(dated)\n\(mon2)\n\(week.prefix(3))"
-        cell.lblEventTitle.text = a["event_heading"] as? String
-       
-        //print(time)
-        cell.lblEventDesc.text = a["event_details"] as? String
-        cell.lblEventDesc.sizeToFit()
-        let cellHeight = cell.contentView.bounds.size.height;
-        cell.lblEventDate.frame.size.height = cellHeight
-//        let neededSize =  cell.lblEventDesc.sizeThatFits(CGSize(width: maxLabelWidth, height: CGFloat.greatestFiniteMagnitude))
-//        print(neededSize)
-        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
-        return cell
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let a = volunteerEvent[indexPath.row]
-        let cellText = a["event_details"] as? String
-        let cellFont = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
-        
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 270.0, height: CGFloat.greatestFiniteMagnitude))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = cellFont
-        label.text = cellText
-        label.sizeToFit()
-        print(label.frame.height)
-        
-        return label.frame.height + 80
-        
-       // return 250.0
-
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        var event = volunteerEvent[indexPath.row]
-        //print(event)
-        
-        let a = volunteerEvent[indexPath.row]
-        let sbh = ServiceHandlers()
-        sbh.getSelectedEventDetails(eventId: a["event_id"] as! String){(responce,isSuccess) in
-            if isSuccess{
-               let event2 = responce as! Dictionary<String,Any>
-                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-                       let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Description") as! VolunteerEventDescription
-                       nextViewController.eventData = event2
-                    nextViewController.event_id = a["event_id"] as! String
-                       self.present(nextViewController, animated:true, completion:nil)
-            }
-            
-        }
-      
-    }
-    
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableView.automaticDimension
-//    }
-
+ 
    
     
 }

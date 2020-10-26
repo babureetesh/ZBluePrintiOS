@@ -47,36 +47,32 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                  }
     }
     func getCoverImageForRank(){
+        
+        var strImageNameCover = "cover_cloud.jpg"
+        
+        if  let decoded  = UserDefaults.standard.object(forKey: "VolData") as? Data, let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as?  Dictionary<String, Any>, let userAvgRank = volData["user_avg_rank"] as? String {
             
-            var strImageNameCover = "cover_cloud.jpg"
+            let floatUserAverageRank = Float(userAvgRank)!
             
-      let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
-                let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-                //print(volData)
-                if (volData["user_avg_rank"] != nil){
-                    if let userAvgRank = volData["user_avg_rank"] as? String {
-                        
-                       let floatUserAverageRank = Float(userAvgRank)!
-                        
-                           
-                        if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
-                            strImageNameCover = "cover_riseandshine.jpg"
-                        }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
-                            strImageNameCover = "cover_cake.jpg"
-                        }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
-                            strImageNameCover = "cover_cool.jpg"
-                        }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
-                            strImageNameCover = "cover_truck.jpg"
-                        }else if (floatUserAverageRank > 80 ){
-                            strImageNameCover = "cover_cloud.jpg"
-                        }
-                       
-                    }
-                }
-            self.imgCoverPic.image = UIImage(named:strImageNameCover)
             
+            if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
+                strImageNameCover = "cover_riseandshine.jpg"
+            }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
+                strImageNameCover = "cover_cake.jpg"
+            }else if ((floatUserAverageRank > 40) && (floatUserAverageRank <= 60)){
+                strImageNameCover = "cover_cool.jpg"
+            }else if ((floatUserAverageRank > 60) && (floatUserAverageRank <= 80)){
+                strImageNameCover = "cover_truck.jpg"
+            }else if (floatUserAverageRank > 80 ){
+                strImageNameCover = "cover_cloud.jpg"
+            }
             
         }
+        
+        self.imgCoverPic.image = UIImage(named:strImageNameCover)
+        
+        
+    }
     func setProfilePic() {
         
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data

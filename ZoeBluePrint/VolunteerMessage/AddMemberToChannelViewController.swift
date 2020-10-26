@@ -140,10 +140,8 @@ class AddMemberToChannelViewController: UIViewController,delegateNewMemberSelect
         let usertype = userIDData["user_type"] as! String
         if (usertype == "VOL"){
           var strImageNameCover = "cover_cloud.jpg"
-    let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
-              let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-              if (volData["user_avg_rank"] != nil){
-                  if let userAvgRank = volData["user_avg_rank"] as? String {
+            if let decoded  = UserDefaults.standard.object(forKey: "VolData") as? Data,let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as?  Dictionary<String, Any>, (volData["user_avg_rank"] != nil){
+                if let userAvgRank = volData["user_avg_rank"] as? String {
                       
                      let floatUserAverageRank = Float(userAvgRank)!
                       
