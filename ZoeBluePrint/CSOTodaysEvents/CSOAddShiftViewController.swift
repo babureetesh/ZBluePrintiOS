@@ -58,6 +58,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
      var shiftEndTime = String ()
     var data_for_update:Dictionary<String,Any>?
     var screen:String?
+    var shiftName: String?
     
    let RankList = [["rank":"0",
                       "shift_rank":"0"],["rank":"1",
@@ -338,13 +339,15 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                                                          let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
                                          
                                      ActivityLoaderView.startAnimating()
-                                                      SBDMain.connect(withUserId: userEmail) { (user, error) in
+                            SBDMain.connect(withUserId: userEmail) { [self] (user, error) in
                                                                 guard error == nil else {   // Error.
                                                                     return
                                                                   ActivityLoaderView.stopAnimating()
                                                                 }
                                                          ActivityLoaderView.stopAnimating()
-                                                              SBDGroupChannel.createChannel(withName: userFullName, isDistinct: true, userIds: [ userEmail ], coverUrl: nil, data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                                let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
+                                                        
+                                SBDGroupChannel.createChannel(withName: eventName, isDistinct: false, userIds: [ userEmail ], coverUrl: eventDetail["event_image"]! as? String , data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
                                                                      guard error == nil else {   // Error.
                                                                          return
                                                                      }
@@ -470,7 +473,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     @IBAction func taskShiftSelection(_ sender: Any) {
         
         let controller = DropDownItemsTable(shiftList)
-        controller.showPopoverInDestinationVC(destination: self, sourceView: sender as! UIView) { (selectedValue) in
+        controller.showPopoverInDestinationVC(destination: self, sourceView: sender as! UIView) { [self] (selectedValue) in
            // //print(selectedValue)
             
             if let selectShiftData = selectedValue as? [String:Any],
@@ -480,6 +483,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
             
             if let selectVal = selectedValue as? [String:Any], let title = selectVal[GetAddShiftSelectShiftStrings.keyShiftTaskName] as? String {
                 (sender as AnyObject).setTitle(title, for: .normal)
+                shiftName = title
             }
         }
     }
