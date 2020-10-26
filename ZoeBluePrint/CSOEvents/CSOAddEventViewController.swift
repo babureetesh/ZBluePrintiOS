@@ -752,17 +752,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
     }
     override func viewWillAppear(_ animated : Bool) {
         super.viewWillAppear(animated)
-//        let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
-//       
-//        if defaults == "Dark Mode" {
-//            
-//            DarkMode()
-//        
-//        }else if defaults == "Light Mode"{
-//            LightMode()
-//            
-//        }
-        
         
        if screenTitle == "UPDATE EVENT DETAILS"{
            self.lblScreenTitle.text = NSLocalizedString("UPDATE EVENT DETAILS", comment: "")
@@ -789,7 +778,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                 self.eDate = data_of_event["event_register_end_date"] as! String
                 self.sDate = data_of_event["event_register_start_date"] as! String
             self.btnStartDateSel.setTitle(data_of_event["event_register_start_date"] as? String, for: .normal)
-            
 //            var Start
                 self.btnStartTime.setTitle(data_of_event["event_start_time_format"] as? String, for: .normal)
                 self.StartTime = data_of_event["event_start_time_format"] as! String
@@ -816,7 +804,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
             //let strphone = String(describing: phone)
             self.txtFldPhone.text = self.formattedNumber(number:(data_of_event["event_phone"] as? String)!)
 
-            
             self.timeZoneID = (data_of_event["event_timezone"] as? String)!
              self.txtFldCity.text = (data_of_event["event_city"] as? String)
             self.stateID = data_of_event["event_state"] as! String
@@ -851,7 +838,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                 }
                 
             }
-            
            
             self.btnEventSelection.setTitle(data_of_event["event_type_name"] as? String, for: .normal)
             if(waiver as! String == "1"){
@@ -887,7 +873,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                  self.checkButtonOutlet.setImage(UIImage(named: "TickIcon.png"), for: .normal)
             }
             
-            
             if let imageURLstr = data_of_event["event_image"] as? String,
                 let imageURL:URL = URL(string: imageURLstr.replacingOccurrences(of: " ", with: "%20")) {
                  let serviceHanlder = ServiceHandlers()
@@ -903,17 +888,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                      }
                  }
             }
-            
-//            let string_url = data_of_event["event_image"] as? String
-//                       let replacedStr = string_url!.replacingOccurrences(of: " ", with: "%20")
-//                           let imageUrl = URL(string: replacedStr)!
-//                           do {
-//                               let imageData = try Data(contentsOf: imageUrl as URL)
-//                               self.imgEvent.image = UIImage(data: imageData)
-//
-//                           } catch {
-//                               //print("Unable to load data: \(error)")
-//                           }
             
             self.eventTypeId = data_of_event["event_type_id"] as! String
                        let servicehandler = ServiceHandlers()
@@ -944,8 +918,6 @@ class CSOAddEventViewController: UIViewController,UINavigationControllerDelegate
                 }
 
             }
-                    
-            
             
         }
             self.view.setNeedsLayout()

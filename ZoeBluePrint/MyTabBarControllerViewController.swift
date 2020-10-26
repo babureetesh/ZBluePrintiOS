@@ -17,7 +17,7 @@ class MyTabBarControllerViewController: UITabBarController, UITabBarControllerDe
         
         let lineView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 3))
         lineView.backgroundColor = UIColor.lightGray
-        self.tabBar.addSubview(lineView)
+        //self.tabBar.addSubview(lineView)
         
     }
     

@@ -336,7 +336,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                             let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                                                          let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                                                          let userEmail = userIDData["user_email"] as! String
-                                                         let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
+                                                         //let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
                                          
                                      ActivityLoaderView.startAnimating()
                             SBDMain.connect(withUserId: userEmail) { [self] (user, error) in
@@ -347,7 +347,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                                                          ActivityLoaderView.stopAnimating()
                                 let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
                                                         
-                                SBDGroupChannel.createChannel(withName: eventName, isDistinct: false, userIds: [ userEmail ], coverUrl: eventDetail["event_image"]! as? String , data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                                SBDGroupChannel.createChannel(withName: eventName, isDistinct: true, userIds: [ userEmail ], coverUrl: eventDetail["event_image"]! as? String , data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
                                                                      guard error == nil else {   // Error.
                                                                          return
                                                                      }

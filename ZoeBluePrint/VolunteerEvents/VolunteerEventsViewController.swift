@@ -641,8 +641,7 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                   if let userAvgRank = volData["user_avg_rank"] as? String {
                       
                      let floatUserAverageRank = Float(userAvgRank)!
-                      
-                         
+                
                       if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
                           strImageNameCover = "cover_riseandshine.jpg"
                       }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
