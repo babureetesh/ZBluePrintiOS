@@ -165,7 +165,8 @@ class ChangeTimezoneCSO: UIViewController {
         }
     }
     @IBAction func back_button(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+        //self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -265,7 +266,8 @@ class ChangeTimezoneCSO: UIViewController {
     }
     
     func dism(){
-        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+        //self.dismiss(animated: true, completion: nil)
     }
     func validate() -> Bool {
         if(self.timezoneID == ""){

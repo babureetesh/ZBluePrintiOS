@@ -388,7 +388,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                     
                      let objToBeSent = "Test Message from Notification"
                     NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: objToBeSent);
-                    self.dismiss(animated: true, completion: nil)
+                    performSegueToReturnBack()
                     
             }
         }

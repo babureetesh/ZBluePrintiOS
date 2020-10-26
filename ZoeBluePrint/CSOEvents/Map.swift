@@ -40,7 +40,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
          //  let b = latitu as! String
            // if ((longitu != nil) && (latitu != nil)) {
             self.delegate.mapData(lang: longitu, lat: latitu, city: self.city!, postal_code: self.postalcode, address: self.address)
-            self.dismiss(animated: true, completion: nil)
+            performSegueToReturnBack()
+            //self.dismiss(animated: true, completion: nil)
            // }
             
         }
@@ -48,7 +49,8 @@ class Map: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
         
     }
     @IBAction func btnCancle(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
     }
   
     override func viewDidLoad() {

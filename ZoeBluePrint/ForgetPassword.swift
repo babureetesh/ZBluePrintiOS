@@ -50,8 +50,8 @@ class ForgetPassword: UIViewController,UITextFieldDelegate {
         }
     
     @IBAction func backButton(_ sender: Any) {
-       
-        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+//        self.dismiss(animated: true, completion: nil)
     }
     
     func isValidEmail(text:String) -> Bool {

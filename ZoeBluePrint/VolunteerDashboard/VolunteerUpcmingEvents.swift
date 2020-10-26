@@ -37,7 +37,8 @@ class VolunteerUpcmingEvents: UIViewController,UITableViewDelegate,UITableViewDa
                 }else{
                     let alert = UIAlertController(title: nil, message: NSLocalizedString("No Data Found", comment: ""), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: {(_alertCOntroller)-> Void in
-                        self.dismiss(animated: true, completion: nil)
+                        //self.dismiss(animated: true, completion: nil)
+                        self.performSegueToReturnBack()
                         
                     }))
                     self.present(alert,animated: true)
@@ -168,8 +169,8 @@ class VolunteerUpcmingEvents: UIViewController,UITableViewDelegate,UITableViewDa
     
     
     @IBAction func backbutton(_ sender: Any) {
-        
-    dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+//    dismiss(animated: true, completion: nil)
         
     }
     

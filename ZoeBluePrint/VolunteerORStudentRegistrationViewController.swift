@@ -241,8 +241,8 @@ class VolunteerORStudentRegistrationViewController: UIViewController,UITextField
     
     @IBAction func backbutton(_ sender: Any) {
         
-
-        dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+//        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func selectVolunteerCountryTapped(_ sender: Any) {

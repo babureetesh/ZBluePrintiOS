@@ -628,8 +628,8 @@ self.volState.setTitleColor(UIColor.black, for: UIControl.State.normal)
                 servicehandler.csoeditProfileStep1(data: params2){(responce,isSuccess) in
                     if isSuccess{
                         // goto dashboard
-                        
-                        self.dismiss(animated: true, completion: nil)
+                        self.performSegueToReturnBack()
+                        //self.dismiss(animated: true, completion: nil)
                         
                     }else{
                         

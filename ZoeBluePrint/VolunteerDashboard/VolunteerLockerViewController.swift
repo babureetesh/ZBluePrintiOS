@@ -656,8 +656,8 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
         }else{
             //print("error")
         }
-        self.dismiss(animated: true, completion: nil)
-        
+//        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
     }
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
         if controller.documentPickerMode == UIDocumentPickerMode.import {

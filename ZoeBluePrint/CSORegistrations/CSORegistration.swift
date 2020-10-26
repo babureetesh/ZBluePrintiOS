@@ -1075,7 +1075,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         }else{
            // //print("error")
         }
-        self.dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
     }
     @IBAction func stage1Gender(_ sender: Any) {
         let contents = ["Female","Male"]
@@ -1635,7 +1635,8 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
 
         print(" cancelled by user")
 
-        dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+        //dismiss(animated: true, completion: nil)
 
     }
     
@@ -2146,7 +2147,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                 {
                     let alert = UIAlertController(title: nil, message: "Update Successful", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { (alert_action) in
-                        self.dismiss(animated: true, completion: nil)
+                        self.performSegueToReturnBack()
                     }))
                     self.present(alert, animated: true)
                 }else{

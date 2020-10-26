@@ -171,7 +171,8 @@ override func viewWillAppear(_ animated: Bool) {
                 
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: { _ in
                     //Cancel Actionse
-                    self.dismiss(animated: true, completion: nil)
+                    self.performSegueToReturnBack()
+                   // self.dismiss(animated: true, completion: nil)
                 }))
                 
                 self.present(alert, animated: true, completion: nil)

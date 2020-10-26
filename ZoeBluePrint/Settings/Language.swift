@@ -121,8 +121,8 @@ picker.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButton(_ sender: Any) {
-        
-        dismiss(animated: true, completion: nil)
+        performSegueToReturnBack()
+        //dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnChooseProfilePic(_ sender: Any) {
