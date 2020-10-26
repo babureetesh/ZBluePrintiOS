@@ -772,7 +772,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     }
      func formattedNumber(number: String) -> String {
         let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-        let mask = "(XXX) XXX-XXXX"
+        let mask = "(XXX)XXX-XXXX"
         
         var result = ""
         var index = cleanPhoneNumber.startIndex

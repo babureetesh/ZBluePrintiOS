@@ -1034,7 +1034,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
     
    func formattedNumber(number: String) -> String {
           let cleanPhoneNumber = number.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-          let mask = "(XXX) XXX-XXXX"
+          let mask = "(XXX)XXX-XXXX"
 
           var result = ""
           var index = cleanPhoneNumber.startIndex
@@ -1192,6 +1192,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
        self.scrollerView.setContentOffset(.zero, animated: false)
         
         if (self.screen == "EDIT VIEW"){
+            if(validateStage1Edit()){
             let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
             let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
             let user_id = userIDData["user_id"] as! String
@@ -1211,7 +1212,6 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                 "user_gender":self.user_gender,
                 "school_id":"",
                 "user_ethnicity":"",
-
                 "user_grade":"",
 
                 "vol_status":""
@@ -1289,7 +1289,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
 
                     }
                 }
-
+            }
         }else if(validate()){
         var params =            ["user_type":"CSO",
                                  "user_device": UIDevice.current.identifierForVendor!.uuidString,
@@ -1382,19 +1382,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
                                         }
                                  // call method whatever u need
                              })
-//let camera = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
-///** What we write here???????? **/
-//
-//let image = UIImagePickerController()
-//image.delegate = self
-//image.sourceType = UIImagePickerController.SourceType.camera
-//image.allowsEditing = false
-//self.present(image, animated: true)
-//{
-//
-//}
-// call method whatever u need
-//})
+
                       let drive = UIAlertAction(title: NSLocalizedString("Files", comment: ""), style: .default, handler: {(_ action: UIAlertAction) -> Void in
                                               /** What we write here???????? **/
                                              let documentPicker = UIDocumentPickerViewController(documentTypes: ["com.apple.iwork.pages.pages", "com.apple.iwork.numbers.numbers", "com.apple.iwork.keynote.key","public.image", "com.apple.application", "public.item","public.data", "public.content", "public.audiovisual-content", "public.movie", "public.audiovisual-content", "public.video", "public.audio", "public.text", "public.data", "public.zip-archive", "com.pkware.zip-archive", "public.composite-content", "public.text","com.microsoft.word.doc","org.openxmlformats.wordprocessingml.document", kUTTypePDF as String], in: .import)
@@ -1539,7 +1527,69 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         }
         return true
     }
-    
+    func validateStage1Edit()->Bool{
+        if(self.stage1email.text == ""){
+            let alert = UIAlertController(title: nil, message:NSLocalizedString("Email Is empty", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }else if !(self.isValidUserName(text: self.stage1email.text!)){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Not a valid email", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        } else if(self.stage1firstName.text == ""){
+                   let alert = UIAlertController(title: nil, message: NSLocalizedString("First Name cannot be blank", comment: ""), preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                   present(alert, animated: true)
+                   return false
+               }else if(self.stage1lastName.text == ""){
+                   let alert = UIAlertController(title: nil, message: NSLocalizedString("Last Name cannot be blank", comment: ""), preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                   present(alert, animated: true)
+                   return false
+               }else if(self.stage1phoneNumber.text == ""){
+                   let alert = UIAlertController(title: nil, message: NSLocalizedString("Phone Number cannot be blank", comment: ""), preferredStyle: .alert)
+                   alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                   present(alert, animated: true)
+                   return false
+               }
+        else if !(self.isValidPhoneNumber(text:self.stage1phoneNumber.text!)){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Not a valid phone number.", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }
+       
+        else if(self.user_stateID == nil){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("State not selected", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }else if(self.user_countryID == nil){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Country Not Selected", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }else if((self.stage1DOB == "") || (self.stage1DOB == nil)){
+            let alert = UIAlertController(title: nil, message:"Date of Birth is empty.", preferredStyle: .alert)
+                      alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+                      self.present(alert, animated: true)
+                      return false
+        }else if (datefromString(strDate: self.stage1DOB!).timeIntervalSinceNow.sign == .plus) {
+            // date is in future
+            let alert = UIAlertController(title: nil, message:"Date of Birth is not valid", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            self.present(alert, animated: true)
+            return false
+        }else if(self.user_gender == "" || self.user_gender == nil){
+            let alert = UIAlertController(title: nil, message: NSLocalizedString("Gender not selected", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
+            present(alert, animated: true)
+            return false
+        }
+        return true
+    }
     
     func validatePassword(password: String) -> Bool
     {

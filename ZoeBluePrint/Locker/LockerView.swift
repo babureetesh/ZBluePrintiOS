@@ -88,7 +88,7 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         if documentTypeName != "" && documentTypeName != " " {
             self.flag2 = true
         }
-        if (self.flag1  && self.flag2 ) && (self.title1 != nil) && (self.documentName != nil)
+        if (self.flag1  && self.flag2 ) && (self.title1 != nil) && (self.documentName.text != nil)
         {
             //Submit Button Functionality
               let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -98,8 +98,6 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
               let Action = "doc_locker_file_upload"
             let user_device = UIDevice.current.identifierForVendor!.uuidString
             var data2:[String:Any] = ["user_id":params,"api_key":apiKey,"action":Action,"document_name":documentTypeName as! String,"user_device":user_device,"user_type":"CSO","document_type":title1 as! String]
-           
-            
             let imageSize: Int = img!.count
             let limit:Double = 2000.0
             if(Double(imageSize/1000) <= limit)
@@ -135,7 +133,8 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
                       // show the alert
    self.present(alert, animated: true, completion: nil)
         }
-        }else {
+        }
+        else{
             
 
             let alert = UIAlertController(title: nil, message: NSLocalizedString("Fields can not be left blank!", comment: ""), preferredStyle: UIAlertController.Style.alert)
@@ -299,9 +298,6 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
         documentName.attributedPlaceholder = NSAttributedString(string: "Please enter the Document Name",attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
          documentName.textColor = .white
         sideMenu.setImage(UIImage(named: "newList.png"), for: UIControl.State.normal)
-        
-        
-        
         
     }
    @objc func keyboardWillShow(notification: NSNotification) {
@@ -568,9 +564,6 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
     alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
 
     self.present(alert, animated: true)
-    
-    
-    
           
       }
     func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
