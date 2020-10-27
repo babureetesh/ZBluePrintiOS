@@ -1473,11 +1473,11 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
                    let Action = "event_doc_upload"
                    let user_device = UIDevice.current.identifierForVendor!.uuidString
            var data2:[String:Any] = ["event_id":eventId,"user_id":params,"api_key":apiKey,"action":Action,"file_name":fileName]
-                   let imageSize: Int = file!.count
-                  // //print("actual size of image in KB: %f ", Double(imageSize)/1000.0 )
-                   let limit:Double = 2000.0
-                   if(Double(imageSize/1000) <= limit)
-                   {
+//                   let imageSize: Int = file!.count
+//                  // //print("actual size of image in KB: %f ", Double(imageSize)/1000.0 )
+//                   let limit:Double = 2000.0
+//                   if(Double(imageSize/1000) <= limit)
+     //              {
                       // //print(data2)
                        let serviceHanlder = ServiceHandlers()
                        serviceHanlder.addEventFileUpload(data_details:data2,file:file!) { (responce, isSuccess) in
@@ -1520,32 +1520,33 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
                    neweventbutton!.setTitleColor(.gray, for: .normal)
                  myeventbtn!.setTitleColor(.black, for: .normal)
                     }
-                   }else{
-                       let alert = UIAlertController(title: nil, message: NSLocalizedString("File must be less then 2 MB.", comment: ""), preferredStyle: UIAlertController.Style.alert)
-                       
-                       // add an action (button)
-                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
-                       
-                       // show the alert
-                       self.present(alert, animated: true, completion: nil)
-                   }
+                 //  }
+//                   else{
+//                       let alert = UIAlertController(title: nil, message: NSLocalizedString("File must be less then 2 MB.", comment: ""), preferredStyle: UIAlertController.Style.alert)
+//
+//                       // add an action (button)
+//                       alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+//
+//                       // show the alert
+//                       self.present(alert, animated: true, completion: nil)
+//                   }
        }
        
        //MARK:- VALIDATION IN ADD EVENT FORM
     
     func validate() -> Bool {
-            if img != nil{
-                let imageSize: Int = img!.count
-                //print("actual size of image in KB: %f ", Double(imageSize)/1000.0 )
-                let limit:Double = 2000.0
-                if(Double(imageSize/1000) >= limit){
-                        let alert = UIAlertController(title: NSLocalizedString("Alert!", comment: ""), message: NSLocalizedString("Image Should be less then 2 MB.", comment: ""), preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                        return false
-                }
-                
-            }
+//            if img != nil{
+//                let imageSize: Int = img!.count
+//                //print("actual size of image in KB: %f ", Double(imageSize)/1000.0 )
+//                let limit:Double = 2000.0
+//                if(Double(imageSize/1000) >= limit){
+//                        let alert = UIAlertController(title: NSLocalizedString("Alert!", comment: ""), message: NSLocalizedString("Image Should be less then 2 MB.", comment: ""), preferredStyle: UIAlertController.Style.alert)
+//                        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
+//                        self.present(alert, animated: true, completion: nil)
+//                        return false
+//                }
+//
+//            }
             if(file != nil){
              let fileSize: Int = file!.count
             // //print("actual size of image in KB: %f ", Double(fileSize)/1000.0 )
