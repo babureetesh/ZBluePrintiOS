@@ -60,7 +60,6 @@
 		2AD703F422E323DC00A40393 /* EventActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD703F322E323DC00A40393 /* EventActionsViewController.swift */; };
 		2AD703F622E323F700A40393 /* EventActionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AD703F522E323F700A40393 /* EventActionsViewController.xib */; };
 		2AD7040222E4C8E800A40393 /* CSOAddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD7040122E4C8E800A40393 /* CSOAddEventViewController.swift */; };
-		2AD70F6222EA289E0069A076 /* CSORegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */; };
 		38019E6324F10E8E00EB7657 /* newAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38019E6224F10E8E00EB7657 /* newAppIcon.png */; };
 		3805A4FB22B3BDD7005734AC /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3805A4FA22B3BDD7005734AC /* AlertManager.swift */; };
 		381988262521BE8200ED023D /* eventscalendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 381988252521BE8200ED023D /* eventscalendar.png */; };
@@ -479,7 +478,6 @@
 		2AD703F322E323DC00A40393 /* EventActionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventActionsViewController.swift; sourceTree = "<group>"; };
 		2AD703F522E323F700A40393 /* EventActionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventActionsViewController.xib; sourceTree = "<group>"; };
 		2AD7040122E4C8E800A40393 /* CSOAddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSOAddEventViewController.swift; sourceTree = "<group>"; };
-		2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSORegistrationViewController.swift; sourceTree = "<group>"; };
 		38019E6224F10E8E00EB7657 /* newAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newAppIcon.png; sourceTree = "<group>"; };
 		3805A4FA22B3BDD7005734AC /* AlertManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		381988252521BE8200ED023D /* eventscalendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eventscalendar.png; sourceTree = "<group>"; };
@@ -1222,7 +1220,6 @@
 				C29867EF237D686C007B3364 /* CSORegistration.swift */,
 				C2205A392382D02F000C2551 /* documentTypeCellTableViewCell.swift */,
 				C219BD9C23828C2D000177F2 /* PhoneOtp.swift */,
-				2AD70F6122EA289E0069A076 /* CSORegistrationViewController.swift */,
 			);
 			path = CSORegistrations;
 			sourceTree = "<group>";
@@ -2115,7 +2112,6 @@
 				C2233266239E5AA5006BC2A0 /* VolunteerLockerTableViewCell.swift in Sources */,
 				38A0908424D0652C00070C9A /* GroupChannelIncomingImageVideoFileMessageTableViewCell.swift in Sources */,
 				2A82186D22BB9518002B2D70 /* CSOMessagingViewController.swift in Sources */,
-				2AD70F6222EA289E0069A076 /* CSORegistrationViewController.swift in Sources */,
 				38A0907324D0652C00070C9A /* GroupChannelIncomingGeneralFileMessageTableViewCell.swift in Sources */,
 				C2477DC223866ACD006E28F9 /* ShiftRank.swift in Sources */,
 				38494F5C24CCA0BD005AF994 /* VolEventsListTableViewCell.swift in Sources */,
