@@ -978,6 +978,7 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
         let urlString = baseURL+"master-data.php?api_key=1234&action=sstate"
         Alamofire.request(urlString, method: .post, parameters: params,encoding: JSONEncoding.default, headers: nil).responseJSON {
             response in
+            ActivityLoaderView.stopAnimating()
             switch response.result {
             case .success:
                 if let JSON = response.result.value as? [String: Any] {
@@ -987,15 +988,15 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
                     if(message == "200"){
                         let stateData = JSON["res_data"] as! NSArray
                         onCompletion(stateData,true)
-                        ActivityLoaderView.stopAnimating()
+                       
                         }
                 } else {
-                    ActivityLoaderView.stopAnimating()
+//                    ActivityLoaderView.stopAnimating()
                     onCompletion(nil,false)
                 }
                 break
             case .failure(let error):
-                ActivityLoaderView.stopAnimating()
+//                ActivityLoaderView.stopAnimating()
                 //print(error)
                 onCompletion(nil,false)
             }
