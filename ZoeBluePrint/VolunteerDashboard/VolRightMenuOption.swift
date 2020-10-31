@@ -209,6 +209,13 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
     }
     @IBAction func logout(_ sender: Any) {
         
+        if let _  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as? Data {
+            
+            UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
+            
+        }
+        
+        
 //       let domain = Bundle.main.bundleIdentifier!
 //        UserDefaults.standard.removePersistentDomain(forName: domain)
 //

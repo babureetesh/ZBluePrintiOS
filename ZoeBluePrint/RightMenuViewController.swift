@@ -309,6 +309,10 @@ class RightMenuViewController: UIViewController,UIImagePickerControllerDelegate,
     }
     
     @IBAction func Logout(_ sender: Any) {
+        if let _  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as? Data {
+            UserDefaults.standard.removeObject(forKey: UserDefaultKeys.key_LoggedInUserData)
+        }
+        
         self.removeImage(itemName: "profilepic", fileExtension: "jpg")
         NotificationCenter.default.post(name: Notification.Name("Removetabbar"), object: nil)
          UIApplication.shared.keyWindow?.rootViewController = storyboard!.instantiateViewController(withIdentifier: "login")
