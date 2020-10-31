@@ -345,7 +345,9 @@ class LockerView: UIViewController,UITableViewDelegate,UITableViewDataSource,dat
                                                                              
         self.title1 = docdata["document_type_id"] as! String
     let strDocTitle = docdata["document_type_name"] as! String
-        self.EventTypeButton.setTitle(strDocTitle, for: .normal)
+        //self.EventTypeButton.setTitle(strDocTitle, for: .normal)
+                self.EventTypeButton.setTitle("Select Type",for: .normal)
+                
                           }
                          }
          self.tblView.reloadData()

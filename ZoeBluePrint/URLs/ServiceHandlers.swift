@@ -174,13 +174,17 @@ typealias CompletionHandler = (_ result:Any?,_ isSuccess:Bool)->Void;
                         let eventData = JSON["res_data"] as! Array<Any>
                         onCompletion(eventData,true)
                         ActivityLoaderView.stopAnimating()
+                    }else{
+                        ActivityLoaderView.stopAnimating()
+                        onCompletion(nil,false)
                     }
                 } else {
+                    ActivityLoaderView.stopAnimating()
                      onCompletion(nil,false)
                 }
                 break
             case .failure(let error):
-                ActivityLoaderView.startAnimating()
+                ActivityLoaderView.stopAnimating()
                 //print(error)
                 onCompletion(nil,false)
             }
@@ -2203,13 +2207,13 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
        
             let date = Date()
             let format = DateFormatter()
-            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            format.dateFormat = "MM-dd-yyyy HH:mm:ss"
         format.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
             let formattedDate = format.string(from: date)
             //print(formattedDate)
             
             let params = ["user_id":userData ,
-                          "list_date":formattedDate] as [String : Any]
+                          "list_date":formattedDate]
             
             //print(params)
             

@@ -436,7 +436,8 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
                             
                             self.title1 = docdata["document_type_id"] as! String
                             let strDocTitle = docdata["document_type_name"] as! String
-                            self.docTypePressed.setTitle(strDocTitle, for: .normal)
+                           // self.docTypePressed.setTitle(strDocTitle, for: .normal)
+                            self.docTypePressed.setTitle("Select Type",for: .normal)
                         }
                     }
                 }else{

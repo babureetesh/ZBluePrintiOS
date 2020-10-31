@@ -23,6 +23,7 @@ class ChangeTimezoneCSO: UIViewController {
     @IBOutlet weak var lblSelectDayLight: UILabel!
     @IBOutlet weak var lblTimezone: UILabel!
     
+    @IBOutlet weak var btnSubmit: UIButton!
     @IBOutlet weak var btnMenuCso: UIButton!
     @IBOutlet weak var btnMenuVol: UIButton!
     var screen:String!
@@ -36,6 +37,7 @@ class ChangeTimezoneCSO: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Reetesh 16 jan
+        btnSubmit.isEnabled = false
         let utility = Utility()
         utility.fetchTimeZone { (eventTypeList, isValueFetched) in
             if let list = eventTypeList {
@@ -127,7 +129,7 @@ class ChangeTimezoneCSO: UIViewController {
         let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
         let params = userIDData["user_id"] as! String
         let serviceHanlder = ServiceHandlers()
-        serviceHanlder.getUserTimeZone(user_id: params) { (responce, isSuccess) in
+        serviceHanlder.getUserTimeZone(user_id: params) { [self] (responce, isSuccess) in
             if isSuccess {
                 var data = responce as! Array<Any>
                 var dict:Dictionary<String,Any> = data[0] as! Dictionary<String,Any>
@@ -155,7 +157,7 @@ class ChangeTimezoneCSO: UIViewController {
                     self.dayLightButton.setTitle(NSLocalizedString("OFF", comment: ""), for: .normal) // Reetesh 16 jan
                 }
                 //print(dict)
-                
+                self.btnSubmit.isEnabled = true
             }
             
         }

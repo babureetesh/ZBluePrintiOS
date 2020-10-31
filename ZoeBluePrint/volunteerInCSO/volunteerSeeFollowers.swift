@@ -215,7 +215,14 @@ self.profile_pic()
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                                   let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                                   let userEmail = userIDData["user_email"] as! String
-                                  let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
+        var userFinalName = String()
+        if let userFName = userIDData["user_f_name"] as? NSString {
+            userFinalName = userFName as String
+            if let userLName = userIDData["user_l_name"] as? NSString {
+                userFinalName = userFinalName + " " + (userLName as String)
+            }
+        }
+                               //   let userFullName = "\(userIDData["user_f_name"]as String)\(" ")\( userIDData["user_l_name"]as String)"
                   
               ActivityLoaderView.startAnimating()
                                SBDMain.connect(withUserId: userEmail) { (user, error) in
@@ -227,7 +234,7 @@ self.profile_pic()
                                          //print(user?.nickname)
                                          //print(user?.profileUrl)
                                   ActivityLoaderView.stopAnimating()
-                                       SBDGroupChannel.createChannel(withName: userFullName, isDistinct: true, userIds: [ userEmail ], coverUrl: nil, data: nil, customType: nil, completionHandler: { (groupChannel, error) in
+                                       SBDGroupChannel.createChannel(withName: userFinalName, isDistinct: true, userIds: [ userEmail ], coverUrl: nil, data: nil, customType: nil, completionHandler: { (groupChannel, error) in
                                               guard error == nil else {   // Error.
                                                   return
                                               }

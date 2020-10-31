@@ -32,6 +32,10 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
                 self.tableNotification.delegate = self
                 self.tableNotification.dataSource = self
                 self.tableNotification.reloadData()
+            }else{
+                let alert = UIAlertController(title: nil, message: "No data found!", preferredStyle: UIAlertController.Style.alert)
+                                                               alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                                                           self.present(alert, animated: true, completion: nil)
             }
 
         }
