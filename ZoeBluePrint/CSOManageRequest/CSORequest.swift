@@ -207,10 +207,11 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil )
         //print(strShowClose)
         if strShowClose == "YES"{
-            backbuttonpressed.isHidden = false
-            backButtonHeightConstraint.constant = 30
+            backbuttonpressed.isHidden = true
+            backButtonHeightConstraint.constant = 0
 //            tblViewforAllRequest.frame = CGRect(x: 0.0, y: 145.0, width: 375.0, height: 522.0)
             //viewRequesSelButtons.frame = CGRect(x: 34.0, y: 4.0, width: 324.0, height: 45.0)
+            self.view.layoutIfNeeded()
         }else{
             backbuttonpressed.isHidden = true
             backButtonHeightConstraint.constant = 0

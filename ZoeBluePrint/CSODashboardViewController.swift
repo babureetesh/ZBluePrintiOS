@@ -141,16 +141,19 @@ class CSODashboardViewController: BaseViewController {
                     
                 do {
                     DispatchQueue.global().async {
-                        let imageData = try? Data(contentsOf: url) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                        self.saveImageInDocsDir(dataImage: imageData!)
-                        DispatchQueue.main.async {
-                            self.profilePic.image = UIImage(data: imageData!)
-                                               self.profilePic.layer.borderWidth = 1
-                                               self.profilePic.layer.masksToBounds = false
-                                               self.profilePic.layer.borderColor = UIColor.black.cgColor
-                                               self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
-                                               self.profilePic.clipsToBounds = true
-                        }
+                        if let imageData = try? Data(contentsOf: url)  {
+                            
+                            self.saveImageInDocsDir(dataImage: imageData)
+                            DispatchQueue.main.async {
+                                self.profilePic.image = UIImage(data: imageData)
+                                                   self.profilePic.layer.borderWidth = 1
+                                                   self.profilePic.layer.masksToBounds = false
+                                                   self.profilePic.layer.borderColor = UIColor.black.cgColor
+                                                   self.profilePic.layer.cornerRadius = self.profilePic.frame.height/2
+                                                   self.profilePic.clipsToBounds = true
+                            }
+                        }//make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                        
                     }
                 }
                 }
