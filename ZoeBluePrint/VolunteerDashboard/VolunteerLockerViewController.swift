@@ -501,7 +501,7 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
 //
 //
 //        }else if defaults == "Light Mode"{
-            self.ratingView.isHidden = false
+          
             
             self.RatingButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
             self.DocumentButton.setTitleColor(UIColor.gray, for: UIControl.State.normal)
@@ -534,9 +534,21 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
         var hoursDone = resdata["vol_hours"] as! String
         hoursDone = hoursDone + " VOLUNTEER HOURS COMPLETED "
         //print(hoursDone)
+        self.ratingView.isHidden = false
+        whiteStarView.isHidden = true
         self.Completedhours.text = hoursDone
         self.rankImage.image = UIImage(named: findingAverageRank(user_hours: volData["user_avg_rank"] as! String))
-        }
+      } else {
+        var hoursDone = "0"
+        hoursDone = hoursDone + " VOLUNTEER HOURS COMPLETED "
+        //print(hoursDone)
+        self.ratingView.isHidden = false
+        whiteStarView.isHidden = true
+        self.Completedhours.text = hoursDone
+        self.rankImage.image = UIImage(named: findingAverageRank(user_hours: "0"))
+        
+        
+      }
         
         self.ratingView.isUserInteractionEnabled = false
         self.whiteStarView.isUserInteractionEnabled = false
