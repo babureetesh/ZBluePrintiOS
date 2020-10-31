@@ -520,21 +520,15 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
         Completedhours.isHidden = false
        
         
-        let decoded  = UserDefaults.standard.object(forKey: "VolData") as! Data
-        let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
-        //print(volData)
-        if (volData["user_avg_rate"] != nil){
-            if let userAvgRate = volData["user_avg_rate"] as? String {
+      if  let decoded  = UserDefaults.standard.object(forKey: "VolData") as? Data,let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as?  Dictionary<String, Any>, let userAvgRate = volData["user_avg_rate"] as? String {
+             
                 //if defaults == "Dark Mode"{
                   //  self.whiteStarView.rating = Double(userAvgRate) ?? 0.0
                 //}else if defaults == "Light Mode"{
                     self.ratingView.rating = Double(userAvgRate) ?? 0.0
                     
                // }
-            }
-        }
-        self.ratingView.isUserInteractionEnabled = false
-        self.whiteStarView.isUserInteractionEnabled = false
+       
         let resdata = volData["res_data"] as! Dictionary<String, Any>
         
         var hoursDone = resdata["vol_hours"] as! String
@@ -542,6 +536,10 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
         //print(hoursDone)
         self.Completedhours.text = hoursDone
         self.rankImage.image = UIImage(named: findingAverageRank(user_hours: volData["user_avg_rank"] as! String))
+        }
+        
+        self.ratingView.isUserInteractionEnabled = false
+        self.whiteStarView.isUserInteractionEnabled = false
         
         
     }
