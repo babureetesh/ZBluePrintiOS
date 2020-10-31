@@ -1075,7 +1075,7 @@ stage2OrgTaxEIN.attributedPlaceholder = NSAttributedString(string: "Tax/EIN",
         }else{
            // //print("error")
         }
-        performSegueToReturnBack()
+        self.dismiss(animated: true, completion: nil)
     }
     @IBAction func stage1Gender(_ sender: Any) {
         let contents = ["Female","Male"]

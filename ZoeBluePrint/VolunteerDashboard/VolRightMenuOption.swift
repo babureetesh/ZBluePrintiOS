@@ -135,8 +135,8 @@ class VolRightMenuOption: UIViewController,UIImagePickerControllerDelegate,UINav
             self.ImagePro = "image2"
         }
         //                let url = NSURL(string:self.ImagePro)
-            performSegueToReturnBack()
-//          self.dismiss(animated: true, completion: nil)
+//            performSegueToReturnBack()
+          self.dismiss(animated: true, completion: nil)
         ActivityLoaderView.startAnimating()
         self.uploadProfileImage()
       }
