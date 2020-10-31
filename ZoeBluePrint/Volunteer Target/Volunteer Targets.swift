@@ -171,10 +171,10 @@ class Volunteer_Targets: UIViewController {
         
      }
     
-    @IBAction func notificationBellTapped(_ sender: Any) {
+    @IBAction func notificationBellTapped(_ sender: Any) { Utility.showNotificationScreen(navController: self.navigationController)
            
-           let sb = UIStoryboard(name: "Main", bundle: nil)
-           let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
-             present(obj,animated: true)
+//           let sb = UIStoryboard(name: "Main", bundle: nil)
+//           let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+//             present(obj,animated: true)
        }
  }

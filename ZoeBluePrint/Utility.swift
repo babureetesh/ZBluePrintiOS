@@ -116,6 +116,16 @@ class Utility: NSObject {
             onCompletion(countryList, isSuccess)
         }
     }
+    
+    class func showNotificationScreen(navController:UINavigationController?){
+        if let navigationController = navController {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+            navigationController.pushViewController(obj, animated: true)
+        }
+      
+    }
+    
     func fetchTimeZone(onCompletion:@escaping CompletionHandler)  {
          var timeZoneList:[[String:Any] ]?
          

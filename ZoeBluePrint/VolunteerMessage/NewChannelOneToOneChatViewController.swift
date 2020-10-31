@@ -119,10 +119,10 @@ self.viewCreateChannel.isHidden = true
     
     
     @IBAction func notificationBellTapped(_ sender: Any) {
-                 
-                 let sb = UIStoryboard(name: "Main", bundle: nil)
-                 let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
-                   present(obj,animated: true)
+        Utility.showNotificationScreen(navController: self.navigationController)
+//                 let sb = UIStoryboard(name: "Main", bundle: nil)
+//                 let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+//                   present(obj,animated: true)
              }
     
     func showLoader(){

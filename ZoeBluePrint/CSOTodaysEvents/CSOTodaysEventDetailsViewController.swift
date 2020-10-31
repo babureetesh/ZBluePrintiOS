@@ -168,9 +168,10 @@ class CSOTodaysEventDetailsViewController: UIViewController {
     
     
     @IBAction func notificationButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
-          present(obj,animated: true)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+//          present(obj,animated: true)
+        Utility.showNotificationScreen(navController: self.navigationController)
     }
     
     @IBAction func sideButton(_ sender: Any) {

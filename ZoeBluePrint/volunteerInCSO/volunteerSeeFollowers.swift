@@ -42,9 +42,10 @@ class volunteerSeeFollowers: UIViewController,UITableViewDelegate,UITableViewDat
     let defaults = UserDefaults.standard.string(forKey: "ChangeTheme")
     
     @IBAction func NotificationButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-               let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
-                 present(obj,animated: true)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//               let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+//                 present(obj,animated: true)
+        Utility.showNotificationScreen(navController: self.navigationController)
     }
     
     override func viewDidLoad() {

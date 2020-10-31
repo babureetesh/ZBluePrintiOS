@@ -7250,12 +7250,12 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOTIFICATIONS" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjF-2R-BPg">
-                                        <rect key="frame" x="85" y="111.5" width="213" height="23.5"/>
+                                        <rect key="frame" x="85" y="111.5" width="264" height="23.5"/>
                                         <fontDescription key="fontDescription" name="TradeGothicLT-Bold" family="TradeGothic LT Bold" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-5g-w37" userLabel="Back Button">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eU6-5g-w37" userLabel="Back Button">
                                         <rect key="frame" x="359" y="60" width="30" height="30"/>
                                         <state key="normal" image="lefArrownew.png"/>
                                         <connections>
@@ -7278,7 +7278,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="newListCso.png"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-AT-XnR" userLabel="Notif Button">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-AT-XnR" userLabel="Notif Button">
                                         <rect key="frame" x="308" y="105" width="30" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -7290,7 +7290,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.1529411765" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="YAL-AT-XnR" firstAttribute="leading" secondItem="fjF-2R-BPg" secondAttribute="trailing" constant="10" id="0Gy-Bv-75J"/>
+                                    <constraint firstItem="hHC-c5-6lQ" firstAttribute="leading" secondItem="fjF-2R-BPg" secondAttribute="trailing" constant="10" id="0Gy-Bv-75J"/>
                                     <constraint firstItem="YAL-AT-XnR" firstAttribute="height" secondItem="hHC-c5-6lQ" secondAttribute="height" id="2Oo-DD-rmp"/>
                                     <constraint firstItem="eU6-5g-w37" firstAttribute="leading" secondItem="hHC-c5-6lQ" secondAttribute="leading" id="3Zl-DT-gbZ"/>
                                     <constraint firstAttribute="bottom" secondItem="keP-cD-k5j" secondAttribute="bottom" id="62e-2b-1Vm"/>
@@ -14185,10 +14185,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Z8M-r1-wsX"/>
-        <segue reference="Gpr-Zx-8Sp"/>
-        <segue reference="jTM-t6-CnA"/>
-        <segue reference="1Ox-bY-Z47"/>
+        <segue reference="OfH-YS-HDc"/>
+        <segue reference="RIo-pM-rVN"/>
+        <segue reference="Mup-EQ-yd4"/>
         <segue reference="tTj-i3-B2O"/>
     </inferredMetricsTieBreakers>
     <resources>

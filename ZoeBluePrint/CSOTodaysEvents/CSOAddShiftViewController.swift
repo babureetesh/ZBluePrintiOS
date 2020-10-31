@@ -108,9 +108,10 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var profilePicture: UIImageView!
     
     @IBAction func notificationButton(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-             let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
-               present(obj,animated: true)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//             let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+//               present(obj,animated: true)
+        Utility.showNotificationScreen(navController: self.navigationController)
     }
     
     override func viewWillAppear(_ animated: Bool){
