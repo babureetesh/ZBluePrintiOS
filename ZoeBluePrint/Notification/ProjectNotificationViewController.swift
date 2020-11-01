@@ -17,6 +17,8 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
     
     @IBOutlet weak var imgProfilePic: UIImageView!
    @IBOutlet weak var imgCoverPic: UIImageView!
+    var segueIdentifier:String = "volSideMenu"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.getCoverImageForRank()
@@ -46,6 +48,7 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
         
         if let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as? Data, let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as? Dictionary<String, Any>, let usertype = userIDData["user_type"] as? String, (usertype == "CSO"){
             self.imgCoverPic.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
+            segueIdentifier = "csoSideMenu"
             
         } else{
             var strImageNameCover = "cover_cloud.jpg"
@@ -54,7 +57,7 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
             //print(volData)
             {
                 
-                
+                segueIdentifier = "volSideMenu"
                 let floatUserAverageRank = Float(userAvgRank)!
                 if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
                     strImageNameCover = "cover_riseandshine.jpg"
@@ -141,6 +144,11 @@ class ProjectNotificationViewController: UIViewController,UITableViewDataSource,
     @IBAction func NotifBackButton(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func sideMenuPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: segueIdentifier, sender: sender)
     }
     
    
