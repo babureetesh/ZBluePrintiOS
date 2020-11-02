@@ -59,6 +59,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     var data_for_update:Dictionary<String,Any>?
     var screen:String?
     var shiftName: String?
+    private var groupChannelListQuery: SBDGroupChannelListQuery?
     
    let RankList = [["rank":"0",
                       "shift_rank":"0"],["rank":"1",
@@ -340,22 +341,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                                                          //let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
                                          
                                      ActivityLoaderView.startAnimating()
-                            SBDMain.connect(withUserId: userEmail) { [self] (user, error) in
-                                                                guard error == nil else {   // Error.
-                                                                    return
-                                                                  ActivityLoaderView.stopAnimating()
-                                                                }
-                                                         ActivityLoaderView.stopAnimating()
-                                let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
-                                                        
-                                SBDGroupChannel.createChannel(withName: eventName, isDistinct: true, userIds: [ userEmail ], coverUrl: eventDetail["event_image"]! as? String , data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
-                                                                     guard error == nil else {   // Error.
-                                                                         return
-                                                                     }
-                                                                
-                                                                    })
-                                                      }
-                                     
+                            self.createChannel(email: userEmail)
                             let alert = UIAlertController(title: NSLocalizedString("Success!", comment: ""), message: NSLocalizedString("Shift Added Succesfully!", comment: ""), preferredStyle: UIAlertController.Style.alert)
                             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
@@ -393,6 +379,49 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                     
             }
         }
+    }
+    
+    func createChannel(email: String) {
+        let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
+        self.groupChannelListQuery = SBDGroupChannel.createMyGroupChannelListQuery()
+        self.groupChannelListQuery?.limit = 100
+        self.groupChannelListQuery?.includeEmptyChannel = true
+        self.groupChannelListQuery?.channelNameFilter = eventName
+        if self.groupChannelListQuery?.hasNext == false {
+            return
+        }
+        
+        self.groupChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
+            if error != nil {
+                print ("error")
+                ActivityLoaderView.stopAnimating()
+                return
+            }
+            
+            if channels?.count == 0{
+                SBDMain.connect(withUserId: email) { [self] (user, error) in
+                                                    guard error == nil else {   // Error.
+                                                        return
+                                                      ActivityLoaderView.stopAnimating()
+                                                    }
+                                             ActivityLoaderView.stopAnimating()
+                   
+                   // let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
+                    SBDGroupChannel.createChannel(withName: eventName, isDistinct: false, userIds: [ email ], coverUrl: eventDetail["event_image"]! as? String , data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                                                         guard error == nil else {   // Error.
+                                                             return
+                                                         }
+                        ActivityLoaderView.stopAnimating()
+                                                        })
+                                          }
+            }
+        })
+        
+            
+          
+            
+         
+     
     }
     
     func profile_pic()  {
