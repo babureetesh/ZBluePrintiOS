@@ -339,8 +339,11 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
         
         let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
         vc.channel = self.channelList[indexPath.row]
-        vc.hidesBottomBarWhenPushed = true
-        vc.modalPresentationStyle = .overFullScreen
+//        vc.hidesBottomBarWhenPushed = true
+//        vc.modalPresentationStyle = .overCurrentContext
+        
+       
+//        volright
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

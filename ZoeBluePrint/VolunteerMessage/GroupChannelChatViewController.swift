@@ -16,6 +16,7 @@ import Alamofire
 import AlamofireImage
 import FLAnimatedImage
 import IQKeyboardManagerSwift
+import SideMenu
 
 class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RSKImageCropViewControllerDelegate, SBDChannelDelegate, GroupChannelMessageTableViewCellDelegate, UIDocumentPickerDelegate, SBDNetworkDelegate, SBDConnectionDelegate {
     
@@ -76,6 +77,21 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
     
     var typingIndicatorTimer: Timer?
 
+    var sideMenuIdentifier = "volsidemenu" // "csoSideMenu"
+    
+    @IBAction func notificationBellTapped(_ sender: Any) {
+              
+              let sb = UIStoryboard(name: "Main", bundle: nil)
+              let obj = sb.instantiateViewController(withIdentifier: "noti") as! ProjectNotificationViewController
+        self.navigationController?.pushViewController(obj, animated: true)
+          }
+    
+    @IBAction func sideMenuClicked(_ sender: Any){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+                             let obj = sb.instantiateViewController(withIdentifier: sideMenuIdentifier) as! UISideMenuNavigationController
+        self.show(obj, sender: sender)
+//        self.navigationController?.pushViewController(obj, animated: true)
+    }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         IQKeyboardManager.shared.enable = true
@@ -86,6 +102,10 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+       
+        
 
         IQKeyboardManager.shared.enable = false
         // Do any additional setup after loading the view.
@@ -163,6 +183,7 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
         
         if let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as? Data, let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as?  Dictionary<String, Any>, let usertype = userIDData["user_type"] as? String, (usertype == "CSO") {
             self.imgCoverPic.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
+            sideMenuIdentifier = "volsidemenu"
         } else {
             var strImageNameCover = "cover_cloud.jpg"
             
@@ -185,6 +206,7 @@ class GroupChannelChatViewController: UIViewController, UITableViewDelegate, UIT
                 
             }
             self.imgCoverPic.image = UIImage(named:strImageNameCover)
+            sideMenuIdentifier = "csoSideMenu"
         }
         
         
