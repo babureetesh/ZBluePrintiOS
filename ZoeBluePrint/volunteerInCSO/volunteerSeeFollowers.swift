@@ -241,9 +241,10 @@ self.profile_pic()
                                               }
                                               let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                                      vc.channel = groupChannel
-                                                     vc.hidesBottomBarWhenPushed = true
-                                        vc.modalPresentationStyle = .overFullScreen
-                                              self.present(vc,animated: true)
+//                                                     vc.hidesBottomBarWhenPushed = true
+//                                        vc.modalPresentationStyle = .overFullScreen
+//                                              self.present(vc,animated: true)
+                                        self.navigationController?.pushViewController(vc, animated: true)
                                              // self.ChangeStatusSelection()
                                   //
                                   //            //print("Chat")

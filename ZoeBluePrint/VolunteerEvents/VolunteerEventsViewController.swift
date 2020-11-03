@@ -190,8 +190,8 @@ class VolunteerEventsViewController: UIViewController,UITableViewDelegate,UITabl
                                             }
                                             let vc = GroupChannelChatViewController.init(nibName: "GroupChannelChatViewController", bundle: nil)
                                                    vc.channel = groupChannel
-                                                   vc.hidesBottomBarWhenPushed = true
-                                        vc.modalPresentationStyle = .overFullScreen
+//                                                   vc.hidesBottomBarWhenPushed = true
+//                                        vc.modalPresentationStyle = .overFullScreen
                                         self.navigationController?.pushViewController(vc, animated: true)
                                            // self.ChangeStatusSelection()
                                 //
