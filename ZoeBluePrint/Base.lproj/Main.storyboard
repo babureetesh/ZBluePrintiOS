@@ -4321,8 +4321,8 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="white star.png"/>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bXr-WC-6kP" customClass="FloatRatingView" customModule="ZoeBluePrint" customModuleProvider="target">
@@ -5951,7 +5951,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="tableCellGroupedBackgroundColor"/>
                                                     <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="white star.png"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -7461,7 +7461,7 @@
                                                     <constraint firstAttribute="height" constant="20" id="qYB-zL-JLp"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -7473,8 +7473,8 @@
                                                     <constraint firstAttribute="width" constant="109" id="f1p-En-CHl"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="white star.png"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="134" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="N64-Hc-dRX">
@@ -7837,8 +7837,8 @@
                                     <constraint firstAttribute="width" constant="115" id="EJb-Gb-h8R"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="outlineStar.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volunteer Requested" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNb-Yo-2YJ">
@@ -7889,7 +7889,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QiK-hF-E2c">
@@ -9968,7 +9968,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                             <userDefinedRuntimeAttribute type="number" keyPath="rating">
                                                 <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
@@ -11144,8 +11144,8 @@
                                             <constraint firstAttribute="height" constant="18" id="ikh-Pu-GKT"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="white star.png"/>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Shift Rating" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akv-bv-Vfg">
@@ -11314,8 +11314,8 @@
                                                     <constraint firstAttribute="height" constant="21" id="rgX-Un-Rfg"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="white star.png"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FaY-XD-8HA" customClass="FloatRatingView" customModule="ZoeBluePrint" customModuleProvider="target">
@@ -11616,7 +11616,7 @@
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="black-stars.png"/>
-                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="cyanStar.jpg"/>
+                                                    <userDefinedRuntimeAttribute type="image" keyPath="fullImage" value="star_full.png"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
@@ -14211,7 +14211,6 @@
         <image name="complete-verified.png" width="96" height="96"/>
         <image name="completed-volunteer.png" width="96" height="96"/>
         <image name="cover_cloud.jpg" width="987" height="365"/>
-        <image name="cyanStar.jpg" width="35.20782470703125" height="32"/>
         <image name="declined-cso.png" width="96" height="96"/>
         <image name="downloadPencil.png" width="100" height="100"/>
         <image name="downloaddocument.png" width="512" height="512"/>
@@ -14256,7 +14255,6 @@
         <image name="newteal1.png" width="24" height="24"/>
         <image name="no_image.jpg" width="1280" height="800"/>
         <image name="notification.png" width="152" height="152"/>
-        <image name="outlineStar.png" width="192" height="192"/>
         <image name="person.png" width="222" height="224"/>
         <image name="plusblack.png" width="225" height="225"/>
         <image name="rejected-cso.png" width="96" height="96"/>
@@ -14272,7 +14270,6 @@
         <image name="user_email.png" width="42.421173095703125" height="42.421173095703125"/>
         <image name="volmenuorg.png" width="35" height="35"/>
         <image name="volunteerforanevent.png" width="152" height="152"/>
-        <image name="white star.png" width="225" height="225"/>
         <image name="whitedrop.png" width="25" height="25"/>
         <image name="withdrawn-volunteer.png" width="128" height="128"/>
         <image name="zoeCalendar.png" width="72" height="72"/>
