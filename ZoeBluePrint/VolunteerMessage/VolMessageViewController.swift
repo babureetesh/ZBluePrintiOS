@@ -264,7 +264,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
             
         }else{
             cell.imgGroupChat.downloadImageFrom(link: self.channelList[indexPath.row].coverUrl!, contentMode: UIView.ContentMode.scaleAspectFill)
-           
+            cell.imgGroupChat.layer.cornerRadius = 0
         }
         
         

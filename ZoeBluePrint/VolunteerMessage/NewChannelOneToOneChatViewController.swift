@@ -32,7 +32,7 @@ var delegate :delegateNewChannelremoved?
     @IBOutlet weak var lblUserType: UILabel!
     var connectedUserList = [[String:Any]]()
     var dataArray = [[String:Any]]()
-    var selectedData : Array<String> = []
+    var selectedData : [String] = []
     var strChannelType : String = ""
     
     override func viewDidLoad() {
@@ -281,7 +281,6 @@ self.viewCreateChannel.isHidden = true
         
         
         
-        
         SBDGroupChannel.createChannel(withName: "\(self.dataArray[indexPath.row]["user_f_name"] ?? " ") \( self.dataArray[indexPath.row]["user_l_name"] ?? "")", isDistinct: true, userIds: [ self.dataArray[indexPath.row]["user_email"] as! String], coverUrl: nil, data: nil, customType: nil, completionHandler: { (groupChannel, error) in
             guard error == nil else {   // Error.
                 return
@@ -453,40 +452,37 @@ self.viewCreateChannel.isHidden = true
                            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
             let useremail = userIDData["user_email"] as! String
            
+                  ActivityLoaderView.startAnimating()
+            SBDMain.connect(withUserId: useremail) { [self] (user, error) in
+                                             guard error == nil else {   // Error.
+                                                 return
+                                               ActivityLoaderView.stopAnimating()
+                                             }
+                                       //print(user?.userId as Any)
+                                             //print(user?.nickname)
+                                             //print(user?.profileUrl)
+                                      //ActivityLoaderView.stopAnimating()
+                SBDGroupChannel.createChannel(withName: self.txtfldChannelName.text!, isDistinct: false, userIds: self.selectedData , coverUrl: nil, data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                                                  guard error == nil else {   // Error.
+                                                    let alert = UIAlertController(title: nil, message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
+                                                                            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                                                                        self.present(alert, animated: true, completion: nil)// Error.
 
-            var ops: [String] = []
-            ops.append(useremail)
-
-            var params = SBDGroupChannelParams()
-            params.isPublic = false
-            params.isEphemeral = false
-            params.isDistinct = false
-            params.addUserIds(self.selectedData)
-            params.operatorUserIds = ops        // Or .operators
-            params.name = self.txtfldChannelName.text
-            params.channelUrl = nil    // In a group channel, you can create a new channel by specifying its unique channel URL in a 'GroupChannelParams' object.
-            params.coverImage = nil// Or .coverUrl
-            params.data = useremail
-            params.customType = self.strChannelType
-
-            SBDGroupChannel.createChannel(with: params, completionHandler: { (groupChannel, error) in
-                guard error == nil else {
-                    let alert = UIAlertController(title: nil, message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)// Error.
-                    return
-                }
-                //print(groupChannel.data)
+                                                      return
+                                                  }
                     let newMetaData: NSDictionary = ["auto_invite" : String(self.btnCheckForInviteAll!.tag)]
 
-                groupChannel?.createMetaData(newMetaData as! [String : String], completionHandler: { (metaData, error) in
-                        guard error == nil else {   // Error.
-                            print(error?.localizedDescription)
-                            return
-                            }
-                    self.hitAPIToSyncChannelToServer(channel: groupChannel!)
-                    })
-            })
+                                    groupChannel?.createMetaData(newMetaData as! [String : String], completionHandler: { (metaData, error) in
+                                            guard error == nil else {   // Error.
+                                                print(error?.localizedDescription)
+                                                return
+                                                }
+                                        self.hitAPIToSyncChannelToServer(channel: groupChannel!)
+
+                                                 })
+                })
+                
+                }
             
         }else{
             let alert = UIAlertController(title: nil, message: "Channel name required", preferredStyle: UIAlertController.Style.alert)
