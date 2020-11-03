@@ -105,6 +105,8 @@ class CSOEventsViewController: UIViewController,UITabBarDelegate,refreshData{
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        selectedButton = nil
+        
         changeButtonStates(selectedButton: myEventsButton)
                //getEventList// Do any additional setup after loading the view.
                
