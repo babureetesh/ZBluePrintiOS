@@ -42,7 +42,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
                      if isSuccess{
                          let data = responce as! Dictionary<String,Any>
                        self.string_url = data["user_profile_pic"] as! String
-                        self.refreshChannelList()
+                        
                      }
                  }
     }
@@ -131,7 +131,7 @@ class VolMessageViewController: UIViewController,UITableViewDelegate,UITableView
 
     override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-       
+        self.refreshChannelList()
         
     }
     override func viewDidAppear(_ animated: Bool) {
