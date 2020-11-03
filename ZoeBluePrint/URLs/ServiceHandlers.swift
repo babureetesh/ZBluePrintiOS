@@ -2208,7 +2208,8 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
        
             let date = Date()
             let format = DateFormatter()
-            format.dateFormat = "MM-dd-yyyy HH:mm:ss"
+           // format.dateFormat = "MM-dd-yyyy HH:mm:ss"
+        format.dateFormat = "MM-dd-yyyy"
         format.timeZone = NSTimeZone(abbreviation: strUserTimezone) as TimeZone?
             let formattedDate = format.string(from: date)
             //print(formattedDate)
