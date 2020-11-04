@@ -97,12 +97,12 @@ class CSOTodaysEventDetailsViewController: UIViewController {
             if status == "10" {
                  
                  self.pubunpubImage.image = UIImage(named: "tick.png")
-                 self.pubunpubLabel.text = "  Published"
+                 self.pubunpubLabel.text = " Published "
              }else
                    if status != "10"{
                  
                  self.pubunpubImage.image = UIImage(named: "close.png")
-                 self.pubunpubLabel.text = "  Unpublished"
+                 self.pubunpubLabel.text = " Unpublished "
              }
         
         }
@@ -305,12 +305,12 @@ self.RatingLabel.text = "Average Star Rating is \(Rate) from the Total \(countRa
        if status == "10" {
             
             self.pubunpubImage.image = UIImage(named: "tick.png")
-            self.pubunpubLabel.text = "  Published"
+            self.pubunpubLabel.text = " Published "
         }else
               if status != "10"{
             
             self.pubunpubImage.image = UIImage(named: "close.png")
-            self.pubunpubLabel.text = "   Unpublished"
+            self.pubunpubLabel.text = " Unpublished "
         }
     let string_url = selectedEvent["event_image"] as! String
                  
