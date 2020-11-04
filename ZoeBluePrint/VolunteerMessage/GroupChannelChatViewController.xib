@@ -152,7 +152,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvK-56-JdT" userLabel="Input Message Container View">
-                    <rect key="frame" x="0.0" y="807" width="414" height="89"/>
+                    <rect key="frame" x="0.0" y="807" width="414" height="55"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WUb-Ix-5nj" userLabel="Input Message Inner Container View">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
@@ -291,7 +291,7 @@
             <constraints>
                 <constraint firstItem="oAG-M7-VNE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2sn-sG-ABt"/>
                 <constraint firstItem="j0C-oq-vkT" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5Cb-qQ-55M"/>
-                <constraint firstAttribute="bottom" secondItem="cvK-56-JdT" secondAttribute="bottom" id="7kd-k0-sqx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cvK-56-JdT" secondAttribute="bottom" id="7kd-k0-sqx"/>
                 <constraint firstItem="j0C-oq-vkT" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F4C-1c-tUd"/>
                 <constraint firstItem="oAG-M7-VNE" firstAttribute="top" secondItem="kpl-2B-fTw" secondAttribute="bottom" constant="25" id="LoI-m5-jF5"/>
                 <constraint firstItem="kpl-2B-fTw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Nwh-Gj-hAT"/>
@@ -305,7 +305,7 @@
                 <constraint firstAttribute="trailing" secondItem="oAG-M7-VNE" secondAttribute="trailing" id="eyu-P2-GlP"/>
                 <constraint firstItem="WUb-Ix-5nj" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="geU-xH-Xaa"/>
                 <constraint firstItem="kpl-2B-fTw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="h5r-Kf-YTG"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WUb-Ix-5nj" secondAttribute="bottom" id="hNx-3k-Oaa"/>
+                <constraint firstItem="cvK-56-JdT" firstAttribute="bottom" secondItem="WUb-Ix-5nj" secondAttribute="bottom" id="hNx-3k-Oaa"/>
                 <constraint firstAttribute="trailing" secondItem="cvK-56-JdT" secondAttribute="trailing" id="hsI-ZQ-ACN"/>
                 <constraint firstAttribute="trailing" secondItem="khe-tC-OtR" secondAttribute="trailing" id="ndy-eC-XZ9"/>
                 <constraint firstItem="khe-tC-OtR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qFE-Vj-SGZ"/>
