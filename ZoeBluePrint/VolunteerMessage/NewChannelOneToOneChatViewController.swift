@@ -148,6 +148,7 @@ self.viewCreateChannel.isHidden = true
        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                      let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                      let usertype = userIDData["user_type"] as! String
+        let userprofilepicurl = userIDData["user_profile_pic"] as! String
                      if (usertype == "CSO"){
                          self.imgViewCsoCover.image = UIImage(named:UserDefaults.standard.string(forKey: "csocoverpic")!)
                      }
@@ -279,9 +280,11 @@ self.viewCreateChannel.isHidden = true
         }
         print(selectedData)*/
         
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                                     let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                                     let userEmail = userIDData["user_email"] as! String
         
-        
-        SBDGroupChannel.createChannel(withName: "\(self.dataArray[indexPath.row]["user_f_name"] ?? " ") \( self.dataArray[indexPath.row]["user_l_name"] ?? "")", isDistinct: true, userIds: [ self.dataArray[indexPath.row]["user_email"] as! String], coverUrl: nil, data: nil, customType: nil, completionHandler: { (groupChannel, error) in
+        SBDGroupChannel.createChannel(withName: "\(self.dataArray[indexPath.row]["user_f_name"] ?? " ") \( self.dataArray[indexPath.row]["user_l_name"] ?? "")", isDistinct: true, userIds: [ self.dataArray[indexPath.row]["user_email"] as! String], coverUrl: nil, data: userEmail, customType: nil, completionHandler: { (groupChannel, error) in
             guard error == nil else {   // Error.
                 return
             }
@@ -451,7 +454,7 @@ self.viewCreateChannel.isHidden = true
             let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                            let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
             let useremail = userIDData["user_email"] as! String
-           
+             let userprofilepicurl = userIDData["user_profile_pic"] as! String
                   ActivityLoaderView.startAnimating()
             SBDMain.connect(withUserId: useremail) { [self] (user, error) in
                                              guard error == nil else {   // Error.
@@ -462,7 +465,7 @@ self.viewCreateChannel.isHidden = true
                                              //print(user?.nickname)
                                              //print(user?.profileUrl)
                                       //ActivityLoaderView.stopAnimating()
-                SBDGroupChannel.createChannel(withName: self.txtfldChannelName.text!, isDistinct: false, userIds: self.selectedData , coverUrl: nil, data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                SBDGroupChannel.createChannel(withName: self.txtfldChannelName.text!, isDistinct: false, userIds: self.selectedData , coverUrl: userprofilepicurl, data: useremail, customType: "Channel", completionHandler: { (groupChannel, error) in
                                                   guard error == nil else {   // Error.
                                                     let alert = UIAlertController(title: nil, message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
                                                                             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))

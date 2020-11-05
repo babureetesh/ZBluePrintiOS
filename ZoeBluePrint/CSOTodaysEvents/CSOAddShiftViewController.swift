@@ -407,7 +407,7 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                     ActivityLoaderView.stopAnimating()
                    
                    // let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
-                    SBDGroupChannel.createChannel(withName: eventName, isDistinct: false, userIds: [ email ], coverUrl: eventDetail["event_image"]! as? String , data: nil, customType: "Channel", completionHandler: { (groupChannel, error) in
+                    SBDGroupChannel.createChannel(withName: eventName, isDistinct: false, userIds: [ email ], coverUrl: eventDetail["event_image"]! as? String , data: email, customType: "Channel", completionHandler: { (groupChannel, error) in
                                                          guard error == nil else {   // Error.
                                                              return
                                                          }
