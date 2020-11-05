@@ -234,18 +234,17 @@ class CSODashboardViewController: BaseViewController {
                             self.upcomingEvents = []
                         }else{
                         let eventData2 = eventData["event_data"] as! [[String:Any]]
-                        //print(eventData2)
-                            let calendarData2 = eventData["calendar_data"] as! [[String:Any]]
-                        //print(calendarData2)
-                            self.calendarEvents = calendarData2
                         self.upcomingEvents = eventData2
-                      self.datesWithEvent.removeAll()
-                        let names = calendarData2
-                        for name in names {
-                            //print(name["shift_date"] as Any)
-                            self.datesWithEvent.append(name["shift_date"] as! String)
                         }
-                        //print(self.upcomingEvents)
+                        if eventData["calendar_data"] != nil {
+                        let calendarData2 = eventData["calendar_data"] as! [[String:Any]]
+                            //print(calendarData2)
+                                self.calendarEvents = calendarData2
+                          self.datesWithEvent.removeAll()
+                            let names = calendarData2
+                            for name in names {
+                                self.datesWithEvent.append(name["shift_date"] as! String)
+                            }
                         }
                         self.upcomingEventsTableView.reloadData()
                         self.eventCalendar.reloadData()

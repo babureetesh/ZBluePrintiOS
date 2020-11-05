@@ -83,15 +83,28 @@ class CSOTodaysEventDetailsViewController: UIViewController {
             self.eventTitle.text = selectedEvent["event_heading"] as! String
             
             let string_url = selectedEvent["event_image"] as! String
-                         
             let replacedStr = string_url.replacingOccurrences(of: " ", with: "%20")
+            
             let imageUrl = URL(string: replacedStr)!
-            do {
-                  let imageData = try Data(contentsOf: imageUrl as URL)
-                  self.eventImage.image = UIImage(data: imageData)
-                } catch {
-                        print("Unable to load data: \(error)")
-                  }
+            if let data = NSData(contentsOf: imageUrl) {
+
+                do {
+                      let imageData = try Data(contentsOf: imageUrl as URL)
+                      self.eventImage.image = UIImage(data: imageData)
+                    } catch {
+                            print("Unable to load data: \(error)")
+                      }
+            }else{
+                do {
+                    let imageUrlBlank = URL(string: "https://zbp.progocrm.com/assets/static/images/thumbnail-logo.png")!
+                      let imageData = try Data(contentsOf: imageUrlBlank as URL)
+                      self.eventImage.image = UIImage(data: imageData)
+                    } catch {
+                            print("Unable to load data: \(error)")
+                      }
+            }
+            
+            
             var status = selectedEvent["event_status"] as? String
              //print(status)
             if status == "10" {
@@ -100,11 +113,10 @@ class CSOTodaysEventDetailsViewController: UIViewController {
                  self.pubunpubLabel.text = " Published "
              }else
                    if status != "10"{
-                 
+            
                  self.pubunpubImage.image = UIImage(named: "close.png")
                  self.pubunpubLabel.text = " Unpublished "
              }
-        
         }
          
         if (screen  == "calender" ){
