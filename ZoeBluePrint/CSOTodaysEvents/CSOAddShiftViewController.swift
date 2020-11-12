@@ -382,12 +382,22 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     }
     
     func createChannel(email: String) {
+        ActivityLoaderView.startAnimating()
         let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
+        SBDMain.connect(withUserId: email) { [self] (user, error) in
+                                            guard error == nil else {   // Error.
+                                                print("USER NOT CONNECTED")
+                                                ActivityLoaderView.stopAnimating()
+                                                return
+                                             
+                                            }
         self.groupChannelListQuery = SBDGroupChannel.createMyGroupChannelListQuery()
         self.groupChannelListQuery?.limit = 100
         self.groupChannelListQuery?.includeEmptyChannel = true
         self.groupChannelListQuery?.channelNameFilter = eventName
         if self.groupChannelListQuery?.hasNext == false {
+            print("GROUP CHANNEL LIST QUERY NOT CREATED")
+            ActivityLoaderView.stopAnimating()
             return
         }
         
@@ -395,16 +405,11 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
             if error != nil {
                 print ("error")
                 ActivityLoaderView.stopAnimating()
+                print("CHANNELS NOT FOUND")
                 return
             }
             
             if channels?.count == 0{
-                SBDMain.connect(withUserId: email) { [self] (user, error) in
-                                                    guard error == nil else {   // Error.
-                                                        return
-                                                      ActivityLoaderView.stopAnimating()
-                                                    }
-                    ActivityLoaderView.stopAnimating()
                     var strCoverUrl = ""
                     if let url = eventDetail["event_image"] as? String{
                         strCoverUrl = url
@@ -414,18 +419,20 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                    // let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
                     SBDGroupChannel.createChannel(withName: eventName, isDistinct: false, userIds: [ email ], coverUrl: strCoverUrl , data: email, customType: "Channel", completionHandler: { (groupChannel, error) in
                                                          guard error == nil else {   // Error.
+                                                            ActivityLoaderView.stopAnimating()
+                                                            print("CHANNEL NOT CREATED")
                                                              return
                                                          }
+                        print("CHANNEL CREATED")
                         ActivityLoaderView.stopAnimating()
                                                         })
-                                          }
+                                          
+            }else{
+                print("CHANNEL with SAME NAME FOUND")
             }
+            
         })
-        
-            
-          
-            
-         
+        }
      
     }
     

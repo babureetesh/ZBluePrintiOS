@@ -646,9 +646,6 @@ extension CSODashboardViewController:  FSCalendarDataSource, FSCalendarDelegate,
 }
 
 
-
-
-
 extension CSODashboardViewController:CustomDetailViewControllerDelegate {
     func eventSelected(_ eventDetail: [String : Any]?) {
         showSelectedEventDetails(selectedEventDetail: eventDetail)
@@ -684,7 +681,6 @@ extension CSODashboardViewController:UITabBarControllerDelegate {
         }
         return true
     }
-    
 }
 func removeAllOtherViewsOfVC(viewcontroller:UIViewController)  {
     

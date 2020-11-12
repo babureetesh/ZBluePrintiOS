@@ -1271,7 +1271,11 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
                                self.waiverfileupload = true
                            }
             let serviceHanlder = ServiceHandlers()
-             
+               
+                if(self.img != nil){
+                }else{
+                    self.imgName = ""
+                }
                 serviceHanlder.updateEvent(event_id:self.eventIdFromServer,event_type_id:self.eventTypeId ,event_heading:txtfldEventName.text!,event_details:txtFldEventDescription.text!,event_address:txtFldAddress.text!,event_country:self.countryID,event_state:self.stateID,event_city:txtFldCity.text!,event_postcode:txtFldPostalcode.text!,event_timezone:self.timeZoneID,event_latitude:self.lat,event_longitude:self.lang,event_email:txtFldEmail.text!,event_phone:txtFldPhone.text!,event_image:self.imgName,event_register_start_date:self.sDate, event_register_end_date:self.eDate, event_end_time: self.EndTime, event_start_time: self.StartTime, event_waiver_doc: self.fileName,event_waiver_req:req!) { (responce, isSuccess) in
                  if isSuccess {
                     let resdata = responce as! [String: Any]
@@ -1306,7 +1310,6 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
                                          
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-                                   
                     }
                 }
                    
@@ -1335,7 +1338,11 @@ txtFldEventDescription.attributedPlaceholder = NSAttributedString(string: NSLoca
                 self.present(alert, animated: true, completion: nil)
             }
             let serviceHanlder = ServiceHandlers()
-            serviceHanlder.addEvent(event_type_id: eventTypeId, event_heading: txtfldEventName.text!, event_details: txtFldEventDescription.text!, event_address: txtFldAddress.text!, event_country: countryID, event_state: stateID, event_city: txtFldCity.text!, event_postcode: txtFldPostalcode.text!, event_timezone: timeZoneID, event_latitude: lat, event_longitude: lang, event_email: txtFldEmail.text!, event_phone: txtFldPhone.text!, event_image: imgName, event_register_start_date: sDate, event_register_end_date: eDate, event_start_time: StartTime, event_end_time: EndTime, event_waiver_doc: fileName, event_waiver_req: req!){ (responce, isSuccess) in
+                if(self.img != nil){
+                }else{
+                    self.imgName = ""
+                }
+                serviceHanlder.addEvent(event_type_id: eventTypeId, event_heading: txtfldEventName.text!, event_details: txtFldEventDescription.text!, event_address: txtFldAddress.text!, event_country: countryID, event_state: stateID, event_city: txtFldCity.text!, event_postcode: txtFldPostalcode.text!, event_timezone: timeZoneID, event_latitude: lat, event_longitude: lang, event_email: txtFldEmail.text!, event_phone: txtFldPhone.text!, event_image: self.imgName, event_register_start_date: sDate, event_register_end_date: eDate, event_start_time: StartTime, event_end_time: EndTime, event_waiver_doc: fileName, event_waiver_req: req!){ (responce, isSuccess) in
                 if isSuccess {
                     let resdata = responce as! [String: Any]
                     self.eventIdFromServer = resdata["event_id"] as! String
