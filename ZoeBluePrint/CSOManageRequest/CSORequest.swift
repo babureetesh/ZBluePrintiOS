@@ -1166,11 +1166,11 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                              "user_type":"CSO",
                            "user_device":UIDevice.current.identifierForVendor!.uuidString as! String,
                              "vol_id": self.server_data!["user_id"] as! String,
-                             "attend_rank":starView.rating,
+                             "attend_rank":Int(starView.rating),
                              "map_id":self.mapID,
                              "map_rank_comment":comm as! String
                    ] as [String : Any?]
-               //print(params)
+               print(params)
                let serviceHanlder = ServiceHandlers()
                serviceHanlder.changeRankinVol(data:params) { (responce, isSuccess) in
                    if isSuccess {

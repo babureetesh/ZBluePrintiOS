@@ -518,23 +518,22 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
         Table1.isHidden = true
         
         Completedhours.isHidden = false
-       
+//
+//        let decoded1  = UserDefaults.standard.object(forKey: "VolData")
+//        let volData1 = NSKeyedUnarchiver.unarchiveObject(with: decoded1 as! Data) as?  Dictionary<String, Any>
+//        print(volData1)
         
-      if  let decoded  = UserDefaults.standard.object(forKey: "VolData") as? Data,let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as?  Dictionary<String, Any>, let userAvgRate = volData["user_avg_rate"] as? String {
+      if  let decoded  = UserDefaults.standard.object(forKey: "VolData") as? Data,let volData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as?  Dictionary<String, Any>{
              
-                //if defaults == "Dark Mode"{
-                  //  self.whiteStarView.rating = Double(userAvgRate) ?? 0.0
-                //}else if defaults == "Light Mode"{
+        if let userAvgRate = volData["user_avg_rate"] as? String {
                     self.ratingView.rating = Double(userAvgRate) ?? 0.0
-                    
-               // }
-       
+            self.ratingView.isHidden = false
+        }
         let resdata = volData["res_data"] as! Dictionary<String, Any>
-        
         var hoursDone = resdata["vol_hours"] as! String
         hoursDone = hoursDone + " VOLUNTEER HOURS COMPLETED "
         //print(hoursDone)
-        self.ratingView.isHidden = false
+       
         whiteStarView.isHidden = true
         self.Completedhours.text = hoursDone
         self.rankImage.image = UIImage(named: findingAverageRank(user_hours: volData["user_avg_rank"] as! String))
@@ -546,7 +545,6 @@ class VolunteerLockerViewController: UIViewController,UITableViewDelegate,UITabl
         whiteStarView.isHidden = true
         self.Completedhours.text = hoursDone
         self.rankImage.image = UIImage(named: findingAverageRank(user_hours: "0"))
-        
         
       }
         
