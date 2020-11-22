@@ -2220,6 +2220,7 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
             //print(params)
             
         let urlString = baseURL + "vol-action.php?api_key=1234&action=vol_dashboard_combine_mob"
+        //let urlString = baseURL + "vol-action.php?api_key=1234&action=vol_dashboard_combine"
             Alamofire.request(urlString, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseJSON {
                 response in
                 switch response.result {
@@ -2489,7 +2490,41 @@ func getSelectedEventDetails(eventId:String, onCompletion:@escaping CompletionHa
            }
          
        }
-    
+    func syncChannelToServerForShift(shift_id:String,shift_channel_url:String, onCompletion:@escaping CompletionHandler){
+           
+           ActivityLoaderView.startAnimating()
+           
+          let params = ["shift_id": shift_id,"shift_channel_url": shift_channel_url]
+           
+           let urlString = baseURL+"cso-action.php?api_key=1234&action=save_channel_url"
+           Alamofire.request(urlString, method: .post, parameters: params,encoding: JSONEncoding.default, headers: nil).responseJSON {
+               response in
+               switch response.result {
+               case .success:
+                   if let JSON = response.result.value as? [String: Any] {
+                       //print(JSON)
+                       let message = JSON["res_status"] as! String
+                       //print(message)
+                       if(message == "200"){
+                           let responseString = JSON["res_message"] as! NSString
+                           ActivityLoaderView.stopAnimating()
+                          onCompletion(responseString,true)
+                           
+                       }else if(message == "401"){
+                       ActivityLoaderView.stopAnimating()
+                           onCompletion(nil,false)
+                       }
+                       
+                   }
+                   break
+               case .failure(let error):
+                   ActivityLoaderView.stopAnimating()
+                   print(error)
+                   onCompletion(nil,false)
+               }
+           }
+         
+       }
     
     
     func myOrgList(user_id:String, onCompletion:@escaping CompletionHandler){

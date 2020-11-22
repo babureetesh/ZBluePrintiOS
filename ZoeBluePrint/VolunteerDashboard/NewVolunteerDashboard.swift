@@ -80,18 +80,19 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
     }
     
     func utcToLocal(dateStr: String) -> String? {
-        let dateFormatter = DateFormatter()
-        let timeZone =  UserDefaults.standard.object(forKey: UserDefaultKeys.key_userTimeZone) as! String
-        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
-        dateFormatter.timeZone = TimeZone(abbreviation: timeZone)
-        
-        if let date = dateFormatter.date(from: dateStr) {
-            dateFormatter.timeZone = TimeZone.current
-            dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
-        
-            return dateFormatter.string(from: date)
-        }
-        return nil
+//        let dateFormatter = DateFormatter()
+//        let timeZone =  UserDefaults.standard.object(forKey: UserDefaultKeys.key_userTimeZone) as! String
+//        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+//        dateFormatter.timeZone = TimeZone(abbreviation: timeZone)
+//
+//        if let date = dateFormatter.date(from: dateStr) {
+//            dateFormatter.timeZone = TimeZone.current
+//            dateFormatter.dateFormat = "MM-dd-yyyy HH:mm:ss"
+//
+//            return dateFormatter.string(from: date)
+//        }
+//        return nil
+        return dateStr
     }
     
     // Creating Countdown Timer:
@@ -172,10 +173,7 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
         //print(volData)
         {
             
-            
             let floatUserAverageRank = Float(userAvgRank)!
-            
-            
             if ((floatUserAverageRank >= 0) && (floatUserAverageRank <= 20)){
                 strImageNameCover = "cover_riseandshine.jpg"
             }else if ((floatUserAverageRank > 20) && (floatUserAverageRank <= 40)){
@@ -304,9 +302,6 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
                            
                          }
                    }
-      
-    
-    
     
     
     func DarkMode() {
@@ -531,11 +526,6 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
               }
           }
     }
-    
-         
-  
- 
-   
     
 }
 

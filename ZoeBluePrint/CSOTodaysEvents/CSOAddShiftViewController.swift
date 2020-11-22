@@ -298,13 +298,6 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func addShift(_ sender: Any) {
-        
-     //  //print(self.sDate)
-      //  //print(self.txtfldVolReq.text!)
-     //   //print(self.shiftStartTime)
-      //  //print(self.shiftEndTime)
-       // //print(self.selectedShiftRankId)
-      //  //print(self.selectedShiftTaskId)
       if(validate())
             {
                 let strShiftStartTime = self.shiftStartTime
@@ -313,17 +306,12 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                 let datestart = dateFormatter.date(from: strShiftStartTime)
                 dateFormatter.dateFormat = "HH:mm"
                 let date24StartTime = dateFormatter.string(from: datestart!)
-                
-                
-                
                 let strShiftEndTime = self.shiftEndTime
                 let dateFormatter2 = DateFormatter()
                 dateFormatter2.dateFormat = "h:mm a"
                 let dateend = dateFormatter2.date(from: strShiftEndTime)
                 dateFormatter2.dateFormat = "HH:mm"
                 let date24EndTime = dateFormatter2.string(from: dateend!)
-                
-                
                 if !(self.screen == "EDIT SCREEN")
                   {
                 let serviceHanlder = ServiceHandlers()
@@ -334,18 +322,20 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                         let message = addShiftResponce!["res_status"] as! String
                        // //print(message)
                         if(message == "200"){
-                            
                             let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                                                          let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
                                                          let userEmail = userIDData["user_email"] as! String
-                                                         //let userFullName = "\(userIDData["user_f_name"]as! String)\(" ")\( userIDData["user_l_name"]as! String)"
-                                         
                                      ActivityLoaderView.startAnimating()
-                            self.createChannel(email: userEmail)
+                            
+                            if let shiftDetail = addShiftResponce?["res_data"] as? [String: Any] {
+                                if let shiftId = shiftDetail["event_shift_id"]{
+                                    self.createChannel(email: userEmail, shiftId: shiftId as! String)
+                                }
+                            }
+                           
                             let alert = UIAlertController(title: NSLocalizedString("Success!", comment: ""), message: NSLocalizedString("Shift Added Succesfully!", comment: ""), preferredStyle: UIAlertController.Style.alert)
                             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertAction.Style.default, handler: nil))
                             self.present(alert, animated: true, completion: nil)
-                            
                         }
                     }
                 }
@@ -359,29 +349,22 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                                 "shift_rank" : self.selectedShiftRankId,
                                 "shift_task" : self.selectedShiftTaskId
                     ]
-                   // //print(dict)
-                    
                     let serviceHanlder = ServiceHandlers()
                     serviceHanlder.updateShift(data_details: dict) { (responce, isSuccess) in
                                if isSuccess {
-                                   
-                                  
                                 let alert = UIAlertController(title: nil, message: "Update Successful", preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                                 self.present(alert , animated: true)
-                               
                                }
                            }
-                    
                      let objToBeSent = "Test Message from Notification"
                     NotificationCenter.default.post(name: Notification.Name("NotificationIdentifier"), object: objToBeSent);
                     performSegueToReturnBack()
-                    
             }
         }
     }
     
-    func createChannel(email: String) {
+    func createChannel(email: String, shiftId: String) {
         ActivityLoaderView.startAnimating()
         let eventName = "\(eventDetail["event_heading"]! as! String) (\(shiftName ?? ""))"
         SBDMain.connect(withUserId: email) { [self] (user, error) in
@@ -389,7 +372,6 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                                                 print("USER NOT CONNECTED")
                                                 ActivityLoaderView.stopAnimating()
                                                 return
-                                             
                                             }
         self.groupChannelListQuery = SBDGroupChannel.createMyGroupChannelListQuery()
         self.groupChannelListQuery?.limit = 100
@@ -400,7 +382,6 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
             ActivityLoaderView.stopAnimating()
             return
         }
-        
         self.groupChannelListQuery?.loadNextPage(completionHandler: { (channels, error) in
             if error != nil {
                 print ("error")
@@ -408,7 +389,6 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                 print("CHANNELS NOT FOUND")
                 return
             }
-            
             if channels?.count == 0{
                     var strCoverUrl = ""
                     if let url = eventDetail["event_image"] as? String{
@@ -424,16 +404,31 @@ class CSOAddShiftViewController: UIViewController,UITextFieldDelegate{
                                                              return
                                                          }
                         print("CHANNEL CREATED")
-                        ActivityLoaderView.stopAnimating()
+                        self.hitAPIToSyncChannelToServerForAddedShift(shiftID: shiftId, channel: groupChannel!)
                                                         })
-                                          
+
             }else{
                 print("CHANNEL with SAME NAME FOUND")
             }
-            
         })
         }
      
+    }
+    
+    func hitAPIToSyncChannelToServerForAddedShift(shiftID: String,channel: SBDGroupChannel){
+        
+        let servicehandler = ServiceHandlers()
+        servicehandler.syncChannelToServerForShift(shift_id: shiftID, shift_channel_url: channel.channelUrl){(responce,isSuccess) in
+                                     if isSuccess{
+                                        let resData = responce as! String
+                                        print(resData)
+                                        print("server updated for add shift and Sendbird URL")
+                                        ActivityLoaderView.stopAnimating()
+                                     }else{
+                                        print("error Occured for add shft sendbird update to server")
+                                        ActivityLoaderView.stopAnimating()
+                                     }
+                                        }
     }
     
     func profile_pic()  {

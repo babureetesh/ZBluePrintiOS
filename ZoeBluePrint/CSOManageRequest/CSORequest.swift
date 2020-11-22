@@ -9,6 +9,7 @@
 import UIKit
 import SendBirdSDK
 
+
 class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate,tagNumberOfButton,UIGestureRecognizerDelegate {
   
     var shiftRank = String ()
@@ -143,6 +144,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     var strMoreInfoStatusValue:String?
     var arrSelectedIndexForTick:[Int] = []
      var arrIndexForTick:[Int] = []
+  //  var channel: SBDGroupChannel!
     
     @IBOutlet weak var btnCheckAll: UIButton!
     @IBOutlet weak var viewRequesSelButtons: UIView!
@@ -923,7 +925,6 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnDecline.isHidden = false
                 self.btnAccept.isHidden = false
                
-                
                 verifyImage.isHidden = true
                 rejectImage.isHidden = true
                 moreinfoimage.isHidden = false
@@ -944,9 +945,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 self.btnVerified.isHidden = true
                 self.btnAccept.isHidden = true
                 self.btnDecline.isHidden = false
-                
-           
-                               
+            
                 verifyImage.isHidden = true
                 rejectImage.isHidden = true
                 moreinfoimage.isHidden = true
@@ -1027,18 +1026,12 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
                 moreinfoimage.isHidden = true
                 declineImage.isHidden = true
                 acceptImage.isHidden = true
-                
-
                 changeStatus_stackView.removeArrangedSubview(changeStatus_acceptView)
                 changeStatus_stackView.removeArrangedSubview(changeStatus_declineView)
                 changeStatus_stackView.removeArrangedSubview(changeStatus_moreInfoView)
-                
-                
                 changeStatus_acceptView.isHidden = true
                 changeStatus_declineView.isHidden = true
                 changeStatus_moreInfoView.isHidden = true
-                
-
                 break
                 
             case "50":          //  More Info : Orange
@@ -1190,6 +1183,8 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
     @IBAction func btnAcceptMethod(_ sender: Any) {
         self.change_status = "20"
         changeStatusMethod()
+        
+        //need to add user in Channel
     }
  
     @IBAction func btnDeclineMethod(_ sender: Any) {
@@ -1217,7 +1212,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         self.lblChangeHours.text = self.server_data!["attend_hours_vol"] as! String
         var rank = self.server_data!["attend_rank"] as! String
                print(rank)
-               
+    
                if rank == ""{
    
                 StatusView.isHidden = true
@@ -1273,11 +1268,49 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
 //
                     self.StatusView.isHidden = true
                     self.statusBackgroundView.isHidden = true
+                if self.change_status == "20" {
+                    ActivityLoaderView.startAnimating()
+                    self.addUserTochannel(channelurl: self.server_data!["shift_channel_url"] as! String, userToAddEmail: self.server_data!["user_email"] as! String)
+                }
                 self.change_status = nil
+                
                     self.volunterData()
             }
         }
     }
+    
+    func addUserTochannel(channelurl: String, userToAddEmail: String){
+        
+        let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
+                                     let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
+                                     let userEmail = userIDData["user_email"] as! String
+        
+        SBDMain.connect(withUserId: userEmail) { [self] (user, error) in
+                                            guard error == nil else {   // Error.
+                                                print("USER NOT CONNECTED")
+                                                ActivityLoaderView.stopAnimating()
+                                                return
+                                            }
+        SBDGroupChannel.getWithUrl(channelurl) { (channel, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            channel?.inviteUserIds([userToAddEmail], completionHandler: { (error) in
+            guard error == nil else {   // Error.
+                print(error)
+                return
+            }
+//            let alert = UIAlertController(title: nil, message: "User Added Successfully!", preferredStyle: UIAlertController.Style.alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
+                print("user added succesfully")
+        })
+        
+        }
+        }
+    }
+    
     func changeHoursMethod(){
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
                              let userIDData = NSKeyedUnarchiver.unarchiveObject(with: decoded) as!  Dictionary<String, Any>
@@ -1512,6 +1545,19 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
         strMapids.remove(at: strMapids.index(before: strMapids.endIndex))
         return strMapids
     }
+    
+    func prepareForAddingMultipleUserToMultiplechannel(){
+        
+       
+        for selectedIndex in arrSelectedIndexForTick{
+            let data:NSDictionary = self.csoallrequest[selectedIndex] as NSDictionary
+                       print(data)
+           // print(data["shift_channel_url"])
+            //print(data["user_email"])
+            self.addUserTochannel(channelurl: data["shift_channel_url"] as? String ?? "", userToAddEmail: data["user_email"] as? String ?? "")
+        }
+    }
+    
     func serviceCallforMultipleRequest(strMapIds: String ){
         
         let decoded  = UserDefaults.standard.object(forKey: UserDefaultKeys.key_LoggedInUserData) as! Data
@@ -1538,6 +1584,7 @@ class CSORequest: UIViewController,UITableViewDelegate,UITableViewDataSource,UIT
 
                                                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .default, handler: nil))
                                                self.present(alert, animated: true, completion: nil)
+                        self.prepareForAddingMultipleUserToMultiplechannel()
                             self.volunterData()
                     }else{
                         

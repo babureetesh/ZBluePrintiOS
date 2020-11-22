@@ -21,7 +21,6 @@ class CSODashboardViewController: BaseViewController {
     
     @IBOutlet weak var imgViewCsoCover: UIImageView!
     
-    
     @IBOutlet weak var sideButton: UIButton!
     @IBOutlet weak var lblcount: UIView!
     @IBOutlet weak var mangeRequest: UIButton!
