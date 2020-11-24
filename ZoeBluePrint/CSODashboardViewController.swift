@@ -333,6 +333,19 @@ class CSODashboardViewController: BaseViewController {
         }else{
            counter_secondsValue.text = strSeconds
         }
+        
+        if let val = counter_secondsValue.text {
+            let secondvalue:Int = Int(val) ?? 0
+            if secondvalue < 0 {
+                daysCounter_value.text = "00"
+                counter_hoursValue.text = "00"
+                counter_minutesValue.text = "00"
+                counter_secondsValue.text = "00"
+                
+            }
+        }
+       
+        
   }
     fileprivate func configureCalander() {
         

@@ -162,6 +162,17 @@ class NewVolunteerDashboard: UIViewController,UITabBarDelegate,UITabBarControlle
             }else{
                Seconds_counter_Value.text = strSeconds
             }
+        
+        if let val = Seconds_counter_Value.text {
+            let secondvalue:Int = Int(val) ?? 0
+            if secondvalue < 0 {
+                Days_counter_value.text = "00"
+                Hours_counter_value.text = "00"
+                Minute_counter_value.text = "00"
+                Seconds_counter_Value.text = "00"
+                
+            }
+        }
             
            
        }
